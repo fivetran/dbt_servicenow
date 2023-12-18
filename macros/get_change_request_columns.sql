@@ -1,0 +1,53 @@
+{% macro get_change_request_columns() %}
+
+{% set columns = [
+    {"name": "_fivetran_deleted", "datatype": dbt.type_boolean()},
+    {"name": "_fivetran_synced", "datatype": dbt.type_timestamp()},
+    {"name": "backout_plan", "datatype": dbt.type_string()},
+    {"name": "cab_date", "datatype": "date"},
+    {"name": "cab_date_time", "datatype": dbt.type_timestamp()},
+    {"name": "cab_delegate_link", "datatype": dbt.type_string()},
+    {"name": "cab_delegate_value", "datatype": dbt.type_string()},
+    {"name": "cab_recommendation", "datatype": dbt.type_string()},
+    {"name": "cab_required", "datatype": dbt.type_boolean()},
+    {"name": "category", "datatype": dbt.type_string()},
+    {"name": "change_plan", "datatype": dbt.type_string()},
+    {"name": "chg_model_link", "datatype": dbt.type_string()},
+    {"name": "chg_model_value", "datatype": dbt.type_string()},
+    {"name": "close_code", "datatype": dbt.type_string()},
+    {"name": "conflict_last_run", "datatype": dbt.type_timestamp()},
+    {"name": "conflict_status", "datatype": dbt.type_string()},
+    {"name": "end_date", "datatype": dbt.type_timestamp()},
+    {"name": "implementation_plan", "datatype": dbt.type_string()},
+    {"name": "justification", "datatype": dbt.type_string()},
+    {"name": "on_hold", "datatype": dbt.type_boolean()},
+    {"name": "on_hold_reason", "datatype": dbt.type_string()},
+    {"name": "on_hold_task", "datatype": dbt.type_string()},
+    {"name": "outside_maintenance_schedule", "datatype": dbt.type_boolean()},
+    {"name": "phase", "datatype": dbt.type_string()},
+    {"name": "phase_state", "datatype": dbt.type_string()},
+    {"name": "production_system", "datatype": dbt.type_boolean()},
+    {"name": "reason", "datatype": dbt.type_string()},
+    {"name": "requested_by_date", "datatype": dbt.type_timestamp()},
+    {"name": "requested_by_link", "datatype": dbt.type_string()},
+    {"name": "requested_by_value", "datatype": dbt.type_string()},
+    {"name": "review_comments", "datatype": dbt.type_string()},
+    {"name": "review_date", "datatype": "date"},
+    {"name": "review_status", "datatype": dbt.type_int()},
+    {"name": "risk", "datatype": dbt.type_int()},
+    {"name": "risk_impact_analysis", "datatype": dbt.type_string()},
+    {"name": "scope", "datatype": dbt.type_int()},
+    {"name": "start_date", "datatype": dbt.type_timestamp()},
+    {"name": "std_change_producer_version_link", "datatype": dbt.type_string()},
+    {"name": "std_change_producer_version_value", "datatype": dbt.type_string()},
+    {"name": "sys_created_on", "datatype": dbt.type_timestamp()},
+    {"name": "sys_id", "datatype": dbt.type_string()},
+    {"name": "sys_updated_on", "datatype": dbt.type_timestamp()},
+    {"name": "test_plan", "datatype": dbt.type_string()},
+    {"name": "type", "datatype": dbt.type_string()},
+    {"name": "unauthorized", "datatype": dbt.type_boolean()}
+] %}
+
+{{ return(columns) }}
+
+{% endmacro %}

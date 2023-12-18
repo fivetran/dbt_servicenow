@@ -1,0 +1,50 @@
+{% macro get_problem_columns() %}
+
+{% set columns = [
+    {"name": "_fivetran_deleted", "datatype": dbt.type_boolean()},
+    {"name": "_fivetran_synced", "datatype": dbt.type_timestamp()},
+    {"name": "category", "datatype": dbt.type_string()},
+    {"name": "cause_notes", "datatype": dbt.type_string()},
+    {"name": "confirmed_at", "datatype": dbt.type_timestamp()},
+    {"name": "confirmed_by_link", "datatype": dbt.type_string()},
+    {"name": "confirmed_by_value", "datatype": dbt.type_string()},
+    {"name": "duplicate_of_link", "datatype": dbt.type_string()},
+    {"name": "duplicate_of_value", "datatype": dbt.type_string()},
+    {"name": "first_reported_by_task_link", "datatype": dbt.type_string()},
+    {"name": "first_reported_by_task_value", "datatype": dbt.type_string()},
+    {"name": "fix_at", "datatype": dbt.type_timestamp()},
+    {"name": "fix_by_link", "datatype": dbt.type_string()},
+    {"name": "fix_by_value", "datatype": dbt.type_string()},
+    {"name": "fix_communicated_at", "datatype": dbt.type_timestamp()},
+    {"name": "fix_communicated_by_link", "datatype": dbt.type_string()},
+    {"name": "fix_communicated_by_value", "datatype": dbt.type_string()},
+    {"name": "fix_notes", "datatype": dbt.type_string()},
+    {"name": "known_error", "datatype": dbt.type_boolean()},
+    {"name": "major_problem", "datatype": dbt.type_boolean()},
+    {"name": "problem_state", "datatype": dbt.type_int()},
+    {"name": "related_incidents", "datatype": dbt.type_int()},
+    {"name": "reopen_count", "datatype": dbt.type_int()},
+    {"name": "reopened_at", "datatype": dbt.type_timestamp()},
+    {"name": "reopened_by_link", "datatype": dbt.type_string()},
+    {"name": "reopened_by_value", "datatype": dbt.type_string()},
+    {"name": "resolution_code", "datatype": dbt.type_string()},
+    {"name": "resolved_at", "datatype": dbt.type_timestamp()},
+    {"name": "resolved_by_link", "datatype": dbt.type_string()},
+    {"name": "resolved_by_value", "datatype": dbt.type_string()},
+    {"name": "review_outcome", "datatype": dbt.type_string()},
+    {"name": "rfc_link", "datatype": dbt.type_string()},
+    {"name": "rfc_value", "datatype": dbt.type_string()},
+    {"name": "subcategory", "datatype": dbt.type_string()},
+    {"name": "sys_created_on", "datatype": dbt.type_timestamp()},
+    {"name": "sys_id", "datatype": dbt.type_string()},
+    {"name": "sys_updated_on", "datatype": dbt.type_timestamp()},
+    {"name": "workaround", "datatype": dbt.type_string()},
+    {"name": "workaround_applied", "datatype": dbt.type_boolean()},
+    {"name": "workaround_communicated_at", "datatype": dbt.type_timestamp()},
+    {"name": "workaround_communicated_by_link", "datatype": dbt.type_string()},
+    {"name": "workaround_communicated_by_value", "datatype": dbt.type_string()}
+] %}
+
+{{ return(columns) }}
+
+{% endmacro %}

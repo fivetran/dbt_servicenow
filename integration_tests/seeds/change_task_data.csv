@@ -1,0 +1,2 @@
+sys_id,_fivetran_deleted,_fivetran_synced,change_request_link,change_request_value,change_task_type,close_code,created_from,on_hold,on_hold_reason,planned_end_date,planned_start_date,sys_created_on,sys_updated_on
+d740c636c0a8016700d4f00b16f9c997,FALSE,2023-11-06 0:06:17,link to change request,06cdb552db252200a6a2b31be0b8f53e,,successful,,FALSE,,,,2016-11-10 5:24:46,2016-11-11 11:51:16

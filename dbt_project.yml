@@ -1,0 +1,25 @@
+config-version: 2
+name: 'servicenow'
+version: '0.1.0'
+require-dbt-version: [">=1.3.0", "<2.0.0"]
+
+models:
+  servicenow:
+    +schema: servicenow
+    +materialized: table
+    intermediate:
+      +materialized: ephemeral
+    staging:
+      +materialized: view
+      +schema: stg_servicenow
+
+
+vars:
+    task: "{{ source('servicenow','task') }}"
+    task_sla: "{{ source('servicenow','task_sla') }}"
+    sys_user: "{{ source('servicenow','sys_user') }}"
+    problem: "{{ source('servicenow','problem') }}"
+    problem_task: "{{ source('servicenow','problem_task') }}"
+    incident: "{{ source('servicenow','incident') }}"
+    change_task: "{{ source('servicenow','change_task') }}"
+    change_request: "{{ source('servicenow','change_request') }}"
