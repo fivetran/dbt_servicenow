@@ -18,14 +18,14 @@ This package models ServiceNow data from [Fivetran's connector](https://fivetran
 
 The main focus of the package is to transform the core object tables into analytics-ready models, including:
 <!--section="servicenow_model"-->
-    - Materializes [ServiceNow staging tables](https://fivetran.github.io/dbt_servicenow/#!/overview/servicenow_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/servicenow/#schemainformation). These staging tables clean, test, and prepare your ServiceNow data from [Fivetran's connector](https://fivetran.com/docs/applications/servicenow_source) for analysis by doing the following:
-    - Name columns for consistency across all packages and for easier analysis
-        - Primary keys are renamed from `id` to `<table name>_id`. 
-        - Foreign key names explicitly map onto their related tables (ie `owner_id` -> `owner_user_id`).
-        - Datetime fields are renamed to `<event happened>_at`.
-    - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
-    - Generates a comprehensive data dictionary of your ServiceNow data through the [dbt docs site](https://fivetran.github.io/dbt_servicenow/).
-    - [Insert additional custom details here.]
+  - Materializes [ServiceNow staging tables](https://fivetran.github.io/dbt_servicenow/#!/overview/servicenow_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/servicenow/#schemainformation). These staging tables clean, test, and prepare your ServiceNow data from [Fivetran's connector](https://fivetran.com/docs/applications/servicenow_source) for analysis by doing the following:
+  - Name columns for consistency across all packages and for easier analysis
+      - Primary keys are renamed from `id` to `<table name>_id`. 
+      - Foreign key names explicitly map onto their related tables (ie `owner_id` -> `owner_user_id`).
+      - Datetime fields are renamed to `<event happened>_at`.
+  - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
+  - Generates a comprehensive data dictionary of your ServiceNow data through the [dbt docs site](https://fivetran.github.io/dbt_servicenow/).
+  - [Insert additional custom details here.]
 
 > This package does not apply freshness tests to source data due to the variability of survey cadences.
 
