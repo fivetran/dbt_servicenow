@@ -13,7 +13,6 @@ models:
       +materialized: view
       +schema: stg_servicenow
 
-
 vars:
     task: "{{ source('servicenow','task') }}"
     task_sla: "{{ source('servicenow','task_sla') }}"
