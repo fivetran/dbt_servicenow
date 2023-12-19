@@ -10,14 +10,17 @@ models:
           - unique
           - not_null
 
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
-      - name: active
-        description: '{{ doc("active") }}'
+      - name: is_task_active
+        description: '{{ doc("is_task_active") }}'
 
       - name: activity_due
         description: '{{ doc("activity_due") }}'
@@ -115,11 +118,11 @@ models:
       - name: delivery_task_value
         description: '{{ doc("delivery_task_value") }}'
 
-      - name: description
-        description: '{{ doc("description") }}'
+      - name: task_description
+        description: '{{ doc("task_description") }}'
 
-      - name: due_date
-        description: '{{ doc("due_date") }}'
+      - name: task_due_date_at
+        description: '{{ doc("task_due_date_at") }}'
 
       - name: escalation
         description: '{{ doc("escalation") }}'
@@ -127,8 +130,8 @@ models:
       - name: expected_start
         description: '{{ doc("expected_start") }}'
 
-      - name: follow_up
-        description: '{{ doc("follow_up") }}'
+      - name: task_follow_up_at
+        description: '{{ doc("task_follow_up_at") }}'
 
       - name: group_list
         description: '{{ doc("group_list") }}'
@@ -148,11 +151,11 @@ models:
       - name: made_sla
         description: '{{ doc("made_sla") }}'
 
-      - name: number
-        description: '{{ doc("number") }}'
+      - name: task_number
+        description: '{{ doc("task_number") }}'
 
-      - name: opened_at
-        description: '{{ doc("opened_at") }}'
+      - name: task_opened_at
+        description: '{{ doc("task_opened_at") }}'
 
       - name: opened_by_link
         description: '{{ doc("opened_by_link") }}'
@@ -160,8 +163,8 @@ models:
       - name: opened_by_value
         description: '{{ doc("opened_by_value") }}'
 
-      - name: order
-        description: '{{ doc("order") }}'
+      - name: task_order
+        description: '{{ doc("task_order") }}'
 
       - name: parent_link
         description: '{{ doc("parent_link") }}'
@@ -196,8 +199,8 @@ models:
       - name: sla_due
         description: '{{ doc("sla_due") }}'
 
-      - name: state
-        description: '{{ doc("state") }}'
+      - name: task_state
+        description: '{{ doc("task_state") }}'
 
       - name: sys_class_name
         description: '{{ doc("sys_class_name") }}'
@@ -205,8 +208,8 @@ models:
       - name: sys_created_by
         description: '{{ doc("sys_created_by") }}'
 
-      - name: sys_created_on
-        description: '{{ doc("sys_created_on") }}'
+      - name: task_created_at
+        description: '{{ doc("task_created_at") }}'
 
       - name: sys_domain_link
         description: '{{ doc("sys_domain_link") }}'
@@ -223,8 +226,8 @@ models:
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
 
-      - name: sys_updated_on
-        description: '{{ doc("sys_updated_on") }}'
+      - name: task_updated_at
+        description: '{{ doc("task_updated_at") }}'
 
       - name: task_effective_number
         description: '{{ doc("task_effective_number") }}'
@@ -273,6 +276,9 @@ models:
         tests:
           - unique
           - not_null
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
 
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
@@ -340,8 +346,8 @@ models:
       - name: sys_created_by
         description: '{{ doc("sys_created_by") }}'
 
-      - name: sys_created_on
-        description: '{{ doc("sys_created_on") }}'
+      - name: task_sla_created_at
+        description: '{{ doc("task_sla_created_at") }}'
 
       - name: sys_mod_count
         description: '{{ doc("sys_mod_count") }}'
@@ -349,8 +355,8 @@ models:
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
 
-      - name: sys_updated_on
-        description: '{{ doc("sys_updated_on") }}'
+      - name: task_sla_updated_at
+        description: '{{ doc("task_sla_updated_at") }}'
 
       - name: task_link
         description: '{{ doc("task_link") }}'
@@ -373,6 +379,9 @@ models:
           - unique
           - not_null
 
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
 
@@ -382,8 +391,8 @@ models:
       - name: accumulated_roles
         description: '{{ doc("accumulated_roles") }}'
 
-      - name: active
-        description: '{{ doc("active") }}'
+      - name: is_active
+        description: '{{ doc("is_active") }}'
 
       - name: avatar
         description: '{{ doc("avatar") }}'
@@ -463,14 +472,14 @@ models:
       - name: introduction
         description: '{{ doc("introduction") }}'
 
-      - name: last_login
-        description: '{{ doc("last_login") }}'
+      - name: last_login_day_date
+        description: '{{ doc("last_login_day_date") }}'
 
       - name: last_login_device
         description: '{{ doc("last_login_device") }}'
 
-      - name: last_login_time
-        description: '{{ doc("last_login_time") }}'
+      - name: last_login_at
+        description: '{{ doc("last_login_at") }}'
 
       - name: last_name
         description: '{{ doc("last_name") }}'
@@ -544,8 +553,8 @@ models:
       - name: sys_created_by
         description: '{{ doc("sys_created_by") }}'
 
-      - name: sys_created_on
-        description: '{{ doc("sys_created_on") }}'
+      - name: user_created_at
+        description: '{{ doc("user_created_at") }}'
 
       - name: sys_domain_link
         description: '{{ doc("sys_domain_link") }}'
@@ -562,8 +571,8 @@ models:
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
 
-      - name: sys_updated_on
-        description: '{{ doc("sys_updated_on") }}'
+      - name: user_updated_at
+        description: '{{ doc("user_updated_at") }}'
 
       - name: time_format
         description: '{{ doc("time_format") }}'
@@ -598,26 +607,29 @@ models:
           - unique
           - not_null
 
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
-      - name: category
-        description: '{{ doc("category") }}'
+      - name: problem_category
+        description: '{{ doc("problem_category") }}'
 
       - name: cause_notes
         description: '{{ doc("cause_notes") }}'
 
-      - name: confirmed_at
-        description: '{{ doc("confirmed_at") }}'
+      - name: problem_confirmed_at
+        description: '{{ doc("problem_confirmed_at") }}'
 
-      - name: confirmed_by_link
-        description: '{{ doc("confirmed_by_link") }}'
+      - name: problem_confirmed_by_link
+        description: '{{ doc("problem_confirmed_by_link") }}'
 
-      - name: confirmed_by_value
-        description: '{{ doc("confirmed_by_value") }}'
+      - name: problem_confirmed_by_value
+        description: '{{ doc("problem_confirmed_by_value") }}'
 
       - name: duplicate_of_link
         description: '{{ doc("duplicate_of_link") }}'
@@ -625,20 +637,20 @@ models:
       - name: duplicate_of_value
         description: '{{ doc("duplicate_of_value") }}'
 
-      - name: first_reported_by_task_link
-        description: '{{ doc("first_reported_by_task_link") }}'
+      - name: problem_first_reported_by_task_link
+        description: '{{ doc("problem_first_reported_by_task_link") }}'
 
-      - name: first_reported_by_task_value
-        description: '{{ doc("first_reported_by_task_value") }}'
+      - name: problem_first_reported_by_task_value
+        description: '{{ doc("problem_first_reported_by_task_value") }}'
 
-      - name: fix_at
-        description: '{{ doc("fix_at") }}'
+      - name: problem_fix_at
+        description: '{{ doc("problem_fix_at") }}'
 
-      - name: fix_by_link
-        description: '{{ doc("fix_by_link") }}'
+      - name: problem_fix_by_link
+        description: '{{ doc("problem_fix_by_link") }}'
 
-      - name: fix_by_value
-        description: '{{ doc("fix_by_value") }}'
+      - name: problem_fix_by_value
+        description: '{{ doc("problem_fix_by_value") }}'
 
       - name: fix_communicated_at
         description: '{{ doc("fix_communicated_at") }}'
@@ -649,20 +661,20 @@ models:
       - name: fix_communicated_by_value
         description: '{{ doc("fix_communicated_by_value") }}'
 
-      - name: fix_notes
-        description: '{{ doc("fix_notes") }}'
+      - name: problem_fix_notes
+        description: '{{ doc("problem_fix_notes") }}'
 
-      - name: known_error
-        description: '{{ doc("known_error") }}'
+      - name: is_known_error
+        description: '{{ doc("is_known_error") }}'
 
-      - name: major_problem
-        description: '{{ doc("major_problem") }}'
+      - name: is_major_problem
+        description: '{{ doc("is_major_problem") }}'
 
       - name: problem_state
         description: '{{ doc("problem_state") }}'
 
-      - name: related_incidents
-        description: '{{ doc("related_incidents") }}'
+      - name: problem_related_incidents
+        description: '{{ doc("problem_related_incidents") }}'
 
       - name: reopen_count
         description: '{{ doc("reopen_count") }}'
@@ -676,17 +688,17 @@ models:
       - name: reopened_by_value
         description: '{{ doc("reopened_by_value") }}'
 
-      - name: resolution_code
-        description: '{{ doc("resolution_code") }}'
+      - name: problem_resolution_code
+        description: '{{ doc("problem_resolution_code") }}'
 
-      - name: resolved_at
-        description: '{{ doc("resolved_at") }}'
+      - name: problem_resolved_at
+        description: '{{ doc("problem_resolved_at") }}'
 
       - name: resolved_by_link
         description: '{{ doc("resolved_by_link") }}'
 
-      - name: resolved_by_value
-        description: '{{ doc("resolved_by_value") }}'
+      - name: problem_resolved_by_value
+        description: '{{ doc("problem_resolved_by_value") }}'
 
       - name: review_outcome
         description: '{{ doc("review_outcome") }}'
@@ -697,14 +709,14 @@ models:
       - name: rfc_value
         description: '{{ doc("rfc_value") }}'
 
-      - name: subcategory
-        description: '{{ doc("subcategory") }}'
+      - name: problem_subcategory
+        description: '{{ doc("problem_subcategory") }}'
 
-      - name: sys_created_on
-        description: '{{ doc("sys_created_on") }}'
+      - name: problem_created_at
+        description: '{{ doc("problem_created_at") }}'
 
-      - name: sys_updated_on
-        description: '{{ doc("sys_updated_on") }}'
+      - name: problem_updated_at
+        description: '{{ doc("problem_updated_at") }}'
 
       - name: workaround
         description: '{{ doc("workaround") }}'
@@ -730,17 +742,20 @@ models:
           - unique
           - not_null
 
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
-      - name: cause_code
-        description: '{{ doc("cause_code") }}'
+      - name: problem_task_cause_code
+        description: '{{ doc("problem_task_cause_code") }}'
 
-      - name: close_code
-        description: '{{ doc("close_code") }}'
+      - name: problem_task_close_code
+        description: '{{ doc("problem_task_close_code") }}'
 
       - name: other_reason
         description: '{{ doc("other_reason") }}'
@@ -766,8 +781,8 @@ models:
       - name: reopened_by_value
         description: '{{ doc("reopened_by_value") }}'
 
-      - name: started_at
-        description: '{{ doc("started_at") }}'
+      - name: problem_task_started_at
+        description: '{{ doc("problem_task_started_at") }}'
 
       - name: started_by_link
         description: '{{ doc("started_by_link") }}'
@@ -775,11 +790,11 @@ models:
       - name: started_by_value
         description: '{{ doc("started_by_value") }}'
 
-      - name: sys_created_on
-        description: '{{ doc("sys_created_on") }}'
+      - name: problem_task_created_at
+        description: '{{ doc("problem_task_created_at") }}'
 
-      - name: sys_updated_on
-        description: '{{ doc("sys_updated_on") }}'
+      - name: problem_task_updated_at
+        description: '{{ doc("problem_task_updated_at") }}'
 
       - name: vendor_link
         description: '{{ doc("vendor_link") }}'
@@ -795,6 +810,9 @@ models:
         tests:
           - unique
           - not_null
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
 
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
@@ -895,11 +913,11 @@ models:
       - name: subcategory
         description: '{{ doc("subcategory") }}'
 
-      - name: sys_created_on
-        description: '{{ doc("sys_created_on") }}'
+      - name: incident_created_at
+        description: '{{ doc("incident_created_at") }}'
 
-      - name: sys_updated_on
-        description: '{{ doc("sys_updated_on") }}'
+      - name: incident_updated_at
+        description: '{{ doc("incident_updated_at") }}'
 
   - name: stg_servicenow__change_task
     description: '{{ doc("stg_servicenow__change_task") }}'
@@ -909,6 +927,9 @@ models:
         tests:
           - unique
           - not_null
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
 
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
@@ -925,29 +946,29 @@ models:
       - name: change_task_type
         description: '{{ doc("change_task_type") }}'
 
-      - name: close_code
-        description: '{{ doc("close_code") }}'
+      - name: change_task_close_code
+        description: '{{ doc("change_task_close_code") }}'
 
-      - name: created_from
-        description: '{{ doc("created_from") }}'
+      - name: change_task_created_from
+        description: '{{ doc("change_task_created_from") }}'
 
-      - name: on_hold
-        description: '{{ doc("on_hold") }}'
+      - name: is_change_on_hold
+        description: '{{ doc("is_change_on_hold") }}'
 
-      - name: on_hold_reason
-        description: '{{ doc("on_hold_reason") }}'
+      - name: change_on_hold_reason
+        description: '{{ doc("change_on_hold_reason") }}'
 
-      - name: planned_end_date
-        description: '{{ doc("planned_end_date") }}'
+      - name: change_task_planned_end_date
+        description: '{{ doc("change_task_planned_end_date") }}'
 
-      - name: planned_start_date
-        description: '{{ doc("planned_start_date") }}'
+      - name: change_task_planned_start_date
+        description: '{{ doc("change_task_planned_start_date") }}'
 
-      - name: sys_created_on
-        description: '{{ doc("sys_created_on") }}'
+      - name: change_task_created_at
+        description: '{{ doc("change_task_created_at") }}'
 
-      - name: sys_updated_on
-        description: '{{ doc("sys_updated_on") }}'
+      - name: change_task_updated_at
+        description: '{{ doc("change_task_updated_at") }}'
 
   - name: stg_servicenow__change_request
     description: '{{ doc("stg_servicenow__change_request") }}'
@@ -982,11 +1003,11 @@ models:
       - name: cab_recommendation
         description: '{{ doc("cab_recommendation") }}'
 
-      - name: cab_required
-        description: '{{ doc("cab_required") }}'
+      - name: is_cab_required
+        description: '{{ doc("is_cab_required") }}'
 
-      - name: category
-        description: '{{ doc("category") }}'
+      - name: change_category
+        description: '{{ doc("change_category") }}'
 
       - name: change_plan
         description: '{{ doc("change_plan") }}'
@@ -997,8 +1018,8 @@ models:
       - name: chg_model_value
         description: '{{ doc("chg_model_value") }}'
 
-      - name: close_code
-        description: '{{ doc("close_code") }}'
+      - name: change_close_code
+        description: '{{ doc("change_close_code") }}'
 
       - name: conflict_last_run
         description: '{{ doc("conflict_last_run") }}'
@@ -1006,20 +1027,20 @@ models:
       - name: conflict_status
         description: '{{ doc("conflict_status") }}'
 
-      - name: end_date
-        description: '{{ doc("end_date") }}'
+      - name: change_end_date
+        description: '{{ doc("change_end_date") }}'
 
-      - name: implementation_plan
-        description: '{{ doc("implementation_plan") }}'
+      - name: change_implementation_plan
+        description: '{{ doc("change_implementation_plan") }}'
 
-      - name: justification
-        description: '{{ doc("justification") }}'
+      - name: change_justification
+        description: '{{ doc("change_justification") }}'
 
-      - name: on_hold
-        description: '{{ doc("on_hold") }}'
+      - name: is_change_on_hold
+        description: '{{ doc("is_change_on_hold") }}'
 
-      - name: on_hold_reason
-        description: '{{ doc("on_hold_reason") }}'
+      - name: change_on_hold_reason
+        description: '{{ doc("change_on_hold_reason") }}'
 
       - name: on_hold_task
         description: '{{ doc("on_hold_task") }}'
@@ -1027,47 +1048,47 @@ models:
       - name: outside_maintenance_schedule
         description: '{{ doc("outside_maintenance_schedule") }}'
 
-      - name: phase
-        description: '{{ doc("phase") }}'
+      - name: change_phase
+        description: '{{ doc("change_phase") }}'
 
-      - name: phase_state
-        description: '{{ doc("phase_state") }}'
+      - name: change_phase_state
+        description: '{{ doc("change_phase_state") }}'
 
-      - name: production_system
-        description: '{{ doc("production_system") }}'
+      - name: is_production_system  
+        description: '{{ doc("is_production_system") }}'
 
-      - name: reason
-        description: '{{ doc("reason") }}'
+      - name: change_reason
+        description: '{{ doc("change_reason") }}'
 
-      - name: requested_by_date
-        description: '{{ doc("requested_by_date") }}'
+      - name: change_requested_by_date
+        description: '{{ doc("change_requested_by_date") }}'
 
-      - name: requested_by_link
-        description: '{{ doc("requested_by_link") }}'
+      - name: change_requested_by_link
+        description: '{{ doc("change_requested_by_link") }}'
 
-      - name: requested_by_value
-        description: '{{ doc("requested_by_value") }}'
+      - name: change_requested_by_value
+        description: '{{ doc("change_requested_by_value") }}'
 
       - name: review_comments
         description: '{{ doc("review_comments") }}'
 
-      - name: review_date
-        description: '{{ doc("review_date") }}'
+      - name: change_review_date
+        description: '{{ doc("change_review_date") }}'
 
-      - name: review_status
-        description: '{{ doc("review_status") }}'
+      - name: change_review_status
+        description: '{{ doc("change_review_status") }}'
 
-      - name: risk
-        description: '{{ doc("risk") }}'
+      - name: change_risk
+        description: '{{ doc("change_risk") }}'
 
       - name: risk_impact_analysis
         description: '{{ doc("risk_impact_analysis") }}'
 
-      - name: scope
-        description: '{{ doc("scope") }}'
+      - name: change_scope
+        description: '{{ doc("change_scope") }}'
 
-      - name: start_date
-        description: '{{ doc("start_date") }}'
+      - name: change_start_date
+        description: '{{ doc("change_start_date") }}'
 
       - name: std_change_producer_version_link
         description: '{{ doc("std_change_producer_version_link") }}'
@@ -1075,18 +1096,21 @@ models:
       - name: std_change_producer_version_value
         description: '{{ doc("std_change_producer_version_value") }}'
 
-      - name: sys_created_on
-        description: '{{ doc("sys_created_on") }}'
+      - name: change_created_at
+        description: '{{ doc("problem_created_at") }}'
 
-      - name: sys_updated_on
-        description: '{{ doc("sys_updated_on") }}'
+      - name: change_updated_at
+        description: '{{ doc("problem_updated_at") }}'
 
-      - name: test_plan
-        description: '{{ doc("test_plan") }}'
+      - name: change_test_plan
+        description: '{{ doc("change_test_plan") }}'
 
-      - name: type
-        description: '{{ doc("type") }}'
+      - name: change_type
+        description: '{{ doc("change_type") }}'
 
-      - name: unauthorized
-        description: '{{ doc("unauthorized") }}'
+      - name: is_change_unauthorized
+        description: '{{ doc("is_change_unauthorized") }}'
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
 

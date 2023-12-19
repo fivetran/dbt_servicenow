@@ -70,8 +70,20 @@ Indicates whether the task record has been marked as deleted by the Fivetran con
 Indicates whether the task record has been synchronized by the Fivetran connector.
 {% enddocs %}
 
+{% docs source_relation %}
+Indicates the schema which the field originated. This is especially important when leveraging the union schema feature.
+{% enddocs %}
+
 {% docs active %}
 Flag indicating whether the task is currently active or completed.
+{% enddocs %}
+
+{% docs is_task_active %}
+Flag indicating whether the task is currently active or completed.
+{% enddocs %}
+
+{% docs is_active %}
+Flag indicating whether the record is currently active.
 {% enddocs %}
 
 {% docs activity_due %}
@@ -206,7 +218,15 @@ Value representing the delivery task associated with the task.
 Detailed description or information about the task.
 {% enddocs %}
 
+{% docs task_description %}
+Detailed description or information about the task.
+{% enddocs %}
+
 {% docs due_date %}
+The date by which the task is expected to be completed.
+{% enddocs %}
+
+{% docs task_due_date_at %}
 The date by which the task is expected to be completed.
 {% enddocs %}
 
@@ -219,7 +239,11 @@ The expected start date or time for the task.
 {% enddocs %}
 
 {% docs follow_up %}
-Information regarding any follow-up actions required for the task.
+Timestamp of when follow up was applied to the task.
+{% enddocs %}
+
+{% docs task_follow_up_at %}
+Timestamp of when follow up was applied to the task.
 {% enddocs %}
 
 {% docs group_list %}
@@ -250,7 +274,15 @@ Indicates whether the task was completed within the agreed-upon Service Level Ag
 Unique identifier or reference number assigned to the task.
 {% enddocs %}
 
+{% docs task_number %}
+Unique identifier or reference number assigned to the task.
+{% enddocs %}
+
 {% docs opened_at %}
+Date and time when the task was initially opened.
+{% enddocs %}
+
+{% docs task_opened_at %}
 Date and time when the task was initially opened.
 {% enddocs %}
 
@@ -263,6 +295,10 @@ Value representing the user who initially opened the task.
 {% enddocs %}
 
 {% docs order %}
+Order or sequence number associated with the task.
+{% enddocs %}
+
+{% docs task_order %}
 Order or sequence number associated with the task.
 {% enddocs %}
 
@@ -314,6 +350,10 @@ Date and time by which the task is expected to meet the Service Level Agreement 
 Current state or status of the task (e.g., in progress, on hold, closed).
 {% enddocs %}
 
+{% docs task_state %}
+Current state or status of the task (e.g., in progress, on hold, closed).
+{% enddocs %}
+
 {% docs sys_class_name %}
 Name of the table in which the task record is stored.
 {% enddocs %}
@@ -323,7 +363,71 @@ User who initially created the task record.
 {% enddocs %}
 
 {% docs sys_created_on %}
+Date and time when the record was initially created.
+{% enddocs %}
+
+{% docs change_created_at %}
+Date and time when the change record was initially created.
+{% enddocs %}
+
+{% docs change_updated_at %}
+Date and time when the change record was last updated.
+{% enddocs %}
+
+{% docs change_task_created_at %}
+Date and time when the change task record was initially created.
+{% enddocs %}
+
+{% docs change_task_updated_at %}
+Date and time when the change task record was last updated.
+{% enddocs %}
+
+{% docs incident_created_at %}
+Date and time when the incident record was initially created.
+{% enddocs %}
+
+{% docs incident_updated_at %}
+Date and time when the incident record was last updated.
+{% enddocs %}
+
+{% docs problem_created_at %}
+Date and time when the problem record was initially created.
+{% enddocs %}
+
+{% docs problem_updated_at %}
+Date and time when the problem record was last updated.
+{% enddocs %}
+
+{% docs problem_task_created_at %}
+Date and time when the problem task record was initially created.
+{% enddocs %}
+
+{% docs problem_task_updated_at %}
+Date and time when the problem task record was last updated.
+{% enddocs %}
+
+{% docs user_created_at %}
+Date and time when the user record was initially created.
+{% enddocs %}
+
+{% docs user_updated_at %}
+Date and time when the user record was last updated.
+{% enddocs %}
+
+{% docs task_created_at %}
 Date and time when the task record was initially created.
+{% enddocs %}
+
+{% docs task_updated_at %}
+Date and time when the task record was last updated.
+{% enddocs %}
+
+{% docs task_sla_created_at %}
+Date and time when the task sla record was initially created.
+{% enddocs %}
+
+{% docs task_sla_updated_at %}
+Date and time when the task sla record was last updated.
 {% enddocs %}
 
 {% docs sys_domain_link %}
@@ -594,11 +698,19 @@ Introduction or bio information associated with the system user.
 Date and time of the last login.
 {% enddocs %}
 
+{% docs last_login_day_date %}
+Date and time of the last login.
+{% enddocs %}
+
 {% docs last_login_device %} 
 The device used for the user's last login to the system. 
 {% enddocs %}
 
 {% docs last_login_time %} 
+The specific time when the user last logged in to the system. 
+{% enddocs %}
+
+{% docs last_login_at %} 
 The specific time when the user last logged in to the system. 
 {% enddocs %}
 
@@ -714,12 +826,24 @@ Additional notes or details about the cause of a particular issue or incident.
 The timestamp indicating when an issue or incident was confirmed or acknowledged. 
 {% enddocs %}
 
+{% docs problem_confirmed_at %} 
+The timestamp indicating when the problem was confirmed or acknowledged. 
+{% enddocs %}
+
 {% docs confirmed_by_link %} 
 A link to the person or entity who confirmed or acknowledged the issue. 
 {% enddocs %}
 
+{% docs problem_confirmed_by_link %} 
+A link to the person or entity who confirmed or acknowledged the problem. 
+{% enddocs %}
+
 {% docs confirmed_by_value %} 
 The name or identifier of the person or entity who confirmed or acknowledged the issue. 
+{% enddocs %}
+
+{% docs problem_confirmed_by_value %} 
+The name or identifier of the person or entity who confirmed or acknowledged the problem. 
 {% enddocs %}
 
 {% docs duplicate_of_link %} 
@@ -734,20 +858,40 @@ The name or identifier of the related issue that is identified as a duplicate.
 A link to the task or activity that first reported the issue. 
 {% enddocs %}
 
+{% docs problem_first_reported_by_task_link %} 
+A link to the task or activity that first reported the problem. 
+{% enddocs %}
+
 {% docs first_reported_by_task_value %} 
 The name or identifier of the task or activity that first reported the issue. 
+{% enddocs %}
+
+{% docs problem_first_reported_by_task_value %} 
+The name or identifier of the task or activity that first reported the problem. 
 {% enddocs %}
 
 {% docs fix_at %} 
 The timestamp indicating when the issue is scheduled or planned to be fixed. 
 {% enddocs %}
 
+{% docs problem_fix_at %} 
+The timestamp indicating when the problem is scheduled or planned to be fixed. 
+{% enddocs %}
+
 {% docs fix_by_link %} 
 A link to the person or entity responsible for fixing the issue. 
 {% enddocs %}
 
+{% docs problem_fix_by_link %} 
+A link to the person or entity responsible for fixing the problem. 
+{% enddocs %}
+
 {% docs fix_by_value %} 
 The name or identifier of the person or entity responsible for fixing the issue. 
+{% enddocs %}
+
+{% docs problem_fix_by_value %} 
+The name or identifier of the person or entity responsible for fixing the problem. 
 {% enddocs %}
 
 {% docs fix_communicated_at %} 
@@ -766,11 +910,23 @@ The name or identifier of the person or entity who communicated the fix for the 
 Additional notes or details related to the fix for the issue. 
 {% enddocs %}
 
+{% docs problem_fix_notes %} 
+Additional notes or details related to the fix for the problem. 
+{% enddocs %}
+
 {% docs known_error %} 
 Indicates whether the issue is a known error with a documented resolution. 
 {% enddocs %}
 
+{% docs is_known_error %} 
+Indicates whether the issue is a known error with a documented resolution. 
+{% enddocs %}
+
 {% docs major_problem %} 
+Indicates whether the issue is categorized as a major problem. 
+{% enddocs %}
+
+{% docs is_major_problem %} 
 Indicates whether the issue is categorized as a major problem. 
 {% enddocs %}
 
@@ -780,6 +936,10 @@ The current state or status of the problem or issue.
 
 {% docs related_incidents %} 
 Information about other incidents that are related to the current issue. 
+{% enddocs %}
+
+{% docs problem_related_incidents %} 
+Information about other incidents that are related to the current problem. 
 {% enddocs %}
 
 {% docs reopen_count %} 
@@ -802,8 +962,16 @@ The name or identifier of the person or entity who reopened the issue.
 The code or identifier associated with the resolution of the issue. 
 {% enddocs %}
 
+{% docs problem_resolution_code %} 
+The code or identifier associated with the resolution of the problem. 
+{% enddocs %}
+
 {% docs resolved_at %} 
 The timestamp indicating when the issue was resolved. 
+{% enddocs %}
+
+{% docs problem_resolved_at %} 
+The timestamp indicating when the problem was resolved. 
 {% enddocs %}
 
 {% docs resolved_by_link %} 
@@ -812,6 +980,10 @@ A link to the person or entity who resolved the issue.
 
 {% docs resolved_by_value %} 
 The name or identifier of the person or entity who resolved the issue. 
+{% enddocs %}
+
+{% docs problem_resolved_by_value %} 
+The name or identifier of the person or entity who resolved the problem. 
 {% enddocs %}
 
 {% docs review_outcome %} 
@@ -826,7 +998,15 @@ A link to the Request for Change (RFC) associated with the issue or incident.
 The unique identifier or name associated with the Request for Change (RFC) linked to the issue. 
 {% enddocs %}
 
+{% docs problem_rfc_value %} 
+The unique identifier or name associated with the Request for Change (RFC) linked to the problem. 
+{% enddocs %}
+
 {% docs subcategory %} 
+The specific subcategory or classification of the issue, providing more detailed information about its nature. 
+{% enddocs %}
+
+{% docs problem_subcategory %} 
 The specific subcategory or classification of the issue, providing more detailed information about its nature. 
 {% enddocs %}
 
@@ -854,8 +1034,24 @@ The name or identifier of the person or entity who communicated the workaround f
 The code or identifier associated with the cause of the issue or problem. 
 {% enddocs %}
 
+{% docs problem_task_cause_code %} 
+The code or identifier associated with the cause of the issue or problem. 
+{% enddocs %}
+
 {% docs close_code %} 
 The code or identifier associated with the closure or resolution of the issue. 
+{% enddocs %}
+
+{% docs problem_task_close_code %} 
+The code or identifier associated with the closure or resolution of the issue. 
+{% enddocs %}
+
+{% docs change_task_close_code %} 
+The code or identifier associated with the closure or resolution of the change task. 
+{% enddocs %}
+
+{% docs change_close_code %} 
+The code or identifier associated with the closure or resolution of the change. 
 {% enddocs %}
 
 {% docs other_reason %} 
@@ -875,6 +1071,10 @@ The unique identifier or name associated with the problem record linked to the i
 {% enddocs %}
 
 {% docs started_at %} 
+The timestamp indicating when the issue or incident was initiated or started. 
+{% enddocs %}
+
+{% docs problem_task_started_at %} 
 The timestamp indicating when the issue or incident was initiated or started. 
 {% enddocs %}
 
@@ -990,19 +1190,47 @@ The type or category of the task associated with the change request or change re
 Information about the source or origin of the current record, indicating how it was created or generated. 
 {% enddocs %}
 
+{% docs change_task_created_from %} 
+Information about the source or origin of the current record, indicating how it was created or generated. 
+{% enddocs %}
+
 {% docs on_hold %} 
 Indicates whether the issue or incident is currently on hold or paused. 
+{% enddocs %}
+
+{% docs is_change_task_on_hold %} 
+Indicates whether the change task is currently on hold or paused. 
+{% enddocs %}
+
+{% docs is_change_on_hold %} 
+Indicates whether the change is currently on hold or paused. 
 {% enddocs %}
 
 {% docs on_hold_reason %} 
 The reason or rationale for placing the issue or incident on hold. 
 {% enddocs %}
 
+{% docs change_task_on_hold_reason %} 
+The reason or rationale for placing the change task on hold. 
+{% enddocs %}
+
+{% docs change_on_hold_reason %} 
+The reason or rationale for placing the change on hold. 
+{% enddocs %}
+
 {% docs planned_end_date %} 
 The planned or scheduled end date for the change request or change record. 
 {% enddocs %}
 
+{% docs change_task_planned_end_date %} 
+The planned or scheduled end date for the change request or change record. 
+{% enddocs %}
+
 {% docs planned_start_date %} 
+The planned or scheduled start date for the change request or change record. 
+{% enddocs %}
+
+{% docs change_task_planned_start_date %} 
 The planned or scheduled start date for the change request or change record. 
 {% enddocs %}
 
@@ -1034,6 +1262,10 @@ The recommendation or decision made by the Change Advisory Board (CAB) regarding
 Indicates whether the Change Advisory Board (CAB) approval is required for the change request. 
 {% enddocs %}
 
+{% docs is_cab_required %} 
+Indicates whether the Change Advisory Board (CAB) approval is required for the change request. 
+{% enddocs %}
+
 {% docs change_plan %} 
 Information about the plan or process for implementing the changes associated with the current record. 
 {% enddocs %}
@@ -1058,14 +1290,25 @@ The status or outcome of the conflict detection process for the change request o
 The end date for the implementation or execution of the changes associated with the current record. 
 {% enddocs %}
 
+{% docs change_end_date %} 
+The end date for the change or execution of the changes associated with the current record. 
+{% enddocs %}
+
 {% docs implementation_plan %} 
 Information about the plan or process for implementing the changes associated with the current record. 
 {% enddocs %}
 
+{% docs change_implementation_plan %} 
+Information about the plan or process for implementing the changes associated with the current record. 
+{% enddocs %}
 
 {% docs justification %} 
-The reasoning or justification behind the changes associated with the current record, providing context or 
-explanation for the modifications made. {% enddocs %}
+The reasoning or justification behind the changes associated with the current record, providing context or explanation for the modifications made. 
+{% enddocs %}
+
+{% docs change_justification %} 
+The reasoning or justification behind the changes associated with the current record, providing context or explanation for the modifications made. 
+{% enddocs %}
 
 {% docs on_hold_task %} 
 A link to the task or activity that indicates the current record is on hold, specifying the task associated with the 
@@ -1076,10 +1319,18 @@ Indicates whether the changes associated with the current record fall outside th
 {% enddocs %}
 
 {% docs phase %} 
-The phase or stage of the change request or change record within the change management process, indicating its progress 
-or status. {% enddocs %}
+The phase or stage of the change request or change record within the change management process, indicating its progress or status. 
+{% enddocs %}
+
+{% docs change_phase %} 
+The phase or stage of the change request or change record within the change management process, indicating its progress or status. 
+{% enddocs %}
 
 {% docs phase_state %} 
+The current state or status of the phase associated with the change request or change record. 
+{% enddocs %}
+
+{% docs change_phase_state %} 
 The current state or status of the phase associated with the change request or change record. 
 {% enddocs %}
 
@@ -1087,11 +1338,23 @@ The current state or status of the phase associated with the change request or c
 Indicates whether the changes associated with the current record are intended for the production environment or system. 
 {% enddocs %}
 
+{% docs is_production_system %} 
+Indicates whether the changes associated with the current record are intended for the production environment or system. 
+{% enddocs %}
+
 {% docs reason %} 
-The reason or rationale behind the changes associated with the current record, providing context or explanation 
-for the modifications made. {% enddocs %}
+The reason or rationale behind the changes associated with the current record, providing context or explanation for the modifications made. 
+{% enddocs %}
+
+{% docs change_reason %} 
+The reason or rationale behind the changes associated with the current record, providing context or explanation for the modifications made. 
+{% enddocs %}
 
 {% docs requested_by_date %} 
+The date when the changes associated with the current record were requested or initiated. 
+{% enddocs %}
+
+{% docs change_requested_by_date %} 
 The date when the changes associated with the current record were requested or initiated. 
 {% enddocs %}
 
@@ -1099,7 +1362,15 @@ The date when the changes associated with the current record were requested or i
 A link to the person or entity who requested or initiated the changes associated with the current record. 
 {% enddocs %}
 
+{% docs change_requested_by_link %} 
+A link to the person or entity who requested or initiated the changes associated with the current record. 
+{% enddocs %}
+
 {% docs requested_by_value %} 
+The name or identifier of the person or entity who requested or initiated the changes associated with the current record. 
+{% enddocs %}
+
+{% docs change_requested_by_value %} 
 The name or identifier of the person or entity who requested or initiated the changes associated with the current record. 
 {% enddocs %}
 
@@ -1111,23 +1382,43 @@ Comments or feedback provided during the review process for the changes associat
 The date when the changes associated with the current record were reviewed or evaluated. 
 {% enddocs %}
 
+{% docs change_review_date %} 
+The date when the changes associated with the current record were reviewed or evaluated. 
+{% enddocs %}
+
 {% docs review_status %} 
 The status or outcome of the review process for the changes associated with the current record. 
 {% enddocs %}
 
+{% docs change_review_status %} 
+The status or outcome of the review process for the changes associated with the current record. 
+{% enddocs %}
+
 {% docs risk %} 
-The level of risk associated with the changes, indicating the potential impact or consequences of implementing 
-the modifications outlined in the current record. {% enddocs %}
+The level of risk associated with the changes, indicating the potential impact or consequences of implementing the modifications outlined in the current record. 
+{% enddocs %}
+
+{% docs change_risk %} 
+The level of risk associated with the changes, indicating the potential impact or consequences of implementing the modifications outlined in the current record. 
+{% enddocs %}
 
 {% docs risk_impact_analysis %} 
 An analysis or assessment of the impact or consequences of the changes outlined in the current record. 
 {% enddocs %}
 
 {% docs scope %} 
-The scope or extent of the changes outlined in the current record, specifying the areas or components affected by 
-the modifications. {% enddocs %}
+The scope or extent of the changes outlined in the current record, specifying the areas or components affected by the modifications. 
+{% enddocs %}
+
+{% docs change_scope %} 
+The scope or extent of the changes outlined in the current record, specifying the areas or components affected by the modifications. 
+{% enddocs %}
 
 {% docs start_date %} 
+The start date for the implementation or execution of the changes associated with the current record. 
+{% enddocs %}
+
+{% docs change_start_date %} 
 The start date for the implementation or execution of the changes associated with the current record. 
 {% enddocs %}
 
@@ -1143,7 +1434,15 @@ The name or identifier of the version of the standard change producer linked to 
 Information about the plan or process for testing the changes associated with the current record. 
 {% enddocs %}
 
+{% docs change_test_plan %} 
+Information about the plan or process for testing the changes associated with the current record. 
+{% enddocs %}
+
 {% docs type %} 
+The type or category of the changes outlined in the current record, indicating the nature or purpose of the modifications. 
+{% enddocs %}
+
+{% docs change_type %} 
 The type or category of the changes outlined in the current record, indicating the nature or purpose of the modifications. 
 {% enddocs %}
 
@@ -1151,6 +1450,18 @@ The type or category of the changes outlined in the current record, indicating t
 Indicates whether the changes associated with the current record were made without proper authorization or approval. 
 {% enddocs %}
 
+{% docs is_change_unauthorized %} 
+Indicates whether the changes associated with the current record were made without proper authorization or approval. 
+{% enddocs %}
+
 {% docs category %} 
 The category of the incident.
+{% enddocs %}
+
+{% docs change_category %} 
+The category of the change.
+{% enddocs %}
+
+{% docs problem_category %} 
+The category of the problem.
 {% enddocs %}
