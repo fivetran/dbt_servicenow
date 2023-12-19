@@ -25,3 +25,8 @@ seeds:
   servicenow_integration_tests:
     +column_types:
       sys_id: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
+    task_data:
+      +enabled: "{{ true if target.type != 'snowflake' else false }}"
+    task_data_snowflake:
+      +alias: task_data
+      +enabled: "{{ true if target.type == 'snowflake' else false }}"
