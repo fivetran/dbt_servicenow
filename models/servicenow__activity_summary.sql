@@ -1,0 +1,23 @@
+with ticket_enhanced as (
+
+    select * 
+    from {{ ref('servicenow__ticket_enhanced') }}
+)
+
+select 
+    task_state,
+    priority,
+    impact,
+    urgency,
+    count(distinct case when task_is_active then task_id end) as total_active_tasks,
+    count(distinct case when is_problem_task and task_is_active then task_id end) as total_active_problem_tasks,
+    count(distinct case when is_change_task and task_is_active then task_id end) as total_active_change_tasks,
+    count(distinct associated_problem_id) as total_associated_problems, 
+    sum(total_incidents_caused_by_problem) as total_incidents_caused_by_problems,
+    count(distinct change_request_id) as total_change_requests,
+    count(distinct case when closed_at is not null then task_id end) as total_closed_tasks,
+    avg(task_minutes_to_close) as average_minutes_to_close -- just added this.. need to debug
+
+
+from ticket_enhanced
+group by 1,2,3,4
