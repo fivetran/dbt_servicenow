@@ -45,7 +45,7 @@ final as (
         business_service_value,
         calendar_duration,
         close_notes,
-        closed_at,
+        closed_at as task_closed_at,
         closed_by_link,
         closed_by_value,
         cmdb_ci_link,
