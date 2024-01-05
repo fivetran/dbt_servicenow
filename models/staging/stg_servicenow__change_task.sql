@@ -31,7 +31,7 @@ final as (
         _fivetran_deleted,
         _fivetran_synced,
         change_request_link,
-        change_request_value,
+        cast(change_request_value as {{ dbt.type_string() }}) as change_request_value,
         change_task_type,
         close_code as change_task_close_code,
         created_from as change_task_created_from,

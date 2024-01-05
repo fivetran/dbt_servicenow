@@ -35,16 +35,16 @@ final as (
         other_reason,
         problem_link,
         problem_task_type,
-        problem_value,
+        cast(problem_value as {{ dbt.type_string() }}) as problem_value,
         reopen_count,
         reopened_at,
         reopened_by_link,
-        reopened_by_value,
+        cast(reopened_by_value as {{ dbt.type_string() }}) as reopened_by_value,
         started_at as problem_task_started_at,
         started_by_link,
-        started_by_value,
+        cast(started_by_value as {{ dbt.type_string() }}) as started_by_value,
         vendor_link,
-        vendor_value
+        cast(vendor_value as {{ dbt.type_string() }}) as vendor_value 
     from fields
 )
 

@@ -24,13 +24,14 @@ The main focus of the package is to transform the core object tables into analyt
     - Renames fields for consistency and standardization.
     - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
     - Generates a comprehensive data dictionary of your ServiceNow data through the [dbt docs site](https://fivetran.github.io/dbt_servicenow/).
-  - The output models...
+
+The output models are focused around the task management feature of Service Now.
 
 <!--section="servicenow_model"-->
 The following table provides a detailed list of all models materialized within this package by default. 
 > TIP: See more details about these models in the package's [dbt docs site](https://fivetran.github.io/dbt_servicenow/#!/overview/servicenow).
 
-| **model**                 | **description**                                                                                                    |
+| **Model**                 | **Description**                                                                                                    |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [servicenow__activity_summary](https://github.com/fivetran/dbt_servicenow/blob/main/models/servicenow__activity_summary.sql)  | Each record represents aggregate task, problem, change, incident, and change request data by varying grains including status, priority, impact, and urgency.    |
 | [servicenow__ticket_enhanced](https://github.com/fivetran/dbt_servicenow/blob/main/models/servicenow__ticket_enhanced.sql)  | Each record represents a task with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.  |
