@@ -29,6 +29,8 @@ seeds:
       resolved_at: "timestamp"
       closed_at: "timestamp"
       confirmed_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
+      first_reported_by_task_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
+      requested_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
     task_data:
       +enabled: "{{ true if target.type != 'snowflake' else false }}"
     task_data_snowflake:
