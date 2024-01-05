@@ -1,6 +1,6 @@
 
 with task as (
-    
+
   select *
   from {{ ref('stg_servicenow__task') }}
 ),
@@ -89,7 +89,7 @@ select
   opener.department_value as opener_department_value,
   opener.sys_user_name as opener_name,
   opener.roles as opener_roles,
-  task.assigned_to_link,
+  task.assigned_to_link, 
   task.assigned_to_value,
   assignee.email as assignee_email,
   assignee.manager_value as assignee_manager_value,

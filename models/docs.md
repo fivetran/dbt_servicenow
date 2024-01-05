@@ -1318,10 +1318,6 @@ The end date for the change or execution of the change request associated with t
 Information about the plan or process for implementing the changes associated with the current record. 
 {% enddocs %}
 
-{% docs change_request_implementation_plan %} 
-Information about the plan or process for implementing the changes associated with the current record. 
-{% enddocs %}
-
 {% docs change_request_justification %} 
 The reasoning or justification behind the changes associated with the current record, providing context or explanation for the modifications made. 
 {% enddocs %}
@@ -1484,4 +1480,8 @@ The category of the change.
 
 {% docs problem_category %} 
 The category of the problem.
+{% enddocs %}
+
+{% docs servicenow__ticket_enhanced %}
+
 {% enddocs %}
