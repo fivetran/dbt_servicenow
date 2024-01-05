@@ -11,7 +11,7 @@
 </p>
 
 
-# 🚧 Currently under active development 🚧 ServiceNow dbt Package ([Docs](https://fivetran.github.io/dbt_servicenow/))
+# ServiceNow dbt Package ([Docs](https://fivetran.github.io/dbt_servicenow/))
 
 # 📣 What does this dbt package do?
 
@@ -32,7 +32,8 @@ The following table provides a detailed list of all models materialized within t
 
 | **model**                 | **description**                                                                                                    |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| [model_here]()  | Model description   |
+| [servicenow__activity_summary](https://github.com/fivetran/dbt_servicenow/blob/main/models/servicenow__activity_summary.sql)  | Each record represents aggregate task, problem, change, incident, and change request data by varying grains including status, priority, impact, and urgency.    |
+| [servicenow__ticket_enhanced](https://github.com/fivetran/dbt_servicenow/blob/main/models/servicenow__ticket_enhanced.sql)  | Each record represents a task with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.  |
 <!--section-end-->
 
 # 🎯 How do I use the dbt package?

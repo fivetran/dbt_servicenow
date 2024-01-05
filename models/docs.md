@@ -1510,6 +1510,10 @@ The associated problem with this task; the sys_id from the problem object.
 The associated change request with this task; the sys_id from the change request object.
 {% enddocs %}
 
+{% docs servicenow__activity_summary %}
+Each record represents aggregate task, problem, change, incident, and change request data by varying grains including status, priority, impact, and urgency. 
+{% enddocs %}
+
 {% docs total_incidents_caused_by_problem %}
 The total number of incidents associated with this problem.
 {% enddocs %}
