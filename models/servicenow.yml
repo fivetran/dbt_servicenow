@@ -61,6 +61,9 @@ models:
       - name: task_closed_at
         description: '{{ doc("closed_at") }}'
 
+      - name: task_minutes_to_close
+        description: '{{ doc("task_minutes_to_close") }}'
+
       - name: closed_by_link
         description: '{{ doc("closed_by_link") }}'
 
