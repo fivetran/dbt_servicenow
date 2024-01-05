@@ -64,7 +64,7 @@ models:
       - name: close_notes
         description: '{{ doc("close_notes") }}'
 
-      - name: closed_at
+      - name: task_closed_at
         description: '{{ doc("closed_at") }}'
 
       - name: closed_by_link
@@ -973,7 +973,7 @@ models:
   - name: stg_servicenow__change_request
     description: '{{ doc("stg_servicenow__change_request") }}'
     columns:
-      - name: change_id
+      - name: change_request_id
         description: '{{ doc("sys_id") }}'
         tests:
           - unique
@@ -1006,7 +1006,7 @@ models:
       - name: is_cab_required
         description: '{{ doc("is_cab_required") }}'
 
-      - name: change_category
+      - name: change_request_category
         description: '{{ doc("change_category") }}'
 
       - name: change_plan
@@ -1018,8 +1018,8 @@ models:
       - name: chg_model_value
         description: '{{ doc("chg_model_value") }}'
 
-      - name: change_close_code
-        description: '{{ doc("change_close_code") }}'
+      - name: change_request_close_code
+        description: '{{ doc("close_code") }}'
 
       - name: conflict_last_run
         description: '{{ doc("conflict_last_run") }}'
@@ -1027,20 +1027,20 @@ models:
       - name: conflict_status
         description: '{{ doc("conflict_status") }}'
 
-      - name: change_end_date
-        description: '{{ doc("change_end_date") }}'
+      - name: change_request_end_date
+        description: '{{ doc("end_date") }}'
 
-      - name: change_implementation_plan
-        description: '{{ doc("change_implementation_plan") }}'
+      - name: change_request_implementation_plan
+        description: '{{ doc("change_request_implementation_plan") }}'
 
-      - name: change_justification
-        description: '{{ doc("change_justification") }}'
+      - name: change_request_justification
+        description: '{{ doc("change_request_justification") }}'
 
-      - name: is_change_on_hold
-        description: '{{ doc("is_change_on_hold") }}'
+      - name: is_change_request_on_hold
+        description: '{{ doc("is_change_request_on_hold") }}'
 
-      - name: change_on_hold_reason
-        description: '{{ doc("change_on_hold_reason") }}'
+      - name: change_request_on_hold_reason
+        description: '{{ doc("change_request_on_hold_reason") }}'
 
       - name: on_hold_task
         description: '{{ doc("on_hold_task") }}'
@@ -1048,16 +1048,16 @@ models:
       - name: outside_maintenance_schedule
         description: '{{ doc("outside_maintenance_schedule") }}'
 
-      - name: change_phase
+      - name: change_request_phase
         description: '{{ doc("change_phase") }}'
 
-      - name: change_phase_state
+      - name: change_request_phase_state
         description: '{{ doc("change_phase_state") }}'
 
       - name: is_production_system  
         description: '{{ doc("is_production_system") }}'
 
-      - name: change_reason
+      - name: change_request_reason
         description: '{{ doc("change_reason") }}'
 
       - name: change_requested_by_date
@@ -1072,23 +1072,23 @@ models:
       - name: review_comments
         description: '{{ doc("review_comments") }}'
 
-      - name: change_review_date
-        description: '{{ doc("change_review_date") }}'
+      - name: change_request_review_date
+        description: '{{ doc("change_request_review_date") }}'
 
-      - name: change_review_status
-        description: '{{ doc("change_review_status") }}'
+      - name: change_request_review_status
+        description: '{{ doc("change_request_review_status") }}'
 
-      - name: change_risk
-        description: '{{ doc("change_risk") }}'
+      - name: change_request_risk
+        description: '{{ doc("risk") }}'
 
       - name: risk_impact_analysis
         description: '{{ doc("risk_impact_analysis") }}'
 
-      - name: change_scope
-        description: '{{ doc("change_scope") }}'
+      - name: change_request_scope
+        description: '{{ doc("scope") }}'
 
-      - name: change_start_date
-        description: '{{ doc("change_start_date") }}'
+      - name: change_request_start_date
+        description: '{{ doc("change_request_start_date") }}'
 
       - name: std_change_producer_version_link
         description: '{{ doc("std_change_producer_version_link") }}'
@@ -1096,20 +1096,20 @@ models:
       - name: std_change_producer_version_value
         description: '{{ doc("std_change_producer_version_value") }}'
 
-      - name: change_created_at
-        description: '{{ doc("problem_created_at") }}'
+      - name: change_request_created_at
+        description: '{{ doc("created_at") }}'
 
-      - name: change_updated_at
-        description: '{{ doc("problem_updated_at") }}'
+      - name: change_request_updated_at
+        description: '{{ doc("updated_at") }}'
 
-      - name: change_test_plan
-        description: '{{ doc("change_test_plan") }}'
+      - name: change_request_test_plan
+        description: '{{ doc("change_request_test_plan") }}'
 
-      - name: change_type
-        description: '{{ doc("change_type") }}'
+      - name: change_request_type
+        description: '{{ doc("change_request_type") }}'
 
-      - name: is_change_unauthorized
-        description: '{{ doc("is_change_unauthorized") }}'
+      - name: is_change_request_unauthorized
+        description: '{{ doc("is_change_request_unauthorized") }}'
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'

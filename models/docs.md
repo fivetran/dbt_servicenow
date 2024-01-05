@@ -366,12 +366,12 @@ User who initially created the task record.
 Date and time when the record was initially created.
 {% enddocs %}
 
-{% docs change_created_at %}
-Date and time when the change record was initially created.
+{% docs created_at %}
+Date and time when the record was initially created.
 {% enddocs %}
 
-{% docs change_updated_at %}
-Date and time when the change record was last updated.
+{% docs updated_at %}
+Date and time when the record was last updated.
 {% enddocs %}
 
 {% docs change_task_created_at %}
@@ -1039,19 +1039,19 @@ The code or identifier associated with the cause of the issue or problem.
 {% enddocs %}
 
 {% docs close_code %} 
-The code or identifier associated with the closure or resolution of the issue. 
+The code or identifier associated with the closure or resolution. 
 {% enddocs %}
 
 {% docs problem_task_close_code %} 
-The code or identifier associated with the closure or resolution of the issue. 
+The code or identifier associated with the closure or resolution of the problem task. 
 {% enddocs %}
 
 {% docs change_task_close_code %} 
 The code or identifier associated with the closure or resolution of the change task. 
 {% enddocs %}
 
-{% docs change_close_code %} 
-The code or identifier associated with the closure or resolution of the change. 
+{% docs change_request_close_code %} 
+The code or identifier associated with the closure or resolution of the change request. 
 {% enddocs %}
 
 {% docs other_reason %} 
@@ -1207,7 +1207,7 @@ Indicates whether the change is currently on hold or paused.
 {% enddocs %}
 
 {% docs on_hold_reason %} 
-The reason or rationale for placing the issue or incident on hold. 
+The reason or rationale for placing the associated record on hold. 
 {% enddocs %}
 
 {% docs change_task_on_hold_reason %} 
@@ -1287,7 +1287,7 @@ The status or outcome of the conflict detection process for the change request o
 {% enddocs %}
 
 {% docs end_date %} 
-The end date for the implementation or execution of the changes associated with the current record. 
+The end date for the implementation or execution associated with the current record. 
 {% enddocs %}
 
 {% docs change_end_date %} 
@@ -1307,6 +1307,22 @@ The reasoning or justification behind the changes associated with the current re
 {% enddocs %}
 
 {% docs change_justification %} 
+The reasoning or justification behind the changes associated with the current record, providing context or explanation for the modifications made. 
+{% enddocs %}
+
+{% docs change_request_end_date %} 
+The end date for the change or execution of the change request associated with the current record. 
+{% enddocs %}
+
+{% docs change_request_implementation_plan %} 
+Information about the plan or process for implementing the changes associated with the current record. 
+{% enddocs %}
+
+{% docs change_request_implementation_plan %} 
+Information about the plan or process for implementing the changes associated with the current record. 
+{% enddocs %}
+
+{% docs change_request_justification %} 
 The reasoning or justification behind the changes associated with the current record, providing context or explanation for the modifications made. 
 {% enddocs %}
 
@@ -1343,7 +1359,7 @@ Indicates whether the changes associated with the current record are intended fo
 {% enddocs %}
 
 {% docs reason %} 
-The reason or rationale behind the changes associated with the current record, providing context or explanation for the modifications made. 
+The reason or rationale behind the changes requested by the current record, providing context or explanation for the modifications made. 
 {% enddocs %}
 
 {% docs change_reason %} 
@@ -1379,26 +1395,30 @@ Comments or feedback provided during the review process for the changes associat
 {% enddocs %}
 
 {% docs review_date %} 
-The date when the changes associated with the current record were reviewed or evaluated. 
+The date when the record was reviewed or evaluated. 
 {% enddocs %}
 
 {% docs change_review_date %} 
 The date when the changes associated with the current record were reviewed or evaluated. 
 {% enddocs %}
 
-{% docs review_status %} 
-The status or outcome of the review process for the changes associated with the current record. 
+{% docs change_request_review_date %} 
+The date when the change request was reviewed or evaluated. 
 {% enddocs %}
 
-{% docs change_review_status %} 
-The status or outcome of the review process for the changes associated with the current record. 
+{% docs review_status %} 
+The status or outcome of the review process associated with the current record. 
+{% enddocs %}
+
+{% docs change_request_review_status %} 
+The status or outcome of the review process for the change request associated with the current record. 
 {% enddocs %}
 
 {% docs risk %} 
 The level of risk associated with the changes, indicating the potential impact or consequences of implementing the modifications outlined in the current record. 
 {% enddocs %}
 
-{% docs change_risk %} 
+{% docs change_request_risk %} 
 The level of risk associated with the changes, indicating the potential impact or consequences of implementing the modifications outlined in the current record. 
 {% enddocs %}
 
@@ -1410,16 +1430,16 @@ An analysis or assessment of the impact or consequences of the changes outlined 
 The scope or extent of the changes outlined in the current record, specifying the areas or components affected by the modifications. 
 {% enddocs %}
 
-{% docs change_scope %} 
+{% docs change_request_scope %} 
 The scope or extent of the changes outlined in the current record, specifying the areas or components affected by the modifications. 
 {% enddocs %}
 
-{% docs start_date %} 
-The start date for the implementation or execution of the changes associated with the current record. 
+{% docs change_request_start_date %} 
+The requested start date for the implementation or execution of the changes associated with the current record. 
 {% enddocs %}
 
-{% docs change_start_date %} 
-The start date for the implementation or execution of the changes associated with the current record. 
+{% docs start_date %} 
+The start date associated with the current record. 
 {% enddocs %}
 
 {% docs std_change_producer_version_link %} 
@@ -1434,15 +1454,15 @@ The name or identifier of the version of the standard change producer linked to 
 Information about the plan or process for testing the changes associated with the current record. 
 {% enddocs %}
 
-{% docs change_test_plan %} 
-Information about the plan or process for testing the changes associated with the current record. 
+{% docs change_request_test_plan %} 
+Information about the plan or process for testing the changes requested by the change request of this record. 
 {% enddocs %}
 
 {% docs type %} 
-The type or category of the changes outlined in the current record, indicating the nature or purpose of the modifications. 
+The type or category regarding the current record
 {% enddocs %}
 
-{% docs change_type %} 
+{% docs change_request_type %} 
 The type or category of the changes outlined in the current record, indicating the nature or purpose of the modifications. 
 {% enddocs %}
 
@@ -1450,12 +1470,12 @@ The type or category of the changes outlined in the current record, indicating t
 Indicates whether the changes associated with the current record were made without proper authorization or approval. 
 {% enddocs %}
 
-{% docs is_change_unauthorized %} 
+{% docs is_change_request_unauthorized %} 
 Indicates whether the changes associated with the current record were made without proper authorization or approval. 
 {% enddocs %}
 
 {% docs category %} 
-The category of the incident.
+The category of the record.
 {% enddocs %}
 
 {% docs change_category %} 

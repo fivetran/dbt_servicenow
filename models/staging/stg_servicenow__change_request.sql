@@ -44,7 +44,7 @@ final as (
         close_code as change_request_close_code,
         conflict_last_run,
         conflict_status,
-        end_date as change_request_end_date,
+        end_date as change_request_end_date, -- sometimes the actual change and the change request timelines don't line up, so let's specify this is pertaining to the change request.
         implementation_plan as change_request_implementation_plan,
         justification as change_request_justification,
         on_hold as is_change_request_on_hold,
