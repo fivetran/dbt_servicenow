@@ -956,7 +956,7 @@ models:
         description: '{{ doc("is_change_on_hold") }}'
 
       - name: change_on_hold_reason
-        description: '{{ doc("change_on_hold_reason") }}'
+        description: '{{ doc("on_hold_reason") }}'
 
       - name: change_task_planned_end_date
         description: '{{ doc("change_task_planned_end_date") }}'

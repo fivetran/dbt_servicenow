@@ -147,8 +147,8 @@ select
   task.work_notes_list,
   problem_task.problem_task_cause_code,
   problem_task.problem_task_close_code,
+  problem_task.problem_task_type,
   problem_task.problem_task_started_at,
-  problem_task.started_by_link,
   problem_task.started_by_value,
   problem_task_starter.email as problem_task_starter_email,
   problem_task_starter.manager_value as problem_task_starter_manager_value,
@@ -187,6 +187,7 @@ select
   problem.problem_resolution_code,
   problem.problem_resolved_at,
   problem.problem_resolved_by_value,
+  problem.workaround_applied,
   problem_resolver.email as problem_resolver_email,
   problem_resolver.manager_value as problem_resolver_manager_value,
   problem_resolver.department_value as problem_resolver_department_value,
@@ -203,7 +204,9 @@ select
   change_task.change_on_hold_reason,
   change_task.change_task_planned_end_date,
   change_task.change_task_planned_start_date,
-  change_request.change_request_id,
+  change_request.change_request_id as associated_change_request_id,
+  change_request.change_request_created_at,
+  change_request.change_request_updated_at,
   change_request.change_request_category,
   change_request.change_plan,
   change_request.change_request_close_code,
@@ -228,7 +231,9 @@ select
   change_request.change_request_scope,
   change_request.change_request_start_date,
   change_request.change_request_test_plan,
-  change_request.change_request_type
+  change_request.change_request_type,
+  change_request.is_change_request_unauthorized,
+  task.source_relation
 
 from task
 left join problem_task

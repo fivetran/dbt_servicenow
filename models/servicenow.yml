@@ -82,32 +82,11 @@ models:
       - name: contact_type
         description: '{{ doc("contact_type") }}'
 
-      - name: correlation_display
-        description: '{{ doc("correlation_display") }}'
-
-      - name: correlation_id
-        description: '{{ doc("correlation_id") }}'
-
-      - name: delivery_plan_link
-        description: '{{ doc("delivery_plan_link") }}'
-
-      - name: delivery_plan_value
-        description: '{{ doc("delivery_plan_value") }}'
-
-      - name: delivery_task_link
-        description: '{{ doc("delivery_task_link") }}'
-
-      - name: delivery_task_value
-        description: '{{ doc("delivery_task_value") }}'
-
       - name: task_description
         description: '{{ doc("task_description") }}'
 
       - name: task_due_date_at
         description: '{{ doc("task_due_date_at") }}'
-
-      - name: escalation
-        description: '{{ doc("escalation") }}'
 
       - name: expected_start
         description: '{{ doc("expected_start") }}'
@@ -123,12 +102,6 @@ models:
 
       - name: knowledge
         description: '{{ doc("knowledge") }}'
-
-      - name: location_link
-        description: '{{ doc("location_link") }}'
-
-      - name: location_value
-        description: '{{ doc("location_value") }}'
 
       - name: made_sla
         description: '{{ doc("made_sla") }}'
@@ -160,20 +133,8 @@ models:
       - name: reassignment_count
         description: '{{ doc("reassignment_count") }}'
 
-      - name: rejection_goto_link
-        description: '{{ doc("rejection_goto_link") }}'
-
-      - name: rejection_goto_value
-        description: '{{ doc("rejection_goto_value") }}'
-
       - name: route_reason
         description: '{{ doc("route_reason") }}'
-
-      - name: service_offering_link
-        description: '{{ doc("service_offering_link") }}'
-
-      - name: service_offering_value
-        description: '{{ doc("service_offering_value") }}'
 
       - name: short_description
         description: '{{ doc("short_description") }}'
@@ -202,9 +163,6 @@ models:
       - name: sys_domain_value
         description: '{{ doc("sys_domain_value") }}'
 
-      - name: sys_mod_count
-        description: '{{ doc("sys_mod_count") }}'
-
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
 
@@ -213,12 +171,6 @@ models:
 
       - name: task_effective_number
         description: '{{ doc("task_effective_number") }}'
-
-      - name: universal_request_link
-        description: '{{ doc("universal_request_link") }}'
-
-      - name: universal_request_value
-        description: '{{ doc("universal_request_value") }}'
 
       - name: upon_approval
         description: '{{ doc("upon_approval") }}'
@@ -232,12 +184,6 @@ models:
       - name: watch_list
         description: '{{ doc("watch_list") }}'
 
-      - name: wf_activity_link
-        description: '{{ doc("wf_activity_link") }}'
-
-      - name: wf_activity_value
-        description: '{{ doc("wf_activity_value") }}'
-
       - name: work_end
         description: '{{ doc("work_end") }}'
 
@@ -250,353 +196,20 @@ models:
       - name: work_start
         description: '{{ doc("work_start") }}'
 
-  - name: stg_servicenow__task_sla
-    description: '{{ doc("stg_servicenow__task_sla") }}'
-    columns:
-      - name: task_sla_id
-        description: '{{ doc("sys_id") }}'
-        tests:
-          - unique
-          - not_null
-
       - name: source_relation
         description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
-
-      - name: active
-        description: '{{ doc("active") }}'
 
       - name: business_duration
         description: '{{ doc("business_duration") }}'
 
-      - name: business_pause_duration
-        description: '{{ doc("business_pause_duration") }}'
-
-      - name: business_percentage
-        description: '{{ doc("business_percentage") }}'
-
-      - name: business_time_left
-        description: '{{ doc("business_time_left") }}'
-
-      - name: duration
-        description: '{{ doc("duration") }}'
-
-      - name: end_time
-        description: '{{ doc("end_time") }}'
-
-      - name: has_breached
-        description: '{{ doc("has_breached") }}'
-
-      - name: original_breach_time
-        description: '{{ doc("original_breach_time") }}'
-
-      - name: pause_duration
-        description: '{{ doc("pause_duration") }}'
-
-      - name: pause_time
-        description: '{{ doc("pause_time") }}'
-
-      - name: percentage
-        description: '{{ doc("percentage") }}'
-
-      - name: planned_end_time
-        description: '{{ doc("planned_end_time") }}'
-
-      - name: schedule_link
-        description: '{{ doc("schedule_link") }}'
-
-      - name: schedule_value
-        description: '{{ doc("schedule_value") }}'
-
-      - name: sla_link
-        description: '{{ doc("sla_link") }}'
-
-      - name: sla_value
-        description: '{{ doc("sla_value") }}'
-
-      - name: stage
-        description: '{{ doc("stage") }}'
-
-      - name: start_time
-        description: '{{ doc("start_time") }}'
-
       - name: sys_created_by
         description: '{{ doc("sys_created_by") }}'
 
-      - name: task_sla_created_at
-        description: '{{ doc("task_sla_created_at") }}'
-
-      - name: sys_mod_count
-        description: '{{ doc("sys_mod_count") }}'
-
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
-
-      - name: task_sla_updated_at
-        description: '{{ doc("task_sla_updated_at") }}'
-
-      - name: task_link
-        description: '{{ doc("task_link") }}'
-
-      - name: task_value
-        description: '{{ doc("task_value") }}'
-
-      - name: time_left
-        description: '{{ doc("time_left") }}'
-
-      - name: timezone
-        description: '{{ doc("timezone") }}'
-
-  - name: stg_servicenow__sys_user
-    description: '{{ doc("stg_servicenow__sys_user") }}'
-    columns:
-      - name: user_id
-        description: '{{ doc("sys_id") }}'
-        tests:
-          - unique
-          - not_null
-
-      - name: source_relation
-        description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
-
-      - name: accumulated_roles
-        description: '{{ doc("accumulated_roles") }}'
-
-      - name: is_active
-        description: '{{ doc("is_active") }}'
-
-      - name: avatar
-        description: '{{ doc("avatar") }}'
-
-      - name: building_link
-        description: '{{ doc("building_link") }}'
-
-      - name: building_value
-        description: '{{ doc("building_value") }}'
-
-      - name: calendar_integration
-        description: '{{ doc("calendar_integration") }}'
-
-      - name: city
-        description: '{{ doc("city") }}'
-
-      - name: company_link
-        description: '{{ doc("company_link") }}'
-
-      - name: company_value
-        description: '{{ doc("company_value") }}'
-
-      - name: cost_center_link
-        description: '{{ doc("cost_center_link") }}'
-
-      - name: cost_center_value
-        description: '{{ doc("cost_center_value") }}'
-
-      - name: country
-        description: '{{ doc("country") }}'
-
-      - name: date_format
-        description: '{{ doc("date_format") }}'
-
-      - name: default_perspective_link
-        description: '{{ doc("default_perspective_link") }}'
-
-      - name: default_perspective_value
-        description: '{{ doc("default_perspective_value") }}'
-
-      - name: department_link
-        description: '{{ doc("department_link") }}'
-
-      - name: department_value
-        description: '{{ doc("department_value") }}'
-
-      - name: edu_status
-        description: '{{ doc("edu_status") }}'
-
-      - name: email
-        description: '{{ doc("email") }}'
-
-      - name: employee_number
-        description: '{{ doc("employee_number") }}'
-
-      - name: enable_multifactor_authn
-        description: '{{ doc("enable_multifactor_authn") }}'
-
-      - name: failed_attempts
-        description: '{{ doc("failed_attempts") }}'
-
-      - name: first_name
-        description: '{{ doc("first_name") }}'
-
-      - name: gender
-        description: '{{ doc("gender") }}'
-
-      - name: hashed_user_id
-        description: '{{ doc("hashed_user_id") }}'
-
-      - name: home_phone
-        description: '{{ doc("home_phone") }}'
-
-      - name: internal_integration_user
-        description: '{{ doc("internal_integration_user") }}'
-
-      - name: introduction
-        description: '{{ doc("introduction") }}'
-
-      - name: last_login_day_date
-        description: '{{ doc("last_login_day_date") }}'
-
-      - name: last_login_device
-        description: '{{ doc("last_login_device") }}'
-
-      - name: last_login_at
-        description: '{{ doc("last_login_at") }}'
-
-      - name: last_name
-        description: '{{ doc("last_name") }}'
-
-      - name: last_password
-        description: '{{ doc("last_password") }}'
-
-      - name: ldap_server_link
-        description: '{{ doc("ldap_server_link") }}'
-
-      - name: ldap_server_value
-        description: '{{ doc("ldap_server_value") }}'
-
-      - name: location_link
-        description: '{{ doc("location_link") }}'
-
-      - name: location_value
-        description: '{{ doc("location_value") }}'
-
-      - name: locked_out
-        description: '{{ doc("locked_out") }}'
-
-      - name: manager_link
-        description: '{{ doc("manager_link") }}'
-
-      - name: manager_value
-        description: '{{ doc("manager_value") }}'
-
-      - name: middle_name
-        description: '{{ doc("middle_name") }}'
-
-      - name: mobile_phone
-        description: '{{ doc("mobile_phone") }}'
-
-      - name: sys_user_name
-        description: '{{ doc("sys_user_name") }}'
-
-      - name: notification
-        description: '{{ doc("notification") }}'
-
-      - name: password_needs_reset
-        description: '{{ doc("password_needs_reset") }}'
-
-      - name: phone
-        description: '{{ doc("phone") }}'
-
-      - name: photo
-        description: '{{ doc("photo") }}'
-
-      - name: preferred_language
-        description: '{{ doc("preferred_language") }}'
-
-      - name: roles
-        description: '{{ doc("roles") }}'
-
-      - name: schedule_link
-        description: '{{ doc("schedule_link") }}'
-
-      - name: schedule_value
-        description: '{{ doc("schedule_value") }}'
-
-      - name: source
-        description: '{{ doc("source") }}'
-
-      - name: state
-        description: '{{ doc("state") }}'
 
       - name: sys_class_name
         description: '{{ doc("sys_class_name") }}'
-
-      - name: sys_created_by
-        description: '{{ doc("sys_created_by") }}'
-
-      - name: user_created_at
-        description: '{{ doc("user_created_at") }}'
-
-      - name: sys_domain_link
-        description: '{{ doc("sys_domain_link") }}'
-
-      - name: sys_domain_path
-        description: '{{ doc("sys_domain_path") }}'
-
-      - name: sys_domain_value
-        description: '{{ doc("sys_domain_value") }}'
-
-      - name: sys_mod_count
-        description: '{{ doc("sys_mod_count") }}'
-
-      - name: sys_updated_by
-        description: '{{ doc("sys_updated_by") }}'
-
-      - name: user_updated_at
-        description: '{{ doc("user_updated_at") }}'
-
-      - name: time_format
-        description: '{{ doc("time_format") }}'
-
-      - name: time_zone
-        description: '{{ doc("time_zone") }}'
-
-      - name: title
-        description: '{{ doc("title") }}'
-
-      - name: user_name
-        description: '{{ doc("user_name") }}'
-
-      - name: user_password
-        description: '{{ doc("user_password") }}'
-
-      - name: vip
-        description: '{{ doc("vip") }}'
-
-      - name: web_service_access_only
-        description: '{{ doc("web_service_access_only") }}'
-
-      - name: zip
-        description: '{{ doc("zip") }}'
-
-  - name: stg_servicenow__problem
-    description: '{{ doc("stg_servicenow__problem") }}'
-    columns:
-      - name: problem_id
-        description: '{{ doc("sys_id") }}'
-        tests:
-          - unique
-          - not_null
-
-      - name: source_relation
-        description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
 
       - name: problem_category
         description: '{{ doc("problem_category") }}'
@@ -607,47 +220,20 @@ models:
       - name: problem_confirmed_at
         description: '{{ doc("problem_confirmed_at") }}'
 
-      - name: problem_confirmed_by_link
-        description: '{{ doc("problem_confirmed_by_link") }}'
-
       - name: problem_confirmed_by_value
         description: '{{ doc("problem_confirmed_by_value") }}'
 
-      - name: duplicate_of_link
-        description: '{{ doc("duplicate_of_link") }}'
-
-      - name: duplicate_of_value
-        description: '{{ doc("duplicate_of_value") }}'
-
-      - name: problem_first_reported_by_task_link
-        description: '{{ doc("problem_first_reported_by_task_link") }}'
-
       - name: problem_first_reported_by_task_value
-        description: '{{ doc("problem_first_reported_by_task_value") }}'
+        description: '{{ doc("task_value") }}'
 
       - name: problem_fix_at
         description: '{{ doc("problem_fix_at") }}'
 
-      - name: problem_fix_by_link
-        description: '{{ doc("problem_fix_by_link") }}'
-
       - name: problem_fix_by_value
         description: '{{ doc("problem_fix_by_value") }}'
 
-      - name: fix_communicated_at
-        description: '{{ doc("fix_communicated_at") }}'
-
-      - name: fix_communicated_by_link
-        description: '{{ doc("fix_communicated_by_link") }}'
-
-      - name: fix_communicated_by_value
-        description: '{{ doc("fix_communicated_by_value") }}'
-
       - name: problem_fix_notes
         description: '{{ doc("problem_fix_notes") }}'
-
-      - name: is_known_error
-        description: '{{ doc("is_known_error") }}'
 
       - name: is_major_problem
         description: '{{ doc("is_major_problem") }}'
@@ -658,38 +244,14 @@ models:
       - name: problem_related_incidents
         description: '{{ doc("problem_related_incidents") }}'
 
-      - name: reopen_count
-        description: '{{ doc("reopen_count") }}'
-
-      - name: reopened_at
-        description: '{{ doc("reopened_at") }}'
-
-      - name: reopened_by_link
-        description: '{{ doc("reopened_by_link") }}'
-
-      - name: reopened_by_value
-        description: '{{ doc("reopened_by_value") }}'
-
       - name: problem_resolution_code
         description: '{{ doc("problem_resolution_code") }}'
 
       - name: problem_resolved_at
         description: '{{ doc("problem_resolved_at") }}'
 
-      - name: resolved_by_link
-        description: '{{ doc("resolved_by_link") }}'
-
       - name: problem_resolved_by_value
         description: '{{ doc("problem_resolved_by_value") }}'
-
-      - name: review_outcome
-        description: '{{ doc("review_outcome") }}'
-
-      - name: rfc_link
-        description: '{{ doc("rfc_link") }}'
-
-      - name: rfc_value
-        description: '{{ doc("rfc_value") }}'
 
       - name: problem_subcategory
         description: '{{ doc("problem_subcategory") }}'
@@ -700,38 +262,8 @@ models:
       - name: problem_updated_at
         description: '{{ doc("problem_updated_at") }}'
 
-      - name: workaround
-        description: '{{ doc("workaround") }}'
-
       - name: workaround_applied
         description: '{{ doc("workaround_applied") }}'
-
-      - name: workaround_communicated_at
-        description: '{{ doc("workaround_communicated_at") }}'
-
-      - name: workaround_communicated_by_link
-        description: '{{ doc("workaround_communicated_by_link") }}'
-
-      - name: workaround_communicated_by_value
-        description: '{{ doc("workaround_communicated_by_value") }}'
-
-  - name: stg_servicenow__problem_task
-    description: '{{ doc("stg_servicenow__problem_task") }}'
-    columns:
-      - name: problem_task_id
-        description: '{{ doc("sys_id") }}'
-        tests:
-          - unique
-          - not_null
-
-      - name: source_relation
-        description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
 
       - name: problem_task_cause_code
         description: '{{ doc("problem_task_cause_code") }}'
@@ -739,191 +271,14 @@ models:
       - name: problem_task_close_code
         description: '{{ doc("problem_task_close_code") }}'
 
-      - name: other_reason
-        description: '{{ doc("other_reason") }}'
-
-      - name: problem_link
-        description: '{{ doc("problem_link") }}'
-
       - name: problem_task_type
         description: '{{ doc("problem_task_type") }}'
-
-      - name: problem_value
-        description: '{{ doc("problem_value") }}'
-
-      - name: reopen_count
-        description: '{{ doc("reopen_count") }}'
-
-      - name: reopened_at
-        description: '{{ doc("reopened_at") }}'
-
-      - name: reopened_by_link
-        description: '{{ doc("reopened_by_link") }}'
-
-      - name: reopened_by_value
-        description: '{{ doc("reopened_by_value") }}'
 
       - name: problem_task_started_at
         description: '{{ doc("problem_task_started_at") }}'
 
-      - name: started_by_link
-        description: '{{ doc("started_by_link") }}'
-
       - name: started_by_value
         description: '{{ doc("started_by_value") }}'
-
-      - name: problem_task_created_at
-        description: '{{ doc("problem_task_created_at") }}'
-
-      - name: problem_task_updated_at
-        description: '{{ doc("problem_task_updated_at") }}'
-
-      - name: vendor_link
-        description: '{{ doc("vendor_link") }}'
-
-      - name: vendor_value
-        description: '{{ doc("vendor_value") }}'
-
-  - name: stg_servicenow__incident
-    description: '{{ doc("stg_servicenow__incident") }}'
-    columns:
-      - name: incident_id
-        description: '{{ doc("sys_id") }}'
-        tests:
-          - unique
-          - not_null
-
-      - name: source_relation
-        description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
-
-      - name: business_impact
-        description: '{{ doc("business_impact") }}'
-
-      - name: business_stc
-        description: '{{ doc("business_stc") }}'
-
-      - name: calendar_stc
-        description: '{{ doc("calendar_stc") }}'
-
-      - name: caller_id_link
-        description: '{{ doc("caller_id_link") }}'
-
-      - name: caller_id_value
-        description: '{{ doc("caller_id_value") }}'
-
-      - name: category
-        description: '{{ doc("category") }}'
-
-      - name: cause
-        description: '{{ doc("cause") }}'
-
-      - name: caused_by_link
-        description: '{{ doc("caused_by_link") }}'
-
-      - name: caused_by_value
-        description: '{{ doc("caused_by_value") }}'
-
-      - name: child_incidents
-        description: '{{ doc("child_incidents") }}'
-
-      - name: close_code
-        description: '{{ doc("close_code") }}'
-
-      - name: hold_reason
-        description: '{{ doc("hold_reason") }}'
-
-      - name: incident_state
-        description: '{{ doc("incident_state") }}'
-
-      - name: notify
-        description: '{{ doc("notify") }}'
-
-      - name: origin_id_link
-        description: '{{ doc("origin_id_link") }}'
-
-      - name: origin_id_value
-        description: '{{ doc("origin_id_value") }}'
-
-      - name: parent_incident_link
-        description: '{{ doc("parent_incident_link") }}'
-
-      - name: parent_incident_value
-        description: '{{ doc("parent_incident_value") }}'
-
-      - name: problem_id_link
-        description: '{{ doc("problem_id_link") }}'
-
-      - name: problem_id_value
-        description: '{{ doc("problem_id_value") }}'
-
-      - name: reopen_count
-        description: '{{ doc("reopen_count") }}'
-
-      - name: reopened_by_link
-        description: '{{ doc("reopened_by_link") }}'
-
-      - name: reopened_by_value
-        description: '{{ doc("reopened_by_value") }}'
-
-      - name: reopened_time
-        description: '{{ doc("reopened_time") }}'
-
-      - name: resolved_at
-        description: '{{ doc("resolved_at") }}'
-
-      - name: resolved_by_link
-        description: '{{ doc("resolved_by_link") }}'
-
-      - name: resolved_by_value
-        description: '{{ doc("resolved_by_value") }}'
-
-      - name: rfc_link
-        description: '{{ doc("rfc_link") }}'
-
-      - name: rfc_value
-        description: '{{ doc("rfc_value") }}'
-
-      - name: severity
-        description: '{{ doc("severity") }}'
-
-      - name: subcategory
-        description: '{{ doc("subcategory") }}'
-
-      - name: incident_created_at
-        description: '{{ doc("incident_created_at") }}'
-
-      - name: incident_updated_at
-        description: '{{ doc("incident_updated_at") }}'
-
-  - name: stg_servicenow__change_task
-    description: '{{ doc("stg_servicenow__change_task") }}'
-    columns:
-      - name: change_task_id
-        description: '{{ doc("sys_id") }}'
-        tests:
-          - unique
-          - not_null
-
-      - name: source_relation
-        description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
-
-      - name: change_request_link
-        description: '{{ doc("change_request_link") }}'
-
-      - name: change_request_value
-        description: '{{ doc("change_request_value") }}'
 
       - name: change_task_type
         description: '{{ doc("change_task_type") }}'
@@ -938,7 +293,7 @@ models:
         description: '{{ doc("is_change_on_hold") }}'
 
       - name: change_on_hold_reason
-        description: '{{ doc("change_on_hold_reason") }}'
+        description: '{{ doc("on_hold_reason") }}'
 
       - name: change_task_planned_end_date
         description: '{{ doc("change_task_planned_end_date") }}'
@@ -946,68 +301,14 @@ models:
       - name: change_task_planned_start_date
         description: '{{ doc("change_task_planned_start_date") }}'
 
-      - name: change_task_created_at
-        description: '{{ doc("change_task_created_at") }}'
-
-      - name: change_task_updated_at
-        description: '{{ doc("change_task_updated_at") }}'
-
-  - name: stg_servicenow__change_request
-    description: '{{ doc("stg_servicenow__change_request") }}'
-    columns:
-      - name: change_request_id
-        description: '{{ doc("sys_id") }}'
-        tests:
-          - unique
-          - not_null
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
-      - name: _fivetran_synced
-        description: '{{ doc("_fivetran_synced") }}'
-
-      - name: backout_plan
-        description: '{{ doc("backout_plan") }}'
-
-      - name: cab_date
-        description: '{{ doc("cab_date") }}'
-
-      - name: cab_date_time
-        description: '{{ doc("cab_date_time") }}'
-
-      - name: cab_delegate_link
-        description: '{{ doc("cab_delegate_link") }}'
-
-      - name: cab_delegate_value
-        description: '{{ doc("cab_delegate_value") }}'
-
-      - name: cab_recommendation
-        description: '{{ doc("cab_recommendation") }}'
-
-      - name: is_cab_required
-        description: '{{ doc("is_cab_required") }}'
-
       - name: change_request_category
         description: '{{ doc("change_category") }}'
 
       - name: change_plan
         description: '{{ doc("change_plan") }}'
 
-      - name: chg_model_link
-        description: '{{ doc("chg_model_link") }}'
-
-      - name: chg_model_value
-        description: '{{ doc("chg_model_value") }}'
-
       - name: change_request_close_code
         description: '{{ doc("close_code") }}'
-
-      - name: conflict_last_run
-        description: '{{ doc("conflict_last_run") }}'
-
-      - name: conflict_status
-        description: '{{ doc("conflict_status") }}'
 
       - name: change_request_end_date
         description: '{{ doc("end_date") }}'
@@ -1024,35 +325,20 @@ models:
       - name: change_request_on_hold_reason
         description: '{{ doc("change_request_on_hold_reason") }}'
 
-      - name: on_hold_task
-        description: '{{ doc("on_hold_task") }}'
-
-      - name: outside_maintenance_schedule
-        description: '{{ doc("outside_maintenance_schedule") }}'
-
       - name: change_request_phase
         description: '{{ doc("change_phase") }}'
 
       - name: change_request_phase_state
         description: '{{ doc("change_phase_state") }}'
 
-      - name: is_production_system  
-        description: '{{ doc("is_production_system") }}'
-
       - name: change_request_reason
         description: '{{ doc("change_reason") }}'
-
-      - name: change_requested_by_date
-        description: '{{ doc("change_requested_by_date") }}'
-
-      - name: change_requested_by_link
-        description: '{{ doc("change_requested_by_link") }}'
-
+      
       - name: change_requested_by_value
         description: '{{ doc("change_requested_by_value") }}'
 
-      - name: review_comments
-        description: '{{ doc("review_comments") }}'
+      - name: change_requested_by_date
+        description: '{{ doc("change_requested_by_date") }}'
 
       - name: change_request_review_date
         description: '{{ doc("change_request_review_date") }}'
@@ -1063,20 +349,11 @@ models:
       - name: change_request_risk
         description: '{{ doc("risk") }}'
 
-      - name: risk_impact_analysis
-        description: '{{ doc("risk_impact_analysis") }}'
-
       - name: change_request_scope
         description: '{{ doc("scope") }}'
 
       - name: change_request_start_date
         description: '{{ doc("change_request_start_date") }}'
-
-      - name: std_change_producer_version_link
-        description: '{{ doc("std_change_producer_version_link") }}'
-
-      - name: std_change_producer_version_value
-        description: '{{ doc("std_change_producer_version_value") }}'
 
       - name: change_request_created_at
         description: '{{ doc("created_at") }}'
@@ -1093,6 +370,170 @@ models:
       - name: is_change_request_unauthorized
         description: '{{ doc("is_change_request_unauthorized") }}'
 
+      - name: is_problem_task
+        description: '{{ doc("is_problem_task") }}'
+      - name: is_change_task
+        description: '{{ doc("is_change_task") }}'
+      - name: creator_email
+        description: '{{ doc("email") }}'
+      - name: creator_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: creator_department_value
+        description: '{{ doc("department_value") }}'
+      - name: creator_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: creator_roles
+        description: '{{ doc("roles") }}'
+      - name: updater_email
+        description: '{{ doc("email") }}'
+      - name: updater_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: updater_department_value
+        description: '{{ doc("department_value") }}'
+      - name: updater_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: updater_roles
+        description: '{{ doc("roles") }}'
+      - name: opener_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: opener_email
+        description: '{{ doc("email") }}'
+      - name: opener_department_value
+        description: '{{ doc("department_value") }}'
+      - name: opener_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: opener_roles
+        description: '{{ doc("roles") }}'
+      - name: assignee_email
+        description: '{{ doc("email") }}'
+      - name: assignee_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: assignee_department_value
+        description: '{{ doc("department_value") }}'
+      - name: assignee_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: assignee_roles
+        description: '{{ doc("roles") }}'
+      - name: closer_email
+        description: '{{ doc("email") }}'
+      - name: closer_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: closer_department_value
+        description: '{{ doc("department_value") }}'
+      - name: closer_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: closer_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_task_starter_email
+        description: '{{ doc("email") }}'
+      - name: problem_task_starter_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_task_starter_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_task_starter_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_task_starter_roles
+        description: '{{ doc("roles") }}'
+      - name: associated_problem_id
+        description: '{{ doc("associated_problem_id") }}'
+      - name: total_incidents_caused_by_problem
+        description: '{{ doc("total_incidents_caused_by_problem") }}'
+      - name: problem_confirmer_email
+        description: '{{ doc("email") }}'
+      - name: problem_confirmer_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_confirmer_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_confirmer_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_confirmer_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_reporter_email
+        description: '{{ doc("email") }}'
+      - name: problem_reporter_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_reporter_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_reporter_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_reporter_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_fixer_email
+        description: '{{ doc("email") }}'
+      - name: problem_fixer_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_fixer_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_fixer_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_fixer_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_is_known_error
+        description: '{{ doc("is_known_error") }}'
+      - name: problem_resolver_email
+        description: '{{ doc("email") }}'
+      - name: problem_resolver_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_resolver_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_resolver_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_resolver_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_minutes_to_resolve
+        description: '{{ doc("problem_minutes_to_resolve") }}'
+      - name: change_requester_email
+        description: '{{ doc("email") }}'
+      - name: change_requester_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: change_requester_department_value
+        description: '{{ doc("department_value") }}'
+      - name: change_requester_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: change_requester_roles
+        description: '{{ doc("roles") }}'
+      - name: associated_change_request_id
+        description: '{{ doc("associated_change_request_id") }}'
+
+  - name: servicenow__activity_summary
+    description: '{{ doc("servicenow__activity_summary") }}'
+    columns:
+      - name: task_state
+        description: '{{ doc("task_state") }}'
+
+      - name: priority
+        description: '{{ doc("priority") }}'
+
+      - name: impact
+        description: '{{ doc("impact") }}' 
+
+      - name: urgency
+        description: '{{ doc("urgency") }}'
+
       - name: source_relation
         description: '{{ doc("source_relation") }}'
+
+      - name: total_active_tasks
+        description: '{{ doc("total_active_tasks") }}'
+
+      - name: total_active_problem_tasks
+        description: '{{ doc("total_active_problem_tasks") }}'
+
+      - name: total_active_change_tasks
+        description: '{{ doc("total_active_change_tasks") }}'
+
+      - name: total_associated_problems
+        description: '{{ doc("total_associated_problems") }}'
+
+      - name: total_incidents_caused_by_problems
+        description: '{{ doc("total_incidents_caused_by_problems") }}'
+
+      - name: total_change_requests
+        description: '{{ doc("total_change_requests") }}'
+
+      - name: total_closed_tasks
+        description: '{{ doc("total_closed_tasks") }}'
+
+      - name: average_minutes_to_close
+        description: '{{ doc("average_minutes_to_close") }}'
 

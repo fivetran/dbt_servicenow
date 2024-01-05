@@ -919,7 +919,7 @@ Indicates whether the issue is a known error with a documented resolution.
 {% enddocs %}
 
 {% docs is_known_error %} 
-Indicates whether the issue is a known error with a documented resolution. 
+Indicates whether the issue is a known error with a documented resolution.
 {% enddocs %}
 
 {% docs major_problem %} 
@@ -1198,11 +1198,11 @@ Information about the source or origin of the current record, indicating how it 
 Indicates whether the issue or incident is currently on hold or paused. 
 {% enddocs %}
 
-{% docs is_change_task_on_hold %} 
+{% docs is_change_on_hold %} 
 Indicates whether the change task is currently on hold or paused. 
 {% enddocs %}
 
-{% docs is_change_on_hold %} 
+{% docs is_change_request_on_hold %} 
 Indicates whether the change is currently on hold or paused. 
 {% enddocs %}
 
@@ -1214,7 +1214,7 @@ The reason or rationale for placing the associated record on hold.
 The reason or rationale for placing the change task on hold. 
 {% enddocs %}
 
-{% docs change_on_hold_reason %} 
+{% docs change_request_on_hold_reason %} 
 The reason or rationale for placing the change on hold. 
 {% enddocs %}
 
@@ -1483,5 +1483,65 @@ The category of the problem.
 {% enddocs %}
 
 {% docs servicenow__ticket_enhanced %}
+Each record represents a task with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.
+{% enddocs %}
 
+{% docs is_problem_task %}
+A boolean of whether the task is a problem task.
+{% enddocs %}
+
+{% docs is_change_task %}
+A boolean of whether the task is a change task.
+{% enddocs %}
+
+{% docs problem_minutes_to_resolve %}
+The number of minutes from time that the problem was created to the time that the problem was resolved.
+{% enddocs %}
+
+{% docs task_minutes_to_close %}
+The number of minutes from time that the task was created to the time that the task was closed.
+{% enddocs %}
+
+{% docs associated_problem_id %}
+The associated problem with this task; the sys_id from the problem object.
+{% enddocs %}
+
+{% docs associated_change_request_id %}
+The associated change request with this task; the sys_id from the change request object.
+{% enddocs %}
+
+{% docs total_incidents_caused_by_problem %}
+The total number of incidents associated with this problem.
+{% enddocs %}
+
+{% docs total_active_tasks %}
+Total number of active tasks
+{% enddocs %}
+
+{% docs total_active_problem_tasks %}
+Total number of active problem tasks
+{% enddocs %}
+
+{% docs total_active_change_tasks %}
+Total number of active change tasks
+{% enddocs %}
+
+{% docs total_associated_problems %}
+Total number of problems
+{% enddocs %}
+
+{% docs total_incidents_caused_by_problems %}
+Total number of incidents caused by associated problems
+{% enddocs %}
+
+{% docs total_change_requests %}
+Total number of change requests
+{% enddocs %}
+
+{% docs total_closed_tasks %}
+Total number of closed tasks
+{% enddocs %}
+
+{% docs average_minutes_to_close %}
+Average number of minutes between the time that the task was created to the time that the task was closed.
 {% enddocs %}
