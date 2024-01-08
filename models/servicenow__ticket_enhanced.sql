@@ -238,8 +238,8 @@ select
   change_request.is_change_request_unauthorized,
   task.source_relation
 
-from task
-left join problem_task
+from task 
+left join problem_task 
   on task.task_id = problem_task.problem_task_id
 left join sys_user problem_task_starter
   on problem_task.started_by_value = problem_task_starter.user_id
