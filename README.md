@@ -20,12 +20,12 @@ This package models ServiceNow data from [Fivetran's connector](https://fivetran
 The main focus of the package is to transform the core object tables into analytics-ready models, including:
 <!--section="servicenow_model"-->
   - Materializes [ServiceNow staging and output models](https://fivetran.github.io/dbt_servicenow/#!/overview/servicenow_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/servicenow/#schemainformation). 
-  - The staging tables clean, test, and prepare your ServiceNow data from [Fivetran's connector](https://fivetran.com/docs/applications/servicenow_source) for analysis by doing the following:
+  - The staging tables clean, test, and prepare your ServiceNow data from [Fivetran's connector](https://fivetran.com/docs/applications/servicenow_source) for analysis by doing the following: 
     - Renames fields for consistency and standardization.
     - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
     - Generates a comprehensive data dictionary of your ServiceNow data through the [dbt docs site](https://fivetran.github.io/dbt_servicenow/).
 
-The output models are focused around the task management feature of Service Now.
+The output models are focused around the task management feature of Service Now. 
 
 <!--section="servicenow_model"-->
 The following table provides a detailed list of all models materialized within this package by default. 
@@ -33,8 +33,8 @@ The following table provides a detailed list of all models materialized within t
 
 | **Model**                 | **Description**                                                                                                    |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| [servicenow__activity_summary](https://github.com/fivetran/dbt_servicenow/blob/main/models/servicenow__activity_summary.sql)  | Each record represents aggregate task, problem, change, incident, and change request data by varying grains including status, priority, impact, and urgency.    |
-| [servicenow__ticket_enhanced](https://github.com/fivetran/dbt_servicenow/blob/main/models/servicenow__ticket_enhanced.sql)  | Each record represents a task with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.  |
+| [servicenow__activity_summary](https://github.com/fivetran/dbt_servicenow/blob/main/models/servicenow__activity_summary.sql)  | Each record represents aggregate task, problem, change, incident, and change request data by varying grains including status, priority, impact, and urgency.    | 
+| [servicenow__ticket_enhanced](https://github.com/fivetran/dbt_servicenow/blob/main/models/servicenow__ticket_enhanced.sql)  | Each record represents a task with information about its associated problem, incident, or change request. Additionally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.  | 
 <!--section-end-->
 
 # 🎯 How do I use the dbt package?

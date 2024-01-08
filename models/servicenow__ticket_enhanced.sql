@@ -1,9 +1,9 @@
 
-with task as (
-
-  select *
-  from {{ ref('stg_servicenow__task') }}
-),
+with task as ( 
+ 
+  select * 
+  from {{ ref('stg_servicenow__task') }} 
+), 
 
 problem_task as (
     
@@ -15,23 +15,23 @@ problem as (
   select *
   from {{ ref('stg_servicenow__problem') }}
 ),
--- actually, because the relationship between incident and problem is many to many, it wouldn't make sense to left join Incident > Problem > Task. Therefore Incident would need to be its own model. So we won't use incident table in the Task Enhanced Mode. But we will use stg_sn__incident to create an aggregated model on the Problem grain in order to left join metrics like sum(incidents) per problem
-
-incident as (
-    
-  select *
-  from {{ ref('stg_servicenow__incident') }}
-),
-
-incidents_per_problem as (
-
-  select
-    problem_id_value,
-    count(distinct incident_id) as total_incidents
-    -- ideally would have fields such as 'total_high_severity_incidents' and 'total_medium_severity_incidents' that would tell you incidents per problem by severity. But severity level is customizable so we may be limited here
-  from incident
-  group by 1
-),
+-- actually, because the relationship between incident and problem is many to many, it wouldn't make sense to left join Incident > Problem > Task. Therefore Incident would need to be its own model. So we won't use incident table in the Task Enhanced Mode. But we will use stg_sn__incident to create an aggregated model on the Problem grain in order to left join metrics like sum(incidents) per problem 
+ 
+incident as ( 
+     
+  select * 
+  from {{ ref('stg_servicenow__incident') }} 
+), 
+ 
+incidents_per_problem as ( 
+ 
+  select 
+    problem_id_value, 
+    count(distinct incident_id) as total_incidents 
+    -- ideally would have fields such as 'total_high_severity_incidents' and 'total_medium_severity_incidents' that would tell you incidents per problem by severity. But severity level is customizable so we may be limited here 
+  from incident 
+  group by 1 
+), 
 
 change_task as (
     
@@ -65,15 +65,18 @@ select
   task.task_state,
   task.task_number,
   task.task_order,
-  case when problem_task.problem_task_id is not null then true else false end as is_problem_task,
+  case when problem_task.problem_task_id is not null 
+    then true 
+    else false 
+  end as is_problem_task,
   case when change_task.change_task_id is not null then true else false end as is_change_task,
   task.task_created_at,
   task.sys_created_by,
-  creator.email as creator_email,
-  creator.manager_value as creator_manager_value,
-  creator.department_value as creator_department_value,
-  creator.sys_user_name as creator_name,
-  creator.roles as creator_roles,
+  creator.email as creator_email, 
+  creator.manager_value as creator_manager_value, 
+  creator.department_value as creator_department_value, 
+  creator.sys_user_name as creator_name, 
+  creator.roles as creator_roles, 
   task.task_updated_at,
   task.sys_updated_by,
   updater.email as updater_email,
@@ -89,15 +92,15 @@ select
   opener.department_value as opener_department_value,
   opener.sys_user_name as opener_name,
   opener.roles as opener_roles,
-  task.assigned_to_link, 
+  task.assigned_to_link,  
   task.assigned_to_value,
   assignee.email as assignee_email,
   assignee.manager_value as assignee_manager_value,
   assignee.department_value as assignee_department_value,
   assignee.sys_user_name as assignee_name,
   assignee.roles as assignee_roles,
-  task.task_closed_at,
-  {{ dbt.datediff("task.task_created_at", "task.task_closed_at", 'minute') }} as task_minutes_to_close,
+  task.task_closed_at, 
+  {{ dbt.datediff("task.task_created_at", "task.task_closed_at", 'minute') }} as task_minutes_to_close, 
   task.closed_by_link,
   task.closed_by_value,
   closer.email as closer_email,
@@ -119,8 +122,8 @@ select
   task.close_notes,
   task.comments,
   task.comments_and_work_notes,
-  task.company_link,
-  task.company_value, 
+  task.company_link, 
+  task.company_value,  
   task.contact_type, 
   task.task_due_date_at,
   task.expected_start,
@@ -235,8 +238,8 @@ select
   change_request.is_change_request_unauthorized,
   task.source_relation
 
-from task
-left join problem_task
+from task 
+left join problem_task 
   on task.task_id = problem_task.problem_task_id
 left join sys_user problem_task_starter
   on problem_task.started_by_value = problem_task_starter.user_id

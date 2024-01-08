@@ -498,8 +498,8 @@ models:
       - name: associated_change_request_id
         description: '{{ doc("associated_change_request_id") }}'
 
-  - name: servicenow__activity_summary
-    description: '{{ doc("servicenow__activity_summary") }}'
+  - name: servicenow__activity_summary 
+    description: '{{ doc("servicenow__activity_summary") }}' 
     columns:
       - name: task_state
         description: '{{ doc("task_state") }}'
