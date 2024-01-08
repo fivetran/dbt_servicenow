@@ -6,10 +6,10 @@ with ticket_enhanced as (
 
 select  
     cast(task_updated_at as date) as ticket_updated_date,
-    task_state,
-    priority,
-    impact,
-    urgency,
+    task_state, 
+    priority, 
+    impact, 
+    urgency, 
     source_relation,
     count(distinct case when is_task_active then task_id end) as total_active_tasks,
     count(distinct case when is_problem_task and is_task_active then task_id end) as total_active_problem_tasks,
