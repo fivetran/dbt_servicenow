@@ -22,3 +22,4 @@ vars:
     incident: "{{ source('servicenow','incident') }}"
     change_task: "{{ source('servicenow','change_task') }}"
     change_request: "{{ source('servicenow','change_request') }}"
+    core_company: "{{ source('servicenow','core_company') }}"

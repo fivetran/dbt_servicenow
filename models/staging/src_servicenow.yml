@@ -739,3 +739,67 @@ sources:
           - name: unauthorized
             description: '{{ doc("unauthorized") }}'
 
+      - name: core_company
+        identifier: '{{ var("servicenow_core_company_identifier", "task") }}'
+        description: '{{ doc("core_company") }}'
+        columns:
+          - name: sys_id
+            description: '{{ doc("sys_id") }}'
+          - name: _fivetran_deleted
+            description: '{{ doc("_fivetran_deleted") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: city
+            description: '{{ doc("city") }}'
+          - name: contact_link
+            description: '{{ doc("contact_link") }}'
+          - name: contact_value
+            description: '{{ doc("contact_value") }}'
+          - name: country
+            description: '{{ doc("country") }}'
+          - name: customer
+            description: '{{ doc("customer") }}'
+          - name: discount
+            description: '{{ doc("discount") }}'
+          - name: fax_phone
+            description: '{{ doc("fax_phone") }}'
+          - name: fiscal_year
+            description: '{{ doc("fiscal_year") }}'
+          - name: name
+            description: '{{ doc("name") }}'
+          - name: notes
+            description: '{{ doc("notes") }}'
+          - name: num_employees
+            description: '{{ doc("num_employees") }}'
+          - name: parent_link
+            description: '{{ doc("parent_link") }}'
+          - name: parent_value
+            description: '{{ doc("parent_value") }}'
+          - name: phone
+            description: '{{ doc("phone") }}'
+          - name: state
+            description: '{{ doc("state") }}'
+          - name: street
+            description: '{{ doc("street") }}'
+          - name: sys_class_name
+            description: '{{ doc("sys_class_name") }}'
+          - name: sys_created_by
+            description: '{{ doc("sys_created_by") }}'
+          - name: sys_created_on
+            description: '{{ doc("sys_created_on") }}'
+          - name: sys_mod_count
+            description: '{{ doc("sys_mod_count") }}'
+          - name: sys_updated_by
+            description: '{{ doc("sys_updated_by") }}'
+          - name: sys_updated_on
+            description: '{{ doc("sys_updated_on") }}'
+          - name: vendor
+            description: '{{ doc("vendor") }}'
+          - name: vendor_manager
+            description: '{{ doc("vendor_manager") }}'
+          - name: vendor_type
+            description: '{{ doc("vendor_type") }}'
+          - name: website
+            description: '{{ doc("website") }}'
+          - name: zip
+            description: '{{ doc("zip") }}'

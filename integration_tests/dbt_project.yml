@@ -19,6 +19,7 @@ vars:
     servicenow_incident_identifier: "incident_data"
     servicenow_change_task_identifier: "change_task_data"
     servicenow_change_request_identifier: "change_request_data"
+    servicenow_core_company_identifier: "core_company_data"
 
 seeds:
   +quote_columns: "{{ true if target.type in ('redshift','postgres') else false }}"
