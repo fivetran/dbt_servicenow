@@ -355,11 +355,11 @@ Current state or status of the task (e.g., in progress, on hold, closed).
 {% enddocs %}
 
 {% docs sys_class_name %}
-Name of the table in which the task record is stored.
+Name of the table in which the record is stored.
 {% enddocs %}
 
 {% docs sys_created_by %}
-User who initially created the task record.
+User who initially created the record.
 {% enddocs %}
 
 {% docs sys_created_on %}
@@ -447,15 +447,15 @@ Unique identifier for the record.
 {% enddocs %}
 
 {% docs sys_mod_count %}
-Number of times the task record has been modified.
+Number of times the record has been modified.
 {% enddocs %}
 
 {% docs sys_updated_by %}
-User who last updated or modified the task record.
+User who last updated or modified the record.
 {% enddocs %}
 
 {% docs sys_updated_on %}
-Date and time when the task record was last updated.
+Date and time when the record was last updated.
 {% enddocs %}
 
 {% docs task_effective_number %}
@@ -615,7 +615,7 @@ Information about the integration of the user's calendar with the ServiceNow sys
 {% enddocs %}
 
 {% docs city %}
-City information associated with the system user.
+City information associated with the record.
 {% enddocs %}
 
 {% docs cost_center_link %}
@@ -627,7 +627,7 @@ Value representing the cost center associated with the system user.
 {% enddocs %}
 
 {% docs country %}
-Country information associated with the system user.
+Country information associated with the record.
 {% enddocs %}
 
 {% docs date_format %}
@@ -751,7 +751,7 @@ The contact number for the user's mobile phone.
 {% enddocs %}
 
 {% docs name %} 
-The full name of the user, typically in the format "First Middle Last." 
+The full name of the record.
 {% enddocs %}
 
 {% docs sys_user_name %} 
@@ -767,7 +767,7 @@ Indicates whether the user needs to reset their password.
 {% enddocs %}
 
 {% docs phone %} 
-The contact number for the user's primary phone. 
+The contact number belonging to this record. 
 {% enddocs %}
 
 {% docs photo %} 
@@ -815,7 +815,7 @@ Indicates whether the user has access only through web services.
 {% enddocs %}
 
 {% docs zip %} 
-The postal code or ZIP code associated with the user's address. 
+The postal code or ZIP code associated with the record.
 {% enddocs %}
 
 {% docs cause_notes %} 
@@ -1548,4 +1548,48 @@ Total number of closed tasks
 
 {% docs average_minutes_to_close %}
 Average number of minutes between the time that the task was created to the time that the task was closed.
+{% enddocs %}
+
+{% docs customer %}
+Boolean of whether the company is a customer.
+{% enddocs %}
+
+{% docs fax_phone %}
+Fax phone number of the record.
+{% enddocs %}
+
+{% docs fiscal_year %}
+Company's fiscal year
+{% enddocs %}
+
+{% docs notes %}
+Notes about the record
+{% enddocs %}
+
+{% docs address_state %}
+The geographical state to which the record belongs
+{% enddocs %}
+
+{% docs street %}
+The street to which the record belongs
+{% enddocs %}
+
+{% docs vendor %}
+Boolean of whether the company is a vendor
+{% enddocs %}
+
+{% docs vendor_type %}
+Vendor types group vendors that offer similar goods and services, and are useful for reporting and comparing vendor performance. Example: Hardware, Services
+{% enddocs %}
+
+{% docs website %}
+Company website
+{% enddocs %}
+
+{% docs stg_servicenow__core_company %}
+Staging table containing all records relating to companies.
+{% enddocs %}
+
+{% docs core_company %}
+Table containing all company related information.
 {% enddocs %}

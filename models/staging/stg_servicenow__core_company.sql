@@ -25,7 +25,27 @@ final as (
     
     select 
         source_relation,
-        
+        cast(sys_id as {{ dbt.type_string() }}) as core_company_id,
+        city as company_city,
+        country as company_country,
+        customer as is_customer,
+        fax_phone as company_fax_phone,
+        fiscal_year,
+        name as company_name,
+        notes,
+        phone as company_phone,
+        state as company_state,
+        street as company_street,
+        sys_class_name,
+        sys_created_by,
+        sys_created_on,
+        sys_mod_count,
+        sys_updated_by,
+        sys_updated_on,
+        vendor as is_vendor,
+        vendor_type,
+        website as company_website,
+        zip as company_zip
     from fields
 )
 

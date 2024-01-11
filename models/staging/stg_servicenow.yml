@@ -1114,3 +1114,57 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
+
+  - name: stg_servicenow__core_company
+    description: '{{ doc("stg_servicenow__core_company") }}'
+    columns:
+      - name: problem_task_id
+        description: '{{ doc("sys_id") }}'
+        tests:
+          - unique
+          - not_null
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+      - name: core_company_id
+        description: '{{ doc("sys_id") }}'
+      - name: company_city
+        description: '{{ doc("city") }}'
+      - name: company_country
+        description: '{{ doc("country") }}'
+      - name: is_customer
+        description: '{{ doc("customer") }}'
+      - name: company_fax_phone
+        description: '{{ doc("fax_phone") }}'
+      - name: fiscal_year
+        description: '{{ doc("fiscal_year") }}'
+      - name: company_name
+        description: '{{ doc("name") }}'
+      - name: notes
+        description: '{{ doc("notes") }}'
+      - name: company_phone
+        description: '{{ doc("phone") }}'
+      - name: company_state
+        description: '{{ doc("state") }}'
+      - name: company_street
+        description: '{{ doc("street") }}'
+      - name: sys_class_name
+        description: '{{ doc("sys_class_name") }}'
+      - name: sys_created_by
+        description: '{{ doc("sys_created_by") }}'
+      - name: sys_created_on
+        description: '{{ doc("sys_created_on") }}'
+      - name: sys_mod_count
+        description: '{{ doc("sys_mod_count") }}'
+      - name: sys_updated_by
+        description: '{{ doc("sys_updated_by") }}'
+      - name: sys_updated_on
+        description: '{{ doc("sys_updated_on") }}'
+      - name: is_vendor
+        description: '{{ doc("vendor") }}'
+      - name: vendor_type
+        description: '{{ doc("vendor_type") }}'
+      - name: company_website
+        description: '{{ doc("website") }}'
+      - name: company_zip
+        description: '{{ doc("zip") }}'

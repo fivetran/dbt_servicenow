@@ -751,16 +751,10 @@ sources:
             description: '{{ doc("_fivetran_synced") }}'
           - name: city
             description: '{{ doc("city") }}'
-          - name: contact_link
-            description: '{{ doc("contact_link") }}'
-          - name: contact_value
-            description: '{{ doc("contact_value") }}'
           - name: country
             description: '{{ doc("country") }}'
           - name: customer
             description: '{{ doc("customer") }}'
-          - name: discount
-            description: '{{ doc("discount") }}'
           - name: fax_phone
             description: '{{ doc("fax_phone") }}'
           - name: fiscal_year
@@ -769,16 +763,10 @@ sources:
             description: '{{ doc("name") }}'
           - name: notes
             description: '{{ doc("notes") }}'
-          - name: num_employees
-            description: '{{ doc("num_employees") }}'
-          - name: parent_link
-            description: '{{ doc("parent_link") }}'
-          - name: parent_value
-            description: '{{ doc("parent_value") }}'
           - name: phone
             description: '{{ doc("phone") }}'
           - name: state
-            description: '{{ doc("state") }}'
+            description: '{{ doc("address_state") }}'
           - name: street
             description: '{{ doc("street") }}'
           - name: sys_class_name
@@ -795,8 +783,6 @@ sources:
             description: '{{ doc("sys_updated_on") }}'
           - name: vendor
             description: '{{ doc("vendor") }}'
-          - name: vendor_manager
-            description: '{{ doc("vendor_manager") }}'
           - name: vendor_type
             description: '{{ doc("vendor_type") }}'
           - name: website

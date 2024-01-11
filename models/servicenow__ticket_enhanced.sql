@@ -51,6 +51,12 @@ sys_user as (
   from {{ ref('stg_servicenow__sys_user') }}
 ),
 
+core_company as (
+    
+  select *
+  from {{ ref('stg_servicenow__core_company') }}
+),
+
 task_enhanced as (
 
 select 
