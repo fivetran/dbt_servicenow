@@ -69,6 +69,8 @@ select
   case when change_task.change_task_id is not null then true else false end as is_change_task,
   task.task_created_at,
   task.sys_created_by,
+  task.cmdb_ci_link,
+  task.cmdb_ci_value,
   creator.email as creator_email,
   creator.manager_value as creator_manager_value,
   creator.department_value as creator_department_value,
