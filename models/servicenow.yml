@@ -82,6 +82,9 @@ models:
       - name: company_value
         description: '{{ doc("company_value") }}'
 
+      - name: company_name
+        description: '{{ doc("name") }}'
+
       - name: contact_type
         description: '{{ doc("contact_type") }}'
 

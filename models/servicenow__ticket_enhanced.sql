@@ -129,6 +129,7 @@ select
   task.comments_and_work_notes,
   task.company_link,
   task.company_value, 
+  core_company.company_name,
   task.contact_type, 
   task.task_due_date_at,
   task.expected_start,
@@ -244,6 +245,8 @@ select
   task.source_relation
 
 from task
+left join core_company
+  on task.company_value = core_company.core_company_id
 left join problem_task
   on task.task_id = problem_task.problem_task_id
 left join sys_user problem_task_starter
