@@ -1482,7 +1482,7 @@ The category of the change.
 The category of the problem.
 {% enddocs %}
 
-{% docs servicenow__ticket_enhanced %}
+{% docs servicenow__task_enhanced %}
 Each record represents a task with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.
 {% enddocs %}
 
