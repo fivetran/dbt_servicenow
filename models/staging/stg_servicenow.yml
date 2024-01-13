@@ -1168,3 +1168,244 @@ models:
         description: '{{ doc("website") }}'
       - name: company_zip
         description: '{{ doc("zip") }}'
+
+
+  - name: stg_servicenow__cmdb_ci
+    description: '{{ doc("stg_servicenow__cmdb_ci") }}'
+    columns:
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+      - name: attributes
+        description: '{{ doc("attributes") }}'
+      - name: business_unit_link
+        description: '{{ doc("business_unit_link") }}'
+      - name: business_unit_value
+        description: '{{ doc("business_unit_value") }}'
+      - name: category
+        description: '{{ doc("category") }}'
+      - name: company_link
+        description: '{{ doc("company_link") }}'
+      - name: company_value
+        description: '{{ doc("company_value") }}'
+      - name: cost
+        description: '{{ doc("cost") }}'
+      - name: cost_cc
+        description: '{{ doc("cost_cc") }}'
+      - name: cost_center_link
+        description: '{{ doc("cost_center_link") }}'
+      - name: cost_center_value
+        description: '{{ doc("cost_center_value") }}'
+      - name: managed_by_link
+        description: '{{ doc("managed_by_link") }}'
+      - name: managed_by_value
+        description: '{{ doc("managed_by_value") }}'
+      - name: manufacturer_link
+        description: '{{ doc("manufacturer_link") }}'
+      - name: manufacturer_value
+        description: '{{ doc("manufacturer_value") }}'
+      - name: model_id_link
+        description: '{{ doc("model_id_link") }}'
+      - name: model_id_value
+        description: '{{ doc("model_id_value") }}'
+      - name: model_number
+        description: '{{ doc("model_number") }}'
+      - name: name
+        description: '{{ doc("name") }}'
+      - name: owned_by_link
+        description: '{{ doc("owned_by_link") }}'
+      - name: owned_by_value
+        description: '{{ doc("owned_by_value") }}'
+      - name: subcategory
+        description: '{{ doc("subcategory") }}'
+      - name: sys_class_name
+        description: '{{ doc("sys_class_name") }}'
+      - name: sys_class_path
+        description: '{{ doc("sys_class_path") }}'
+      - name: sys_created_by
+        description: '{{ doc("sys_created_by") }}'
+      - name: sys_created_on
+        description: '{{ doc("sys_created_on") }}'
+      - name: sys_domain_link
+        description: '{{ doc("sys_domain_link") }}'
+      - name: sys_domain_path
+        description: '{{ doc("sys_domain_path") }}'
+      - name: sys_domain_value
+        description: '{{ doc("sys_domain_value") }}'
+      - name: sys_id
+        description: '{{ doc("sys_id") }}'
+      - name: sys_mod_count
+        description: '{{ doc("sys_mod_count") }}'
+      - name: sys_updated_by
+        description: '{{ doc("sys_updated_by") }}'
+      - name: sys_updated_on
+        description: '{{ doc("sys_updated_on") }}'
+      - name: vendor_link
+        description: '{{ doc("vendor_link") }}'
+      - name: vendor_value
+        description: '{{ doc("vendor_value") }}'
+
+  - name: stg_servicenow__cmdb_ci_service
+    description: '{{ doc("stg_servicenow__cmdb_ci_service") }}'
+    columns:
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+      - name: attributes
+        description: '{{ doc("attributes") }}'
+      - name: business_unit_link
+        description: '{{ doc("business_unit_link") }}'
+      - name: business_unit_value
+        description: '{{ doc("business_unit_value") }}'
+      - name: category
+        description: '{{ doc("category") }}'
+      - name: company_link
+        description: '{{ doc("company_link") }}'
+      - name: company_value
+        description: '{{ doc("company_value") }}'
+      - name: cost
+        description: '{{ doc("cost") }}'
+      - name: cost_cc
+        description: '{{ doc("cost_cc") }}'
+      - name: managed_by_link
+        description: '{{ doc("managed_by_link") }}'
+      - name: managed_by_value
+        description: '{{ doc("managed_by_value") }}'
+      - name: manufacturer_link
+        description: '{{ doc("manufacturer_link") }}'
+      - name: manufacturer_value
+        description: '{{ doc("manufacturer_value") }}'
+      - name: model_id_link
+        description: '{{ doc("model_id_link") }}'
+      - name: model_id_value
+        description: '{{ doc("model_id_value") }}'
+      - name: model_number
+        description: '{{ doc("model_number") }}'
+      - name: name
+        description: '{{ doc("name") }}'
+      - name: owned_by_link
+        description: '{{ doc("owned_by_link") }}'
+      - name: owned_by_value
+        description: '{{ doc("owned_by_value") }}'
+      - name: service_classification
+        description: '{{ doc("service_classification") }}'
+      - name: service_level_requirement
+        description: '{{ doc("service_level_requirement") }}'
+      - name: short_description
+        description: '{{ doc("short_description") }}'
+      - name: sla_link
+        description: '{{ doc("sla_link") }}'
+      - name: sla_value
+        description: '{{ doc("sla_value") }}'
+      - name: state
+        description: '{{ doc("state") }}'
+      - name: subcategory
+        description: '{{ doc("subcategory") }}'
+      - name: sys_class_name
+        description: '{{ doc("sys_class_name") }}'
+      - name: sys_class_path
+        description: '{{ doc("sys_class_path") }}'
+      - name: sys_created_by
+        description: '{{ doc("sys_created_by") }}'
+      - name: sys_created_on
+        description: '{{ doc("sys_created_on") }}'
+      - name: sys_domain_link
+        description: '{{ doc("sys_domain_link") }}'
+      - name: sys_domain_path
+        description: '{{ doc("sys_domain_path") }}'
+      - name: sys_domain_value
+        description: '{{ doc("sys_domain_value") }}'
+      - name: sys_id
+        description: '{{ doc("sys_id") }}'
+      - name: sys_mod_count
+        description: '{{ doc("sys_mod_count") }}'
+      - name: sys_updated_by
+        description: '{{ doc("sys_updated_by") }}'
+      - name: sys_updated_on
+        description: '{{ doc("sys_updated_on") }}'
+      - name: vendor_link
+        description: '{{ doc("vendor_link") }}'
+      - name: vendor_value
+        description: '{{ doc("vendor_value") }}'
+
+  - name: stg_servicenow__sys_user_group
+    description: '{{ doc("stg_servicenow__sys_user_group") }}'
+    columns:
+      - name: sys_id
+        description: '{{ doc("sys_id") }}'
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: active
+        description: '{{ doc("active") }}'
+
+      - name: cost_center_link
+        description: '{{ doc("cost_center_link") }}'
+
+      - name: cost_center_value
+        description: '{{ doc("cost_center_value") }}'
+
+      - name: default_assignee_link
+        description: '{{ doc("default_assignee_link") }}'
+
+      - name: default_assignee_value
+        description: '{{ doc("default_assignee_value") }}'
+
+      - name: description
+        description: '{{ doc("description") }}'
+
+      - name: email
+        description: '{{ doc("email") }}'
+
+      - name: exclude_manager
+        description: '{{ doc("exclude_manager") }}'
+
+      - name: include_members
+        description: '{{ doc("include_members") }}'
+
+      - name: manager_link
+        description: '{{ doc("manager_link") }}'
+
+      - name: manager_value
+        description: '{{ doc("manager_value") }}'
+
+      - name: sys_user_group_name
+        description: '{{ doc("name") }}'
+
+      - name: parent_link
+        description: '{{ doc("sys_user_group_parent_link") }}'
+
+      - name: parent_value
+        description: '{{ doc("sys_user_group_parent_value") }}'
+
+      - name: roles
+        description: '{{ doc("roles") }}'
+
+      - name: source
+        description: '{{ doc("source") }}'
+
+      - name: sys_created_by
+        description: '{{ doc("sys_created_by") }}'
+
+      - name: sys_created_on
+        description: '{{ doc("sys_created_on") }}'
+
+      - name: sys_mod_count
+        description: '{{ doc("sys_mod_count") }}'
+
+      - name: sys_updated_by
+        description: '{{ doc("sys_updated_by") }}'
+
+      - name: sys_updated_on
+        description: '{{ doc("sys_updated_on") }}'
+
+      - name: type
+        description: '{{ doc("type") }}'
+
+

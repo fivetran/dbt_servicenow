@@ -23,3 +23,7 @@ vars:
     change_task: "{{ source('servicenow','change_task') }}"
     change_request: "{{ source('servicenow','change_request') }}"
     core_company: "{{ source('servicenow','core_company') }}"
+    cmdb_ci: "{{ source('servicenow','cmdb_ci') }}"
+    cmdb_ci_service: "{{ source('servicenow','cmdb_ci_service') }}"
+    sys_user_group: "{{ source('servicenow','sys_user_group') }}"
+

@@ -75,7 +75,7 @@ Indicates the schema which the field originated. This is especially important wh
 {% enddocs %}
 
 {% docs active %}
-Flag indicating whether the task is currently active or completed.
+Flag indicating whether the record is currently active or completed.
 {% enddocs %}
 
 {% docs is_task_active %}
@@ -155,47 +155,47 @@ Value representing the user who closed or completed the task.
 {% enddocs %}
 
 {% docs cmdb_ci_link %}
-Link to the configuration item (CI) associated with the task in the Configuration Management Database (CMDB).
+Link to the configuration item (CI) associated with the record in the Configuration Management Database (CMDB).
 {% enddocs %}
 
 {% docs cmdb_ci_value %}
-Value representing the configuration item (CI) associated with the task.
+Value representing the configuration item (CI) associated with the record.
 {% enddocs %}
 
 {% docs comments %}
-General comments or notes related to the task.
+General comments or notes related to the record.
 {% enddocs %}
 
 {% docs comments_and_work_notes %}
-Combined information of comments and work notes recorded during the task's lifecycle.
+Combined information of comments and work notes recorded during the record's lifecycle.
 {% enddocs %}
 
 {% docs company_link %}
-Link to the company associated with the task.
+Link to the company associated with the record.
 {% enddocs %}
 
 {% docs company_value %}
-Value representing the company associated with the task.
+Value representing the company associated with the record.
 {% enddocs %}
 
 {% docs contact_type %}
-Type of contact associated with the task (e.g., customer, vendor).
+Type of contact associated with the record (e.g., customer, vendor).
 {% enddocs %}
 
 {% docs contract_link %}
-Link to the contract associated with the task.
+Link to the contract associated with the record.
 {% enddocs %}
 
 {% docs contract_value %}
-Value representing the contract associated with the task.
+Value representing the contract associated with the record.
 {% enddocs %}
 
 {% docs correlation_display %}
-Display information related to correlation of the task with other records.
+Display information related to correlation of the record with other records.
 {% enddocs %}
 
 {% docs correlation_id %}
-Identifier used for correlating the task with related records.
+Identifier used for correlating the record with related records.
 {% enddocs %}
 
 {% docs delivery_plan_link %}
@@ -215,7 +215,7 @@ Value representing the delivery task associated with the task.
 {% enddocs %}
 
 {% docs description %}
-Detailed description or information about the task.
+Detailed description or information about the record.
 {% enddocs %}
 
 {% docs task_description %}
@@ -331,23 +331,23 @@ Reason or criteria for routing the task to a particular user or group.
 {% enddocs %}
 
 {% docs service_offering_link %}
-Link to the service offering associated with the task.
+Link to the service offering associated with the record.
 {% enddocs %}
 
 {% docs service_offering_value %}
-Value representing the service offering associated with the task.
+Value representing the service offering associated with the record.
 {% enddocs %}
 
 {% docs short_description %}
-Brief or concise summary of the task.
+Brief or concise summary of the record.
 {% enddocs %}
 
 {% docs sla_due %}
-Date and time by which the task is expected to meet the Service Level Agreement (SLA).
+Date and time by which the record is expected to meet the Service Level Agreement (SLA).
 {% enddocs %}
 
 {% docs state %}
-Current state or status of the task (e.g., in progress, on hold, closed).
+Current state or status of the record (e.g., in progress, on hold, closed).
 {% enddocs %}
 
 {% docs task_state %}
@@ -431,15 +431,15 @@ Date and time when the task sla record was last updated.
 {% enddocs %}
 
 {% docs sys_domain_link %}
-Link to the system domain associated with the task.
+Link to the system domain associated with the record.
 {% enddocs %}
 
 {% docs sys_domain_path %}
-Path of the system domain associated with the task.
+Path of the system domain associated with the record.
 {% enddocs %}
 
 {% docs sys_domain_value %}
-Value representing the system domain associated with the task.
+Value representing the system domain associated with the record.
 {% enddocs %}
 
 {% docs sys_id %}
@@ -563,19 +563,19 @@ Value representing the schedule associated with the task.
 {% enddocs %}
 
 {% docs sla_link %}
-Link to the Service Level Agreement (SLA) associated with the task.
+Link to the Service Level Agreement (SLA) associated with the record.
 {% enddocs %}
 
 {% docs sla_value %}
-Value representing the Service Level Agreement (SLA) associated with the task.
+Value representing the Service Level Agreement (SLA) associated with the record.
 {% enddocs %}
 
 {% docs stage %}
-Current stage or phase of the task's lifecycle.
+Current stage or phase of the record's lifecycle.
 {% enddocs %}
 
 {% docs start_time %}
-The scheduled or expected start time for the task.
+The scheduled or expected start time for the record.
 {% enddocs %}
 
 {% docs task_link %}
@@ -591,7 +591,7 @@ Remaining time for the completion of the task.
 {% enddocs %}
 
 {% docs timezone %}
-Timezone information associated with the task.
+Timezone information associated with the record.
 {% enddocs %}
 
 {% docs accumulated_roles %}
@@ -619,11 +619,11 @@ City information associated with the record.
 {% enddocs %}
 
 {% docs cost_center_link %}
-Link to the cost center associated with the system user.
+Link to the cost center associated with the record.
 {% enddocs %}
 
 {% docs cost_center_value %}
-Value representing the cost center associated with the system user.
+Value representing the cost center associated with the record.
 {% enddocs %}
 
 {% docs country %}
@@ -655,7 +655,7 @@ Education status or level associated with the system user.
 {% enddocs %}
 
 {% docs email %}
-Email address associated with the system user.
+Email address associated with the record.
 {% enddocs %}
 
 {% docs employee_number %}
@@ -783,7 +783,7 @@ The roles assigned to the user in the system or organization.
 {% enddocs %}
 
 {% docs source %} 
-The source or origin of the user's profile information. 
+The source or origin of the user's or user group's profile information. 
 {% enddocs %}
 
 {% docs time_format %} 
@@ -1003,7 +1003,7 @@ The unique identifier or name associated with the Request for Change (RFC) linke
 {% enddocs %}
 
 {% docs subcategory %} 
-The specific subcategory or classification of the issue, providing more detailed information about its nature. 
+The specific subcategory or classification of the record, providing more detailed information about its nature. 
 {% enddocs %}
 
 {% docs problem_subcategory %} 
@@ -1087,11 +1087,11 @@ The name or identifier of the person or entity who initiated or started the issu
 {% enddocs %}
 
 {% docs vendor_link %} 
-A link to the vendor or external entity associated with the issue or incident. 
+A link to the vendor or external entity associated with the record.
 {% enddocs %}
 
 {% docs vendor_value %} 
-The name or identifier of the vendor or external entity linked to the issue or incident. 
+The name or identifier of the vendor or external entity linked to the record. 
 {% enddocs %}
 
 {% docs business_impact %} 
@@ -1592,4 +1592,120 @@ Staging table containing all records relating to companies.
 
 {% docs core_company %}
 Table containing all company related information.
+{% enddocs %}
+
+{% docs cmdb_ci %}
+The base table for all CI (Configuration Item) tables in the CMDB (Configuration Management Database)
+{% enddocs %}
+
+{% docs stg_servicenow__cmdb_ci %}
+Staging table containing all records relating to CI(Configuration Item) tables in the CMDB (Configuration Management Database)
+{% enddocs %}
+
+{% docs cmdb_ci_service %}
+Table containing all information related to application service areas. An application service is work or goods that are supported by an IT infrastructure. For example, delivering email service to an employee can require services such as email servers, web servers, and the work to configure the user's account. An application service management map graphically displays the configuration items (CI) that support an application service and the relationships between the CIs.
+{% enddocs %}
+
+{% docs stg_servicenow__cmdb_ci_service %}
+Staging table containing all records related to CMDB CI service areas.
+{% enddocs %}
+
+{% docs sys_user_group %}
+Table containing all information related to user groups.
+{% enddocs %}
+
+{% docs stg_servicenow__sys_user_group %}
+Staging table containing all information related to user groups.
+{% enddocs %}
+
+{% docs attributes %}
+Data elements which describe the characteristics of CIs
+{% enddocs %}
+
+{% docs business_unit_link %}
+Link to business unit. Business units usually comprise departments and are associated with a company
+{% enddocs %}
+
+{% docs business_unit_value %}
+The ID of the business unit.
+{% enddocs %}
+
+{% docs cost %}
+The cost related to the record.
+{% enddocs %}
+
+{% docs cost_cc %}
+The cost center that the record belongs to.
+{% enddocs %}
+
+{% docs managed_by_link %}
+The link to the user profile that manages this record.
+{% enddocs %}
+
+{% docs managed_by_value %}
+The ID of the user profile that manages this record.
+{% enddocs %}
+
+{% docs manufacturer_link %}
+The link to the manufacturer that manages this record.
+{% enddocs %}
+
+{% docs manufacturer_value %}
+The ID of the manufacturer that manages this record.
+{% enddocs %}
+
+{% docs model_id_link %}
+The link to the model related to the CI.
+{% enddocs %}
+
+{% docs model_id_value %}
+The ID to the model related to the CI.
+{% enddocs %}
+
+{% docs model_number %}
+The number of the model related to the IC.
+{% enddocs %}
+
+{% docs owned_by_link %}
+The link to the owner of the CI related to this record.
+{% enddocs %}
+
+{% docs owned_by_value %}
+The ID to the owner of the CI related to this record.
+{% enddocs %}
+
+{% docs sys_class_path %}
+Where a particular CI class is within the overall hierarchy of classes.
+{% enddocs %}
+
+{% docs service_classification %}
+The type of service. Each type contains groups of CI services that share attributes.
+{% enddocs %}
+
+{% docs service_level_requirement %}
+Requirement specified to maintain service commitments between parties. 
+{% enddocs %}
+
+{% docs default_assignee_link %}
+Link to the user that is the default assignee for this record.
+{% enddocs %}
+
+{% docs default_assignee_value %}
+ID of the user that is the default assignee for this record.
+{% enddocs %}
+
+{% docs exclude_manager %}
+Boolean of whether the group manager receives email notifications.
+{% enddocs %}
+
+{% docs include_members %}
+Boolean of whether the group members receive individual emails when someone sends an email to the Group Email address.
+{% enddocs %}
+
+{% docs sys_user_group_parent_value %}
+ID of the other group of which this group is a member. If a group has a parent, the child group inherits the roles of the parent group. The members of the child group are not members of the parent group.
+{% enddocs %}
+
+{% docs sys_user_group_parent_link %}
+Link to the other group of which this group is a member. If a group has a parent, the child group inherits the roles of the parent group. The members of the child group are not members of the parent group.
 {% enddocs %}
