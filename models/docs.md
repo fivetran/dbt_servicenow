@@ -1709,3 +1709,15 @@ ID of the other group of which this group is a member. If a group has a parent, 
 {% docs sys_user_group_parent_link %}
 Link to the other group of which this group is a member. If a group has a parent, the child group inherits the roles of the parent group. The members of the child group are not members of the parent group.
 {% enddocs %}
+
+{% docs cmdb_ci_name %}
+Name of the relevant CMDB CI.
+{% enddocs %}
+
+{% docs assignment_group_name %}
+Name of the relevant assignment group.
+{% enddocs %}
+
+{% docs business_service_name %}
+Name of the relevant business service.
+{% enddocs %}

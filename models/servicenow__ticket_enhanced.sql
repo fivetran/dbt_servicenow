@@ -51,10 +51,28 @@ sys_user as (
   from {{ ref('stg_servicenow__sys_user') }}
 ),
 
+sys_user_group as (
+    
+  select *
+  from {{ ref('stg_servicenow__sys_user_group') }}
+),
+
 core_company as (
     
   select *
   from {{ ref('stg_servicenow__core_company') }}
+),
+
+cmdb_ci as (
+
+  select *
+  from {{ ref('stg_servicenow__cmdb_ci') }}
+),
+
+cmdb_ci_service as (
+
+  select *
+  from {{ ref('stg_servicenow__cmdb_ci_service') }}
 ),
 
 task_enhanced as (
@@ -77,6 +95,7 @@ select
   task.sys_created_by,
   task.cmdb_ci_link,
   task.cmdb_ci_value,
+  cmdb_ci.cmdb_ci_name,
   creator.email as creator_email,
   creator.manager_value as creator_manager_value,
   creator.department_value as creator_department_value,
@@ -120,10 +139,12 @@ select
   task.approval_set,
   task.assignment_group_link,
   task.assignment_group_value,
+  assignment_group.sys_user_group_name as assignment_group_name,
   task.business_duration,
   task.calendar_duration,
   task.business_service_link,
   task.business_service_value,
+  business_service.cmdb_ci_service_name as business_service_name,
   task.close_notes,
   task.comments,
   task.comments_and_work_notes,
@@ -279,6 +300,12 @@ left join sys_user creator
   on task.sys_created_by = creator.user_id
 left join sys_user updater
   on task.sys_updated_by = updater.user_id
+left join sys_user_group assignment_group
+  on task.assignment_group_value = assignment_group.sys_user_group_id
+left join cmdb_ci
+  on task.cmdb_ci_value = cmdb_ci.cmdb_ci_id
+left join cmdb_ci_service business_service
+  on task.business_service_value = business_service.cmdb_ci_service_id
 )
 
 select *

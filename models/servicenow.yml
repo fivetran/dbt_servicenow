@@ -504,6 +504,12 @@ models:
         description: '{{ doc("cmdb_ci_value") }}'
       - name: cmdb_ci_value
         description: '{{ doc("cmdb_ci_value") }}'
+      - name: cmdb_ci_name
+        description: '{{ doc("cmdb_ci_value") }}'
+      - name: assignment_group_name
+        description: '{{ doc("cmdb_ci_value") }}'
+      - name: business_service_name
+        description: '{{ doc("cmdb_ci_value") }}'
 
   - name: servicenow__activity_summary
     description: '{{ doc("servicenow__activity_summary") }}'

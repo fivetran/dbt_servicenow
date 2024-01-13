@@ -1211,7 +1211,7 @@ models:
         description: '{{ doc("model_id_value") }}'
       - name: model_number
         description: '{{ doc("model_number") }}'
-      - name: name
+      - name: cmdb_ci_name
         description: '{{ doc("name") }}'
       - name: owned_by_link
         description: '{{ doc("owned_by_link") }}'
@@ -1225,7 +1225,7 @@ models:
         description: '{{ doc("sys_class_path") }}'
       - name: sys_created_by
         description: '{{ doc("sys_created_by") }}'
-      - name: sys_created_on
+      - name: cmdb_ci_created_at
         description: '{{ doc("sys_created_on") }}'
       - name: sys_domain_link
         description: '{{ doc("sys_domain_link") }}'
@@ -1233,13 +1233,13 @@ models:
         description: '{{ doc("sys_domain_path") }}'
       - name: sys_domain_value
         description: '{{ doc("sys_domain_value") }}'
-      - name: sys_id
+      - name: cmdb_ci_id
         description: '{{ doc("sys_id") }}'
       - name: sys_mod_count
         description: '{{ doc("sys_mod_count") }}'
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
-      - name: sys_updated_on
+      - name: cmdb_ci_updated_at
         description: '{{ doc("sys_updated_on") }}'
       - name: vendor_link
         description: '{{ doc("vendor_link") }}'
@@ -1283,7 +1283,7 @@ models:
         description: '{{ doc("model_id_value") }}'
       - name: model_number
         description: '{{ doc("model_number") }}'
-      - name: name
+      - name: cmdb_ci_service_name
         description: '{{ doc("name") }}'
       - name: owned_by_link
         description: '{{ doc("owned_by_link") }}'
@@ -1309,7 +1309,7 @@ models:
         description: '{{ doc("sys_class_path") }}'
       - name: sys_created_by
         description: '{{ doc("sys_created_by") }}'
-      - name: sys_created_on
+      - name: cmdb_ci_service_created_at
         description: '{{ doc("sys_created_on") }}'
       - name: sys_domain_link
         description: '{{ doc("sys_domain_link") }}'
@@ -1317,13 +1317,13 @@ models:
         description: '{{ doc("sys_domain_path") }}'
       - name: sys_domain_value
         description: '{{ doc("sys_domain_value") }}'
-      - name: sys_id
+      - name: cmdb_ci_service_id
         description: '{{ doc("sys_id") }}'
       - name: sys_mod_count
         description: '{{ doc("sys_mod_count") }}'
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
-      - name: sys_updated_on
+      - name: cmdb_ci_service_updated_at
         description: '{{ doc("sys_updated_on") }}'
       - name: vendor_link
         description: '{{ doc("vendor_link") }}'

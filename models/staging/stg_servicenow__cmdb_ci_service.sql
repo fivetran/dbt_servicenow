@@ -48,7 +48,7 @@ final as (
         cast(model_id_value as {{ dbt.type_string() }}) as model_id_value,
         model_number,
         monitor,
-        name,
+        name as cmdb_ci_service_name,
         owned_by_link,
         cast(owned_by_value as {{ dbt.type_string() }}) as owned_by_value,
         service_classification,

@@ -47,7 +47,7 @@ final as (
         model_id_link,
         cast(model_id_value as {{ dbt.type_string() }}) as model_id_value,
         model_number,
-        name,
+        name as cmdb_ci_name,
         owned_by_link,
         cast(owned_by_value as {{ dbt.type_string() }}) as owned_by_value,
         subcategory,
