@@ -12,8 +12,8 @@ The main focus of the package is to transform the core object tables into analyt
     - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
     - Generates a comprehensive data dictionary of your ServiceNow data through the [dbt docs site](https://fivetran.github.io/dbt_servicenow/).
 
-The output models are focused around the task management feature of Service Now. 
-  - Summarizes task, problem, change, incident, and change request data by varying grains including status, priority, impact, and urgency.
-  - Enhances each task record with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.
+- The output models are focused around task Management. 
+    - Summarizes task, problem, change, incident, and change request data by varying grains including last updated day, status, priority, impact, and urgency.
+    - Enhances each task record with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.
   
 For more information, refer to the [README](./README.md)
