@@ -6,10 +6,14 @@ This package models Service Now data from [Fivetran's connector](https://fivetra
 
 The main focus of the package is to transform the core object tables into analytics-ready models, including:
 <!--section="servicenow_model"-->
-  - Materializes [ServiceNow staging and output models](https://fivetran.github.io/dbt_servicenow/#!/overview/servicenow_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/servicenow/#schemainformation). 
-  - The staging tables clean, test, and prepare your ServiceNow data from [Fivetran's connector](https://fivetran.com/docs/applications/servicenow_source) for analysis by doing the following:
-    - Renames fields for consistency and standardization.
+  - Materializes [Service Now staging and output models](https://fivetran.github.io/dbt_servicenow/#!/overview/servicenow_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/servicenow/#schemainformation). 
+  - The staging tables clean, test, and prepare your ServiceNow data from [Fivetran's connector](https://fivetran.com/docs/applications/servicenow) for analysis by doing the following:
+    - Renames fields for consistency and standardization. For example, primary keys `sys_id` are renamed to `<table_name>_id`.
     - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
     - Generates a comprehensive data dictionary of your ServiceNow data through the [dbt docs site](https://fivetran.github.io/dbt_servicenow/).
 
-The output models are focused around the task management feature of Service Now. For more information, refer to the [README](./README.md)
+The output models are focused around the task management feature of Service Now. 
+  - Summarizes task, problem, change, incident, and change request data by varying grains including status, priority, impact, and urgency.
+  - Enhances each task record with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.
+  
+For more information, refer to the [README](./README.md)
