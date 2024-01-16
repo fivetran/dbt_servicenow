@@ -1,10 +1,11 @@
 with ticket_enhanced as (
 
     select * 
-    from {{ ref('servicenow__ticket_enhanced') }}
+    from {{ ref('servicenow__task_enhanced') }}
 )
 
 select 
+    task_updated_date,
     task_state,
     priority,
     impact,
@@ -20,4 +21,4 @@ select
     avg(task_minutes_to_close) as average_minutes_to_close  -- just added this.. need to debug
 
 from ticket_enhanced
-group by 1,2,3,4,5
+group by 1,2,3,4,5,6

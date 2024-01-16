@@ -93,7 +93,10 @@ select
     then true 
     else false 
   end as is_problem_task,
-  case when change_task.change_task_id is not null then true else false end as is_change_task,
+  case when change_task.change_task_id is not null 
+    then true 
+    else false 
+  end as is_change_task,
   task.task_created_at,
   task.sys_created_by,
   task.cmdb_ci_link,
@@ -105,6 +108,7 @@ select
   creator.sys_user_name as creator_name,
   creator.roles as creator_roles,
   task.task_updated_at,
+  cast ({{ dbt.date_trunc('day', 'task.task_updated_at') }} as date) as task_updated_date,
   task.sys_updated_by,
   updater.email as updater_email,
   updater.manager_value as updater_manager_value,

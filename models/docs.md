@@ -1721,3 +1721,7 @@ Name of the relevant assignment group.
 {% docs business_service_name %}
 Name of the relevant business service.
 {% enddocs %}
+
+{% docs task_updated_date %}
+The day the task last got updated.
+{% enddocs %}
