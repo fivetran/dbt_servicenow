@@ -251,7 +251,7 @@ List of groups associated with the task.
 {% enddocs %}
 
 {% docs impact %}
-Assessment of the impact that completing or not completing the task may have.
+Assessment of the impact that completing or not completing the task may have. This is the business loss and potential damage (for example, financial, customer, regulation, security, reputation, brand) caused by the incident
 {% enddocs %}
 
 {% docs knowledge %}
@@ -311,7 +311,7 @@ Value representing the parent task or record associated with the task.
 {% enddocs %}
 
 {% docs priority %}
-Priority level assigned to the task.
+Priority level assigned to the task. The priority field is automatically calculated based on the values of impact and urgency. This determines the sequence in which the record should be resolved.
 {% enddocs %}
 
 {% docs reassignment_count %}
@@ -479,7 +479,7 @@ Actions or steps to be taken upon the rejection of the task.
 {% enddocs %}
 
 {% docs urgency %}
-Level of urgency associated with the task.
+Level of urgency associated with the record. Speed at which the business expects the record to be resolved.
 {% enddocs %}
 
 {% docs watch_list %}
@@ -1494,12 +1494,8 @@ A boolean of whether the task is a problem task.
 A boolean of whether the task is a change task.
 {% enddocs %}
 
-{% docs problem_minutes_to_resolve %}
-The number of minutes from time that the problem was created to the time that the problem was resolved.
-{% enddocs %}
-
-{% docs task_minutes_to_close %}
-The number of minutes from time that the task was created to the time that the task was closed.
+{% docs task_minutes_open_to_close %}
+The number of minutes from time that the task was opened to the time that the task was closed.
 {% enddocs %}
 
 {% docs associated_problem_id %}
