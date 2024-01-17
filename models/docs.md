@@ -1542,8 +1542,12 @@ Total number of change requests
 Total number of closed tasks
 {% enddocs %}
 
-{% docs average_minutes_to_close %}
-Average number of minutes between the time that the task was created to the time that the task was closed.
+{% docs average_minutes_open_to_close %}
+Average number of minutes between the time that the task was opened to the time that the task was closed.
+{% enddocs %}
+
+{% docs total_tasks_made_slas %}
+The count of total tasks where is_made_sla = True
 {% enddocs %}
 
 {% docs customer %}

@@ -562,6 +562,9 @@ models:
       - name: total_closed_tasks
         description: '{{ doc("total_closed_tasks") }}'
 
-      - name: average_minutes_to_close
-        description: '{{ doc("average_minutes_to_close") }}'
+      - name: average_minutes_open_to_close
+        description: '{{ doc("average_minutes_open_to_close") }}'
+
+      - name: total_tasks_made_slas
+        description: '{{ doc("total_tasks_made_slas") }}'
 
