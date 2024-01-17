@@ -56,7 +56,7 @@ final as (
         short_description,
         sla_link,
         cast(sla_value as {{ dbt.type_string() }}) as sla_value,
-        state,
+        state as cmdb_ci_service_state,
         subcategory,
         sys_class_name,
         sys_class_path,

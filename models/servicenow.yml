@@ -513,6 +513,15 @@ models:
 
   - name: servicenow__activity_summary
     description: '{{ doc("servicenow__activity_summary") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - task_updated_date
+            - task_state
+            - priority
+            - impact
+            - urgency
+            - source_relation
     columns:
       - name: task_updated_date
         description: '{{ doc("task_updated_date") }}'

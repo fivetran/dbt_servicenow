@@ -3,11 +3,15 @@ version: 2
 models:
   - name: stg_servicenow__task
     description: '{{ doc("stg_servicenow__task") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - task_id
+            - source_relation
     columns:
       - name: task_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
 
       - name: source_relation
@@ -270,11 +274,15 @@ models:
 
   - name: stg_servicenow__task_sla
     description: '{{ doc("stg_servicenow__task_sla") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - task_sla_id
+            - source_relation
     columns:
       - name: task_sla_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
 
       - name: source_relation
@@ -372,11 +380,15 @@ models:
 
   - name: stg_servicenow__sys_user
     description: '{{ doc("stg_servicenow__sys_user") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - user_id
+            - source_relation
     columns:
       - name: user_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
 
       - name: source_relation
@@ -600,11 +612,15 @@ models:
 
   - name: stg_servicenow__problem
     description: '{{ doc("stg_servicenow__problem") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - problem_id
+            - source_relation
     columns:
       - name: problem_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
 
       - name: source_relation
@@ -735,11 +751,15 @@ models:
 
   - name: stg_servicenow__problem_task
     description: '{{ doc("stg_servicenow__problem_task") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - problem_task_id
+            - source_relation
     columns:
       - name: problem_task_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
 
       - name: source_relation
@@ -804,11 +824,15 @@ models:
 
   - name: stg_servicenow__incident
     description: '{{ doc("stg_servicenow__incident") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - incident_id
+            - source_relation
     columns:
       - name: incident_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
 
       - name: source_relation
@@ -921,11 +945,15 @@ models:
 
   - name: stg_servicenow__change_task
     description: '{{ doc("stg_servicenow__change_task") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - change_task_id
+            - source_relation
     columns:
       - name: change_task_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
 
       - name: source_relation
@@ -972,11 +1000,15 @@ models:
 
   - name: stg_servicenow__change_request
     description: '{{ doc("stg_servicenow__change_request") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - change_request_id
+            - source_relation
     columns:
       - name: change_request_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
 
       - name: _fivetran_deleted
@@ -1117,13 +1149,16 @@ models:
 
   - name: stg_servicenow__core_company
     description: '{{ doc("stg_servicenow__core_company") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - problem_task_id
+            - source_relation
     columns:
       - name: problem_task_id
         description: '{{ doc("sys_id") }}'
         tests:
-          - unique
           - not_null
-
       - name: source_relation
         description: '{{ doc("source_relation") }}'
       - name: core_company_id
@@ -1172,7 +1207,16 @@ models:
 
   - name: stg_servicenow__cmdb_ci
     description: '{{ doc("stg_servicenow__cmdb_ci") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - cmdb_ci_id
+            - source_relation
     columns:
+      - name: cmdb_ci_id
+        description: '{{ doc("sys_id") }}'
+        tests:
+          - not_null
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
       - name: _fivetran_synced
@@ -1233,8 +1277,6 @@ models:
         description: '{{ doc("sys_domain_path") }}'
       - name: sys_domain_value
         description: '{{ doc("sys_domain_value") }}'
-      - name: cmdb_ci_id
-        description: '{{ doc("sys_id") }}'
       - name: sys_mod_count
         description: '{{ doc("sys_mod_count") }}'
       - name: sys_updated_by
@@ -1248,7 +1290,16 @@ models:
 
   - name: stg_servicenow__cmdb_ci_service
     description: '{{ doc("stg_servicenow__cmdb_ci_service") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - cmdb_ci_service_id
+            - source_relation
     columns:
+      - name: cmdb_ci_service_id
+        description: '{{ doc("sys_id") }}'
+        tests: 
+          - not_null
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
       - name: _fivetran_synced
@@ -1299,7 +1350,7 @@ models:
         description: '{{ doc("sla_link") }}'
       - name: sla_value
         description: '{{ doc("sla_value") }}'
-      - name: state
+      - name: cmdb_ci_service_state
         description: '{{ doc("state") }}'
       - name: subcategory
         description: '{{ doc("subcategory") }}'
@@ -1317,8 +1368,6 @@ models:
         description: '{{ doc("sys_domain_path") }}'
       - name: sys_domain_value
         description: '{{ doc("sys_domain_value") }}'
-      - name: cmdb_ci_service_id
-        description: '{{ doc("sys_id") }}'
       - name: sys_mod_count
         description: '{{ doc("sys_mod_count") }}'
       - name: sys_updated_by
@@ -1332,9 +1381,16 @@ models:
 
   - name: stg_servicenow__sys_user_group
     description: '{{ doc("stg_servicenow__sys_user_group") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_group_id
+            - source_relation
     columns:
-      - name: sys_id
+      - name: sys_user_group_id
         description: '{{ doc("sys_id") }}'
+        tests:
+          - not_null
 
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
@@ -1393,7 +1449,7 @@ models:
       - name: sys_created_by
         description: '{{ doc("sys_created_by") }}'
 
-      - name: sys_created_on
+      - name: sys_user_group_created_at
         description: '{{ doc("sys_created_on") }}'
 
       - name: sys_mod_count
@@ -1402,10 +1458,10 @@ models:
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
 
-      - name: sys_updated_on
+      - name: sys_user_group_updated_at
         description: '{{ doc("sys_updated_on") }}'
 
-      - name: type
+      - name: sys_user_group_type
         description: '{{ doc("type") }}'
 
 

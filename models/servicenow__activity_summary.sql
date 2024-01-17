@@ -18,7 +18,8 @@ select
     sum(total_incidents_caused_by_problem) as total_incidents_caused_by_problems,
     count(distinct associated_change_request_id) as total_change_requests,
     count(distinct case when task_closed_at is not null then task_id end) as total_closed_tasks,
-    avg(task_minutes_to_close) as average_minutes_to_close  -- just added this.. need to debug
+    avg(task_minutes_to_close) as average_minutes_to_close,
+    count(case when is_made_sla then 1 end) as total_tasks_made_slas
 
 from ticket_enhanced
 group by 1,2,3,4,5,6
