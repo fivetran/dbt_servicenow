@@ -10,27 +10,11 @@ problem_task as (
   select *
   from {{ ref('stg_servicenow__problem_task') }}
 ),
+
 problem as (
     
   select *
   from {{ ref('stg_servicenow__problem') }}
-),
--- actually, because the relationship between incident and problem is many to many, it wouldn't make sense to left join Incident > Problem > Task. Therefore Incident would need to be its own model. So we won't use incident table in the Task Enhanced Mode. But we will use stg_sn__incident to create an aggregated model on the Problem grain in order to left join metrics like sum(incidents) per problem
-
-incident as (
-    
-  select *
-  from {{ ref('stg_servicenow__incident') }}
-),
-
-incidents_per_problem as (
-
-  select
-    problem_id_value,
-    count(distinct incident_id) as total_incidents
-    -- ideally would have fields such as 'total_high_severity_incidents' and 'total_medium_severity_incidents' that would tell you incidents per problem by severity. But severity level is customizable so we may be limited here
-  from incident
-  group by 1
 ),
 
 change_task as (
@@ -164,7 +148,7 @@ select
   task.task_follow_up_at,
   task.group_list,
   task.knowledge,
-  task.made_sla,
+  task.is_made_sla,
   task.sla_due,
   task.parent_link, 
   task.parent_value,
@@ -195,7 +179,6 @@ select
   problem.problem_id as associated_problem_id,
   problem.problem_category,
   problem.cause_notes,
-  incidents_per_problem.total_incidents as total_incidents_caused_by_problem,
   problem.problem_confirmed_at,
   problem.problem_confirmed_by_value,
   problem_confirmer.email as problem_confirmer_email,
@@ -288,8 +271,6 @@ left join sys_user problem_fixer
   on problem.problem_fix_by_value = problem_fixer.user_id
 left join sys_user problem_resolver
   on problem.problem_resolved_by_value = problem_resolver.user_id
-left join incidents_per_problem
-  on incidents_per_problem.problem_id_value = problem.problem_id
 left join change_task
   on task.task_id = change_task.change_task_id
 left join change_request

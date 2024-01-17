@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name: servicenow__ticket_enhanced
-    description: '{{ doc("servicenow__ticket_enhanced") }}'
+  - name: servicenow__task_enhanced
+    description: '{{ doc("servicenow__task_enhanced") }}'
     columns:
       - name: task_id
         description: '{{ doc("sys_id") }}'
@@ -61,8 +61,8 @@ models:
       - name: task_closed_at
         description: '{{ doc("closed_at") }}'
 
-      - name: task_minutes_to_close
-        description: '{{ doc("task_minutes_to_close") }}'
+      - name: task_minutes_open_to_close
+        description: '{{ doc("task_minutes_open_to_close") }}'
 
       - name: closed_by_link
         description: '{{ doc("closed_by_link") }}'
@@ -109,7 +109,7 @@ models:
       - name: knowledge
         description: '{{ doc("knowledge") }}'
 
-      - name: made_sla
+      - name: is_made_sla
         description: '{{ doc("made_sla") }}'
 
       - name: task_number
@@ -486,8 +486,6 @@ models:
         description: '{{ doc("sys_user_name") }}'
       - name: problem_resolver_roles
         description: '{{ doc("roles") }}'
-      - name: problem_minutes_to_resolve
-        description: '{{ doc("problem_minutes_to_resolve") }}'
       - name: change_requester_email
         description: '{{ doc("email") }}'
       - name: change_requester_manager_value

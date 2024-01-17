@@ -939,7 +939,7 @@ Information about other incidents that are related to the current issue.
 {% enddocs %}
 
 {% docs problem_related_incidents %} 
-Information about other incidents that are related to the current problem. 
+Number of incidents that are related to the current problem.
 {% enddocs %}
 
 {% docs reopen_count %} 

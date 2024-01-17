@@ -73,7 +73,7 @@ final as (
         knowledge,
         location_link,
         cast(location_value as {{ dbt.type_string() }}) as location_value,
-        made_sla,
+        made_sla as is_made_sla,
         number as task_number,
         opened_at as task_opened_at,
         opened_by_link,

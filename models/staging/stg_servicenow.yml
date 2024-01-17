@@ -152,7 +152,7 @@ models:
       - name: location_value
         description: '{{ doc("location_value") }}'
 
-      - name: made_sla
+      - name: is_made_sla
         description: '{{ doc("made_sla") }}'
 
       - name: task_number
