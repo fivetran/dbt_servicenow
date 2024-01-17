@@ -175,6 +175,9 @@ models:
       - name: task_updated_at
         description: '{{ doc("task_updated_at") }}'
 
+      - name: task_updated_date
+        description: '{{ doc("task_updated_date") }}'
+
       - name: task_effective_number
         description: '{{ doc("task_effective_number") }}'
 
@@ -442,8 +445,6 @@ models:
         description: '{{ doc("roles") }}'
       - name: associated_problem_id
         description: '{{ doc("associated_problem_id") }}'
-      - name: total_incidents_caused_by_problem
-        description: '{{ doc("total_incidents_caused_by_problem") }}'
       - name: problem_confirmer_email
         description: '{{ doc("email") }}'
       - name: problem_confirmer_manager_value
