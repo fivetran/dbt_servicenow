@@ -1507,7 +1507,7 @@ The associated change request with this task; the sys_id from the change request
 {% enddocs %}
 
 {% docs servicenow__activity_summary %}
-Each record represents aggregate task, problem, change, incident, and change request data by varying grains including status, priority, impact, and urgency. 
+Each record represents aggregate task, problem, change, incident, and change request data by varying grains including update date, status, priority, impact, and urgency. 
 {% enddocs %}
 
 {% docs total_incidents_caused_by_problem %}
@@ -1724,4 +1724,12 @@ Name of the relevant business service.
 
 {% docs task_updated_date %}
 The day the task last got updated.
+{% enddocs %}
+
+{% docs unverified %}
+Boolean indicating if the change task is unverified.
+{% enddocs %}
+
+{% docs monitor %}
+Monitor in relation to the cmdb_ci_service.
 {% enddocs %}
