@@ -1,2 +1,2 @@
 sys_id,_fivetran_deleted,_fivetran_synced,active,cost_center_link,cost_center_value,default_assignee_link,default_assignee_value,description,email,exclude_manager,include_members,manager_link,manager_value,name,parent_link,parent_value,roles,source,sys_created_by,sys_created_on,sys_mod_count,sys_updated_by,sys_updated_on,type
-561cc5360f6e33004fbc309c4e767eb8,false,2023-11-06 03:50:57.165000 UTC,true,,,,,,,false,false,,,ATF Service Level Management  Group,,,,,admin,2019-07-13 16:00:26.000000 UTC,1,admin,2019-07-13 16:01:15.000000 UTC,
+561cc5360f6e33004fbc309c4e767eb8,false,2023-11-06 03:50:57.165000,true,,,,,,,false,false,,,ATF Service Level Management  Group,,,,,admin,2019-07-13 16:00:26.000000,1,admin,2019-07-13 16:01:15.000000,
