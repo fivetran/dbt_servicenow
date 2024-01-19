@@ -1122,12 +1122,6 @@ models:
       - name: change_request_start_date
         description: '{{ doc("change_request_start_date") }}'
 
-      - name: std_change_producer_version_link
-        description: '{{ doc("std_change_producer_version_link") }}'
-
-      - name: std_change_producer_version_value
-        description: '{{ doc("std_change_producer_version_value") }}'
-
       - name: change_request_created_at
         description: '{{ doc("created_at") }}'
 
@@ -1152,17 +1146,15 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
-            - problem_task_id
+            - core_company_id
             - source_relation
     columns:
-      - name: problem_task_id
+      - name: core_company_id
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
       - name: source_relation
         description: '{{ doc("source_relation") }}'
-      - name: core_company_id
-        description: '{{ doc("sys_id") }}'
       - name: company_city
         description: '{{ doc("city") }}'
       - name: company_country
@@ -1287,6 +1279,10 @@ models:
         description: '{{ doc("vendor_link") }}'
       - name: vendor_value
         description: '{{ doc("vendor_value") }}'
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+      - name: unverified
+        description: '{{ doc("unverified") }}'
 
   - name: stg_servicenow__cmdb_ci_service
     description: '{{ doc("stg_servicenow__cmdb_ci_service") }}'
@@ -1378,6 +1374,14 @@ models:
         description: '{{ doc("vendor_link") }}'
       - name: vendor_value
         description: '{{ doc("vendor_value") }}'
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+      - name: cost_center_link
+        description: '{{ doc("cost_center_link") }}'
+      - name: cost_center_value
+        description: '{{ doc("cost_center_value") }}'
+      - name: monitor
+        description: '{{ doc("monitor") }}'
 
   - name: stg_servicenow__sys_user_group
     description: '{{ doc("stg_servicenow__sys_user_group") }}'
@@ -1461,7 +1465,8 @@ models:
       - name: sys_user_group_updated_at
         description: '{{ doc("sys_updated_on") }}'
 
-      - name: sys_user_group_type
+      - name: type
         description: '{{ doc("type") }}'
 
-
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
