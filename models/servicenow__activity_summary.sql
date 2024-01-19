@@ -18,7 +18,7 @@ select
     sum(problem_related_incidents) as total_incidents_caused_by_problems,
     count(distinct associated_change_request_id) as total_change_requests,
     count(distinct case when task_closed_at is not null then task_id end) as total_closed_tasks,
-    avg(task_minutes_open_to_close) as average_minutes_open_to_close
+    avg(task_minutes_open_to_close) as average_minutes_open_to_close,
     count(case when is_made_sla = true then 1 end) as total_tasks_made_slas
 
 from ticket_enhanced
