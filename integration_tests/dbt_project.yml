@@ -10,7 +10,7 @@ dispatch:
 
 vars:
   servicenow:
-    servicenow_schema: servicenow_integration_tests_3
+    servicenow_schema: servicenow_integration_tests_4
     servicenow_task_identifier: "task_data"
     servicenow_task_sla_identifier: "task_sla_data"
     servicenow_sys_user_identifier: "sys_user_data"
@@ -20,6 +20,11 @@ vars:
     servicenow_change_task_identifier: "change_task_data"
     servicenow_change_request_identifier: "change_request_data"
     servicenow_core_company_identifier: "core_company_data"
+    servicenow_cmdb_ci_identifier: "cmdb_ci_data"
+    servicenow_cmdb_ci_service_identifier: "cmdb_ci_service_data"
+    servicenow_sys_user_group_identifier: "sys_user_group_data"
+
+
 
 seeds:
   +quote_columns: "{{ true if target.type in ('redshift','postgres') else false }}"
