@@ -24,7 +24,7 @@ The main focus of the package is to transform the core object tables into analyt
     - Renames fields for consistency and standardization. For example, primary keys `sys_id` are renamed to `<table_name>_id`.
     - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
     - Generates a comprehensive data dictionary of your ServiceNow data through the [dbt docs site](https://fivetran.github.io/dbt_servicenow/).
-  - The output models are focused around task Management. 
+  - The output models are focused around task management. 
     - Summarizes task, problem, change, incident, and change request data by varying grains including last updated day, status, priority, impact, and urgency.
     - Enhances each task record with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.
 
