@@ -11,7 +11,7 @@ select
     impact,
     urgency,
     source_relation,
-    count(distinct case when is_task_active = true then task_id end) as total_active_tasks,
+    -- count(distinct case when is_task_active = true then task_id end) as total_active_tasks,
     -- count(distinct case when is_problem_task = true and is_task_active = true then task_id end) as total_active_problem_tasks,
     -- count(distinct case when is_change_task = true and is_task_active = true then task_id end) as total_active_change_tasks,
     count(distinct associated_problem_id) as total_associated_problems, 
