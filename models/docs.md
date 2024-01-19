@@ -70,10 +70,6 @@ Indicates whether the task record has been marked as deleted by the Fivetran con
 Indicates whether the task record has been synchronized by the Fivetran connector.
 {% enddocs %}
 
-{% docs source_relation %}
-Indicates the schema which the field originated. This is especially important when leveraging the union schema feature.
-{% enddocs %}
-
 {% docs active %}
 Flag indicating whether the record is currently active or completed.
 {% enddocs %}

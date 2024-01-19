@@ -14,17 +14,13 @@ fields as (
                 staging_columns=get_core_company_columns()
             )
         }}
-        {{ fivetran_utils.source_relation(
-            union_schema_variable='servicenow_union_schemas', 
-            union_database_variable='servicenow_union_databases') 
-        }}
+
     from base
 ),
 
 final as (
     
     select 
-        source_relation,
         cast(sys_id as {{ dbt.type_string() }}) as core_company_id,
         city as company_city,
         country as company_country,

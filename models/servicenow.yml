@@ -10,9 +10,6 @@ models:
           - unique
           - not_null
 
-      - name: source_relation
-        description: '{{ doc("source_relation") }}'
-
       - name: is_task_active
         description: '{{ doc("is_task_active") }}'
 
@@ -204,9 +201,6 @@ models:
 
       - name: work_start
         description: '{{ doc("work_start") }}'
-
-      - name: source_relation
-        description: '{{ doc("source_relation") }}'
 
       - name: business_duration
         description: '{{ doc("business_duration") }}'
@@ -520,7 +514,6 @@ models:
             - priority
             - impact
             - urgency
-            - source_relation
     columns:
       - name: task_updated_date
         description: '{{ doc("task_updated_date") }}'
@@ -536,9 +529,6 @@ models:
 
       - name: urgency
         description: '{{ doc("urgency") }}'
-
-      - name: source_relation
-        description: '{{ doc("source_relation") }}'
 
       - name: total_active_tasks
         description: '{{ doc("total_active_tasks") }}'

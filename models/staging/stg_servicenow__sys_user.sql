@@ -14,17 +14,13 @@ fields as (
                 staging_columns=get_sys_user_columns()
             )
         }}
-        {{ fivetran_utils.source_relation(
-            union_schema_variable='servicenow_union_schemas', 
-            union_database_variable='servicenow_union_databases') 
-        }}
+
     from base
 ),
 
 final as (
     
     select 
-        source_relation,
         cast(sys_id as {{ dbt.type_string() }}) as user_id,
         cast(sys_created_on as {{ dbt.type_timestamp() }}) as user_created_at,
         cast(sys_updated_on as {{ dbt.type_timestamp() }}) as user_updated_at,

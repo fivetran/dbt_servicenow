@@ -14,17 +14,13 @@ fields as (
                 staging_columns=get_task_columns()
             )
         }}
-        {{ fivetran_utils.source_relation(
-            union_schema_variable='servicenow_union_schemas', 
-            union_database_variable='servicenow_union_databases') 
-        }}
+
     from base
 ),
 
 final as (
     
     select 
-        source_relation,
         cast(sys_id as {{ dbt.type_string() }}) as task_id,
         cast(sys_created_on as {{ dbt.type_timestamp() }}) as task_created_at,
         cast(sys_updated_on as {{ dbt.type_timestamp() }}) as task_updated_at,

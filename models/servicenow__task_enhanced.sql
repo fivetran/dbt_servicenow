@@ -251,8 +251,7 @@ select
   change_request.change_request_start_date,
   change_request.change_request_test_plan,
   change_request.change_request_type,
-  change_request.is_change_request_unauthorized,
-  task.source_relation
+  change_request.is_change_request_unauthorized
 
 from task
 left join core_company

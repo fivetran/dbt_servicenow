@@ -10,7 +10,6 @@ select
     priority,
     impact,
     urgency,
-    source_relation,
     count(distinct case when is_task_active then task_id end) as total_active_tasks,
     count(distinct case when is_problem_task and is_task_active then task_id end) as total_active_problem_tasks,
     count(distinct case when is_change_task and is_task_active then task_id end) as total_active_change_tasks,
@@ -22,4 +21,4 @@ select
     count(case when is_made_sla then 1 end) as total_tasks_made_slas
 
 from ticket_enhanced
-group by 1,2,3,4,5,6
+group by 1,2,3,4,5
