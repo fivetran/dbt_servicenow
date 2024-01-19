@@ -73,14 +73,14 @@ select
   task.task_state,
   task.task_number,
   task.task_order,
-  case when problem_task.problem_task_id is not null 
+  cast( (case when problem_task.problem_task_id is not null 
     then true 
     else false 
-  end as is_problem_task,
-  case when change_task.change_task_id is not null 
+  end) as {{ dbt.type_boolean() }}) as is_problem_task,
+  cast( (case when change_task.change_task_id is not null 
     then true 
     else false 
-  end as is_change_task,
+  end) as {{ dbt.type_boolean() }}) as is_change_task,
   task.task_created_at,
   task.sys_created_by,
   task.cmdb_ci_link,
