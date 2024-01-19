@@ -32,6 +32,7 @@ seeds:
       sys_created_on: "timestamp"
       resolved_at: "timestamp"
       closed_at: "timestamp"
+      market_cap: "{{ 'FLOAT64' if target.type == 'bigquery' else 'float' }}"
       confirmed_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       first_reported_by_task_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       requested_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
