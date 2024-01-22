@@ -28,7 +28,7 @@ The main focus of the package is to transform the core object tables into analyt
     - Summarizes task, problem, change, incident, and change request data by varying grains including last updated day, status, priority, impact, and urgency.
     - Enhances each task record with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.
 
-The output models are focused around the task management feature of Service Now.
+The output models are focused around the task management feature of ServiceNow.
 
 <!--section="servicenow_model"-->
 The following table provides a detailed list of all models materialized within this package by default. 
