@@ -149,6 +149,12 @@ A small team of analytics engineers at Fivetran develops these dbt packages. How
 
 We highly encourage and welcome contributions to this package. Check out [this dbt Discourse article](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) on the best workflow for contributing to a package!
 
+## Opinionated Modelling Decisions
+
+The ServiceNow Connector provides thousands of tables. We developed our data models based on the tables with highest usage across Fivetran customers. 
+
+For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
+
 # 🏪 Are there any resources available?
 - If you have questions or want to reach out for help, please refer to the [GitHub Issue](https://github.com/fivetran/dbt_servicenow/issues/new/choose) section to find the right avenue of support for you.
 - If you would like to provide feedback to the dbt package team at Fivetran or would like to request a new dbt package, fill out our [Feedback Form](https://www.surveymonkey.com/r/DQ7K7WW).
