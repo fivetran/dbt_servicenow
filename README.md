@@ -153,7 +153,7 @@ We highly encourage and welcome contributions to this package. Check out [this d
 
 The ServiceNow Connector provides thousands of tables. We developed our data models based on the tables with highest usage across Fivetran customers. 
 
-For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
+Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
 
 # 🏪 Are there any resources available?
 - If you have questions or want to reach out for help, please refer to the [GitHub Issue](https://github.com/fivetran/dbt_servicenow/issues/new/choose) section to find the right avenue of support for you.
