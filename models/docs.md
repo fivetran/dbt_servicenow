@@ -370,8 +370,16 @@ Date and time when the record was initially created.
 Date and time when the record was initially created.
 {% enddocs %}
 
+{% docs created_date %}
+Date the record was created.
+{% enddocs %}
+
 {% docs updated_at %}
 Date and time when the record was last updated.
+{% enddocs %}
+
+{% docs updated_date %}
+Date the record was last updated.
 {% enddocs %}
 
 {% docs change_task_created_at %}
@@ -1067,7 +1075,7 @@ The type or category of the task associated with the problem or issue.
 {% enddocs %}
 
 {% docs problem_value %} 
-The unique identifier or name associated with the problem record linked to the issue. 
+The unique identifier or name associated with the problem linked to the record. 
 {% enddocs %}
 
 {% docs started_at %} 
@@ -1363,11 +1371,11 @@ The reason or rationale behind the changes associated with the current record, p
 {% enddocs %}
 
 {% docs requested_by_date %} 
-The date when the changes associated with the current record were requested or initiated. 
+The date the change is requested for.
 {% enddocs %}
 
 {% docs change_requested_by_date %} 
-The date when the changes associated with the current record were requested or initiated. 
+The date the change is requested for.
 {% enddocs %}
 
 {% docs requested_by_link %} 
