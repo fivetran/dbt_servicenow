@@ -1,3 +1,8 @@
+# dbt_servicenow v0.2.0
+
+to be completed
+
+
 # dbt_servicenow v0.1.0
 This is the initial release of the ServiceNow dbt package!
 

@@ -1,5 +1,5 @@
 name: 'servicenow_integration_tests'
-version: '0.1.0'
+version: '0.2.0'
 config-version: 2
 
 profile: 'integration_tests'
@@ -10,7 +10,7 @@ dispatch:
 
 vars:
   servicenow:
-    servicenow_schema: servicenow_integration_tests_445
+    servicenow_schema: servicenow_integration_tests_8
     servicenow_task_identifier: "task_data"
     servicenow_task_sla_identifier: "task_sla_data"
     servicenow_sys_user_identifier: "sys_user_data"
