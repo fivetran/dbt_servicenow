@@ -151,8 +151,6 @@ We highly encourage and welcome contributions to this package. Check out [this d
 
 ## Opinionated Modelling Decisions
 
-The ServiceNow Connector provides thousands of tables. We developed our data models based on the tables with highest usage across Fivetran customers. 
-
 Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
 
 # 🏪 Are there any resources available?
