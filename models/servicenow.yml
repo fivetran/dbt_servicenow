@@ -567,3 +567,201 @@ models:
       - name: total_tasks_made_slas
         description: '{{ doc("total_tasks_made_slas") }}'
 
+  - name: servicenow__problem_enhanced
+    description: '{{ doc("servicenow__problem_enhanced") }}'
+    columns:
+      - name: problem_id
+        description: '{{ doc("sys_id") }}'
+
+      - name: problem_subcategory
+        description: '{{ doc("problem_subcategory") }}'
+
+      - name: problem_category
+        description: '{{ doc("problem_category") }}'
+
+      - name: problem_state
+        description: '{{ doc("problem_state") }}'
+
+      - name: problem_created_at
+        description: '{{ doc("problem_created_at") }}'
+
+      - name: problem_updated_at
+        description: '{{ doc("problem_updated_at") }}'
+
+      - name: problem_confirmed_at
+        description: '{{ doc("problem_confirmed_at") }}'
+
+      - name: problem_confirmed_by_link
+        description: '{{ doc("problem_confirmed_by_link") }}'
+
+      - name: problem_confirmed_by_value
+        description: '{{ doc("problem_confirmed_by_value") }}'
+
+      - name: problem_fix_at
+        description: '{{ doc("problem_fix_at") }}'
+
+      - name: problem_fix_by_link
+        description: '{{ doc("problem_fix_by_link") }}'
+
+      - name: problem_fix_by_value
+        description: '{{ doc("problem_fix_by_value") }}'
+
+      - name: problem_resolution_code
+        description: '{{ doc("problem_resolution_code") }}'
+
+      - name: problem_resolved_at
+        description: '{{ doc("problem_resolved_at") }}'
+
+      - name: resolved_by_link
+        description: '{{ doc("resolved_by_link") }}'
+
+      - name: problem_resolved_by_value
+        description: '{{ doc("problem_resolved_by_value") }}'
+
+      - name: problem_first_reported_by_task_link
+        description: '{{ doc("problem_first_reported_by_task_link") }}'
+
+      - name: problem_first_reported_by_task_value
+        description: '{{ doc("problem_first_reported_by_task_value") }}'
+
+      - name: fix_communicated_at
+        description: '{{ doc("fix_communicated_at") }}'
+
+      - name: fix_communicated_by_link
+        description: '{{ doc("fix_communicated_by_link") }}'
+
+      - name: fix_communicated_by_value
+        description: '{{ doc("fix_communicated_by_value") }}'
+
+      - name: reopen_count
+        description: '{{ doc("reopen_count") }}'
+
+      - name: reopened_at
+        description: '{{ doc("reopened_at") }}'
+
+      - name: reopened_by_link
+        description: '{{ doc("reopened_by_link") }}'
+
+      - name: reopened_by_value
+        description: '{{ doc("reopened_by_value") }}'
+
+      - name: cause_notes
+        description: '{{ doc("cause_notes") }}'
+
+      - name: duplicate_of_link
+        description: '{{ doc("duplicate_of_link") }}'
+
+      - name: duplicate_of_value
+        description: '{{ doc("duplicate_of_value") }}'
+
+      - name: problem_fix_notes
+        description: '{{ doc("problem_fix_notes") }}'
+
+      - name: is_known_error
+        description: '{{ doc("is_known_error") }}'
+
+      - name: is_major_problem
+        description: '{{ doc("is_major_problem") }}'
+
+      - name: problem_related_incidents
+        description: '{{ doc("problem_related_incidents") }}'
+
+      - name: review_outcome
+        description: '{{ doc("review_outcome") }}'
+
+      - name: rfc_link
+        description: '{{ doc("rfc_link") }}'
+
+      - name: rfc_value
+        description: '{{ doc("rfc_value") }}'
+
+      - name: workaround
+        description: '{{ doc("workaround") }}'
+
+      - name: workaround_applied
+        description: '{{ doc("workaround_applied") }}'
+
+      - name: workaround_communicated_at
+        description: '{{ doc("workaround_communicated_at") }}'
+
+      - name: workaround_communicated_by_link
+        description: '{{ doc("workaround_communicated_by_link") }}'
+
+      - name: workaround_communicated_by_value
+        description: '{{ doc("workaround_communicated_by_value") }}'
+
+      - name: problem_minutes_created_to_fix
+        description: '{{ doc("problem_minutes_created_to_fix") }}'
+
+      - name: problem_minutes_created_to_resolved
+        description: '{{ doc("problem_minutes_created_to_resolved") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: total_related_tasks
+        description: '{{ doc("total_related_tasks") }}'
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
+      - name: problem_confirmer_email
+        description: '{{ doc("email") }}'
+      - name: problem_confirmer_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_confirmer_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_confirmer_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_confirmer_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_fixer_email
+        description: '{{ doc("email") }}'
+      - name: problem_fixer_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_fixer_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_fixer_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_fixer_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_resolver_email
+        description: '{{ doc("email") }}'
+      - name: problem_resolver_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_resolver_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_resolver_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_resolver_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_fix_communicator_email
+        description: '{{ doc("email") }}'
+      - name: problem_fix_communicator_manager_value
+        description: '{{ doc("") }}'
+      - name: problem_fix_communicator_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_fix_communicator_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_fix_communicator_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_reopener_email
+        description: '{{ doc("email") }}'
+      - name: problem_reopener_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_reopener_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_reopener_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_reopener_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_workaround_communicator_email
+        description: '{{ doc("email") }}'
+      - name: problem_workaround_communicator_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_workaround_communicator_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_workaround_communicator_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_workaround_communicator_roles
+        description: '{{ doc("roles") }}'

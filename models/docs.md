@@ -1741,3 +1741,16 @@ Boolean indicating if the change task is unverified.
 {% docs monitor %}
 Monitor in relation to the cmdb_ci_service.
 {% enddocs %}
+
+
+{% docs servicenow__problem_enhanced %}
+Each record represents a problem with additional information about users who have interacted with it, pertinent task data, and various timestamps.
+{% enddocs %}
+
+{% docs servicenow__change_request_enhanced %}
+Each record represents
+{% enddocs %}
+
+{% docs servicenow__incident_enhanced %}
+Each record represents
+{% enddocs %}
