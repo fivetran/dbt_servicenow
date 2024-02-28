@@ -1,7 +1,11 @@
 # dbt_servicenow v0.2.0
+[PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:
 
-to be completed
+## Feature Updates
+- Adds the following new models:s
 
+## Under The Hood
+- Updates field names upstream to specify what type of entity it pertains to (_incident_*)
 
 # dbt_servicenow v0.1.0
 This is the initial release of the ServiceNow dbt package!

@@ -16,8 +16,8 @@ problem_task as (
 
 sys_user as (
     
-  select *
-  from {{ ref('stg_servicenow__sys_user') }}
+    select *
+    from {{ ref('stg_servicenow__sys_user') }}
 ),
 
 problem_enhanced as (
@@ -109,20 +109,20 @@ problem_enhanced as (
         and problem.source_relation = problem_confirmer.source_relation
     left join sys_user problem_fixer
         on problem.problem_fix_by_value = problem_fixer.user_id
-        on problem.source_relation = problem_fixer.source_relation
+        and problem.source_relation = problem_fixer.source_relation
     left join sys_user problem_resolver
         on problem.problem_resolved_by_value = problem_resolver.user_id
-        on problem.source_relation = problem_resolver.source_relation
+        and problem.source_relation = problem_resolver.source_relation
     left join sys_user problem_fix_communicator
         on problem.fix_communicated_by_value = problem_fix_communicator.user_id
-        on problem.source_relation = problem_fix_communicator.source_relation
+        and problem.source_relation = problem_fix_communicator.source_relation
     left join sys_user problem_reopener
         on problem.reopened_by_value = problem_reopener.user_id
-        on problem.source_relation = problem_reopener.source_relation
+        and problem.source_relation = problem_reopener.source_relation
     left join sys_user problem_workaround_communicator
         on problem.workaround_communicated_by_value = problem_workaround_communicator.user_id
-        on problem.source_relation = problem_workaround_communicator.source_relation
-    where not _fivetran_deleted
+        and problem.source_relation = problem_workaround_communicator.source_relation
+    where not problem._fivetran_deleted
 )
 
 select *

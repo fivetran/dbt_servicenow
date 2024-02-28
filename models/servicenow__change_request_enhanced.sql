@@ -14,6 +14,12 @@ change_task as (
     group by 1,2
 ),
 
+sys_user as (
+    
+  select *
+  from {{ ref('stg_servicenow__sys_user') }}
+),
+
 change_request_enhanced as (
     select
         change_request.change_request_id,
@@ -27,6 +33,11 @@ change_request_enhanced as (
         change_request.change_requested_by_date,
         change_request.change_requested_by_link,
         change_request.change_requested_by_value,
+        change_requestor.email as change_requestor_email,
+        change_requestor.manager_value as change_requestor_manager_value,
+        change_requestor.department_value as change_requestor_department_value,
+        change_requestor.sys_user_name as change_requestor_name,
+        change_requestor.roles as change_requestor_roles,
         change_request.change_request_review_date,
         change_request.change_request_review_status,
         change_request.review_comments,
@@ -59,9 +70,9 @@ change_request_enhanced as (
         change_request.cab_recommendation,
         change_request.is_cab_required,
         change_request._fivetran_synced,
-        {{ dbt.datediff("change_request.change_request_created_date","change_request.change_request_review_date", 'day') }} as change_request_days_created_to_reviewed,
         {{ dbt.datediff("change_request.change_request_created_date","change_request.change_request_start_date", 'day') }} as change_request_days_created_to_start,
-        {{ dbt.datediff("change_request.change_requested_by_date","change_request.change_request_start_date", 'minute') }} as change_request_minutes_requested_by_to_start,
+        {{ dbt.datediff("change_request.change_requested_by_date","change_request.change_request_start_date", 'day') }} as change_request_days_requested_by_to_start,
+        {{ dbt.datediff("change_request.change_request_created_date","change_request.change_request_review_date", 'day') }} as change_request_days_created_to_reviewed,
         change_task.total_tasks as total_related_tasks,
         change_request.source_relation
 
@@ -69,7 +80,10 @@ change_request_enhanced as (
     left join change_task
         on change_request.change_request_id = change_task.change_request_value
         and change_request.source_relation = change_task.source_relation
-    where not _fivetran_deleted
+    left join sys_user change_requestor
+        on change_request.change_requested_by_value = change_requestor.user_id
+        and change_request.source_relation = change_requestor.source_relation
+    where not change_request._fivetran_deleted
 )
 
 select *

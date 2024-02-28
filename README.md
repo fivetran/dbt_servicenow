@@ -38,6 +38,9 @@ The following table provides a detailed list of all models materialized within t
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [servicenow__activity_summary](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__activity_summary)  | Each record represents aggregate task, problem, change, incident, and change request data by varying grains including update date, status, priority, impact, and urgency.    |
 | [servicenow__task_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__task_enhanced)  | Each record represents a task with additional information about its associated problem, incident, or change request. Additionally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.  |
+| [servicenow__problem_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__problem_enhanced)  | Each record represents a problem with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.    |
+| [servicenow__incident_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__incident_enhanced)  | Each record represents an incident with additional information about users who have interacted with it and relevant timestamps.    |
+| [servicenow__change_request_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__change_request_enhanced)  | Each record represents a change request with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.    |
 <!--section-end-->
 
 # 🎯 How do I use the dbt package?
@@ -62,7 +65,7 @@ Include the following ServiceNow package version in your `packages.yml` file:
 ```yml
 packages:
   - package: fivetran/servicenow
-    version: [">=0.1.0", "<0.2.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=0.2.0", "<0.3.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 ## Step 3: Define database and schema variables

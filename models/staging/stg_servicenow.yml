@@ -859,10 +859,10 @@ models:
       - name: caller_id_value
         description: '{{ doc("caller_id_value") }}'
 
-      - name: category
+      - name: incident_category
         description: '{{ doc("category") }}'
 
-      - name: cause
+      - name: incident_cause
         description: '{{ doc("cause") }}'
 
       - name: caused_by_link
@@ -913,10 +913,10 @@ models:
       - name: reopened_by_value
         description: '{{ doc("reopened_by_value") }}'
 
-      - name: reopened_time
+      - name: incident_reopened_time
         description: '{{ doc("reopened_time") }}'
 
-      - name: resolved_at
+      - name: incident_resolved_at
         description: '{{ doc("resolved_at") }}'
 
       - name: resolved_by_link
@@ -931,10 +931,10 @@ models:
       - name: rfc_value
         description: '{{ doc("rfc_value") }}'
 
-      - name: severity
+      - name: incident_severity
         description: '{{ doc("severity") }}'
 
-      - name: subcategory
+      - name: incident_subcategory
         description: '{{ doc("subcategory") }}'
 
       - name: incident_created_at

@@ -1744,13 +1744,42 @@ Monitor in relation to the cmdb_ci_service.
 
 
 {% docs servicenow__problem_enhanced %}
-Each record represents a problem with additional information about users who have interacted with it, pertinent task data, and various timestamps.
+Each record represents a problem with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.
+{% enddocs %}
+
+{% docs problem_minutes_created_to_fix %}
+The minutes lapsed from when the problem was created to when it was fixed.
+{% enddocs %}
+
+{% docs problem_minutes_created_to_resolved %}
+The minutes lapsed from when the problem was created to when it was resolved.
+{% enddocs %}
+
+{% docs total_related_tasks %}
+The total number of tasks tied to this record.
 {% enddocs %}
 
 {% docs servicenow__change_request_enhanced %}
-Each record represents
+Each record represents a change request with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.
 {% enddocs %}
 
+{% docs change_request_days_created_to_reviewed %}
+The days lapsed from when the change request was created to when it was reviewed
+{% enddocs %}
+
+{% docs change_request_days_created_to_start %}
+The days lapsed from when the change request was created to when it was started
+{% enddocs %}
+
+{% docs change_request_days_requested_by_to_start %}
+The days lapsed from when the change request was requested to when it was started
+{% enddocs %}
+
+
 {% docs servicenow__incident_enhanced %}
-Each record represents
+Each record represents an incident with additional information about users who have interacted with it and relevant timestamps.
+{% enddocs %}
+
+{% docs incident_minutes_created_to_resolved %}
+Minutes elapsed from when incident was created to resolved.
 {% enddocs %}
