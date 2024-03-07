@@ -1007,3 +1007,11 @@ sources:
           - name: type
             description: '{{ doc("type") }}'
 
+      - name: sys_user_role
+        identifier: '{{ var("servicenow_sys_user_role_identifier", "sys_user_role") }}'
+      
+      - name: sys_user_has_role
+        identifier: '{{ var("servicenow_sys_user_has_role_identifier", "sys_user_has_role") }}'
+
+      - name: sys_user_grmember
+        identifier: '{{ var("servicenow_sys_user_grmember_identifier", "sys_user_grmember") }}'

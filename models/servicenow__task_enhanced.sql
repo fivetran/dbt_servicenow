@@ -262,22 +262,22 @@ left join problem_task
   on task.task_id = problem_task.problem_task_id
   and task.source_relation = problem_task.source_relation
 left join sys_user problem_task_starter
-  on problem_task.started_by_value = problem_task_starter.user_id
+  on problem_task.started_by_value = problem_task_starter.sys_user_id
   and problem_task.source_relation = problem_task_starter.source_relation
 left join problem
   on problem_task.problem_value = problem.problem_id
   and problem_task.source_relation = problem.source_relation
 left join sys_user problem_confirmer
-  on problem.problem_confirmed_by_value = problem_confirmer.user_id
+  on problem.problem_confirmed_by_value = problem_confirmer.sys_user_id
   and problem.source_relation = problem_confirmer.source_relation
 left join sys_user problem_reporter
-  on problem.problem_first_reported_by_task_value = problem_reporter.user_id
+  on problem.problem_first_reported_by_task_value = problem_reporter.sys_user_id
   and problem.source_relation = problem_reporter.source_relation
 left join sys_user problem_fixer
-  on problem.problem_fix_by_value = problem_fixer.user_id
+  on problem.problem_fix_by_value = problem_fixer.sys_user_id
   and problem.source_relation = problem_fixer.source_relation
 left join sys_user problem_resolver
-  on problem.problem_resolved_by_value = problem_resolver.user_id
+  on problem.problem_resolved_by_value = problem_resolver.sys_user_id
   and problem.source_relation = problem_resolver.source_relation
 left join change_task
   on task.task_id = change_task.change_task_id
@@ -286,22 +286,22 @@ left join change_request
   on change_task.change_request_value = change_request.change_request_id
   and change_task.source_relation = change_request.source_relation
 left join sys_user change_requester
-  on change_request.change_requested_by_value = change_requester.user_id
+  on change_request.change_requested_by_value = change_requester.sys_user_id
   and change_request.source_relation = change_requester.source_relation
 left join sys_user assignee
-  on task.assigned_to_value = assignee.user_id
+  on task.assigned_to_value = assignee.sys_user_id
   and task.source_relation = assignee.source_relation
 left join sys_user closer 
-  on task.closed_by_value = closer.user_id
+  on task.closed_by_value = closer.sys_user_id
   and task.source_relation = closer.source_relation
 left join sys_user opener
-  on task.opened_by_value = opener.user_id
+  on task.opened_by_value = opener.sys_user_id
   and task.source_relation = opener.source_relation
 left join sys_user creator
-  on task.sys_created_by = creator.user_id
+  on task.sys_created_by = creator.sys_user_id
   and task.source_relation = creator.source_relation
 left join sys_user updater
-  on task.sys_updated_by = updater.user_id
+  on task.sys_updated_by = updater.sys_user_id
   and task.source_relation = updater.source_relation
 left join sys_user_group assignment_group
   on task.assignment_group_value = assignment_group.sys_user_group_id

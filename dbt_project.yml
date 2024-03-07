@@ -27,4 +27,7 @@ vars:
     cmdb_ci: "{{ source('servicenow','cmdb_ci') }}"
     cmdb_ci_service: "{{ source('servicenow','cmdb_ci_service') }}"
     sys_user_group: "{{ source('servicenow','sys_user_group') }}"
+    sys_user_role: "{{ source('servicenow','sys_user_role') }}"
+    sys_user_has_role: "{{ source('servicenow','sys_user_has_role') }}"
+    sys_user_grmember: "{{ source('servicenow','sys_user_grmember') }}"
 
