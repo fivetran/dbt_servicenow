@@ -1408,7 +1408,7 @@ models:
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
-      - name: active
+      - name: is_active
         description: '{{ doc("active") }}'
 
       - name: cost_center_link

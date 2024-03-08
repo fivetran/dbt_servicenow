@@ -30,7 +30,7 @@ final as (
         cast(sys_updated_on as {{ dbt.type_timestamp() }}) as sys_user_group_updated_at,
         _fivetran_deleted,
         _fivetran_synced,
-        active,
+        active as is_active,
         cost_center_link,
         cast(cost_center_value as {{ dbt.type_string() }}) as cost_center_value,
         default_assignee_link,
