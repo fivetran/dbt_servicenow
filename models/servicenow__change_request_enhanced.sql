@@ -16,8 +16,8 @@ change_task as (
 
 sys_user as (
     
-  select *
-  from {{ ref('stg_servicenow__sys_user') }}
+    select *
+    from {{ ref('stg_servicenow__sys_user') }}
 ),
 
 change_request_enhanced as (
@@ -81,7 +81,7 @@ change_request_enhanced as (
         on change_request.change_request_id = change_task.change_request_value
         and change_request.source_relation = change_task.source_relation
     left join sys_user change_requestor
-        on change_request.change_requested_by_value = change_requestor.user_id
+        on change_request.change_requested_by_value = change_requestor.sys_user_id
         and change_request.source_relation = change_requestor.source_relation
     where not change_request._fivetran_deleted
 )

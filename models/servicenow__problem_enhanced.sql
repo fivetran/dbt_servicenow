@@ -105,22 +105,22 @@ problem_enhanced as (
         on problem.problem_id = problem_task.problem_value
         and problem.source_relation = problem_task.source_relation
     left join sys_user problem_confirmer
-        on problem.problem_confirmed_by_value = problem_confirmer.user_id
+        on problem.problem_confirmed_by_value = problem_confirmer.sys_user_id
         and problem.source_relation = problem_confirmer.source_relation
     left join sys_user problem_fixer
-        on problem.problem_fix_by_value = problem_fixer.user_id
+        on problem.problem_fix_by_value = problem_fixer.sys_user_id
         and problem.source_relation = problem_fixer.source_relation
     left join sys_user problem_resolver
-        on problem.problem_resolved_by_value = problem_resolver.user_id
+        on problem.problem_resolved_by_value = problem_resolver.sys_user_id
         and problem.source_relation = problem_resolver.source_relation
     left join sys_user problem_fix_communicator
-        on problem.fix_communicated_by_value = problem_fix_communicator.user_id
+        on problem.fix_communicated_by_value = problem_fix_communicator.sys_user_id
         and problem.source_relation = problem_fix_communicator.source_relation
     left join sys_user problem_reopener
-        on problem.reopened_by_value = problem_reopener.user_id
+        on problem.reopened_by_value = problem_reopener.sys_user_id
         and problem.source_relation = problem_reopener.source_relation
     left join sys_user problem_workaround_communicator
-        on problem.workaround_communicated_by_value = problem_workaround_communicator.user_id
+        on problem.workaround_communicated_by_value = problem_workaround_communicator.sys_user_id
         and problem.source_relation = problem_workaround_communicator.source_relation
     where not problem._fivetran_deleted
 )

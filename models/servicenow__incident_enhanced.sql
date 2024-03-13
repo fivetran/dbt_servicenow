@@ -61,10 +61,10 @@ incident_enhanced as (
         incident.source_relation
     from incident
     left join sys_user reopener
-        on incident.reopened_by_value = reopener.user_id
+        on incident.reopened_by_value = reopener.sys_user_id
         and incident.source_relation = reopener.source_relation
     left join sys_user resolver
-        on incident.resolved_by_value = resolver.user_id
+        on incident.resolved_by_value = resolver.sys_user_id
         and incident.source_relation = resolver.source_relation
     where not incident._fivetran_deleted
 )
