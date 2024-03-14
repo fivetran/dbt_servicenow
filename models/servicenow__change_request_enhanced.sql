@@ -37,7 +37,7 @@ change_request_enhanced as (
         change_requestor.manager_value as change_requestor_manager_value,
         change_requestor.department_value as change_requestor_department_value,
         change_requestor.sys_user_name as change_requestor_name,
-        change_requestor.roles as change_requestor_roles,
+        change_requestor.sys_user_roles as change_requestor_roles,
         change_request.change_request_review_date,
         change_request.change_request_review_status,
         change_request.review_comments,
