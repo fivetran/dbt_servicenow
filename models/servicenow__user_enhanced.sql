@@ -40,7 +40,7 @@ user_enhanced as (
         user.manager_value,
         user.mobile_phone,
         user.phone,
-        user.roles,
+        user.sys_user_roles,
         user.schedule_link,
         user.schedule_value,
         user.source,

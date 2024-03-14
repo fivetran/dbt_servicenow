@@ -80,7 +80,7 @@ final as (
         phone,
         photo,
         preferred_language,
-        roles,
+        roles as sys_user_roles,
         schedule_link,
         cast(schedule_value as {{ dbt.type_string() }}) as schedule_value,
         source,

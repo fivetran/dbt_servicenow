@@ -544,7 +544,7 @@ models:
       - name: preferred_language
         description: '{{ doc("preferred_language") }}'
 
-      - name: roles
+      - name: sys_user_roles
         description: '{{ doc("roles") }}'
 
       - name: schedule_link
@@ -1423,7 +1423,7 @@ models:
       - name: default_assignee_value
         description: '{{ doc("default_assignee_value") }}'
 
-      - name: description
+      - name: sys_user_group_description
         description: '{{ doc("description") }}'
 
       - name: email
@@ -1450,7 +1450,7 @@ models:
       - name: parent_value
         description: '{{ doc("sys_user_group_parent_value") }}'
 
-      - name: roles
+      - name: sys_user_group_roles
         description: '{{ doc("roles") }}'
 
       - name: source

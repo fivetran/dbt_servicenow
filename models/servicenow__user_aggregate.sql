@@ -36,7 +36,10 @@ user_aggregates as (
         user.sys_user_id,
         user.source_relation,
         {{ dbt.listagg(measure="user_grmember.sys_user_group_id") }} as sys_user_group_ids,
-        {{ dbt.listagg(measure="user_has_role.sys_user_role_id") }} as sys_user_role_ids
+        {{ dbt.listagg(measure="user_has_role.sys_user_role_id") }} as sys_user_role_ids,
+        {{ dbt.listagg(measure="user_role.sys_user_role_name") }} as sys_user_role_names,
+        {{ dbt.listagg(measure="user_role.includes_roles") }} as included_roles,
+        {{ dbt.listagg(measure="user_group.sys_user_group_roles") }} as sys_user_group_roles
 
 
     from user
