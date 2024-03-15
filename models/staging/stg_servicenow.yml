@@ -383,7 +383,7 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
-            - user_id
+            - sys_user_id
             - source_relation
     columns:
       - name: sys_user_id
