@@ -386,7 +386,7 @@ models:
             - user_id
             - source_relation
     columns:
-      - name: user_id
+      - name: sys_user_id
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
@@ -1479,9 +1479,16 @@ models:
 
   - name: stg_servicenow__sys_user_role
     description: '{{ doc("stg_servicenow__sys_user_role") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_role_id
+            - source_relation
     columns:
       - name: sys_user_role_id
         description: '{{ doc("sys_id") }}'
+        tests:
+          - not_null
 
       - name: sys_user_role_name
         description: '{{ doc("name") }}'
@@ -1530,9 +1537,16 @@ models:
 
   - name: stg_servicenow__sys_user_has_role
     description: '{{ doc("stg_servicenow__sys_user_has_role") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_has_role_id
+            - source_relation
     columns:
       - name: sys_user_has_role_id
         description: '{{ doc("sys_id") }}'
+        tests:
+          - not_null
 
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
@@ -1599,9 +1613,16 @@ models:
 
   - name: stg_servicenow__sys_user_grmember
     description: '{{ doc("stg_servicenow__sys_user_grmember") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_grmember_id
+            - source_relation
     columns:
       - name: sys_user_grmember_id
         description: '{{ doc("sys_id") }}'
+        tests:
+          - not_null
 
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
