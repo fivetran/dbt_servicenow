@@ -1099,7 +1099,19 @@ models:
             - source_relation
     columns:
       - name: sys_user_id
-        description: '{{ doc("sys_id")}}'
+        description: '{{ doc("sys_id") }}'
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+      - name: sys_user_group_ids
+        description: '{{ doc("sys_user_group_ids") }}'
+      - name: sys_user_role_ids
+        description: '{{ doc("sys_user_role_ids") }}'
+      - name: sys_user_role_names
+        description: '{{ doc("sys_user_role_names") }}'
+      - name: included_roles
+        description: '{{ doc("included_roles") }}'
+      - name: sys_user_group_roles
+        description: '{{ doc("sys_user_group_roles") }}'
 
   - name: servicenow__user_enhanced
     description: '{{ doc("servicenow__user_enhanced") }}'
@@ -1111,3 +1123,91 @@ models:
     columns:
       - name: sys_user_id
         description: '{{ doc("sys_id")}}'
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+      - name: sys_user_group_ids
+        description: '{{ doc("sys_user_group_ids") }}'
+      - name: sys_user_role_ids
+        description: '{{ doc("sys_user_role_ids") }}'
+      - name: sys_user_role_names
+        description: '{{ doc("sys_user_role_names") }}'
+      - name: included_roles
+        description: '{{ doc("included_roles") }}'
+      - name: sys_user_group_roles
+        description: '{{ doc("sys_user_group_roles") }}'
+      - name: user_created_at
+        description: '{{ doc("user_created_at") }}'
+      - name: user_updated_at
+        description: '{{ doc("user_updated_at") }}'
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+      - name: accumulated_roles
+        description: '{{ doc("accumulated_roles") }}'
+      - name: first_name
+        description: '{{ doc("first_name") }}'
+      - name: last_name
+        description: '{{ doc("last_name") }}'
+      - name: sys_user_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: is_active
+        description: '{{ doc("is_active") }}'
+      - name: company_link
+        description: '{{ doc("company_link") }}'
+      - name: company_value
+        description: '{{ doc("company_value") }}'
+      - name: cost_center_link
+        description: '{{ doc("cost_center_link") }}'
+      - name: cost_center_value
+        description: '{{ doc("cost_center_value") }}'
+      - name: department_link
+        description: '{{ doc("department_link") }}'
+      - name: department_value
+        description: '{{ doc("department_value") }}'
+      - name: email
+        description: '{{ doc("email") }}'
+      - name: employee_number
+        description: '{{ doc("employee_number") }}'
+      - name: gender
+        description: '{{ doc("gender") }}'
+      - name: hashed_user_id
+        description: '{{ doc("hashed_user_id") }}'
+      - name: last_password
+        description: '{{ doc("last_password") }}'
+      - name: ldap_server_link
+        description: '{{ doc("ldap_server_link") }}'
+      - name: ldap_server_value
+        description: '{{ doc("ldap_server_value") }}'
+      - name: manager_link
+        description: '{{ doc("manager_link") }}'
+      - name: manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: mobile_phone
+        description: '{{ doc("mobile_phone") }}'
+      - name: phone
+        description: '{{ doc("phone") }}'
+      - name: sys_user_roles
+        description: '{{ doc("roles") }}'
+      - name: schedule_link
+        description: '{{ doc("schedule_link") }}'
+      - name: schedule_value
+        description: '{{ doc("schedule_value") }}'
+      - name: source
+        description: '{{ doc("source") }}'
+      - name: state
+        description: '{{ doc("state") }}'
+      - name: sys_class_name
+        description: '{{ doc("sys_class_name") }}'
+      - name: sys_domain_link
+        description: '{{ doc("sys_domain_link") }}'
+      - name: sys_domain_path
+        description: '{{ doc("sys_domain_path") }}'
+      - name: sys_domain_value
+        description: '{{ doc("sys_domain_value") }}'
+      - name: time_format
+        description: '{{ doc("time_format") }}'
+      - name: time_zone
+        description: '{{ doc("time_zone") }}'
+      - name: user_name
+        description: '{{ doc("user_name") }}'
+      - name: user_password
+        description: '{{ doc("user_password") }}'

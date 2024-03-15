@@ -1911,3 +1911,23 @@ Each record represents a user with their associated groups and roles.
 {% docs servicenow__user_enhanced %}
 Each record represents a user with their associated groups and roles, in addition to additional user info from the sys_user table.
 {% enddocs %}
+
+{% docs sys_user_group_ids %}
+List of associated user group ids.
+{% enddocs %}
+
+{% docs sys_user_role_ids %}
+List of associated user roles ids.
+{% enddocs %}
+
+{% docs sys_user_role_names %}
+Names of associated user roles.
+{% enddocs %}
+
+{% docs included_roles %}
+List of included roles.
+{% enddocs %}
+
+{% docs sys_user_group_roles %}
+List of associated user group roles.
+{% enddocs %}
