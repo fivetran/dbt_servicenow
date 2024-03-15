@@ -3,10 +3,18 @@
 [PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:
 
 ## Feature Updates
-- Adds the following new models:s
+- Adds the following new models:
 
+
+| **Model**                 | **Description**                                                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| [servicenow__problem_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__problem_enhanced)  | Each record represents a problem with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.    |
+| [servicenow__incident_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__incident_enhanced)  | Each record represents an incident with additional information about users who have interacted with it and relevant timestamps.    |
+| [servicenow__change_request_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__change_request_enhanced)  | Each record represents a change request with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.    |
+| [servicenow__user_aggregated](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_aggregated)  | Each record represents a user with their associated groups and roles.    |
+| [servicenow__user_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_enhanced)  | Each record represents a user with their associated groups and roles, in addition to additional user info from the sys_user table.    |
 ## Under The Hood
-- Updates field names upstream to specify what type of entity it pertains to (_incident_*)
+- Updates field names upstream to specify what type of entity it pertains to (example: _incident_*)
 
 # dbt_servicenow v0.1.1
 [PR #7](https://github.com/fivetran/dbt_servicenow/pull/7) includes the following updates:
