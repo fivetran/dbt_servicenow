@@ -1,6 +1,6 @@
 {{ config(enabled=var('servicenow__using_roles', False)) }}
 
-with user as (
+with sys_user as (
     
     select *
     from {{ ref('stg_servicenow__sys_user') }}
@@ -33,8 +33,8 @@ user_group as (
 user_aggregates as (
 
     select
-        user.sys_user_id,
-        user.source_relation,
+        sys_user.sys_user_id,
+        sys_user.source_relation,
         {{ dbt.listagg(measure="user_grmember.sys_user_group_id") }} as sys_user_group_ids,
         {{ dbt.listagg(measure="user_has_role.sys_user_role_id") }} as sys_user_role_ids,
         {{ dbt.listagg(measure="user_role.sys_user_role_name") }} as sys_user_role_names,
@@ -42,16 +42,16 @@ user_aggregates as (
         {{ dbt.listagg(measure="user_group.sys_user_group_roles") }} as sys_user_group_roles
 
 
-    from user
+    from sys_user
     left join user_grmember
-        on user.sys_user_id = user_grmember.sys_user_id
-        and user.source_relation = user_grmember.source_relation
+        on sys_user.sys_user_id = user_grmember.sys_user_id
+        and sys_user.source_relation = user_grmember.source_relation
     left join user_group
         on user_grmember.sys_user_group_id = user_group.sys_user_group_id
         and user_grmember.source_relation = user_group.source_relation
     left join user_has_role
-        on user.sys_user_id = user_has_role.sys_user_id
-        and user.source_relation = user_has_role.source_relation
+        on sys_user.sys_user_id = user_has_role.sys_user_id
+        and sys_user.source_relation = user_has_role.source_relation
     left join user_role
         on user_has_role.sys_user_role_id = user_role.sys_user_role_id
         and user_has_role.source_relation = user_role.source_relation
