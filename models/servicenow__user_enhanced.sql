@@ -3,7 +3,7 @@
 with user_aggregates as (
 
     select *
-    from {{ ref('servicenow__user_aggregate')}}
+    from {{ ref('servicenow__user_aggregated')}}
 ),
 
 user as (
