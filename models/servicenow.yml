@@ -569,6 +569,11 @@ models:
 
   - name: servicenow__problem_enhanced
     description: '{{ doc("servicenow__problem_enhanced") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - problem_id
+            - source_relation
     columns:
       - name: problem_id
         description: '{{ doc("sys_id") }}'
@@ -769,6 +774,11 @@ models:
 
   - name: servicenow__change_request_enhanced
     description: '{{ doc("servicenow__change_request_enhanced") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - change_request_id
+            - source_relation
     columns:
 
       - name: change_request_id
@@ -932,6 +942,11 @@ models:
 
   - name: servicenow__incident_enhanced
     description: '{{ doc("servicenow__incident_enhanced") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - incident_id
+            - source_relation
     columns:
       - name: incident_id
         description: '{{ doc("sys_id")}}'
@@ -1073,4 +1088,26 @@ models:
       
       - name: source_relation
         description: '{{ doc("source_relation")}}'
-      
+
+
+  - name: servicenow__user_aggregated
+    description: '{{ doc("servicenow__user_aggregated") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_id
+            - source_relation
+    columns:
+      - name: sys_user_id
+        description: '{{ doc("sys_id")}}'
+
+  - name: servicenow__user_enhanced
+    description: '{{ doc("servicenow__user_enhanced") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_id
+            - source_relation
+    columns:
+      - name: sys_user_id
+        description: '{{ doc("sys_id")}}'

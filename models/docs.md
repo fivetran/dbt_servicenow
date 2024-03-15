@@ -1903,3 +1903,11 @@ Link to the group in the sys_user_group table.
 {% docs group_value %}
 The sys_id associated with the group in the sys_user_group table.
 {% enddocs %}
+
+{% docs servicenow__user_aggregated %}
+Each record represents a user with their associated groups and roles.
+{% enddocs %}
+
+{% docs servicenow__user_enhanced %}
+Each record represents a user with their associated groups and roles, in addition to additional user info from the sys_user table.
+{% enddocs %}
