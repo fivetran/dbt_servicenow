@@ -27,9 +27,9 @@ final as (
     select 
         source_relation, 
         cast(sys_id as {{ dbt.type_string() }}) as sys_user_has_role_id,
-        cast(sys_created_on as {{ dbt.type_timestamp() }}) as user_created_at,
+        cast(sys_created_on as {{ dbt.type_timestamp() }}) as sys_user_has_role_created_at,
         sys_created_by,
-        cast(sys_updated_on as {{ dbt.type_timestamp() }}) as user_updated_at,
+        cast(sys_updated_on as {{ dbt.type_timestamp() }}) as sys_user_has_role_updated_at,
         sys_updated_by,
         user_link,
         cast(user_value as {{ dbt.type_string() }}) as sys_user_id, 
@@ -47,7 +47,7 @@ final as (
         inh_map,
         inherited,
         state as sys_user_has_role_state,
-        sys_mod_count,
+        sys_mod_count
     from fields
 )
 

@@ -1477,4 +1477,161 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-  
+  - name: stg_servicenow__sys_user_role
+    description: '{{ doc("stg_servicenow__sys_user_role") }}'
+    columns:
+      - name: sys_user_role_id
+        description: '{{ doc("sys_id") }}'
+
+      - name: sys_user_role_name
+        description: '{{ doc("name") }}'
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: assignable_by_link
+        description: '{{ doc("assignable_by_link") }}'
+
+      - name: assignable_by_value
+        description: '{{ doc("assignable_by_value") }}'
+
+      - name: can_delegate
+        description: '{{ doc("can_delegate") }}'
+
+      - name: sys_user_role_description
+        description: '{{ doc("description") }}'
+
+      - name: is_elevated_privilege
+        description: '{{ doc("elevated_privilege") }}'
+
+      - name: is_grantable
+        description: '{{ doc("grantable") }}'
+
+      - name: includes_roles
+        description: '{{ doc("includes_roles") }}'
+
+      - name: requires_subscription
+        description: '{{ doc("requires_subscription") }}'
+
+      - name: scoped_admin
+        description: '{{ doc("scoped_admin") }}'
+
+      - name: suffix
+        description: '{{ doc("suffix") }}'
+
+      - name: sys_created_on
+        description: '{{ doc("sys_created_on") }}'
+
+      - name: sys_updated_on
+        description: '{{ doc("sys_updated_on") }}'
+
+  - name: stg_servicenow__sys_user_has_role
+    description: '{{ doc("stg_servicenow__sys_user_has_role") }}'
+    columns:
+      - name: sys_user_has_role_id
+        description: '{{ doc("sys_id") }}'
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: granted_by_link
+        description: '{{ doc("granted_by_link") }}'
+
+      - name: granted_by_value
+        description: '{{ doc("granted_by_value") }}'
+
+      - name: included_in_role_instance_link
+        description: '{{ doc("included_in_role_instance_link") }}'
+
+      - name: included_in_role_instance_value
+        description: '{{ doc("included_in_role_instance_value") }}'
+
+      - name: included_in_role_link
+        description: '{{ doc("included_in_role_link") }}'
+
+      - name: included_in_role_value
+        description: '{{ doc("included_in_role_value") }}'
+
+      - name: inh_count
+        description: '{{ doc("inh_count") }}'
+
+      - name: inh_map
+        description: '{{ doc("inh_map") }}'
+
+      - name: inherited
+        description: '{{ doc("inherited") }}'
+
+      - name: role_link
+        description: '{{ doc("role_link") }}'
+
+      - name: sys_user_role_id
+        description: '{{ doc("role_value") }}'
+
+      - name: sys_user_has_role_state
+        description: '{{ doc("state") }}'
+
+      - name: sys_created_by
+        description: '{{ doc("sys_created_by") }}'
+
+      - name: sys_user_has_role_created_at
+        description: '{{ doc("sys_created_on") }}'
+
+      - name: sys_mod_count
+        description: '{{ doc("sys_mod_count") }}'
+
+      - name: sys_updated_by
+        description: '{{ doc("sys_updated_by") }}'
+
+      - name: sys_user_has_role_updated_at
+        description: '{{ doc("sys_updated_on") }}'
+
+      - name: user_link
+        description: '{{ doc("user_link") }}'
+
+      - name: sys_user_id
+        description: '{{ doc("user_value") }}'
+
+  - name: stg_servicenow__sys_user_grmember
+    description: '{{ doc("stg_servicenow__sys_user_grmember") }}'
+    columns:
+      - name: sys_user_grmember_id
+        description: '{{ doc("sys_id") }}'
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: group_link
+        description: '{{ doc("group_link") }}'
+
+      - name: sys_user_group_id
+        description: '{{ doc("group_value") }}'
+
+      - name: sys_created_by
+        description: '{{ doc("sys_created_by") }}'
+
+      - name: sys_created_on
+        description: '{{ doc("sys_created_on") }}'
+
+      - name: sys_mod_count
+        description: '{{ doc("sys_mod_count") }}'
+
+      - name: sys_updated_by
+        description: '{{ doc("sys_updated_by") }}'
+
+      - name: sys_updated_on
+        description: '{{ doc("sys_updated_on") }}'
+
+      - name: user_link
+        description: '{{ doc("user_link") }}'
+
+      - name: sys_user_id
+        description: '{{ doc("user_value") }}'
