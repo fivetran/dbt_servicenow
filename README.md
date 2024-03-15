@@ -94,7 +94,17 @@ Please be aware that the native `source.yml` connection set up in the package wi
 
 To connect your multiple schema/database sources to the package models, follow the steps outlined in the [Union Data Defined Sources Configuration](https://github.com/fivetran/dbt_fivetran_utils/tree/releases/v0.4.latest#union_data-source) section of the Fivetran Utils documentation for the union_data macro. This will ensure a proper configuration and correct visualization of connections in the DAG.
 
-## (Optional) Step 4: Additional configurations
+## (Optional) Step 4: Populating the User Models
+Our user grain models are disabled by default because not everyone syncs the underlying tables: `sys_user_role`, `sys_user_has_role`, and `sys_user_grmember`. If these tables do exist in your schema, set this following variable `servicenow__using_roles` to True in order to populate the user models `servicenow__user_aggregated` and `servicenow__user_enhanced`. 
+
+```yml
+# dbt_project.yml
+
+vars:
+    servicenow__using_roles: True
+```
+
+## (Optional) Step 5: Additional configurations
 
 ### Changing the Build Schema
 By default this package will build the ServiceNow staging models within a schema titled (<target_schema> + `_stg_servicenow`) and the ServiceNow final models within a schema titled (<target_schema> + `_servicenow`) in your target database. If this is not where you would like your modeled qualtrics data to be written to, add the following configuration to your `dbt_project.yml` file:
@@ -123,7 +133,7 @@ vars:
 </details>
 
 
-## (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
+## (Optional) Step 6: Orchestrate your models with Fivetran Transformations for dbt Core™
 <details><summary>Expand for details</summary>
 <br>
     

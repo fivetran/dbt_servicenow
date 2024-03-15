@@ -1,3 +1,5 @@
+{{ config(enabled=var('servicenow__using_roles', False)) }}
+
 with user_aggregates as (
 
     select *
