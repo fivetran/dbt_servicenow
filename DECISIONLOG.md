@@ -1,3 +1,13 @@
+## Relationships between user, group, and role tables in ServiceNow
+
+The Users table (`sys_user`) is linked to Roles (`sys_user_role`) through a many-to-many relationship via the `sys_user_has_role` table. This intermediary table stores records that connect each User with one or more Roles. When a Role is assigned directly to a User, a corresponding entry is created in the `sys_user_has_role` table. Conversely, when a Role is removed from a User, the corresponding entry is deleted from the table.
+
+In other words, `sys_user` stores all user records. `sys_user_role` stores all roles. These are related via `sys_user_has_role`, which maps records of users and roles.
+
+Similarly, Groups (`sys_user_group`) are associated with Users through another many-to-many relationship via the `sys_user_grmember` table. Each entry in `sys_user_grmember` stores records connecting each User and specific Group, establishing the group memberships for each User.
+
+In other words, sys_user_group stores all group records. Again, `sys_user` stores all user records. These are related via `sys_user_grmember`, which maps records of users and groups.
+
 ## Relationships between Task, Problem, Incident, and Change Request tables in ServiceNow
 
 Tasks, Problems, Incidents, and Change Requests are related in ServiceNow. To add clarity to the logic in our models, below are summaries of each table and additional information regarding the relationship between the tables.

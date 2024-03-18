@@ -46,6 +46,11 @@ The following table provides a detailed list of all models materialized within t
 | [servicenow__user_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_enhanced)  | Each record represents a user with their associated groups and roles, in addition to additional user info from the sys_user table.    |
 <!--section-end-->
 
+
+## Opinionated Modelling Decisions
+
+Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
+
 # 🎯 How do I use the dbt package?
 
 ## Step 1: Prerequisites
@@ -165,9 +170,6 @@ A small team of analytics engineers at Fivetran develops these dbt packages. How
 
 We highly encourage and welcome contributions to this package. Check out [this dbt Discourse article](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) on the best workflow for contributing to a package!
 
-## Opinionated Modelling Decisions
-
-Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
 
 # 🏪 Are there any resources available?
 - If you have questions or want to reach out for help, please refer to the [GitHub Issue](https://github.com/fivetran/dbt_servicenow/issues/new/choose) section to find the right avenue of support for you.
