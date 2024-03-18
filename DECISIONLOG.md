@@ -1,4 +1,4 @@
-## Relationships between user, group, and role tables in ServiceNow
+## Relationships between User, Group, and Role related tables in ServiceNow
 
 The Users table (`sys_user`) is linked to Roles (`sys_user_role`) through a many-to-many relationship via the `sys_user_has_role` table. This intermediary table stores records that connect each User with one or more Roles. When a Role is assigned directly to a User, a corresponding entry is created in the `sys_user_has_role` table. Conversely, when a Role is removed from a User, the corresponding entry is deleted from the table.
 
