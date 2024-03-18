@@ -35,8 +35,8 @@ final as (
         calendar_stc,
         caller_id_link,
         cast(caller_id_value as {{ dbt.type_string() }}) as caller_id_value,
-        category,
-        cause,
+        category as incident_category,
+        cause as incident_cause,
         caused_by_link,
         cast(caused_by_value as {{ dbt.type_string() }}) as caused_by_value,
         child_incidents,
@@ -53,14 +53,14 @@ final as (
         reopen_count,
         reopened_by_link,
         cast(reopened_by_value as {{ dbt.type_string() }}) as reopened_by_value,
-        reopened_time,
-        resolved_at,
+        reopened_time as incident_reopened_time,
+        resolved_at as incident_resolved_at,
         resolved_by_link,
         cast(resolved_by_value as {{ dbt.type_string() }}) as resolved_by_value,
         rfc_link,
         cast(rfc_value as {{ dbt.type_string() }}) as rfc_value,
-        severity,
-        subcategory
+        severity as incident_severity,
+        subcategory as incident_subcategory
     from fields
 )
 
