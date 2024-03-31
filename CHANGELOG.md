@@ -13,8 +13,12 @@
 | [servicenow__change_request_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__change_request_enhanced)  | Each record represents a change request with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.    |
 | [servicenow__user_aggregated](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_aggregated)  | Each record represents a user with their associated groups and roles.    |
 | [servicenow__user_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_enhanced)  | Each record represents a user with their associated groups and roles, in addition to additional user info from the sys_user table.    |
+
+- In addition, adds the following upstream tables: `stg_servicenow__sys_user_grmember_base`, `stg_servicenow__sys_user_has_role_base` , `stg_servicenow__sys_user_role_base`
+
 ## Under The Hood
 - Updates field names upstream to specify what type of entity it pertains to (example: _incident_*)
+- Introduces the `servicenow__using_roles` to enable the user role/group-based tables, which are disabled by default.
 
 # dbt_servicenow v0.1.1
 [PR #7](https://github.com/fivetran/dbt_servicenow/pull/7) includes the following updates:
