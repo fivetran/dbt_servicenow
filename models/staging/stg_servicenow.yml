@@ -17,9 +17,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -288,9 +285,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -393,9 +387,6 @@ models:
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -626,9 +617,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -765,9 +753,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -837,9 +822,6 @@ models:
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -959,9 +941,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -1010,9 +989,6 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -1215,8 +1191,6 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
       - name: attributes
@@ -1302,8 +1276,6 @@ models:
         description: '{{ doc("sys_id") }}'
         tests: 
           - not_null
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
       - name: attributes
@@ -1402,9 +1374,6 @@ models:
         tests:
           - not_null
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -1426,7 +1395,7 @@ models:
       - name: sys_user_group_description
         description: '{{ doc("description") }}'
 
-      - name: email
+      - name: sys_user_group_email
         description: '{{ doc("email") }}'
 
       - name: exclude_manager
@@ -1493,9 +1462,6 @@ models:
       - name: sys_user_role_name
         description: '{{ doc("name") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -1529,10 +1495,10 @@ models:
       - name: suffix
         description: '{{ doc("suffix") }}'
 
-      - name: sys_created_on
+      - name: sys_user_role_created_at
         description: '{{ doc("sys_created_on") }}'
 
-      - name: sys_updated_on
+      - name: sys_user_role_updated_at
         description: '{{ doc("sys_updated_on") }}'
 
   - name: stg_servicenow__sys_user_has_role
@@ -1547,9 +1513,6 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -1624,9 +1587,6 @@ models:
         tests:
           - not_null
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -1639,7 +1599,7 @@ models:
       - name: sys_created_by
         description: '{{ doc("sys_created_by") }}'
 
-      - name: sys_created_on
+      - name: sys_user_grmember_created_at
         description: '{{ doc("sys_created_on") }}'
 
       - name: sys_mod_count
@@ -1648,7 +1608,7 @@ models:
       - name: sys_updated_by
         description: '{{ doc("sys_updated_by") }}'
 
-      - name: sys_updated_on
+      - name: sys_user_grmember_updated_at
         description: '{{ doc("sys_updated_on") }}'
 
       - name: user_link

@@ -27,9 +27,9 @@ final as (
     select 
         source_relation, 
         cast(sys_id as {{ dbt.type_string() }}) as sys_user_grmember_id,
-        sys_created_on,
+        cast(sys_created_on as {{ dbt.type_timestamp() }}) as sys_user_grmember_created_at,
+        cast(sys_updated_on as {{ dbt.type_timestamp() }}) as sys_user_grmember_updated_at,
         sys_created_by,
-        sys_updated_on,
         sys_updated_by,
         _fivetran_deleted,
         _fivetran_synced,
@@ -43,3 +43,4 @@ final as (
 
 select *
 from final
+where not _fivetran_deleted

@@ -32,17 +32,17 @@ final as (
         _fivetran_synced,
         category as problem_category,
         cause_notes,
-        confirmed_at as problem_confirmed_at,
+        cast(confirmed_at as {{ dbt.type_timestamp() }}) as problem_confirmed_at,
         confirmed_by_link as problem_confirmed_by_link,
         cast(confirmed_by_value as {{ dbt.type_string() }}) as problem_confirmed_by_value,
         duplicate_of_link,
         cast(duplicate_of_value as {{ dbt.type_string() }}) as duplicate_of_value,
         first_reported_by_task_link as problem_first_reported_by_task_link,
         first_reported_by_task_value as problem_first_reported_by_task_value,
-        fix_at as problem_fix_at,
+        cast(fix_at as {{ dbt.type_timestamp() }}) as problem_fix_at,
         fix_by_link as problem_fix_by_link,
         cast(fix_by_value as {{ dbt.type_string() }}) as problem_fix_by_value,
-        fix_communicated_at,
+        cast(fix_communicated_at as {{ dbt.type_timestamp() }}) as fix_communicated_at,
         fix_communicated_by_link,
         cast(fix_communicated_by_value as {{ dbt.type_string() }}) as fix_communicated_by_value,
         fix_notes as problem_fix_notes,
@@ -51,11 +51,11 @@ final as (
         problem_state,
         related_incidents as problem_related_incidents,
         reopen_count,
-        reopened_at,
+        cast(reopened_at as {{ dbt.type_timestamp() }}) as reopened_at,
         reopened_by_link,
         cast(reopened_by_value as {{ dbt.type_string() }}) as reopened_by_value,
         resolution_code as problem_resolution_code,
-        resolved_at as problem_resolved_at,
+        cast(resolved_at as {{ dbt.type_timestamp() }}) as problem_resolved_at,
         resolved_by_link,
         cast(resolved_by_value as {{ dbt.type_string() }}) as problem_resolved_by_value,
         review_outcome,
@@ -64,7 +64,7 @@ final as (
         subcategory as problem_subcategory,
         workaround,
         workaround_applied,
-        workaround_communicated_at,
+        cast(workaround_communicated_at as {{ dbt.type_timestamp() }}) as workaround_communicated_at,
         workaround_communicated_by_link,
         cast(workaround_communicated_by_value as {{ dbt.type_string() }}) as workaround_communicated_by_value 
     from fields
@@ -72,3 +72,4 @@ final as (
 
 select *
 from final
+where not _fivetran_deleted

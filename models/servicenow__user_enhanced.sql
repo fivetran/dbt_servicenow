@@ -19,7 +19,6 @@ user_enhanced as (
         user_aggregates.*,
         sys_user.user_created_at,
         sys_user.user_updated_at,
-        sys_user._fivetran_deleted,
         sys_user.accumulated_roles,
         sys_user.first_name,
         sys_user.last_name,

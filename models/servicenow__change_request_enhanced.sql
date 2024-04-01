@@ -83,7 +83,6 @@ change_request_enhanced as (
     left join sys_user change_requestor
         on change_request.change_requested_by_value = change_requestor.sys_user_id
         and change_request.source_relation = change_requestor.source_relation
-    where not change_request._fivetran_deleted
 )
 
 select *

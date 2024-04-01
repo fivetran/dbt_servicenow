@@ -75,3 +75,4 @@ final as (
 
 select *
 from final
+where not _fivetran_deleted

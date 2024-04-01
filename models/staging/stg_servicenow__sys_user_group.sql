@@ -36,7 +36,7 @@ final as (
         default_assignee_link,
         cast(default_assignee_value as {{ dbt.type_string() }}) as default_assignee_value,
         description as sys_user_group_description,
-        email,
+        email as sys_user_group_email,
         exclude_manager,
         include_members,
         manager_link,
@@ -55,3 +55,4 @@ final as (
 
 select *
 from final
+where not _fivetran_deleted

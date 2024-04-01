@@ -1011,6 +1011,8 @@ sources:
       - name: sys_user_role
         identifier: '{{ var("servicenow_sys_user_role_identifier", "sys_user_role") }}'
         description: '{{ doc("sys_user_role") }}'
+        config:
+          enabled: "{{ var('servicenow__using_roles', true) }}"
         columns:
           - name: sys_id
             description: '{{ doc("sys_id") }}'
@@ -1048,6 +1050,8 @@ sources:
       - name: sys_user_has_role
         identifier: '{{ var("servicenow_sys_user_has_role_identifier", "sys_user_has_role") }}'
         description: '{{ doc("sys_user_has_role") }}'
+        config:
+          enabled: "{{ var('servicenow__using_roles', true) }}"
         columns:
           - name: sys_id
             description: '{{ doc("sys_id") }}'
@@ -1097,6 +1101,8 @@ sources:
       - name: sys_user_grmember
         identifier: '{{ var("servicenow_sys_user_grmember_identifier", "sys_user_grmember") }}'
         description: '{{ doc("sys_user_grmember") }}'
+        config:
+          enabled: "{{ var('servicenow__using_roles', true) }}"
         columns:
           - name: sys_id
             description: '{{ doc("sys_id") }}'

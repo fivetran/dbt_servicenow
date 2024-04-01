@@ -60,7 +60,7 @@ final as (
         home_phone,
         internal_integration_user,
         introduction,
-        last_login as last_login_day_date,
+        cast ({{ dbt.date_trunc('day', 'last_login') }} as date)  as last_login_day_date,
         last_login_device,
         last_login_time as last_login_at,
         last_name,
@@ -103,3 +103,4 @@ final as (
 
 select *
 from final
+where not _fivetran_deleted

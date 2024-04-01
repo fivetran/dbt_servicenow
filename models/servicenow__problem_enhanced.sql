@@ -122,7 +122,6 @@ problem_enhanced as (
     left join sys_user problem_workaround_communicator
         on problem.workaround_communicated_by_value = problem_workaround_communicator.sys_user_id
         and problem.source_relation = problem_workaround_communicator.source_relation
-    where not problem._fivetran_deleted
 )
 
 select *

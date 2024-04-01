@@ -54,7 +54,7 @@ final as (
         reopened_by_link,
         cast(reopened_by_value as {{ dbt.type_string() }}) as reopened_by_value,
         reopened_time as incident_reopened_time,
-        resolved_at as incident_resolved_at,
+        cast(resolved_at as {{ dbt.type_timestamp() }}) as incident_resolved_at,
         resolved_by_link,
         cast(resolved_by_value as {{ dbt.type_string() }}) as resolved_by_value,
         rfc_link,
@@ -66,3 +66,4 @@ final as (
 
 select *
 from final
+where not _fivetran_deleted

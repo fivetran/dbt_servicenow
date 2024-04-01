@@ -29,8 +29,8 @@ final as (
         cast(sys_id as {{ dbt.type_string() }}) as sys_user_role_id,
         name as sys_user_role_name,
         description as sys_user_role_description,
-        sys_created_on,
-        sys_updated_on
+        cast(sys_created_on as {{ dbt.type_timestamp() }}) as sys_user_role_created_at,
+        cast(sys_updated_on as {{ dbt.type_timestamp() }}) as sys_user_role_updated_at,
         _fivetran_deleted,
         _fivetran_synced,
         assignable_by_link,
@@ -47,3 +47,4 @@ final as (
 
 select *
 from final
+where not _fivetran_deleted

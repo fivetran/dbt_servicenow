@@ -64,7 +64,7 @@ final as (
         delivery_task_link,
         cast(delivery_task_value as {{ dbt.type_string() }}) as delivery_task_value,
         description as task_description,
-        due_date as task_due_date_at,
+        cast ({{ dbt.date_trunc('day', 'due_date') }} as date)  as task_due_date_at,
         escalation,
         expected_start,
         follow_up as task_follow_up_at,
@@ -116,3 +116,4 @@ final as (
 
 select *
 from final
+where not _fivetran_deleted
