@@ -62,8 +62,8 @@ final as (
         severity as incident_severity,
         subcategory as incident_subcategory
     from fields
+    where not _fivetran_deleted
 )
 
 select *
 from final
-where not _fivetran_deleted

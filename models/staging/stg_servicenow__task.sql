@@ -112,8 +112,8 @@ final as (
         work_notes_list,
         work_start
     from fields
+    where not _fivetran_deleted
 )
 
 select *
 from final
-where not _fivetran_deleted

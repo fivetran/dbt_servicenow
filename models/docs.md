@@ -1135,7 +1135,7 @@ The name or identifier of the record or entity that caused or triggered the issu
 {% enddocs %}
 
 {% docs child_incidents %} 
-Information about other incidents that are identified as child incidents linked to the current incident. 
+The number of incidents that are identified as child incidents linked to the current incident. 
 {% enddocs %}
 
 {% docs hold_reason %} 

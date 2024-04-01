@@ -99,8 +99,8 @@ final as (
         web_service_access_only,
         zip
     from fields
+    where not _fivetran_deleted
 )
 
 select *
 from final
-where not _fivetran_deleted

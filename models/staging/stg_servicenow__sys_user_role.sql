@@ -43,8 +43,8 @@ final as (
         scoped_admin,
         suffix
     from fields
+    where not _fivetran_deleted
 )
 
 select *
 from final
-where not _fivetran_deleted

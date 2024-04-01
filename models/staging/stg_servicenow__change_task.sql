@@ -40,8 +40,8 @@ final as (
         planned_end_date as change_task_planned_end_date,
         planned_start_date as change_task_planned_start_date
     from fields
+    where not _fivetran_deleted
 )
 
 select *
 from final
-where not _fivetran_deleted

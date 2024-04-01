@@ -57,8 +57,8 @@ final as (
         time_left,
         timezone
     from fields
+    where not _fivetran_deleted
 )
 
 select *
 from final
-where not _fivetran_deleted

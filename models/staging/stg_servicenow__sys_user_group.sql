@@ -51,8 +51,8 @@ final as (
         sys_updated_by,
         type
     from fields
+    where not _fivetran_deleted
 )
 
 select *
 from final
-where not _fivetran_deleted

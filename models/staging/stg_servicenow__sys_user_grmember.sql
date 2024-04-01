@@ -39,8 +39,8 @@ final as (
         user_link,
         cast(user_value as {{dbt.type_string() }}) as sys_user_id
     from fields
+    where not _fivetran_deleted
 )
 
 select *
 from final
-where not _fivetran_deleted

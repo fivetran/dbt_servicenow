@@ -43,7 +43,7 @@ incident_enhanced as (
         incident.incident_cause,
         incident.caused_by_link,
         incident.caused_by_value,
-        incident.child_incidents,
+        coalesce(incident.child_incidents,0) as child_incidents,
         incident.close_code,
         incident.hold_reason,
         incident.notify,

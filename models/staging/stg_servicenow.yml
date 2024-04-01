@@ -1501,6 +1501,9 @@ models:
       - name: sys_user_role_updated_at
         description: '{{ doc("sys_updated_on") }}'
 
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
   - name: stg_servicenow__sys_user_has_role
     description: '{{ doc("stg_servicenow__sys_user_has_role") }}'
     tests:
@@ -1573,6 +1576,10 @@ models:
 
       - name: sys_user_id
         description: '{{ doc("user_value") }}'
+        
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
 
   - name: stg_servicenow__sys_user_grmember
     description: '{{ doc("stg_servicenow__sys_user_grmember") }}'
@@ -1616,3 +1623,7 @@ models:
 
       - name: sys_user_id
         description: '{{ doc("user_value") }}'
+        
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
