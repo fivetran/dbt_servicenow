@@ -33,6 +33,7 @@ seeds:
   servicenow_integration_tests:
     +column_types:
       confirmed_at: "timestamp"
+      fix_communicated_at: "timestamp"
       due_date: "timestamp"
       group_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       role_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
