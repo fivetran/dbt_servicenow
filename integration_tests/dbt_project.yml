@@ -32,6 +32,8 @@ seeds:
   +quote_columns: "{{ true if target.type in ('redshift','postgres') else false }}"
   servicenow_integration_tests:
     +column_types:
+      confirmed_at: "timestamp"
+      due_date: "timestamp"
       group_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       role_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       user_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
