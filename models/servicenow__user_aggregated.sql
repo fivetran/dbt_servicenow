@@ -35,9 +35,9 @@ user_aggregates as (
     select
         sys_user.sys_user_id,
         sys_user.source_relation,
-        {{ dbt.listagg(measure="user_grmember.sys_user_group_id") }} as sys_user_group_ids,
-        {{ dbt.listagg(measure="user_has_role.sys_user_role_id") }} as sys_user_role_ids,
-        {{ dbt.listagg(measure="user_role.sys_user_role_name") }} as sys_user_role_names,
+        {{ fivetran_utils.string_agg("user_grmember.sys_user_group_id", "'\\n'") }} as sys_user_group_ids,
+        {{ fivetran_utils.string_agg("user_has_role.sys_user_role_id", "'\\n'") }} as sys_user_role_ids,
+        {{ fivetran_utils.string_agg("user_role.sys_user_role_name", "'\\n'") }} as sys_user_role_names,
         {{ fivetran_utils.string_agg("distinct user_role.includes_roles", "'\\n'") }} as included_roles,
         {{ fivetran_utils.string_agg("distinct user_group.sys_user_group_roles", "'\\n'") }} as sys_user_group_roles
 

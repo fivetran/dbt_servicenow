@@ -16,6 +16,9 @@
 
 - In addition, adds the following upstream tables: `stg_servicenow__sys_user_grmember_base`, `stg_servicenow__sys_user_has_role_base` , `stg_servicenow__sys_user_role_base`
 
+## 🚨 Breaking Changes
+- Records where `_fivetran_deleted` is marked true have been removed.
+
 ## Under The Hood
 - Updates field names upstream to specify what type of entity it pertains to (example: _incident_*)
 - Introduces the `servicenow__using_roles` to enable the user role/group-based tables, which are disabled by default.
