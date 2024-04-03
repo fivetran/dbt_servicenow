@@ -70,9 +70,9 @@ change_request_enhanced as (
         change_request.cab_recommendation,
         change_request.is_cab_required,
         change_request._fivetran_synced,
-        {{ dbt.datediff("change_request.change_request_created_date","change_request.change_request_start_date", 'day') }} as change_request_days_created_to_start,
-        {{ dbt.datediff("change_request.change_requested_by_date","change_request.change_request_start_date", 'day') }} as change_request_days_requested_by_to_start,
-        {{ dbt.datediff("change_request.change_request_created_date","change_request.change_request_review_date", 'day') }} as change_request_days_created_to_reviewed,
+        {{ dbt.datediff("cast(change_request.change_request_created_date as " ~ dbt.type_timestamp() ~ " ) ", "cast(change_request.change_request_start_date as " ~ dbt.type_timestamp() ~ " ) ", 'day') }} as change_request_days_created_to_start,
+        {{ dbt.datediff("cast(change_request.change_requested_by_date as " ~ dbt.type_timestamp() ~ " ) " , "cast(change_request.change_request_start_date as " ~ dbt.type_timestamp() ~ " ) ", 'day') }} as change_request_days_requested_by_to_start, 
+        {{ dbt.datediff("cast(change_request.change_request_created_date as " ~ dbt.type_timestamp() ~ " ) ", "cast(change_request.change_request_review_date as " ~ dbt.type_timestamp() ~ " ) ", 'day') }} as change_request_days_created_to_reviewed,
         change_task.total_tasks as total_related_tasks,
         change_request.source_relation
 

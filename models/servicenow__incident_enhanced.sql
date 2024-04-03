@@ -56,7 +56,7 @@ incident_enhanced as (
         incident.reopen_count,
         incident.rfc_link,
         incident.rfc_value,
-        {{ dbt.datediff("incident_created_at","incident_resolved_at", 'minute') }} as incident_minutes_created_to_resolved,
+        {{ dbt.datediff("cast(incident_created_at as " ~ dbt.type_timestamp() ~ " ) ", "cast(incident_resolved_at as " ~ dbt.type_timestamp() ~ " ) ", 'minute') }} as incident_minutes_created_to_resolved,
         incident._fivetran_synced,
         incident.source_relation
     from incident

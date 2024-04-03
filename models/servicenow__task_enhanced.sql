@@ -115,7 +115,7 @@ select
   assignee.sys_user_name as assignee_name,
   assignee.sys_user_roles as assignee_roles,
   task.task_closed_at,
-  {{ dbt.datediff("task.task_opened_at", "task.task_closed_at", 'minute') }} as task_minutes_open_to_close,
+  {{ dbt.datediff("cast(task.task_opened_at as " ~ dbt.type_timestamp() ~ " ) ", "cast(task.task_closed_at as " ~ dbt.type_timestamp() ~ " ) ", 'minute') }} as task_minutes_open_to_close,
   task.closed_by_link,
   task.closed_by_value,
   closer.email as closer_email,

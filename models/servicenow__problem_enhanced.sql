@@ -94,8 +94,8 @@ problem_enhanced as (
         problem_workaround_communicator.department_value as problem_workaround_communicator_department_value,
         problem_workaround_communicator.sys_user_name as problem_workaround_communicator_name,
         problem_workaround_communicator.sys_user_roles as problem_workaround_communicator_roles,
-        {{ dbt.datediff("problem.problem_created_at", "problem.problem_fix_at", 'minute') }} as problem_minutes_created_to_fix,
-        {{ dbt.datediff("problem.problem_created_at", "problem.problem_resolved_at", 'minute') }} as problem_minutes_created_to_resolved,
+        {{ dbt.datediff("cast(problem.problem_created_at as " ~ dbt.type_timestamp() ~  " ) ", "cast(problem.problem_fix_at as " ~ dbt.type_timestamp() ~ " ) ", 'minute') }} as problem_minutes_created_to_fix,
+        {{ dbt.datediff("cast(problem.problem_created_at as " ~ dbt.type_timestamp() ~ " ) ", "cast(problem.problem_resolved_at as " ~ dbt.type_timestamp() ~ " ) ", 'minute') }} as problem_minutes_created_to_resolved,
         problem._fivetran_synced,
         problem_task.total_tasks as total_related_tasks,
         problem.source_relation
