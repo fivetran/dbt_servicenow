@@ -101,7 +101,7 @@ user_aggregates as (
         on user_has_role.sys_user_role_id = user_role.sys_user_role_id
         and user_has_role.source_relation = user_role.source_relation
 
-    group by sys_user_id, source_relation, count_distinct_sys_user_group_ids, count_distinct_sys_user_role_ids, count_distinct_sys_user_role_names, count_distinct_included_roles, count_distinct_sys_user_group_roles
+    group by sys_user.sys_user_id, sys_user.source_relation, count_distinct_sys_user_group_ids, count_distinct_sys_user_role_ids, count_distinct_sys_user_role_names, count_distinct_included_roles, count_distinct_sys_user_group_roles
 )
 
 select * 
