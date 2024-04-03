@@ -99,7 +99,7 @@ final as (
         web_service_access_only,
         zip
     from fields
-    where not _fivetran_deleted
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

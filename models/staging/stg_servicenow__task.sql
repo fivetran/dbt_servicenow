@@ -112,7 +112,7 @@ final as (
         work_notes_list,
         work_start
     from fields
-    where not _fivetran_deleted
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

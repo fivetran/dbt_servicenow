@@ -71,7 +71,7 @@ final as (
         type as change_request_type,
         unauthorized as is_change_request_unauthorized
     from fields
-    where not _fivetran_deleted
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

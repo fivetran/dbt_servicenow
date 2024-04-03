@@ -51,7 +51,7 @@ final as (
         sys_updated_by,
         type
     from fields
-    where not _fivetran_deleted
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

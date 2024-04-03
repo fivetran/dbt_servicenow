@@ -68,7 +68,7 @@ final as (
         workaround_communicated_by_link,
         cast(workaround_communicated_by_value as {{ dbt.type_string() }}) as workaround_communicated_by_value 
     from fields
-    where not _fivetran_deleted
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

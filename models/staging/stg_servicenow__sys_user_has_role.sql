@@ -49,7 +49,7 @@ final as (
         state as sys_user_has_role_state,
         sys_mod_count
     from fields
-    where not _fivetran_deleted
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

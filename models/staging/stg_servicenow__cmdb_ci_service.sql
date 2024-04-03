@@ -69,7 +69,7 @@ final as (
         vendor_link,
         cast(vendor_value as {{ dbt.type_string() }}) as vendor_value
     from fields
-    where not _fivetran_deleted
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

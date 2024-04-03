@@ -62,7 +62,7 @@ final as (
         severity as incident_severity,
         subcategory as incident_subcategory
     from fields
-    where not _fivetran_deleted
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *
