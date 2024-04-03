@@ -35,12 +35,26 @@ user_aggregates as (
     select
         sys_user.sys_user_id,
         sys_user.source_relation,
-        {{ fivetran_utils.string_agg("user_grmember.sys_user_group_id", "'\\n'") }} as sys_user_group_ids,
-        {{ fivetran_utils.string_agg("user_has_role.sys_user_role_id", "'\\n'") }} as sys_user_role_ids,
-        {{ fivetran_utils.string_agg("user_role.sys_user_role_name", "'\\n'") }} as sys_user_role_names,
-        {{ fivetran_utils.string_agg("distinct user_role.includes_roles", "'\\n'") }} as included_roles,
-        {{ fivetran_utils.string_agg("distinct user_group.sys_user_group_roles", "'\\n'") }} as sys_user_group_roles
-
+        case when
+            count(distinct user_grmember.sys_user_group_id) <= 1000 then {{ fivetran_utils.string_agg("distinct user_grmember.sys_user_group_id", "'\\n'") }}
+            else 'Too many fields to render' 
+        end as sys_user_group_ids,
+        case when
+            count(distinct user_has_role.sys_user_role_id) <= 1000 then {{ fivetran_utils.string_agg("distinct user_has_role.sys_user_role_id", "'\\n'") }}
+            else 'Too many fields to render' 
+        end as sys_user_role_ids,
+        case when
+            count(distinct user_role.sys_user_role_name) <= 1000 then {{ fivetran_utils.string_agg("distinct user_role.sys_user_role_name", "'\\n'") }}
+            else 'Too many fields to render' 
+        end as sys_user_role_names,
+        case when
+            count(distinct user_role.includes_roles) <= 1000 then {{ fivetran_utils.string_agg(""distinct user_role.includes_roles"", "'\\n'") }}
+            else 'Too many fields to render' 
+        end as included_roles,
+        case when
+            count(distinct user_group.sys_user_group_roles) <= 1000 then {{ fivetran_utils.string_agg("distinct user_group.sys_user_group_roles", "'\\n'") }}
+            else 'Too many fields to render' 
+        end as sys_user_group_roles
 
     from sys_user
     left join user_grmember

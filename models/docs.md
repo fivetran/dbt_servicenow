@@ -1905,7 +1905,7 @@ The sys_id associated with the group in the sys_user_group table.
 {% enddocs %}
 
 {% docs servicenow__user_aggregated %}
-Each record represents a user with their associated groups and roles.
+Each record represents a user with their associated groups and roles. To prevent run failures caused by character limits, if there are more than 1000 distinct associated values, the field will output 'Too many fields to render' .
 {% enddocs %}
 
 {% docs servicenow__user_enhanced %}
