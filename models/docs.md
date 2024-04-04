@@ -23,7 +23,7 @@ Table containing all Service Level Agreement (SLA) information related to the ta
 {% enddocs %}
 
 {% docs stg_servicenow__sys_user %}
-Staging table containing all information related to the system user associated with the task.
+Staging table containing information related to the system user associated with the task.
 {% enddocs %}
 
 {% docs sys_user %}
@@ -39,7 +39,7 @@ Table containing all the information related to the problem tasks.
 {% enddocs %}
 
 {% docs stg_servicenow__incident %} 
-Staging table containing all information related to incidents.
+Staging table containing information related to incidents.
 {% enddocs %}
 
 {% docs incident %} 
@@ -47,7 +47,7 @@ Table containing all information related to incidents.
 {% enddocs %}
 
 {% docs stg_servicenow__change_task %} 
-Staging table containing all information related to change tasks.
+Staging table containing information related to change tasks.
 {% enddocs %}
 
 {% docs change_task %} 
@@ -55,7 +55,7 @@ Table containing all information related to change tasks.
 {% enddocs %}
 
 {% docs stg_servicenow__change_request %} 
-Staging table that contains all information related to change requests.
+Staging table that contains information related to change requests.
 {% enddocs %}
 
 {% docs change_request %} 
@@ -370,8 +370,16 @@ Date and time when the record was initially created.
 Date and time when the record was initially created.
 {% enddocs %}
 
+{% docs created_date %}
+Date the record was created.
+{% enddocs %}
+
 {% docs updated_at %}
 Date and time when the record was last updated.
+{% enddocs %}
+
+{% docs updated_date %}
+Date the record was last updated.
 {% enddocs %}
 
 {% docs change_task_created_at %}
@@ -1067,7 +1075,7 @@ The type or category of the task associated with the problem or issue.
 {% enddocs %}
 
 {% docs problem_value %} 
-The unique identifier or name associated with the problem record linked to the issue. 
+The unique identifier or name associated with the problem linked to the record. 
 {% enddocs %}
 
 {% docs started_at %} 
@@ -1127,7 +1135,7 @@ The name or identifier of the record or entity that caused or triggered the issu
 {% enddocs %}
 
 {% docs child_incidents %} 
-Information about other incidents that are identified as child incidents linked to the current incident. 
+The number of incidents that are identified as child incidents linked to the current incident. 
 {% enddocs %}
 
 {% docs hold_reason %} 
@@ -1363,11 +1371,11 @@ The reason or rationale behind the changes associated with the current record, p
 {% enddocs %}
 
 {% docs requested_by_date %} 
-The date when the changes associated with the current record were requested or initiated. 
+The date the change is requested for.
 {% enddocs %}
 
 {% docs change_requested_by_date %} 
-The date when the changes associated with the current record were requested or initiated. 
+The date the change is requested for.
 {% enddocs %}
 
 {% docs requested_by_link %} 
@@ -1615,7 +1623,7 @@ Table containing all information related to user groups.
 {% enddocs %}
 
 {% docs stg_servicenow__sys_user_group %}
-Staging table containing all information related to user groups.
+Staging table containing information related to user groups.
 {% enddocs %}
 
 {% docs attributes %}
@@ -1732,4 +1740,194 @@ Boolean indicating if the change task is unverified.
 
 {% docs monitor %}
 Monitor in relation to the cmdb_ci_service.
+{% enddocs %}
+
+
+{% docs servicenow__problem_enhanced %}
+Each record represents a problem with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.
+{% enddocs %}
+
+{% docs problem_minutes_created_to_fix %}
+The minutes lapsed from when the problem was created to when it was fixed.
+{% enddocs %}
+
+{% docs problem_minutes_created_to_resolved %}
+The minutes lapsed from when the problem was created to when it was resolved.
+{% enddocs %}
+
+{% docs total_related_tasks %}
+The total number of tasks tied to this record.
+{% enddocs %}
+
+{% docs servicenow__change_request_enhanced %}
+Each record represents a change request with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.
+{% enddocs %}
+
+{% docs change_request_days_created_to_reviewed %}
+The days lapsed from when the change request was created to when it was reviewed
+{% enddocs %}
+
+{% docs change_request_days_created_to_start %}
+The days lapsed from when the change request was created to when it was started
+{% enddocs %}
+
+{% docs change_request_days_requested_by_to_start %}
+The days lapsed from when the change request was requested to when it was started
+{% enddocs %}
+
+
+{% docs servicenow__incident_enhanced %}
+Each record represents an incident with additional information about users who have interacted with it and relevant timestamps.
+{% enddocs %}
+
+{% docs incident_minutes_created_to_resolved %}
+Minutes elapsed from when incident was created to resolved.
+{% enddocs %}
+
+{% docs sys_user_role %}
+Table containing all the information about roles that can belong to a user. A user’s role can be directly granted, inherited from other roles, or inherited from groups.
+{% enddocs %}
+
+{% docs stg_servicenow__sys_user_role %}
+Staging table containing information about roles that can belong to a user. When a role is added to a user, a new record is created here. A user’s role can be directly granted, inherited from other roles, or inherited from groups.
+{% enddocs %}
+
+{% docs sys_user_has_role %}
+Table containing all the information about each unique user and role combination. When a role is added to a user, a new record is created here. This relates the sys_user table with the sys_user_role table.
+{% enddocs %}
+
+{% docs stg_servicenow__sys_user_has_role %}
+Staging table containing information about each unique user and role combination. When a role is added to a user, a new record is created here. This relates the sys_user table with the sys_user_role table.
+{% enddocs %}
+
+{% docs sys_user_grmember %}
+Table containing all the information about a given user and given group. This relates the sys_user_group table to the sys_user table.
+{% enddocs %}
+
+{% docs stg_servicenow__sys_user_grmember %}
+Staging table containing information about a given user and given group. This relates the sys_user_group table to the sys_user table.
+{% enddocs %}
+
+{% docs assignable_by_link %}
+The link to the entity that can assign this role.
+{% enddocs %}
+
+{% docs assignable_by_value %}
+The value of the entity that can assign this role.
+{% enddocs %}
+
+{% docs can_delegate %}
+Boolean of whether this role can delegate.
+{% enddocs %}
+
+{% docs elevated_privilege %}
+Boolean of whether this role is an elevated privilege.
+{% enddocs %}
+
+{% docs grantable %}
+Boolean of whether this role is grantable.
+{% enddocs %}
+
+{% docs includes_roles %}
+The roles included in this record.
+{% enddocs %}
+
+{% docs requires_subscription %}
+If this role requires a subscription.
+{% enddocs %}
+
+{% docs scoped_admin %}
+Boolean of whether the role was scoped administration.
+{% enddocs %}
+
+{% docs suffix %}
+Suffix of the record.
+{% enddocs %}
+
+{% docs granted_by_link %}
+The link to the entity that granted this.
+{% enddocs %}
+
+{% docs granted_by_value %}
+The value of the entity that granted this.
+{% enddocs %}
+
+{% docs included_in_role_instance_link %}
+The link to the role instance included in the role.
+{% enddocs %}
+
+{% docs included_in_role_instance_value %}
+The value of the role instance included in the role.
+{% enddocs %}
+
+{% docs included_in_role_link %}
+The link to the role included in the role.
+{% enddocs %}	
+
+{% docs included_in_role_value %}
+The value of the role included in the role.
+{% enddocs %}
+
+{% docs inh_count %}
+Count of inherited roles.
+{% enddocs %}
+
+{% docs inh_map %}
+Mapping of inherited roles.
+{% enddocs %}
+
+{% docs inherited %}
+Boolean of whether the role is inherited.
+{% enddocs %}
+
+{% docs role_link %}
+Link to the role in the sys_user_role table.
+{% enddocs %}
+
+{% docs role_value %}
+The sys_id associated with the role in the sys_user_role table.
+{% enddocs %}
+
+{% docs user_link %}
+Link to the user in the sys_user table.
+{% enddocs %}
+
+{% docs user_value %}
+The sys_id associated with the user in the sys_user table.
+{% enddocs %}
+
+{% docs group_link %}
+Link to the group in the sys_user_group table.
+{% enddocs %}
+
+{% docs group_value %}
+The sys_id associated with the group in the sys_user_group table.
+{% enddocs %}
+
+{% docs servicenow__user_aggregated %}
+Each record represents a user with their associated groups and roles. To prevent run failures caused by character limits, if there are more than 1000 distinct associated values, the field will output 'Too many fields to render' .
+{% enddocs %}
+
+{% docs servicenow__user_enhanced %}
+Each record represents a user with their associated groups and roles, in addition to additional user info from the sys_user table.
+{% enddocs %}
+
+{% docs sys_user_group_ids %}
+List of associated user group ids.
+{% enddocs %}
+
+{% docs sys_user_role_ids %}
+List of associated user roles ids.
+{% enddocs %}
+
+{% docs sys_user_role_names %}
+Names of associated user roles.
+{% enddocs %}
+
+{% docs included_roles %}
+List of included roles.
+{% enddocs %}
+
+{% docs sys_user_group_roles %}
+List of associated user group roles.
 {% enddocs %}

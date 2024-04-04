@@ -27,7 +27,9 @@ final as (
         source_relation, 
         cast(sys_id as {{ dbt.type_string() }}) as change_request_id,
         cast(sys_created_on as {{ dbt.type_timestamp() }}) as change_request_created_at,
+        cast ({{ dbt.date_trunc('day', 'sys_created_on') }} as date) as change_request_created_date,
         cast(sys_updated_on as {{ dbt.type_timestamp() }}) as change_request_updated_at,
+        cast ({{ dbt.date_trunc('day', 'sys_updated_on') }} as date) as change_request_updated_date,
         _fivetran_deleted,
         _fivetran_synced,
         backout_plan,
@@ -69,6 +71,7 @@ final as (
         type as change_request_type,
         unauthorized as is_change_request_unauthorized
     from fields
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

@@ -249,156 +249,6 @@ sources:
           - name: timezone
             description: '{{ doc("timezone") }}'
 
-      - name: sys_user
-        identifier: '{{ var("servicenow_sys_user_identifier", "sys_user") }}'
-        description: '{{ doc("sys_user") }}'
-        columns:
-          - name: sys_id
-            description: '{{ doc("sys_id") }}'
-          - name: _fivetran_deleted
-            description: '{{ doc("_fivetran_deleted") }}'
-          - name: _fivetran_synced
-            description: '{{ doc("_fivetran_synced") }}'
-          - name: accumulated_roles
-            description: '{{ doc("accumulated_roles") }}'
-          - name: active
-            description: '{{ doc("active") }}'
-          - name: avatar
-            description: '{{ doc("avatar") }}'
-          - name: building_link
-            description: '{{ doc("building_link") }}'
-          - name: building_value
-            description: '{{ doc("building_value") }}'
-          - name: calendar_integration
-            description: '{{ doc("calendar_integration") }}'
-          - name: city
-            description: '{{ doc("city") }}'
-          - name: company_link
-            description: '{{ doc("company_link") }}'
-          - name: company_value
-            description: '{{ doc("company_value") }}'
-          - name: cost_center_link
-            description: '{{ doc("cost_center_link") }}'
-          - name: cost_center_value
-            description: '{{ doc("cost_center_value") }}'
-          - name: country
-            description: '{{ doc("country") }}'
-          - name: date_format
-            description: '{{ doc("date_format") }}'
-          - name: default_perspective_link
-            description: '{{ doc("default_perspective_link") }}'
-          - name: default_perspective_value
-            description: '{{ doc("default_perspective_value") }}'
-          - name: department_link
-            description: '{{ doc("department_link") }}'
-          - name: department_value
-            description: '{{ doc("department_value") }}'
-          - name: edu_status
-            description: '{{ doc("edu_status") }}'
-          - name: email
-            description: '{{ doc("email") }}'
-          - name: employee_number
-            description: '{{ doc("employee_number") }}'
-          - name: enable_multifactor_authn
-            description: '{{ doc("enable_multifactor_authn") }}'
-          - name: failed_attempts
-            description: '{{ doc("failed_attempts") }}'
-          - name: first_name
-            description: '{{ doc("first_name") }}'
-          - name: gender
-            description: '{{ doc("gender") }}'
-          - name: hashed_user_id
-            description: '{{ doc("hashed_user_id") }}'
-          - name: home_phone
-            description: '{{ doc("home_phone") }}'
-          - name: internal_integration_user
-            description: '{{ doc("internal_integration_user") }}'
-          - name: introduction
-            description: '{{ doc("introduction") }}'
-          - name: last_login
-            description: '{{ doc("last_login") }}'
-          - name: last_login_device
-            description: '{{ doc("last_login_device") }}'
-          - name: last_login_time
-            description: '{{ doc("last_login_time") }}'
-          - name: last_name
-            description: '{{ doc("last_name") }}'
-          - name: last_password
-            description: '{{ doc("last_password") }}'
-          - name: ldap_server_link
-            description: '{{ doc("ldap_server_link") }}'
-          - name: ldap_server_value
-            description: '{{ doc("ldap_server_value") }}'
-          - name: location_link
-            description: '{{ doc("location_link") }}'
-          - name: location_value
-            description: '{{ doc("location_value") }}'
-          - name: locked_out
-            description: '{{ doc("locked_out") }}'
-          - name: manager_link
-            description: '{{ doc("manager_link") }}'
-          - name: manager_value
-            description: '{{ doc("manager_value") }}'
-          - name: middle_name
-            description: '{{ doc("middle_name") }}'
-          - name: mobile_phone
-            description: '{{ doc("mobile_phone") }}'
-          - name: name
-            description: '{{ doc("name") }}'
-          - name: notification
-            description: '{{ doc("notification") }}'
-          - name: password_needs_reset
-            description: '{{ doc("password_needs_reset") }}'
-          - name: phone
-            description: '{{ doc("phone") }}'
-          - name: photo
-            description: '{{ doc("photo") }}'
-          - name: preferred_language
-            description: '{{ doc("preferred_language") }}'
-          - name: roles
-            description: '{{ doc("roles") }}'
-          - name: schedule_link
-            description: '{{ doc("schedule_link") }}'
-          - name: schedule_value
-            description: '{{ doc("schedule_value") }}'
-          - name: source
-            description: '{{ doc("source") }}'
-          - name: state
-            description: '{{ doc("state") }}'
-          - name: sys_class_name
-            description: '{{ doc("sys_class_name") }}'
-          - name: sys_created_by
-            description: '{{ doc("sys_created_by") }}'
-          - name: sys_created_on
-            description: '{{ doc("sys_created_on") }}'
-          - name: sys_domain_link
-            description: '{{ doc("sys_domain_link") }}'
-          - name: sys_domain_path
-            description: '{{ doc("sys_domain_path") }}'
-          - name: sys_domain_value
-            description: '{{ doc("sys_domain_value") }}'
-          - name: sys_mod_count
-            description: '{{ doc("sys_mod_count") }}'
-          - name: sys_updated_by
-            description: '{{ doc("sys_updated_by") }}'
-          - name: sys_updated_on
-            description: '{{ doc("sys_updated_on") }}'
-          - name: time_format
-            description: '{{ doc("time_format") }}'
-          - name: time_zone
-            description: '{{ doc("time_zone") }}'
-          - name: title
-            description: '{{ doc("title") }}'
-          - name: user_name
-            description: '{{ doc("user_name") }}'
-          - name: user_password
-            description: '{{ doc("user_password") }}'
-          - name: vip
-            description: '{{ doc("vip") }}'
-          - name: web_service_access_only
-            description: '{{ doc("web_service_access_only") }}'
-          - name: zip
-            description: '{{ doc("zip") }}'
 
       - name: problem
         identifier: '{{ var("servicenow_problem_identifier", "problem") }}'
@@ -952,6 +802,157 @@ sources:
           - name: vendor_value
             description: '{{ doc("vendor_value") }}'
 
+      - name: sys_user
+        identifier: '{{ var("servicenow_sys_user_identifier", "sys_user") }}'
+        description: '{{ doc("sys_user") }}'
+        columns:
+          - name: sys_id
+            description: '{{ doc("sys_id") }}'
+          - name: _fivetran_deleted
+            description: '{{ doc("_fivetran_deleted") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: accumulated_roles
+            description: '{{ doc("accumulated_roles") }}'
+          - name: active
+            description: '{{ doc("active") }}'
+          - name: avatar
+            description: '{{ doc("avatar") }}'
+          - name: building_link
+            description: '{{ doc("building_link") }}'
+          - name: building_value
+            description: '{{ doc("building_value") }}'
+          - name: calendar_integration
+            description: '{{ doc("calendar_integration") }}'
+          - name: city
+            description: '{{ doc("city") }}'
+          - name: company_link
+            description: '{{ doc("company_link") }}'
+          - name: company_value
+            description: '{{ doc("company_value") }}'
+          - name: cost_center_link
+            description: '{{ doc("cost_center_link") }}'
+          - name: cost_center_value
+            description: '{{ doc("cost_center_value") }}'
+          - name: country
+            description: '{{ doc("country") }}'
+          - name: date_format
+            description: '{{ doc("date_format") }}'
+          - name: default_perspective_link
+            description: '{{ doc("default_perspective_link") }}'
+          - name: default_perspective_value
+            description: '{{ doc("default_perspective_value") }}'
+          - name: department_link
+            description: '{{ doc("department_link") }}'
+          - name: department_value
+            description: '{{ doc("department_value") }}'
+          - name: edu_status
+            description: '{{ doc("edu_status") }}'
+          - name: email
+            description: '{{ doc("email") }}'
+          - name: employee_number
+            description: '{{ doc("employee_number") }}'
+          - name: enable_multifactor_authn
+            description: '{{ doc("enable_multifactor_authn") }}'
+          - name: failed_attempts
+            description: '{{ doc("failed_attempts") }}'
+          - name: first_name
+            description: '{{ doc("first_name") }}'
+          - name: gender
+            description: '{{ doc("gender") }}'
+          - name: hashed_user_id
+            description: '{{ doc("hashed_user_id") }}'
+          - name: home_phone
+            description: '{{ doc("home_phone") }}'
+          - name: internal_integration_user
+            description: '{{ doc("internal_integration_user") }}'
+          - name: introduction
+            description: '{{ doc("introduction") }}'
+          - name: last_login
+            description: '{{ doc("last_login") }}'
+          - name: last_login_device
+            description: '{{ doc("last_login_device") }}'
+          - name: last_login_time
+            description: '{{ doc("last_login_time") }}'
+          - name: last_name
+            description: '{{ doc("last_name") }}'
+          - name: last_password
+            description: '{{ doc("last_password") }}'
+          - name: ldap_server_link
+            description: '{{ doc("ldap_server_link") }}'
+          - name: ldap_server_value
+            description: '{{ doc("ldap_server_value") }}'
+          - name: location_link
+            description: '{{ doc("location_link") }}'
+          - name: location_value
+            description: '{{ doc("location_value") }}'
+          - name: locked_out
+            description: '{{ doc("locked_out") }}'
+          - name: manager_link
+            description: '{{ doc("manager_link") }}'
+          - name: manager_value
+            description: '{{ doc("manager_value") }}'
+          - name: middle_name
+            description: '{{ doc("middle_name") }}'
+          - name: mobile_phone
+            description: '{{ doc("mobile_phone") }}'
+          - name: name
+            description: '{{ doc("name") }}'
+          - name: notification
+            description: '{{ doc("notification") }}'
+          - name: password_needs_reset
+            description: '{{ doc("password_needs_reset") }}'
+          - name: phone
+            description: '{{ doc("phone") }}'
+          - name: photo
+            description: '{{ doc("photo") }}'
+          - name: preferred_language
+            description: '{{ doc("preferred_language") }}'
+          - name: roles
+            description: '{{ doc("roles") }}'
+          - name: schedule_link
+            description: '{{ doc("schedule_link") }}'
+          - name: schedule_value
+            description: '{{ doc("schedule_value") }}'
+          - name: source
+            description: '{{ doc("source") }}'
+          - name: state
+            description: '{{ doc("state") }}'
+          - name: sys_class_name
+            description: '{{ doc("sys_class_name") }}'
+          - name: sys_created_by
+            description: '{{ doc("sys_created_by") }}'
+          - name: sys_created_on
+            description: '{{ doc("sys_created_on") }}'
+          - name: sys_domain_link
+            description: '{{ doc("sys_domain_link") }}'
+          - name: sys_domain_path
+            description: '{{ doc("sys_domain_path") }}'
+          - name: sys_domain_value
+            description: '{{ doc("sys_domain_value") }}'
+          - name: sys_mod_count
+            description: '{{ doc("sys_mod_count") }}'
+          - name: sys_updated_by
+            description: '{{ doc("sys_updated_by") }}'
+          - name: sys_updated_on
+            description: '{{ doc("sys_updated_on") }}'
+          - name: time_format
+            description: '{{ doc("time_format") }}'
+          - name: time_zone
+            description: '{{ doc("time_zone") }}'
+          - name: title
+            description: '{{ doc("title") }}'
+          - name: user_name
+            description: '{{ doc("user_name") }}'
+          - name: user_password
+            description: '{{ doc("user_password") }}'
+          - name: vip
+            description: '{{ doc("vip") }}'
+          - name: web_service_access_only
+            description: '{{ doc("web_service_access_only") }}'
+          - name: zip
+            description: '{{ doc("zip") }}'
+
       - name: sys_user_group
         identifier: '{{ var("servicenow_sys_user_group_identifier", "sys_user_group") }}'
         description: '{{ doc("sys_user_group") }}'
@@ -1007,3 +1008,123 @@ sources:
           - name: type
             description: '{{ doc("type") }}'
 
+      - name: sys_user_role
+        identifier: '{{ var("servicenow_sys_user_role_identifier", "sys_user_role") }}'
+        description: '{{ doc("sys_user_role") }}'
+        config:
+          enabled: "{{ var('servicenow__using_roles', true) }}"
+        columns:
+          - name: sys_id
+            description: '{{ doc("sys_id") }}'
+          - name: _fivetran_deleted
+            description: '{{ doc("_fivetran_deleted") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: assignable_by_link
+            description: '{{ doc("assignable_by_link") }}'
+          - name: assignable_by_value
+            description: '{{ doc("assignable_by_value") }}'
+          - name: can_delegate
+            description: '{{ doc("can_delegate") }}'
+          - name: description
+            description: '{{ doc("description") }}'
+          - name: elevated_privilege
+            description: '{{ doc("elevated_privilege") }}'
+          - name: grantable
+            description: '{{ doc("grantable") }}'
+          - name: includes_roles
+            description: '{{ doc("includes_roles") }}'
+          - name: name
+            description: '{{ doc("name") }}'
+          - name: requires_subscription
+            description: '{{ doc("requires_subscription") }}'
+          - name: scoped_admin
+            description: '{{ doc("scoped_admin") }}'
+          - name: suffix
+            description: '{{ doc("suffix") }}'
+          - name: sys_created_on
+            description: '{{ doc("sys_created_on") }}'
+          - name: sys_updated_on
+            description: '{{ doc("sys_updated_on") }}'
+
+      - name: sys_user_has_role
+        identifier: '{{ var("servicenow_sys_user_has_role_identifier", "sys_user_has_role") }}'
+        description: '{{ doc("sys_user_has_role") }}'
+        config:
+          enabled: "{{ var('servicenow__using_roles', true) }}"
+        columns:
+          - name: sys_id
+            description: '{{ doc("sys_id") }}'
+          - name: _fivetran_deleted
+            description: '{{ doc("_fivetran_deleted") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: granted_by_link
+            description: '{{ doc("granted_by_link") }}'
+          - name: granted_by_value
+            description: '{{ doc("granted_by_value") }}'
+          - name: included_in_role_instance_link
+            description: '{{ doc("included_in_role_instance_link") }}'
+          - name: included_in_role_instance_value
+            description: '{{ doc("included_in_role_instance_value") }}'
+          - name: included_in_role_link
+            description: '{{ doc("included_in_role_link") }}'
+          - name: included_in_role_value
+            description: '{{ doc("included_in_role_value") }}'
+          - name: inh_count
+            description: '{{ doc("inh_count") }}'
+          - name: inh_map
+            description: '{{ doc("inh_map") }}'
+          - name: inherited
+            description: '{{ doc("inherited") }}'
+          - name: role_link
+            description: '{{ doc("role_link") }}'
+          - name: role_value
+            description: '{{ doc("role_value") }}'
+          - name: state
+            description: '{{ doc("state") }}'
+          - name: sys_created_by
+            description: '{{ doc("sys_created_by") }}'
+          - name: sys_created_on
+            description: '{{ doc("sys_created_on") }}'
+          - name: sys_mod_count
+            description: '{{ doc("sys_mod_count") }}'
+          - name: sys_updated_by
+            description: '{{ doc("sys_updated_by") }}'
+          - name: sys_updated_on
+            description: '{{ doc("sys_updated_on") }}'
+          - name: user_link
+            description: '{{ doc("user_link") }}'
+          - name: user_value
+            description: '{{ doc("user_value") }}'
+
+      - name: sys_user_grmember
+        identifier: '{{ var("servicenow_sys_user_grmember_identifier", "sys_user_grmember") }}'
+        description: '{{ doc("sys_user_grmember") }}'
+        config:
+          enabled: "{{ var('servicenow__using_roles', true) }}"
+        columns:
+          - name: sys_id
+            description: '{{ doc("sys_id") }}'
+          - name: _fivetran_deleted
+            description: '{{ doc("_fivetran_deleted") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: group_link
+            description: '{{ doc("group_link") }}'
+          - name: group_value
+            description: '{{ doc("group_value") }}'
+          - name: sys_created_by
+            description: '{{ doc("sys_created_by") }}'
+          - name: sys_created_on
+            description: '{{ doc("sys_created_on") }}'
+          - name: sys_mod_count
+            description: '{{ doc("sys_mod_count") }}'
+          - name: sys_updated_by
+            description: '{{ doc("sys_updated_by") }}'
+          - name: sys_updated_on
+            description: '{{ doc("sys_updated_on") }}'
+          - name: user_link
+            description: '{{ doc("user_link") }}'
+          - name: user_value
+            description: '{{ doc("user_value") }}'

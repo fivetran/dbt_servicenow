@@ -567,3 +567,645 @@ models:
       - name: total_tasks_made_slas
         description: '{{ doc("total_tasks_made_slas") }}'
 
+  - name: servicenow__problem_enhanced
+    description: '{{ doc("servicenow__problem_enhanced") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - problem_id
+            - source_relation
+    columns:
+      - name: problem_id
+        description: '{{ doc("sys_id") }}'
+
+      - name: problem_subcategory
+        description: '{{ doc("problem_subcategory") }}'
+
+      - name: problem_category
+        description: '{{ doc("problem_category") }}'
+
+      - name: problem_state
+        description: '{{ doc("problem_state") }}'
+
+      - name: problem_created_at
+        description: '{{ doc("problem_created_at") }}'
+
+      - name: problem_updated_at
+        description: '{{ doc("problem_updated_at") }}'
+
+      - name: problem_confirmed_at
+        description: '{{ doc("problem_confirmed_at") }}'
+
+      - name: problem_confirmed_by_link
+        description: '{{ doc("problem_confirmed_by_link") }}'
+
+      - name: problem_confirmed_by_value
+        description: '{{ doc("problem_confirmed_by_value") }}'
+
+      - name: problem_fix_at
+        description: '{{ doc("problem_fix_at") }}'
+
+      - name: problem_fix_by_link
+        description: '{{ doc("problem_fix_by_link") }}'
+
+      - name: problem_fix_by_value
+        description: '{{ doc("problem_fix_by_value") }}'
+
+      - name: problem_resolution_code
+        description: '{{ doc("problem_resolution_code") }}'
+
+      - name: problem_resolved_at
+        description: '{{ doc("problem_resolved_at") }}'
+
+      - name: resolved_by_link
+        description: '{{ doc("resolved_by_link") }}'
+
+      - name: problem_resolved_by_value
+        description: '{{ doc("problem_resolved_by_value") }}'
+
+      - name: problem_first_reported_by_task_link
+        description: '{{ doc("problem_first_reported_by_task_link") }}'
+
+      - name: problem_first_reported_by_task_value
+        description: '{{ doc("problem_first_reported_by_task_value") }}'
+
+      - name: fix_communicated_at
+        description: '{{ doc("fix_communicated_at") }}'
+
+      - name: fix_communicated_by_link
+        description: '{{ doc("fix_communicated_by_link") }}'
+
+      - name: fix_communicated_by_value
+        description: '{{ doc("fix_communicated_by_value") }}'
+
+      - name: reopen_count
+        description: '{{ doc("reopen_count") }}'
+
+      - name: reopened_at
+        description: '{{ doc("reopened_at") }}'
+
+      - name: reopened_by_link
+        description: '{{ doc("reopened_by_link") }}'
+
+      - name: reopened_by_value
+        description: '{{ doc("reopened_by_value") }}'
+
+      - name: cause_notes
+        description: '{{ doc("cause_notes") }}'
+
+      - name: duplicate_of_link
+        description: '{{ doc("duplicate_of_link") }}'
+
+      - name: duplicate_of_value
+        description: '{{ doc("duplicate_of_value") }}'
+
+      - name: problem_fix_notes
+        description: '{{ doc("problem_fix_notes") }}'
+
+      - name: is_known_error
+        description: '{{ doc("is_known_error") }}'
+
+      - name: is_major_problem
+        description: '{{ doc("is_major_problem") }}'
+
+      - name: problem_related_incidents
+        description: '{{ doc("problem_related_incidents") }}'
+
+      - name: review_outcome
+        description: '{{ doc("review_outcome") }}'
+
+      - name: rfc_link
+        description: '{{ doc("rfc_link") }}'
+
+      - name: rfc_value
+        description: '{{ doc("rfc_value") }}'
+
+      - name: workaround
+        description: '{{ doc("workaround") }}'
+
+      - name: workaround_applied
+        description: '{{ doc("workaround_applied") }}'
+
+      - name: workaround_communicated_at
+        description: '{{ doc("workaround_communicated_at") }}'
+
+      - name: workaround_communicated_by_link
+        description: '{{ doc("workaround_communicated_by_link") }}'
+
+      - name: workaround_communicated_by_value
+        description: '{{ doc("workaround_communicated_by_value") }}'
+
+      - name: problem_minutes_created_to_fix
+        description: '{{ doc("problem_minutes_created_to_fix") }}'
+
+      - name: problem_minutes_created_to_resolved
+        description: '{{ doc("problem_minutes_created_to_resolved") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: total_related_tasks
+        description: '{{ doc("total_related_tasks") }}'
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
+      - name: problem_confirmer_email
+        description: '{{ doc("email") }}'
+      - name: problem_confirmer_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_confirmer_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_confirmer_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_confirmer_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_fixer_email
+        description: '{{ doc("email") }}'
+      - name: problem_fixer_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_fixer_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_fixer_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_fixer_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_resolver_email
+        description: '{{ doc("email") }}'
+      - name: problem_resolver_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_resolver_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_resolver_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_resolver_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_fix_communicator_email
+        description: '{{ doc("email") }}'
+      - name: problem_fix_communicator_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_fix_communicator_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_fix_communicator_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_fix_communicator_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_reopener_email
+        description: '{{ doc("email") }}'
+      - name: problem_reopener_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_reopener_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_reopener_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_reopener_roles
+        description: '{{ doc("roles") }}'
+      - name: problem_workaround_communicator_email
+        description: '{{ doc("email") }}'
+      - name: problem_workaround_communicator_manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: problem_workaround_communicator_department_value
+        description: '{{ doc("department_value") }}'
+      - name: problem_workaround_communicator_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: problem_workaround_communicator_roles
+        description: '{{ doc("roles") }}'
+
+
+  - name: servicenow__change_request_enhanced
+    description: '{{ doc("servicenow__change_request_enhanced") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - change_request_id
+            - source_relation
+    columns:
+
+      - name: change_request_id
+        description: '{{ doc("sys_id") }}'
+
+      - name: change_request_category
+        description: '{{ doc("change_category") }}'
+
+      - name: change_request_type
+        description: '{{ doc("change_request_type") }}'
+
+      - name: change_request_created_at
+        description: '{{ doc("created_at") }}'
+
+      - name: change_request_created_date
+        description: '{{ doc("created_date") }}'
+
+      - name: change_request_updated_at
+        description: '{{ doc("updated_at") }}'
+
+      - name: change_request_updated_date
+        description: '{{ doc("updated_date") }}'
+
+      - name: change_request_start_date
+        description: '{{ doc("change_request_start_date") }}'
+
+      - name: change_requested_by_date
+        description: '{{ doc("requested_by_date") }}'
+
+      - name: change_requested_by_link
+        description: '{{ doc("requested_by_link") }}'
+
+      - name: change_requested_by_value
+        description: '{{ doc("requested_by_value") }}'
+
+      - name: change_request_review_date
+        description: '{{ doc("review_date") }}'
+
+      - name: change_request_review_status
+        description: '{{ doc("review_status") }}'
+
+      - name: review_comments
+        description: '{{ doc("review_comments") }}'
+
+      - name: change_plan
+        description: '{{ doc("change_plan") }}'
+
+      - name: backout_plan
+        description: '{{ doc("backout_plan") }}'
+
+      - name: chg_model_link
+        description: '{{ doc("chg_model_link") }}'
+
+      - name: chg_model_value
+        description: '{{ doc("chg_model_value") }}'
+
+      - name: change_request_close_code
+        description: '{{ doc("close_code") }}'
+
+      - name: conflict_last_run
+        description: '{{ doc("conflict_last_run") }}'
+
+      - name: conflict_status
+        description: '{{ doc("conflict_status") }}'
+
+      - name: change_request_phase
+        description: '{{ doc("phase") }}'
+
+      - name: change_request_phase_state
+        description: '{{ doc("phase_state") }}'
+
+      - name: change_request_implementation_plan
+        description: '{{ doc("implementation_plan") }}'
+
+      - name: change_request_justification
+        description: '{{ doc("justification") }}'
+
+      - name: is_change_request_on_hold
+        description: '{{ doc("is_change_request_on_hold") }}'
+
+      - name: change_request_on_hold_reason
+        description: '{{ doc("on_hold_reason") }}'
+
+      - name: on_hold_task
+        description: '{{ doc("on_hold_task") }}'
+
+      - name: outside_maintenance_schedule
+        description: '{{ doc("outside_maintenance_schedule") }}'
+
+      - name: is_production_system
+        description: '{{ doc("production_system") }}'
+
+      - name: change_request_reason
+        description: '{{ doc("reason") }}'
+
+      - name: change_request_risk
+        description: '{{ doc("risk") }}'
+
+      - name: risk_impact_analysis
+        description: '{{ doc("risk_impact_analysis") }}'
+
+      - name: change_request_scope
+        description: '{{ doc("scope") }}'
+
+      - name: change_request_test_plan
+        description: '{{ doc("test_plan") }}'
+
+      - name: is_change_request_unauthorized
+        description: '{{ doc("unauthorized") }}'
+
+      - name: cab_date
+        description: '{{ doc("cab_date") }}'
+
+      - name: cab_date_time
+        description: '{{ doc("cab_date_time") }}'
+
+      - name: cab_delegate_link
+        description: '{{ doc("cab_delegate_link") }}'
+
+      - name: cab_delegate_value
+        description: '{{ doc("cab_delegate_value") }}'
+
+      - name: cab_recommendation
+        description: '{{ doc("cab_recommendation") }}'
+
+      - name: is_cab_required
+        description: '{{ doc("cab_required") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: change_requestor_email
+        description: '{{ doc("email") }}'
+
+      - name: change_requestor_manager_value
+        description: '{{ doc("manager_value") }}'
+
+      - name: change_requestor_department_value
+        description: '{{ doc("department_value") }}'
+
+      - name: change_requestor_name
+        description: '{{ doc("sys_user_name") }}'
+
+      - name: change_requestor_roles
+        description: '{{ doc("roles") }}'
+
+      - name: change_request_days_created_to_reviewed
+        description: '{{ doc("change_request_days_created_to_reviewed") }}'
+
+      - name: change_request_days_created_to_start
+        description: '{{ doc("change_request_days_created_to_start") }}'
+
+      - name: change_request_days_requested_by_to_start
+        description: '{{ doc("change_request_days_requested_by_to_start") }}'
+
+      - name: total_related_tasks
+        description: '{{ doc("total_related_tasks") }}'
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
+  - name: servicenow__incident_enhanced
+    description: '{{ doc("servicenow__incident_enhanced") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - incident_id
+            - source_relation
+    columns:
+      - name: incident_id
+        description: '{{ doc("sys_id")}}'
+      
+      - name: incident_category
+        description: '{{ doc("category")}}'
+      
+      - name: incident_subcategory
+        description: '{{ doc("subcategory")}}'
+      
+      - name: incident_severity
+        description: '{{ doc("severity")}}'
+      
+      - name: incident_state
+        description: '{{ doc("incident_state")}}'
+      
+      - name: incident_created_at
+        description: '{{ doc("incident_created_at")}}'
+      
+      - name: incident_updated_at
+        description: '{{ doc("incident_updated_at")}}'
+      
+      - name: reopened_by_link
+        description: '{{ doc("reopened_by_link")}}'
+      
+      - name: reopened_by_value
+        description: '{{ doc("reopened_by_value")}}'
+      
+      - name: reopener_email
+        description: '{{ doc("email")}}'
+      
+      - name: reopener_manager_value
+        description: '{{ doc("manager_value")}}'
+      
+      - name: reopener_department_value
+        description: '{{ doc("department_value")}}'
+      
+      - name: reopener_name
+        description: '{{ doc("sys_user_name")}}'
+      
+      - name: reopener_roles
+        description: '{{ doc("roles")}}'
+      
+      - name: incident_reopened_time
+        description: '{{ doc("reopened_time")}}'
+      
+      - name: incident_resolved_at
+        description: '{{ doc("resolved_at")}}'
+      
+      - name: resolved_by_link
+        description: '{{ doc("resolved_by_link")}}'
+      
+      - name: resolved_by_value
+        description: '{{ doc("resolved_by_value")}}'
+      
+      - name: resolver_email
+        description: '{{ doc("email")}}'
+      
+      - name: resolver_manager_value
+        description: '{{ doc("manager_value")}}'
+      
+      - name: resolver_department_value
+        description: '{{ doc("department_value")}}'
+      
+      - name: resolver_name
+        description: '{{ doc("sys_user_name")}}'
+      
+      - name: resolver_roles
+        description: '{{ doc("roles")}}'
+      
+      - name: business_impact
+        description: '{{ doc("business_impact")}}'
+      
+      - name: business_stc
+        description: '{{ doc("business_stc")}}'
+      
+      - name: calendar_stc
+        description: '{{ doc("calendar_stc")}}'
+      
+      - name: caller_id_link
+        description: '{{ doc("caller_id_link")}}'
+      
+      - name: caller_id_value
+        description: '{{ doc("caller_id_value")}}'
+      
+      - name: incident_cause
+        description: '{{ doc("cause")}}'
+      
+      - name: caused_by_link
+        description: '{{ doc("caused_by_link")}}'
+      
+      - name: caused_by_value
+        description: '{{ doc("caused_by_value")}}'
+      
+      - name: child_incidents
+        description: '{{ doc("child_incidents")}}'
+      
+      - name: close_code
+        description: '{{ doc("close_code")}}'
+      
+      - name: hold_reason
+        description: '{{ doc("hold_reason")}}'
+      
+      - name: notify
+        description: '{{ doc("notify")}}'
+      
+      - name: origin_id_link
+        description: '{{ doc("origin_id_link")}}'
+      
+      - name: origin_id_value
+        description: '{{ doc("origin_id_value")}}'
+      
+      - name: parent_incident_link
+        description: '{{ doc("parent_incident_link")}}'
+      
+      - name: parent_incident_value
+        description: '{{ doc("parent_incident_value")}}'
+      
+      - name: problem_id_link
+        description: '{{ doc("problem_id_link")}}'
+      
+      - name: problem_id_value
+        description: '{{ doc("problem_id_value")}}'
+      
+      - name: reopen_count
+        description: '{{ doc("reopen_count")}}'
+      
+      - name: rfc_link
+        description: '{{ doc("rfc_link")}}'
+      
+      - name: rfc_value
+        description: '{{ doc("rfc_value")}}'
+      
+      - name: incident_minutes_created_to_resolved
+        description: '{{ doc("incident_minutes_created_to_resolved")}}'
+      
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced")}}'
+      
+      - name: source_relation
+        description: '{{ doc("source_relation")}}'
+
+
+  - name: servicenow__user_aggregated
+    description: '{{ doc("servicenow__user_aggregated") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_id
+            - source_relation
+    columns:
+      - name: sys_user_id
+        description: '{{ doc("sys_id") }}'
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+      - name: sys_user_group_ids
+        description: '{{ doc("sys_user_group_ids") }}'
+      - name: sys_user_role_ids
+        description: '{{ doc("sys_user_role_ids") }}'
+      - name: sys_user_role_names
+        description: '{{ doc("sys_user_role_names") }}'
+      - name: included_roles
+        description: '{{ doc("included_roles") }}'
+      - name: sys_user_group_roles
+        description: '{{ doc("sys_user_group_roles") }}'
+
+  - name: servicenow__user_enhanced
+    description: '{{ doc("servicenow__user_enhanced") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_id
+            - source_relation
+    columns:
+      - name: sys_user_id
+        description: '{{ doc("sys_id")}}'
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+      - name: sys_user_group_ids
+        description: '{{ doc("sys_user_group_ids") }}'
+      - name: sys_user_role_ids
+        description: '{{ doc("sys_user_role_ids") }}'
+      - name: sys_user_role_names
+        description: '{{ doc("sys_user_role_names") }}'
+      - name: included_roles
+        description: '{{ doc("included_roles") }}'
+      - name: sys_user_group_roles
+        description: '{{ doc("sys_user_group_roles") }}'
+      - name: user_created_at
+        description: '{{ doc("user_created_at") }}'
+      - name: user_updated_at
+        description: '{{ doc("user_updated_at") }}'
+      - name: accumulated_roles
+        description: '{{ doc("accumulated_roles") }}'
+      - name: first_name
+        description: '{{ doc("first_name") }}'
+      - name: last_name
+        description: '{{ doc("last_name") }}'
+      - name: sys_user_name
+        description: '{{ doc("sys_user_name") }}'
+      - name: is_active
+        description: '{{ doc("is_active") }}'
+      - name: company_link
+        description: '{{ doc("company_link") }}'
+      - name: company_value
+        description: '{{ doc("company_value") }}'
+      - name: cost_center_link
+        description: '{{ doc("cost_center_link") }}'
+      - name: cost_center_value
+        description: '{{ doc("cost_center_value") }}'
+      - name: department_link
+        description: '{{ doc("department_link") }}'
+      - name: department_value
+        description: '{{ doc("department_value") }}'
+      - name: email
+        description: '{{ doc("email") }}'
+      - name: employee_number
+        description: '{{ doc("employee_number") }}'
+      - name: gender
+        description: '{{ doc("gender") }}'
+      - name: hashed_user_id
+        description: '{{ doc("hashed_user_id") }}'
+      - name: last_password
+        description: '{{ doc("last_password") }}'
+      - name: ldap_server_link
+        description: '{{ doc("ldap_server_link") }}'
+      - name: ldap_server_value
+        description: '{{ doc("ldap_server_value") }}'
+      - name: manager_link
+        description: '{{ doc("manager_link") }}'
+      - name: manager_value
+        description: '{{ doc("manager_value") }}'
+      - name: mobile_phone
+        description: '{{ doc("mobile_phone") }}'
+      - name: phone
+        description: '{{ doc("phone") }}'
+      - name: sys_user_roles
+        description: '{{ doc("roles") }}'
+      - name: schedule_link
+        description: '{{ doc("schedule_link") }}'
+      - name: schedule_value
+        description: '{{ doc("schedule_value") }}'
+      - name: source
+        description: '{{ doc("source") }}'
+      - name: state
+        description: '{{ doc("state") }}'
+      - name: sys_class_name
+        description: '{{ doc("sys_class_name") }}'
+      - name: sys_domain_link
+        description: '{{ doc("sys_domain_link") }}'
+      - name: sys_domain_path
+        description: '{{ doc("sys_domain_path") }}'
+      - name: sys_domain_value
+        description: '{{ doc("sys_domain_value") }}'
+      - name: time_format
+        description: '{{ doc("time_format") }}'
+      - name: time_zone
+        description: '{{ doc("time_zone") }}'
+      - name: user_name
+        description: '{{ doc("user_name") }}'
+      - name: user_password
+        description: '{{ doc("user_password") }}'

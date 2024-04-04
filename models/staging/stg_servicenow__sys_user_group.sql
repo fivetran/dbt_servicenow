@@ -30,13 +30,13 @@ final as (
         cast(sys_updated_on as {{ dbt.type_timestamp() }}) as sys_user_group_updated_at,
         _fivetran_deleted,
         _fivetran_synced,
-        active,
+        active as is_active,
         cost_center_link,
         cast(cost_center_value as {{ dbt.type_string() }}) as cost_center_value,
         default_assignee_link,
         cast(default_assignee_value as {{ dbt.type_string() }}) as default_assignee_value,
-        description,
-        email,
+        description as sys_user_group_description,
+        email as sys_user_group_email,
         exclude_manager,
         include_members,
         manager_link,
@@ -44,13 +44,14 @@ final as (
         name as sys_user_group_name,
         parent_link,
         cast(parent_value as {{ dbt.type_string() }}) as parent_value,
-        roles,
+        roles as sys_user_group_roles,
         source,
         sys_created_by,
         sys_mod_count,
         sys_updated_by,
         type
     from fields
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *

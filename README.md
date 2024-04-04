@@ -27,8 +27,9 @@ The main focus of the package is to transform the core object tables into analyt
   - The output models are focused around task management. 
     - Summarizes task, problem, change, incident, and change request data by varying grains including last updated day, status, priority, impact, and urgency.
     - Enhances each task record with additional information about its associated problem, incident, or change request. Finally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.
+    - Enhances user data with associated roles and groups.
 
-The output models are focused around the task management feature of ServiceNow.
+The output models are focused around the task management feature of ServiceNow in addition to enhancing user records.
 
 <!--section="servicenow_model"-->
 The following table provides a detailed list of all models materialized within this package by default. 
@@ -38,7 +39,17 @@ The following table provides a detailed list of all models materialized within t
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [servicenow__activity_summary](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__activity_summary)  | Each record represents aggregate task, problem, change, incident, and change request data by varying grains including update date, status, priority, impact, and urgency.    |
 | [servicenow__task_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__task_enhanced)  | Each record represents a task with additional information about its associated problem, incident, or change request. Additionally, it contains user information for who opened, started, updated, reported, fixed, closed, requested, reported, or confirmed the task.  |
+| [servicenow__problem_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__problem_enhanced)  | Each record represents a problem with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.    |
+| [servicenow__incident_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__incident_enhanced)  | Each record represents an incident with additional information about users who have interacted with it and relevant timestamps.    |
+| [servicenow__change_request_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__change_request_enhanced)  | Each record represents a change request with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.    |
+| [servicenow__user_aggregated](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_aggregated)  | Each record represents a user with their associated groups and roles.    |
+| [servicenow__user_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_enhanced)  | Each record represents a user with their associated groups and roles, in addition to additional user info from the sys_user table.    |
 <!--section-end-->
+
+
+## Opinionated Modelling Decisions
+
+Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
 
 # 🎯 How do I use the dbt package?
 
@@ -62,7 +73,7 @@ Include the following ServiceNow package version in your `packages.yml` file:
 ```yml
 packages:
   - package: fivetran/servicenow
-    version: [">=0.1.0", "<0.2.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=0.2.0", "<0.3.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 ## Step 3: Define database and schema variables
@@ -92,6 +103,16 @@ Please be aware that the native `source.yml` connection set up in the package wi
 To connect your multiple schema/database sources to the package models, follow the steps outlined in the [Union Data Defined Sources Configuration](https://github.com/fivetran/dbt_fivetran_utils/tree/releases/v0.4.latest#union_data-source) section of the Fivetran Utils documentation for the union_data macro. This will ensure a proper configuration and correct visualization of connections in the DAG.
 
 ## (Optional) Step 4: Additional configurations
+
+### Populating the User Models
+Our user grain models are disabled by default because not everyone syncs the underlying tables: `sys_user_role`, `sys_user_has_role`, and `sys_user_grmember`. If these tables do exist in your schema, set this following variable `servicenow__using_roles` to True in order to populate the user models `servicenow__user_aggregated` and `servicenow__user_enhanced`. 
+
+```yml
+# dbt_project.yml
+
+vars:
+    servicenow__using_roles: True
+```
 
 ### Changing the Build Schema
 By default this package will build the ServiceNow staging models within a schema titled (<target_schema> + `_stg_servicenow`) and the ServiceNow final models within a schema titled (<target_schema> + `_servicenow`) in your target database. If this is not where you would like your modeled qualtrics data to be written to, add the following configuration to your `dbt_project.yml` file:
@@ -149,9 +170,6 @@ A small team of analytics engineers at Fivetran develops these dbt packages. How
 
 We highly encourage and welcome contributions to this package. Check out [this dbt Discourse article](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) on the best workflow for contributing to a package!
 
-## Opinionated Modelling Decisions
-
-Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
 
 # 🏪 Are there any resources available?
 - If you have questions or want to reach out for help, please refer to the [GitHub Issue](https://github.com/fivetran/dbt_servicenow/issues/new/choose) section to find the right avenue of support for you.

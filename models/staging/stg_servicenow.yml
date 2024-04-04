@@ -17,9 +17,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -288,9 +285,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -383,19 +377,16 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
-            - user_id
+            - sys_user_id
             - source_relation
     columns:
-      - name: user_id
+      - name: sys_user_id
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -544,7 +535,7 @@ models:
       - name: preferred_language
         description: '{{ doc("preferred_language") }}'
 
-      - name: roles
+      - name: sys_user_roles
         description: '{{ doc("roles") }}'
 
       - name: schedule_link
@@ -625,9 +616,6 @@ models:
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -765,9 +753,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -838,9 +823,6 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -859,10 +841,10 @@ models:
       - name: caller_id_value
         description: '{{ doc("caller_id_value") }}'
 
-      - name: category
+      - name: incident_category
         description: '{{ doc("category") }}'
 
-      - name: cause
+      - name: incident_cause
         description: '{{ doc("cause") }}'
 
       - name: caused_by_link
@@ -913,10 +895,10 @@ models:
       - name: reopened_by_value
         description: '{{ doc("reopened_by_value") }}'
 
-      - name: reopened_time
+      - name: incident_reopened_time
         description: '{{ doc("reopened_time") }}'
 
-      - name: resolved_at
+      - name: incident_resolved_at
         description: '{{ doc("resolved_at") }}'
 
       - name: resolved_by_link
@@ -931,10 +913,10 @@ models:
       - name: rfc_value
         description: '{{ doc("rfc_value") }}'
 
-      - name: severity
+      - name: incident_severity
         description: '{{ doc("severity") }}'
 
-      - name: subcategory
+      - name: incident_subcategory
         description: '{{ doc("subcategory") }}'
 
       - name: incident_created_at
@@ -958,9 +940,6 @@ models:
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -1010,9 +989,6 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
-
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -1125,8 +1101,14 @@ models:
       - name: change_request_created_at
         description: '{{ doc("created_at") }}'
 
+      - name: change_request_created_date
+        description: '{{ doc("created_date") }}'
+
       - name: change_request_updated_at
         description: '{{ doc("updated_at") }}'
+
+      - name: change_request_updated_date
+        description: '{{ doc("updated_date") }}'
 
       - name: change_request_test_plan
         description: '{{ doc("change_request_test_plan") }}'
@@ -1209,8 +1191,6 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
       - name: attributes
@@ -1296,8 +1276,6 @@ models:
         description: '{{ doc("sys_id") }}'
         tests: 
           - not_null
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
       - name: attributes
@@ -1396,13 +1374,10 @@ models:
         tests:
           - not_null
 
-      - name: _fivetran_deleted
-        description: '{{ doc("_fivetran_deleted") }}'
-
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
-      - name: active
+      - name: is_active
         description: '{{ doc("active") }}'
 
       - name: cost_center_link
@@ -1417,10 +1392,10 @@ models:
       - name: default_assignee_value
         description: '{{ doc("default_assignee_value") }}'
 
-      - name: description
+      - name: sys_user_group_description
         description: '{{ doc("description") }}'
 
-      - name: email
+      - name: sys_user_group_email
         description: '{{ doc("email") }}'
 
       - name: exclude_manager
@@ -1444,7 +1419,7 @@ models:
       - name: parent_value
         description: '{{ doc("sys_user_group_parent_value") }}'
 
-      - name: roles
+      - name: sys_user_group_roles
         description: '{{ doc("roles") }}'
 
       - name: source
@@ -1470,3 +1445,185 @@ models:
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'
+
+  - name: stg_servicenow__sys_user_role
+    description: '{{ doc("stg_servicenow__sys_user_role") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_role_id
+            - source_relation
+    columns:
+      - name: sys_user_role_id
+        description: '{{ doc("sys_id") }}'
+        tests:
+          - not_null
+
+      - name: sys_user_role_name
+        description: '{{ doc("name") }}'
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: assignable_by_link
+        description: '{{ doc("assignable_by_link") }}'
+
+      - name: assignable_by_value
+        description: '{{ doc("assignable_by_value") }}'
+
+      - name: can_delegate
+        description: '{{ doc("can_delegate") }}'
+
+      - name: sys_user_role_description
+        description: '{{ doc("description") }}'
+
+      - name: is_elevated_privilege
+        description: '{{ doc("elevated_privilege") }}'
+
+      - name: is_grantable
+        description: '{{ doc("grantable") }}'
+
+      - name: includes_roles
+        description: '{{ doc("includes_roles") }}'
+
+      - name: requires_subscription
+        description: '{{ doc("requires_subscription") }}'
+
+      - name: scoped_admin
+        description: '{{ doc("scoped_admin") }}'
+
+      - name: suffix
+        description: '{{ doc("suffix") }}'
+
+      - name: sys_user_role_created_at
+        description: '{{ doc("sys_created_on") }}'
+
+      - name: sys_user_role_updated_at
+        description: '{{ doc("sys_updated_on") }}'
+
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
+  - name: stg_servicenow__sys_user_has_role
+    description: '{{ doc("stg_servicenow__sys_user_has_role") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_has_role_id
+            - source_relation
+    columns:
+      - name: sys_user_has_role_id
+        description: '{{ doc("sys_id") }}'
+        tests:
+          - not_null
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: granted_by_link
+        description: '{{ doc("granted_by_link") }}'
+
+      - name: granted_by_value
+        description: '{{ doc("granted_by_value") }}'
+
+      - name: included_in_role_instance_link
+        description: '{{ doc("included_in_role_instance_link") }}'
+
+      - name: included_in_role_instance_value
+        description: '{{ doc("included_in_role_instance_value") }}'
+
+      - name: included_in_role_link
+        description: '{{ doc("included_in_role_link") }}'
+
+      - name: included_in_role_value
+        description: '{{ doc("included_in_role_value") }}'
+
+      - name: inh_count
+        description: '{{ doc("inh_count") }}'
+
+      - name: inh_map
+        description: '{{ doc("inh_map") }}'
+
+      - name: inherited
+        description: '{{ doc("inherited") }}'
+
+      - name: role_link
+        description: '{{ doc("role_link") }}'
+
+      - name: sys_user_role_id
+        description: '{{ doc("role_value") }}'
+
+      - name: sys_user_has_role_state
+        description: '{{ doc("state") }}'
+
+      - name: sys_created_by
+        description: '{{ doc("sys_created_by") }}'
+
+      - name: sys_user_has_role_created_at
+        description: '{{ doc("sys_created_on") }}'
+
+      - name: sys_mod_count
+        description: '{{ doc("sys_mod_count") }}'
+
+      - name: sys_updated_by
+        description: '{{ doc("sys_updated_by") }}'
+
+      - name: sys_user_has_role_updated_at
+        description: '{{ doc("sys_updated_on") }}'
+
+      - name: user_link
+        description: '{{ doc("user_link") }}'
+
+      - name: sys_user_id
+        description: '{{ doc("user_value") }}'
+        
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+
+
+  - name: stg_servicenow__sys_user_grmember
+    description: '{{ doc("stg_servicenow__sys_user_grmember") }}'
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - sys_user_grmember_id
+            - source_relation
+    columns:
+      - name: sys_user_grmember_id
+        description: '{{ doc("sys_id") }}'
+        tests:
+          - not_null
+
+      - name: _fivetran_synced
+        description: '{{ doc("_fivetran_synced") }}'
+
+      - name: group_link
+        description: '{{ doc("group_link") }}'
+
+      - name: sys_user_group_id
+        description: '{{ doc("group_value") }}'
+
+      - name: sys_created_by
+        description: '{{ doc("sys_created_by") }}'
+
+      - name: sys_user_grmember_created_at
+        description: '{{ doc("sys_created_on") }}'
+
+      - name: sys_mod_count
+        description: '{{ doc("sys_mod_count") }}'
+
+      - name: sys_updated_by
+        description: '{{ doc("sys_updated_by") }}'
+
+      - name: sys_user_grmember_updated_at
+        description: '{{ doc("sys_updated_on") }}'
+
+      - name: user_link
+        description: '{{ doc("user_link") }}'
+
+      - name: sys_user_id
+        description: '{{ doc("user_value") }}'
+        
+      - name: source_relation
+        description: '{{ doc("source_relation") }}'
+

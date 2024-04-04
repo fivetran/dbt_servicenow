@@ -25,9 +25,11 @@ final as (
     
     select 
         source_relation,
-        cast(sys_id as {{ dbt.type_string() }}) as user_id,
+        cast(sys_id as {{ dbt.type_string() }}) as sys_user_id,
         cast(sys_created_on as {{ dbt.type_timestamp() }}) as user_created_at,
+        sys_created_by,
         cast(sys_updated_on as {{ dbt.type_timestamp() }}) as user_updated_at,
+        sys_updated_by,
         _fivetran_deleted,
         _fivetran_synced,
         accumulated_roles,
@@ -58,7 +60,7 @@ final as (
         home_phone,
         internal_integration_user,
         introduction,
-        last_login as last_login_day_date,
+        cast ({{ dbt.date_trunc('day', 'last_login') }} as date)  as last_login_day_date,
         last_login_device,
         last_login_time as last_login_at,
         last_name,
@@ -78,18 +80,16 @@ final as (
         phone,
         photo,
         preferred_language,
-        roles,
+        roles as sys_user_roles,
         schedule_link,
         cast(schedule_value as {{ dbt.type_string() }}) as schedule_value,
         source,
         state,
         sys_class_name,
-        sys_created_by,
         sys_domain_link,
         sys_domain_path,
         cast(sys_domain_value as {{ dbt.type_string() }}) as sys_domain_value,
         sys_mod_count,
-        sys_updated_by,
         time_format,
         time_zone,
         title,
@@ -99,6 +99,7 @@ final as (
         web_service_access_only,
         zip
     from fields
+    where not coalesce(_fivetran_deleted, false)
 )
 
 select *
