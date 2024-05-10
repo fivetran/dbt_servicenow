@@ -49,7 +49,7 @@ The following table provides a detailed list of all models materialized within t
 
 ## Opinionated Modelling Decisions
 
-Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](DECISIONLOG.md).
+Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](https://github.com/fivetran/dbt_servicenow/blob/main/DECISIONLOG.md).
 
 # 🎯 How do I use the dbt package?
 
