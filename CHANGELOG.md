@@ -1,3 +1,16 @@
+# dbt_servicenow v0.3.0
+[PR #](https://github.com/fivetran/dbt_servicenow/pull/) includes the following updates:
+
+## 🚨 Breaking Changes
+-  The following fields were removed from the `servicenow__task_enhanced` model as `problem_first_reported_by_task_value` was incorrectly assumed to have corresponding `sys_user` values, but in actuality is related to the task table and therefore have no user fields.
+  - `problem_reporter_email, problem_reporter_manager_value, problem_reporter_department_value, problem_reporter_name, problem_reporter_roles`
+
+## Feature Updates
+- The following fields were added to the `servicenow__incident_enhanced` model to add relevant display names to the caller_id_value.
+  - `caller_email, caller_manager_value, caller_department_value, caller_name, caller_roles`
+- The following fields were added to the `servicenow__user_enhanced` model to add relevant display names to the company_value and manager_value. 
+  - `company_name, manager_name`
+
 
 # dbt_servicenow v0.2.0
 [PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:

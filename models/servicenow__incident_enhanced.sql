@@ -40,6 +40,11 @@ incident_enhanced as (
         incident.calendar_stc,
         incident.caller_id_link,
         incident.caller_id_value,
+        caller_info.email as caller_email,
+        caller_info.manager_value as caller_manager_value,
+        caller_info.department_value as caller_department_value,
+        caller_info.sys_user_name as caller_name,
+        caller_info.sys_user_roles as caller_roles,
         incident.incident_cause,
         incident.caused_by_link,
         incident.caused_by_value,
@@ -66,6 +71,9 @@ incident_enhanced as (
     left join sys_user resolver
         on incident.resolved_by_value = resolver.sys_user_id
         and incident.source_relation = resolver.source_relation
+    left join sys_user caller_info
+        on incident.caller_id_value = caller_info.sys_user_id
+        and incident.source_relation = caller_info.source_relation
 )
 
 select *

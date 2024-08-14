@@ -12,6 +12,12 @@ sys_user as (
     from {{ ref('stg_servicenow__sys_user') }}
 ),
 
+core_company as (
+    
+    select *
+    from {{ ref('stg_servicenow__core_company') }}
+),
+
 user_enhanced as (
 
     select
@@ -26,6 +32,7 @@ user_enhanced as (
         sys_user.is_active,
         sys_user.company_link,
         sys_user.company_value,
+        core_company.company_name,
         sys_user.cost_center_link,
         sys_user.cost_center_value,
         sys_user.department_link,
@@ -39,6 +46,7 @@ user_enhanced as (
         sys_user.ldap_server_value,
         sys_user.manager_link,
         sys_user.manager_value,
+        manager.sys_user_name as manager_name,
         sys_user.mobile_phone,
         sys_user.phone,
         sys_user.sys_user_roles,
@@ -59,6 +67,12 @@ user_enhanced as (
     left join sys_user
         on user_aggregates.sys_user_id = sys_user.sys_user_id
         and user_aggregates.source_relation = sys_user.source_relation
+    left join core_company 
+        on sys_user.company_value = core_company.core_company_id
+        and sys_user.source_relation = core_company.source_relation
+    left join sys_user manager
+        on sys_user.manager_value = manager.sys_user_id
+        and sys_user.source_relation = manager.source_relation
 )
 
 select *

@@ -186,12 +186,8 @@ select
   problem_confirmer.department_value as problem_confirmer_department_value,
   problem_confirmer.sys_user_name as problem_confirmer_name,
   problem_confirmer.sys_user_roles as problem_confirmer_roles,
+  problem.problem_first_reported_by_task_link,
   problem.problem_first_reported_by_task_value,
-  problem_reporter.email as problem_reporter_email,
-  problem_reporter.manager_value as problem_reporter_manager_value,
-  problem_reporter.department_value as problem_reporter_department_value,
-  problem_reporter.sys_user_name as problem_reporter_name,
-  problem_reporter.sys_user_roles as problem_reporter_roles,
   problem.problem_fix_at,
   problem.problem_fix_by_value,
   problem_fixer.email as problem_fixer_email,
@@ -270,9 +266,6 @@ left join problem
 left join sys_user problem_confirmer
   on problem.problem_confirmed_by_value = problem_confirmer.sys_user_id
   and problem.source_relation = problem_confirmer.source_relation
-left join sys_user problem_reporter
-  on problem.problem_first_reported_by_task_value = problem_reporter.sys_user_id
-  and problem.source_relation = problem_reporter.source_relation
 left join sys_user problem_fixer
   on problem.problem_fix_by_value = problem_fixer.sys_user_id
   and problem.source_relation = problem_fixer.source_relation
