@@ -1,5 +1,5 @@
 # dbt_servicenow v0.3.0
-[PR #](https://github.com/fivetran/dbt_servicenow/pull/) includes the following updates:
+[PR #10](https://github.com/fivetran/dbt_servicenow/pull/10) includes the following updates:
 
 ## 🚨 Breaking Changes
 -  The following fields were removed from the `servicenow__task_enhanced` model as `problem_first_reported_by_task_value` was incorrectly assumed to have corresponding `sys_user` values, but in actuality is related to the task table and therefore have no user fields.

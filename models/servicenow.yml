@@ -232,6 +232,9 @@ models:
       - name: problem_confirmed_by_value
         description: '{{ doc("problem_confirmed_by_value") }}'
 
+      - name: problem_first_reported_by_task_link
+        description: '{{ doc("problem_first_reported_by_task_link") }}'
+
       - name: problem_first_reported_by_task_value
         description: '{{ doc("task_value") }}'
 
