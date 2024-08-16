@@ -382,6 +382,18 @@ models:
       - name: is_change_request_unauthorized
         description: '{{ doc("is_change_request_unauthorized") }}'
 
+      - name: priority_label
+        description: '{{ doc("label") }}'
+
+      - name: impact_label
+        description: '{{ doc("label") }}'
+
+      - name: urgency_label
+        description: '{{ doc("label") }}'
+
+      - name: task_state_label
+        description: '{{ doc("label") }}'
+
       - name: is_problem_task
         description: '{{ doc("is_problem_task") }}'
       - name: is_change_task
@@ -763,6 +775,9 @@ models:
         description: '{{ doc("sys_user_name") }}'
       - name: problem_workaround_communicator_roles
         description: '{{ doc("roles") }}'
+      - name: problem_state_label
+        description: '{{ doc("label") }}'
+
 
 
   - name: servicenow__change_request_enhanced
@@ -933,6 +948,19 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
+      - name: change_request_type_label
+        description: '{{ doc("label") }}'
+
+      - name: change_request_phase_state_label
+        description: '{{ doc("label") }}'
+
+      - name: change_request_risk_label
+        description: '{{ doc("label") }}'
+
+      - name: risk_impact_analysis_label
+        description: '{{ doc("label") }}'
+
+
   - name: servicenow__incident_enhanced
     description: '{{ doc("servicenow__incident_enhanced") }}'
     tests:
@@ -1096,6 +1124,22 @@ models:
       
       - name: source_relation
         description: '{{ doc("source_relation")}}'
+
+      - name: incident_category_label
+        description: '{{ doc("label") }}'
+
+      - name: incident_subcategory_label
+        description: '{{ doc("label") }}'
+
+      - name: incident_severity_label
+        description: '{{ doc("label") }}'
+
+      - name: incident_state_label
+        description: '{{ doc("label") }}'
+
+      - name: business_impact_label
+        description: '{{ doc("label") }}'
+
 
 
   - name: servicenow__user_aggregated
