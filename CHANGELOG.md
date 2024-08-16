@@ -10,6 +10,9 @@
   - `caller_email, caller_manager_value, caller_department_value, caller_name, caller_roles`
 - The following fields were added to the `servicenow__user_enhanced` model to add relevant display names to the company_value and manager_value. 
   - `company_name, manager_name`
+- The following label fields were added to respective choice fields in order to bring the human-readable text displayed for each choice option
+
+TO BE COMPLETED
 
 
 # dbt_servicenow v0.2.0

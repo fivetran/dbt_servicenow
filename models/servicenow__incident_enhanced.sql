@@ -1,22 +1,29 @@
 with incident as (
-
     select *
     from {{ ref('stg_servicenow__incident') }}
 ),
 
 sys_user as (
-    
     select *
     from {{ ref('stg_servicenow__sys_user') }}
+),
+
+sys_choice as (
+    select *
+    from {{ ref('stg_servicenow__sys_choice') }}
 ),
 
 incident_enhanced as (
     select
         incident.incident_id,
         incident.incident_category,
+        category_choice.label as incident_category_label,
         incident.incident_subcategory,
+        subcategory_choice.label as incident_subcategory_label,
         incident.incident_severity,
+        severity_choice.label as incident_severity_label,
         incident.incident_state,
+        state_choice.label as incident_state_label,
         incident.incident_created_at,
         incident.incident_updated_at,
         incident.reopened_by_link,
@@ -36,6 +43,7 @@ incident_enhanced as (
         resolver.sys_user_name as resolver_name,
         resolver.sys_user_roles as resolver_roles,
         incident.business_impact,
+        business_impact_choice.label as business_impact_label,
         incident.business_stc,
         incident.calendar_stc,
         incident.caller_id_link,
@@ -74,6 +82,31 @@ incident_enhanced as (
     left join sys_user caller_info
         on incident.caller_id_value = caller_info.sys_user_id
         and incident.source_relation = caller_info.source_relation
+    left join sys_choice category_choice
+        on incident.incident_category = category_choice.sys_choice_value
+        and category_choice.sys_choice_name = 'incident'
+        and category_choice.element = 'category'
+        and incident.source_relation = category_choice.source_relation
+    left join sys_choice subcategory_choice
+        on incident.incident_subcategory = subcategory_choice.sys_choice_value
+        and subcategory_choice.sys_choice_name = 'incident'
+        and subcategory_choice.element = 'subcategory'
+        and incident.source_relation = subcategory_choice.source_relation
+    left join sys_choice state_choice
+        on incident.incident_state = state_choice.sys_choice_value
+        and state_choice.sys_choice_name = 'incident'
+        and state_choice.element = 'state'
+        and incident.source_relation = state_choice.source_relation
+    left join sys_choice business_impact_choice
+        on incident.business_impact = business_impact_choice.sys_choice_value
+        and business_impact_choice.sys_choice_name = 'incident'
+        and business_impact_choice.element = 'business_impact'
+        and incident.source_relation = business_impact_choice.source_relation
+    left join sys_choice severity_choice
+        on incident.incident_severity = severity_choice.sys_choice_value
+        and severity_choice.sys_choice_name = 'incident'
+        and severity_choice.element = 'severity'
+        and incident.source_relation = severity_choice.source_relation
 )
 
 select *
