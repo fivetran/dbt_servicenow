@@ -1,12 +1,9 @@
-
 with base as (
-
     select * 
     from {{ ref('stg_servicenow__task_base') }}
 ),
 
 fields as (
-
     select
         {{
             fivetran_utils.fill_staging_columns(
@@ -22,7 +19,6 @@ fields as (
 ),
 
 final as (
-    
     select 
         source_relation,
         cast(sys_id as {{ dbt.type_string() }}) as task_id,
@@ -45,7 +41,7 @@ final as (
         cast(business_service_value as {{ dbt.type_string() }}) as business_service_value,
         calendar_duration,
         close_notes,
-        closed_at as task_closed_at,
+        cast(closed_at as {{ dbt.type_timestamp() }}) as task_closed_at,
         closed_by_link,
         cast(closed_by_value as {{ dbt.type_string() }}) as closed_by_value,
         cmdb_ci_link,
@@ -64,24 +60,24 @@ final as (
         delivery_task_link,
         cast(delivery_task_value as {{ dbt.type_string() }}) as delivery_task_value,
         description as task_description,
-        cast ({{ dbt.date_trunc('day', 'due_date') }} as date)  as task_due_date_at,
+        cast ({{ dbt.date_trunc('day', 'due_date') }} as date) as task_due_date_at,
         escalation,
         expected_start,
         follow_up as task_follow_up_at,
         group_list,
-        impact,
+        cast(impact as {{ dbt.type_string() }}) as impact,
         knowledge,
         location_link,
         cast(location_value as {{ dbt.type_string() }}) as location_value,
         cast(made_sla as {{ dbt.type_boolean() }}) as is_made_sla,
         number as task_number,
-        opened_at as task_opened_at,
+        cast(opened_at as {{ dbt.type_timestamp() }}) as task_opened_at,
         opened_by_link,
         cast(opened_by_value as {{ dbt.type_string() }}) as opened_by_value,
         task_order, -- Renamed within the get_task_columns() macro.
         parent_link,
         cast(parent_value as {{ dbt.type_string() }}) as parent_value,
-        priority,
+        cast(priority as {{ dbt.type_string() }}) as priority,
         reassignment_count,
         rejection_goto_link,
         cast(rejection_goto_value as {{ dbt.type_string() }}) as rejection_goto_value,
@@ -90,7 +86,7 @@ final as (
         cast(service_offering_value as {{ dbt.type_string() }}) as service_offering_value,
         short_description,
         sla_due,
-        state as task_state,
+        cast(state as {{ dbt.type_string() }}) as task_state,
         sys_class_name,
         sys_created_by,
         sys_domain_link,
@@ -103,7 +99,7 @@ final as (
         cast(universal_request_value as {{ dbt.type_string() }}) as universal_request_value,
         upon_approval,
         upon_reject,
-        urgency,
+        cast(urgency as {{ dbt.type_string() }}) as urgency,
         watch_list,
         wf_activity_link,
         cast(wf_activity_value as {{ dbt.type_string() }}) as wf_activity_value,

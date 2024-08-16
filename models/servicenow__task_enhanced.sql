@@ -1,76 +1,72 @@
-
 with task as (
-
   select *
   from {{ ref('stg_servicenow__task') }}
 ),
 
 problem_task as (
-    
   select *
   from {{ ref('stg_servicenow__problem_task') }}
 ),
 
 problem as (
-    
   select *
   from {{ ref('stg_servicenow__problem') }}
 ),
 
 change_task as (
-    
   select *
   from {{ ref('stg_servicenow__change_task') }}
 ),
 
 change_request as (
-    
   select *
   from {{ ref('stg_servicenow__change_request') }}
 ),
 
 sys_user as (
-    
   select *
   from {{ ref('stg_servicenow__sys_user') }}
 ),
 
 sys_user_group as (
-    
   select *
   from {{ ref('stg_servicenow__sys_user_group') }}
 ),
 
 core_company as (
-    
   select *
   from {{ ref('stg_servicenow__core_company') }}
 ),
 
 cmdb_ci as (
-
   select *
   from {{ ref('stg_servicenow__cmdb_ci') }}
 ),
 
 cmdb_ci_service as (
-
   select *
   from {{ ref('stg_servicenow__cmdb_ci_service') }}
 ),
 
+sys_choice as (
+  select *
+  from {{ ref('stg_servicenow__sys_choice') }}
+),
+
 task_enhanced as (
-
 select 
-
   task.task_id,
   task.is_task_active,
   task.task_description,
   task.activity_due,
   task.priority,
+  priority_choice.label as priority_label,
   task.impact,
+  impact_choice.label as impact_label,
   task.urgency,
+  urgency_choice.label as urgency_label,
   task.task_state,
+  state_choice.label as task_state_label,
   task.task_number,
   task.task_order,
   cast( (case when problem_task.problem_task_id is not null 
@@ -305,6 +301,26 @@ left join cmdb_ci
 left join cmdb_ci_service business_service
   on task.business_service_value = business_service.cmdb_ci_service_id
   and task.source_relation = business_service.source_relation
+left join sys_choice state_choice
+  on task.task_state = state_choice.sys_choice_value
+  and state_choice.sys_choice_name = 'task'
+  and state_choice.element = 'state'
+  and task.source_relation = state_choice.source_relation
+left join sys_choice priority_choice
+  on task.priority = priority_choice.sys_choice_value
+  and priority_choice.sys_choice_name = 'task'
+  and priority_choice.element = 'priority'
+  and task.source_relation = priority_choice.source_relation
+left join sys_choice impact_choice
+  on task.impact = impact_choice.sys_choice_value
+  and impact_choice.sys_choice_name = 'task'
+  and impact_choice.element = 'impact'
+  and task.source_relation = impact_choice.source_relation
+left join sys_choice urgency_choice
+  on task.urgency = urgency_choice.sys_choice_value
+  and urgency_choice.sys_choice_name = 'task'
+  and urgency_choice.element = 'urgency'
+  and task.source_relation = urgency_choice.source_relation
 )
 
 select *
