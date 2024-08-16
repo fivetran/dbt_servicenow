@@ -13,9 +13,6 @@
 - The following label fields were added to respective choice fields in order to bring the human-readable text displayed for each choice option:
   - `priority_label, impact_label, urgency_label, task_state_label, problem_state_label, change_request_type_label, change_request_phase_state_label, change_request_risk_label, risk_impact_analysis_label, incident_category_label, incident_subcategory_label, incident_severity_label, incident_state_label, business_impact_label`
 
-TO BE COMPLETED
-
-
 # dbt_servicenow v0.2.0
 [PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:
 
