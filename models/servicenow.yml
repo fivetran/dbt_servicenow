@@ -382,16 +382,16 @@ models:
       - name: is_change_request_unauthorized
         description: '{{ doc("is_change_request_unauthorized") }}'
 
-      - name: priority_label
+      - name: dv_priority_label
         description: '{{ doc("label") }}'
 
-      - name: impact_label
+      - name: dv_impact_label
         description: '{{ doc("label") }}'
 
-      - name: urgency_label
+      - name: dv_urgency_label
         description: '{{ doc("label") }}'
 
-      - name: task_state_label
+      - name: dv_task_state_label
         description: '{{ doc("label") }}'
 
       - name: is_problem_task
@@ -775,7 +775,7 @@ models:
         description: '{{ doc("sys_user_name") }}'
       - name: problem_workaround_communicator_roles
         description: '{{ doc("roles") }}'
-      - name: problem_state_label
+      - name: dv_problem_state_label
         description: '{{ doc("label") }}'
 
 
@@ -948,16 +948,16 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
-      - name: change_request_type_label
+      - name: dv_change_request_type_label
         description: '{{ doc("label") }}'
 
-      - name: change_request_phase_state_label
+      - name: dv_change_request_phase_state_label
         description: '{{ doc("label") }}'
 
-      - name: change_request_risk_label
+      - name: dv_change_request_risk_label
         description: '{{ doc("label") }}'
 
-      - name: risk_impact_analysis_label
+      - name: dv_risk_impact_analysis_label
         description: '{{ doc("label") }}'
 
 
@@ -1125,19 +1125,19 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation")}}'
 
-      - name: incident_category_label
+      - name: dv_incident_category_label
         description: '{{ doc("label") }}'
 
-      - name: incident_subcategory_label
+      - name: dv_incident_subcategory_label
         description: '{{ doc("label") }}'
 
-      - name: incident_severity_label
+      - name: dv_incident_severity_label
         description: '{{ doc("label") }}'
 
-      - name: incident_state_label
+      - name: dv_incident_state_label
         description: '{{ doc("label") }}'
 
-      - name: business_impact_label
+      - name: dv_business_impact_label
         description: '{{ doc("label") }}'
 
 

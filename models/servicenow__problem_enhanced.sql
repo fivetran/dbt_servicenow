@@ -28,7 +28,7 @@ problem_enhanced as (
         problem.problem_subcategory,
         problem.problem_category,
         problem.problem_state,
-        state_choice.label as problem_state_label,
+        state_choice.label as dv_problem_state_label,
         problem.problem_created_at,
         problem.problem_updated_at,
         problem.problem_confirmed_at,
