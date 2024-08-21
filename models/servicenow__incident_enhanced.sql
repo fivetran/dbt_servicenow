@@ -16,6 +16,26 @@ sys_choice as (
 
 incident_enhanced as (
     select
+
+    -- number, -- task
+    -- service,
+    -- service_offering, -- task
+    -- configuration_item,
+    -- universal_request, -- task
+    -- transfer_reason, 
+    -- channel,
+    -- impact, -- task
+    -- urgency, -- task
+    -- priority, -- task
+    -- assignment_group, -- task
+    -- assign_to, -- task
+    -- watch_list, -- task
+    -- work_notes_list, -- task
+    -- additional_comments,
+    -- work_notes, -- task
+    -- change_request, 
+    -- resolution_notes
+
         incident.incident_id,
         incident.incident_category,
         category_choice.label as dv_incident_category_label,

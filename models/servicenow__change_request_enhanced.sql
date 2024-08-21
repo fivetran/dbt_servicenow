@@ -25,6 +25,19 @@ sys_choice as (
 
 change_request_enhanced as (
     select
+
+    -- number, -- task
+    -- service, -- task
+    -- configuration_item, -- na
+    -- priority, -- task
+    -- impact,  -- task
+    -- approval,  -- task
+    -- state, -- task
+    -- assignment_group, -- task
+    -- assigned_to,-- task
+    -- short_description,-- task
+    -- description, -- task
+
         change_request.change_request_id,
         change_request.change_request_category,
         change_request.change_request_type,

@@ -52,7 +52,7 @@ final as (
         on_hold_reason as change_request_on_hold_reason,
         on_hold_task,
         outside_maintenance_schedule,
-        phase as change_request_phase,
+        cast(phase as {{ dbt.type_string() }}) as change_request_phase,
         cast(phase_state as {{ dbt.type_string() }}) as change_request_phase_state,
         production_system as is_production_system,
         reason as change_request_reason,
