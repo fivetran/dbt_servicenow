@@ -957,9 +957,6 @@ models:
       - name: dv_change_request_risk_label
         description: '{{ doc("label") }}'
 
-      - name: dv_risk_impact_analysis_label
-        description: '{{ doc("label") }}'
-
 
   - name: servicenow__incident_enhanced
     description: '{{ doc("servicenow__incident_enhanced") }}'

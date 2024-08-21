@@ -11,6 +11,7 @@ sys_user as (
 sys_choice as (
     select *
     from {{ ref('stg_servicenow__sys_choice') }}
+    where sys_choice_name = 'incident'
 ),
 
 incident_enhanced as (
@@ -84,27 +85,24 @@ incident_enhanced as (
         and incident.source_relation = caller_info.source_relation
     left join sys_choice category_choice
         on incident.incident_category = category_choice.sys_choice_value
-        and category_choice.sys_choice_name = 'incident'
         and category_choice.element = 'category'
         and incident.source_relation = category_choice.source_relation
     left join sys_choice subcategory_choice
         on incident.incident_subcategory = subcategory_choice.sys_choice_value
-        and subcategory_choice.sys_choice_name = 'incident'
         and subcategory_choice.element = 'subcategory'
+        and incident.incident_category = subcategory_choice.dependent_value 
         and incident.source_relation = subcategory_choice.source_relation
     left join sys_choice state_choice
         on incident.incident_state = state_choice.sys_choice_value
-        and state_choice.sys_choice_name = 'incident'
         and state_choice.element = 'state'
         and incident.source_relation = state_choice.source_relation
     left join sys_choice business_impact_choice
         on incident.business_impact = business_impact_choice.sys_choice_value
-        and business_impact_choice.sys_choice_name = 'incident'
         and business_impact_choice.element = 'business_impact'
+        -- none when filtered for incident
         and incident.source_relation = business_impact_choice.source_relation
     left join sys_choice severity_choice
         on incident.incident_severity = severity_choice.sys_choice_value
-        and severity_choice.sys_choice_name = 'incident'
         and severity_choice.element = 'severity'
         and incident.source_relation = severity_choice.source_relation
 )

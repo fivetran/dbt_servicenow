@@ -20,6 +20,7 @@ sys_user as (
 sys_choice as (
     select *
     from {{ ref('stg_servicenow__sys_choice') }}
+    where sys_choice_name = 'change_request'
 ),
 
 change_request_enhanced as (
@@ -65,7 +66,6 @@ change_request_enhanced as (
         change_request.change_request_risk,
         risk_choice.label as dv_change_request_risk_label,
         change_request.risk_impact_analysis,
-        risk_impact_analysis_choice.label as dv_risk_impact_analysis_label,
         change_request.change_request_scope,
         change_request.change_request_test_plan,
         change_request.is_change_request_unauthorized,
@@ -91,24 +91,17 @@ change_request_enhanced as (
         and change_request.source_relation = change_requestor.source_relation
     left join sys_choice type_choice
         on change_request.change_request_type = type_choice.sys_choice_value
-        and type_choice.sys_choice_name = 'change_request'
         and type_choice.element = 'type'
         and change_request.source_relation = type_choice.source_relation
     left join sys_choice phase_state_choice
         on change_request.change_request_phase_state = phase_state_choice.sys_choice_value
-        and phase_state_choice.sys_choice_name = 'change_request'
         and phase_state_choice.element = 'phase_state'
+        and change_request.change_request_phase = phase_state_choice.dependent_value
         and change_request.source_relation = phase_state_choice.source_relation
     left join sys_choice risk_choice
         on change_request.change_request_risk = risk_choice.sys_choice_value
-        and risk_choice.sys_choice_name = 'change_request'
         and risk_choice.element = 'risk'
         and change_request.source_relation = risk_choice.source_relation
-    left join sys_choice risk_impact_analysis_choice
-        on change_request.risk_impact_analysis = risk_impact_analysis_choice.sys_choice_value
-        and risk_impact_analysis_choice.sys_choice_name = 'change_request'
-        and risk_impact_analysis_choice.element = 'risk_impact_analysis'
-        and change_request.source_relation = risk_impact_analysis_choice.source_relation
 )
 
 select *

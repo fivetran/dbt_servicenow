@@ -11,7 +11,10 @@
 - The following fields were added to the `servicenow__user_enhanced` model to add relevant display names to the company_value and manager_value. 
   - `company_name, manager_name`
 - The following label fields were added to respective choice fields in order to bring the human-readable text displayed for each choice option:
-  - `priority_label, impact_label, urgency_label, task_state_label, problem_state_label, change_request_type_label, change_request_phase_state_label, change_request_risk_label, risk_impact_analysis_label, incident_category_label, incident_subcategory_label, incident_severity_label, incident_state_label, business_impact_label`
+  - `dv_priority_label, dv_impact_label, dv_urgency_label, dv_task_state_label, dv_problem_state_label, dv_change_request_type_label, dv_change_request_phase_state_label, dv_change_request_risk_label, dv_risk_impact_analysis_label, dv_incident_category_label, dv_incident_subcategory_label, dv_incident_severity_label, dv_incident_state_label, dv_business_impact_label`
+    - Certain choice fields have labels that can depend on the `dependent_value` field in the `sys_choice` table. This dependency typically arises when the same choice field can have different labels based on the context in which it is used. Therefore some elements from `sys_choice` are also joined in on the additional `dependent_value` field. For example, here is a common example where `dependent_value` might influence the label:
+
+    - `incident_category` and `incident_subcategory`: These fields often depend on each other. For instance, if the `incident_category` is "Software," the `incident_subcategory` might have different options compared to when the category is "Hardware." The `dependent_value` in this case could represent the incident_category and influence the incident_subcategory labels.
 
 # dbt_servicenow v0.2.0
 [PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:
