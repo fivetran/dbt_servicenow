@@ -23,23 +23,7 @@ sys_choice as (
 ),
 
 problem_enhanced as (
-    select 
-
-    -- number, -- task
-    -- service, -- task
-    -- service_offering, -- task
-    -- configuration_item,
-    -- impact,  -- task
-    -- urgency,   -- task
-    -- priority,   -- task
-    -- assignment_group, -- task
-    -- assigned_to,-- task
-    -- problem_statement,
-    -- description, --task
-    -- work_notes_list, --task
-    -- work_notes,  --task
-    -- closed_by -- task
-
+    select
         problem.problem_id,
         problem.problem_subcategory,
         problem.problem_category,
