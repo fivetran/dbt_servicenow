@@ -316,7 +316,7 @@ models:
       - name: change_request_category
         description: '{{ doc("change_category") }}'
 
-      - name: change_plan
+      - name: change_request_change_plan
         description: '{{ doc("change_plan") }}'
 
       - name: change_request_close_code
@@ -834,7 +834,7 @@ models:
       - name: change_plan
         description: '{{ doc("change_plan") }}'
 
-      - name: backout_plan
+      - name: change_request_backout_plan
         description: '{{ doc("backout_plan") }}'
 
       - name: chg_model_link
