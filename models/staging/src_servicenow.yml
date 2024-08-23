@@ -1128,3 +1128,52 @@ sources:
             description: '{{ doc("user_link") }}'
           - name: user_value
             description: '{{ doc("user_value") }}'
+
+      - name: sys_choice
+        identifier: '{{ var("servicenow_sys_choice_identifier", "sys_choice") }}'
+        description: '{{ doc("sys_choice") }}'
+        config:
+          enabled: "{{ var('servicenow__using_sys_choice', true) }}"
+        columns:
+          - name: sys_id
+            description: '{{ doc("sys_id") }}'
+          - name: _fivetran_deleted
+            description: '{{ doc("_fivetran_deleted") }}'
+          - name: _fivetran_synced
+            description: '{{ doc("_fivetran_synced") }}'
+          - name: dependent_value
+            description: '{{ doc("dependent_value") }}'
+          - name: element
+            description: '{{ doc("element") }}'
+          - name: hint
+            description: '{{ doc("hint") }}'
+          - name: inactive
+            description: '{{ doc("inactive") }}'
+          - name: label
+            description: '{{ doc("label") }}'
+          - name: language
+            description: '{{ doc("language") }}'
+          - name: name
+            description: '{{ doc("sys_choice_name") }}'
+          - name: sequence
+            description: '{{ doc("sequence") }}'
+          - name: synonyms
+            description: '{{ doc("synonyms") }}'
+          - name: sys_created_by
+            description: '{{ doc("sys_created_by") }}'
+          - name: sys_created_on
+            description: '{{ doc("sys_created_on") }}'
+          - name: sys_domain_link
+            description: '{{ doc("sys_domain_link") }}'
+          - name: sys_domain_path
+            description: '{{ doc("sys_domain_path") }}'
+          - name: sys_domain_value
+            description: '{{ doc("sys_domain_value") }}'
+          - name: sys_mod_count
+            description: '{{ doc("sys_mod_count") }}'
+          - name: sys_updated_by
+            description: '{{ doc("sys_updated_by") }}'
+          - name: sys_updated_on
+            description: '{{ doc("sys_updated_on") }}'
+          - name: value
+            description: '{{ doc("sys_choice_value") }}'

@@ -1,76 +1,72 @@
-
 with task as (
-
   select *
   from {{ ref('stg_servicenow__task') }}
 ),
 
 problem_task as (
-    
   select *
   from {{ ref('stg_servicenow__problem_task') }}
 ),
 
 problem as (
-    
   select *
   from {{ ref('stg_servicenow__problem') }}
 ),
 
 change_task as (
-    
   select *
   from {{ ref('stg_servicenow__change_task') }}
 ),
 
 change_request as (
-    
   select *
   from {{ ref('stg_servicenow__change_request') }}
 ),
 
 sys_user as (
-    
   select *
   from {{ ref('stg_servicenow__sys_user') }}
 ),
 
 sys_user_group as (
-    
   select *
   from {{ ref('stg_servicenow__sys_user_group') }}
 ),
 
 core_company as (
-    
   select *
   from {{ ref('stg_servicenow__core_company') }}
 ),
 
 cmdb_ci as (
-
   select *
   from {{ ref('stg_servicenow__cmdb_ci') }}
 ),
 
 cmdb_ci_service as (
-
   select *
   from {{ ref('stg_servicenow__cmdb_ci_service') }}
 ),
 
+sys_choice as (
+  select *
+  from {{ ref('stg_servicenow__sys_choice') }}
+),
+
 task_enhanced as (
-
 select 
-
   task.task_id,
   task.is_task_active,
   task.task_description,
   task.activity_due,
   task.priority,
+  priority_choice.label as dv_priority_label,
   task.impact,
+  impact_choice.label as dv_impact_label,
   task.urgency,
+  urgency_choice.label as dv_urgency_label,
   task.task_state,
+  state_choice.label as dv_task_state_label,
   task.task_number,
   task.task_order,
   cast( (case when problem_task.problem_task_id is not null 
@@ -186,12 +182,8 @@ select
   problem_confirmer.department_value as problem_confirmer_department_value,
   problem_confirmer.sys_user_name as problem_confirmer_name,
   problem_confirmer.sys_user_roles as problem_confirmer_roles,
+  problem.problem_first_reported_by_task_link,
   problem.problem_first_reported_by_task_value,
-  problem_reporter.email as problem_reporter_email,
-  problem_reporter.manager_value as problem_reporter_manager_value,
-  problem_reporter.department_value as problem_reporter_department_value,
-  problem_reporter.sys_user_name as problem_reporter_name,
-  problem_reporter.sys_user_roles as problem_reporter_roles,
   problem.problem_fix_at,
   problem.problem_fix_by_value,
   problem_fixer.email as problem_fixer_email,
@@ -227,7 +219,14 @@ select
   change_request.change_request_created_at,
   change_request.change_request_updated_at,
   change_request.change_request_category,
-  change_request.change_plan,
+  change_request.change_request_change_plan,
+  change_request.change_request_backout_plan,
+  change_request.change_request_test_plan,
+  change_request.is_cab_required,
+  change_request.cab_date_time,
+  change_request.cab_delegate_link,
+  change_request.cab_delegate_value,
+  change_request.cab_recommendation,
   change_request.change_request_close_code,
   change_request.change_request_end_date,
   change_request.change_request_implementation_plan,
@@ -247,9 +246,9 @@ select
   change_request.change_request_review_date,
   change_request.change_request_review_status,
   change_request.change_request_risk,
+  change_request.risk_impact_analysis,
   change_request.change_request_scope,
   change_request.change_request_start_date,
-  change_request.change_request_test_plan,
   change_request.change_request_type,
   change_request.is_change_request_unauthorized,
   task.source_relation
@@ -270,9 +269,6 @@ left join problem
 left join sys_user problem_confirmer
   on problem.problem_confirmed_by_value = problem_confirmer.sys_user_id
   and problem.source_relation = problem_confirmer.source_relation
-left join sys_user problem_reporter
-  on problem.problem_first_reported_by_task_value = problem_reporter.sys_user_id
-  and problem.source_relation = problem_reporter.source_relation
 left join sys_user problem_fixer
   on problem.problem_fix_by_value = problem_fixer.sys_user_id
   and problem.source_relation = problem_fixer.source_relation
@@ -312,6 +308,26 @@ left join cmdb_ci
 left join cmdb_ci_service business_service
   on task.business_service_value = business_service.cmdb_ci_service_id
   and task.source_relation = business_service.source_relation
+left join sys_choice state_choice
+  on task.task_state = state_choice.sys_choice_value
+  and state_choice.sys_choice_name = 'task'
+  and state_choice.element = 'state'
+  and task.source_relation = state_choice.source_relation
+left join sys_choice priority_choice
+  on task.priority = priority_choice.sys_choice_value
+  and priority_choice.sys_choice_name = 'task'
+  and priority_choice.element = 'priority'
+  and task.source_relation = priority_choice.source_relation
+left join sys_choice impact_choice
+  on task.impact = impact_choice.sys_choice_value
+  and impact_choice.sys_choice_name = 'task'
+  and impact_choice.element = 'impact'
+  and task.source_relation = impact_choice.source_relation
+left join sys_choice urgency_choice
+  on task.urgency = urgency_choice.sys_choice_value
+  and urgency_choice.sys_choice_name = 'task'
+  and urgency_choice.element = 'urgency'
+  and task.source_relation = urgency_choice.source_relation
 )
 
 select *

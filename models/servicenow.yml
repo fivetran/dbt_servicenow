@@ -232,6 +232,9 @@ models:
       - name: problem_confirmed_by_value
         description: '{{ doc("problem_confirmed_by_value") }}'
 
+      - name: problem_first_reported_by_task_link
+        description: '{{ doc("problem_first_reported_by_task_link") }}'
+
       - name: problem_first_reported_by_task_value
         description: '{{ doc("task_value") }}'
 
@@ -313,7 +316,7 @@ models:
       - name: change_request_category
         description: '{{ doc("change_category") }}'
 
-      - name: change_plan
+      - name: change_request_change_plan
         description: '{{ doc("change_plan") }}'
 
       - name: change_request_close_code
@@ -378,6 +381,18 @@ models:
 
       - name: is_change_request_unauthorized
         description: '{{ doc("is_change_request_unauthorized") }}'
+
+      - name: dv_priority_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_impact_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_urgency_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_task_state_label
+        description: '{{ doc("label") }}'
 
       - name: is_problem_task
         description: '{{ doc("is_problem_task") }}'
@@ -454,16 +469,6 @@ models:
       - name: problem_confirmer_name
         description: '{{ doc("sys_user_name") }}'
       - name: problem_confirmer_roles
-        description: '{{ doc("roles") }}'
-      - name: problem_reporter_email
-        description: '{{ doc("email") }}'
-      - name: problem_reporter_manager_value
-        description: '{{ doc("manager_value") }}'
-      - name: problem_reporter_department_value
-        description: '{{ doc("department_value") }}'
-      - name: problem_reporter_name
-        description: '{{ doc("sys_user_name") }}'
-      - name: problem_reporter_roles
         description: '{{ doc("roles") }}'
       - name: problem_fixer_email
         description: '{{ doc("email") }}'
@@ -770,6 +775,9 @@ models:
         description: '{{ doc("sys_user_name") }}'
       - name: problem_workaround_communicator_roles
         description: '{{ doc("roles") }}'
+      - name: dv_problem_state_label
+        description: '{{ doc("label") }}'
+
 
 
   - name: servicenow__change_request_enhanced
@@ -826,7 +834,7 @@ models:
       - name: change_plan
         description: '{{ doc("change_plan") }}'
 
-      - name: backout_plan
+      - name: change_request_backout_plan
         description: '{{ doc("backout_plan") }}'
 
       - name: chg_model_link
@@ -940,6 +948,16 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
+      - name: dv_change_request_type_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_change_request_phase_state_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_change_request_risk_label
+        description: '{{ doc("label") }}'
+
+
   - name: servicenow__incident_enhanced
     description: '{{ doc("servicenow__incident_enhanced") }}'
     tests:
@@ -1031,6 +1049,21 @@ models:
       
       - name: caller_id_value
         description: '{{ doc("caller_id_value")}}'
+
+      - name: caller_email
+        description: '{{ doc("email")}}'
+
+      - name: caller_manager_value
+        description: '{{ doc("manager_value")}}'
+
+      - name: caller_department_value
+        description: '{{ doc("department_value")}}'
+
+      - name: caller_name
+        description: '{{ doc("sys_user_name")}}'
+
+      - name: caller_roles
+        description: '{{ doc("roles")}}'
       
       - name: incident_cause
         description: '{{ doc("cause")}}'
@@ -1088,6 +1121,22 @@ models:
       
       - name: source_relation
         description: '{{ doc("source_relation")}}'
+
+      - name: dv_incident_category_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_incident_subcategory_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_incident_severity_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_incident_state_label
+        description: '{{ doc("label") }}'
+
+      - name: dv_business_impact_label
+        description: '{{ doc("label") }}'
+
 
 
   - name: servicenow__user_aggregated
@@ -1153,6 +1202,8 @@ models:
         description: '{{ doc("company_link") }}'
       - name: company_value
         description: '{{ doc("company_value") }}'
+      - name: company_name
+        description: '{{ doc("name") }}'
       - name: cost_center_link
         description: '{{ doc("cost_center_link") }}'
       - name: cost_center_value
@@ -1179,6 +1230,8 @@ models:
         description: '{{ doc("manager_link") }}'
       - name: manager_value
         description: '{{ doc("manager_value") }}'
+      - name: manager_name
+        description: '{{ doc("sys_user_name") }}'
       - name: mobile_phone
         description: '{{ doc("mobile_phone") }}'
       - name: phone

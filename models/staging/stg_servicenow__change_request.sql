@@ -1,4 +1,3 @@
-
 with base as (
 
     select * 
@@ -32,7 +31,7 @@ final as (
         cast ({{ dbt.date_trunc('day', 'sys_updated_on') }} as date) as change_request_updated_date,
         _fivetran_deleted,
         _fivetran_synced,
-        backout_plan,
+        backout_plan as change_request_backout_plan,
         cab_date,
         cab_date_time,
         cab_delegate_link,
@@ -40,7 +39,7 @@ final as (
         cab_recommendation,
         cab_required as is_cab_required,
         category as change_request_category,
-        change_plan,
+        change_plan as change_request_change_plan,
         chg_model_link,
         cast(chg_model_value as {{ dbt.type_string() }}) as chg_model_value,
         close_code as change_request_close_code,
@@ -53,8 +52,8 @@ final as (
         on_hold_reason as change_request_on_hold_reason,
         on_hold_task,
         outside_maintenance_schedule,
-        phase as change_request_phase,
-        phase_state as change_request_phase_state,
+        cast(phase as {{ dbt.type_string() }}) as change_request_phase,
+        cast(phase_state as {{ dbt.type_string() }}) as change_request_phase_state,
         production_system as is_production_system,
         reason as change_request_reason,
         requested_by_date as change_requested_by_date,
@@ -63,12 +62,12 @@ final as (
         review_comments,
         review_date as change_request_review_date,
         review_status as change_request_review_status,
-        risk as change_request_risk,
-        risk_impact_analysis,
+        cast(risk as {{ dbt.type_string() }}) as change_request_risk,
+        cast(risk_impact_analysis as {{ dbt.type_string() }}) as risk_impact_analysis,
         scope as change_request_scope,
         start_date as change_request_start_date,
         test_plan as change_request_test_plan,
-        type as change_request_type,
+        cast(type as {{ dbt.type_string() }}) as change_request_type,
         unauthorized as is_change_request_unauthorized
     from fields
     where not coalesce(_fivetran_deleted, false)

@@ -1,11 +1,9 @@
 with problem as (
-
     select *
     from {{ ref('stg_servicenow__problem') }}
 ),
 
 problem_task as (
-    
     select
         problem_value,
         source_relation,
@@ -15,19 +13,38 @@ problem_task as (
 ),
 
 sys_user as (
-    
     select *
     from {{ ref('stg_servicenow__sys_user') }}
 ),
 
-problem_enhanced as (
+sys_choice as (
+    select *
+    from {{ ref('stg_servicenow__sys_choice') }}
+),
 
+problem_enhanced as (
     select 
+
+    -- number, -- task
+    -- service, -- task
+    -- service_offering, -- task
+    -- configuration_item,
+    -- impact,  -- task
+    -- urgency,   -- task
+    -- priority,   -- task
+    -- assignment_group, -- task
+    -- assigned_to,-- task
+    -- problem_statement,
+    -- description, --task
+    -- work_notes_list, --task
+    -- work_notes,  --task
+    -- closed_by -- task
 
         problem.problem_id,
         problem.problem_subcategory,
         problem.problem_category,
         problem.problem_state,
+        state_choice.label as dv_problem_state_label,
         problem.problem_created_at,
         problem.problem_updated_at,
         problem.problem_confirmed_at,
@@ -94,12 +111,11 @@ problem_enhanced as (
         problem_workaround_communicator.department_value as problem_workaround_communicator_department_value,
         problem_workaround_communicator.sys_user_name as problem_workaround_communicator_name,
         problem_workaround_communicator.sys_user_roles as problem_workaround_communicator_roles,
-        {{ dbt.datediff("cast(problem.problem_created_at as " ~ dbt.type_timestamp() ~  " ) ", "cast(problem.problem_fix_at as " ~ dbt.type_timestamp() ~ " ) ", 'minute') }} as problem_minutes_created_to_fix,
-        {{ dbt.datediff("cast(problem.problem_created_at as " ~ dbt.type_timestamp() ~ " ) ", "cast(problem.problem_resolved_at as " ~ dbt.type_timestamp() ~ " ) ", 'minute') }} as problem_minutes_created_to_resolved,
+        {{ dbt.datediff("cast(problem.problem_created_at as " ~ dbt.type_timestamp() ~  " ) ", "cast(problem.problem_fix_at as " ~ dbt.type_timestamp() ~ " ) ", 'minute') }} as problem_minutes_created_to_fix,
+        {{ dbt.datediff("cast(problem.problem_created_at as " ~ dbt.type_timestamp() ~ " ) ", "cast(problem.problem_resolved_at as " ~ dbt.type_timestamp() ~ " ) ", 'minute') }} as problem_minutes_created_to_resolved,
         problem._fivetran_synced,
         problem_task.total_tasks as total_related_tasks,
         problem.source_relation
-
     from problem
     left join problem_task
         on problem.problem_id = problem_task.problem_value
@@ -122,6 +138,11 @@ problem_enhanced as (
     left join sys_user problem_workaround_communicator
         on problem.workaround_communicated_by_value = problem_workaround_communicator.sys_user_id
         and problem.source_relation = problem_workaround_communicator.source_relation
+    left join sys_choice state_choice
+        on problem.problem_state = state_choice.sys_choice_value
+        and state_choice.sys_choice_name = 'problem'
+        and state_choice.element = 'state'
+        and problem.source_relation = state_choice.source_relation
 )
 
 select *
