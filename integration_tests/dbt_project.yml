@@ -26,6 +26,7 @@ vars:
     servicenow_sys_user_role_identifier: "sys_user_role_data"
     servicenow_sys_user_has_role_identifier: "sys_user_has_role_data"
     servicenow_sys_user_grmember_identifier: "sys_user_grmember_data"
+    # fivetran_validation_tests_enabled: true
 
 
 seeds:
@@ -73,3 +74,8 @@ seeds:
     task_data_snowflake:
       +alias: task_data
       +enabled: "{{ true if target.type == 'snowflake' else false }}"
+
+
+  ## For validation testing. To be commented out before release.
+  # servicenow_schema: servicenow_test_env  
+
