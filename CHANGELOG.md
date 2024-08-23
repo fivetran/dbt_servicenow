@@ -16,6 +16,8 @@
 
     - `incident_category` and `incident_subcategory`: These fields often depend on each other. For instance, if the `incident_category` is "Software," the `incident_subcategory` might have different options compared to when the category is "Hardware." The `dependent_value` in this case could represent the incident_category and influence the incident_subcategory labels.
 
+- To make labels feasible, we included a new table to the staging models, `stg_servicenow__sys_choice`.
+
 # dbt_servicenow v0.2.0
 [PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:
 
