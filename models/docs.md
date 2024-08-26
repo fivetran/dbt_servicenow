@@ -1933,7 +1933,7 @@ List of associated user group roles.
 {% enddocs %}
 
 {% docs sys_choice %}
-Staging table containing all records relating to system choices. System choices represent predefined options for fields in various ServiceNow tables.
+Table containing all records relating to system choices. System choices represent predefined options for fields in various ServiceNow tables.
 {% enddocs %}
 
 {% docs stg_servicenow__sys_choice %}
@@ -1957,7 +1957,7 @@ Boolean indicating whether this choice is inactive (not available for selection)
 {% enddocs %}
 
 {% docs label %}
-The human-readable text displayed for this choice option.
+The display value, or human-readable text, for a titular choice option.
 {% enddocs %}
 
 {% docs language %}
