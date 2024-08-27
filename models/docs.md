@@ -1957,7 +1957,7 @@ Boolean indicating whether this choice is inactive (not available for selection)
 {% enddocs %}
 
 {% docs label %}
-The display value, or human-readable text, for a titular choice option.
+The display value (viewable in the ServiceNow UI), or human-readable text, for a titular choice option.
 {% enddocs %}
 
 {% docs language %}
