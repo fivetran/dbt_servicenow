@@ -40,7 +40,7 @@
     - For more information about the logic used to attach labels to choice fields, refer to the [DECISIONLOG](https://github.com/fivetran/dbt_servicenow/blob/main/DECISIONLOG.md#methodology-for-adding-label-for-choice-fields) where a section has been added (titled *Methodology for Adding Labels for Choice Fields*).
 
 #### New Staging Model
-- To make labels feasible, we included a new table to the staging models, `stg_servicenow__sys_choice`.
+- To include labels, we added a new source table `sys_choice`. This is reflected upstream, in `stg_servicenow__sys_choice` and `stg_servicenow__sys_choice_base`. 
 
 ## Under The Hood
 - Added explicit casts to timestamp fields, as well as string casts to choice fields in order to join them later downstream on `sys_choice.element`.
