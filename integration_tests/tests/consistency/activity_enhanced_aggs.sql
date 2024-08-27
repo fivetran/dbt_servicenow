@@ -6,10 +6,6 @@
 with prod as (
     select
         task_updated_date,
-        -- task_state,
-        -- priority,
-        -- impact,
-        -- urgency,
         source_relation,
         sum(total_active_tasks) as total_active_tasks,
         sum(total_active_problem_tasks) as total_active_problem_tasks,
@@ -28,10 +24,6 @@ with prod as (
 dev as (
     select
         task_updated_date,
-        -- task_state,
-        -- priority,
-        -- impact,
-        -- urgency,
         source_relation,
         sum(total_active_tasks) as total_active_tasks,
         sum(total_active_problem_tasks) as total_active_problem_tasks,
@@ -80,8 +72,7 @@ final as (
 
 select * 
 from final
-    where prod.task_updated_date != dev.task_updated_date or 
-    prod_source_relation != dev_source_relation or
+where
     abs(prod_total_active_tasks - dev_total_active_tasks) > .1 or
     abs(prod_total_active_problem_tasks - dev_total_active_problem_tasks) > .1 or
     abs(prod_total_active_change_tasks - dev_total_active_change_tasks) > .1 or
