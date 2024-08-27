@@ -36,10 +36,8 @@
   - `dv_business_impact_label`
 
 - Certain choice fields have labels that can depend on the `dependent_value` field in the `sys_choice` table. This dependency typically arises when the same choice field can have different labels based on the context in which it is used. Therefore some elements from `sys_choice` are also joined in on the additional `dependent_value` field. For example, here is a common example where `dependent_value` might influence the label:
-
     - `incident_category` and `incident_subcategory`: These fields often depend on each other. For instance, if the `incident_category` is "Software," the `incident_subcategory` might have different options compared to when the category is "Hardware." The `dependent_value` in this case could represent the incident_category and influence the incident_subcategory labels.
-
-- For more information about the logic used to attach labels to choice fields, refer to the [DECISIONLOG](https://github.com/fivetran/dbt_servicenow/blob/main/DECISIONLOG.md#methodology-for-adding-label-for-choice-fields) where a section has been added (titled *Methodology for Adding Labels for Choice Fields*).
+    - For more information about the logic used to attach labels to choice fields, refer to the [DECISIONLOG](https://github.com/fivetran/dbt_servicenow/blob/main/DECISIONLOG.md#methodology-for-adding-label-for-choice-fields) where a section has been added (titled *Methodology for Adding Labels for Choice Fields*).
 
 #### New Staging Model
 - To make labels feasible, we included a new table to the staging models, `stg_servicenow__sys_choice`.
