@@ -63,22 +63,27 @@ user_aggregates as (
     select
         sys_user.sys_user_id,
         sys_user.source_relation,
+        count_distinct_sys_user_group_ids,
         case when
             aggregate_counts.count_distinct_sys_user_group_ids <= 5000 then {{ fivetran_utils.string_agg("distinct user_grmember.sys_user_group_id", "'\\n'") }}
             else 'Too many sys user group ids to render' 
         end as sys_user_group_ids,
+        count_distinct_sys_user_role_ids,
         case when
             aggregate_counts.count_distinct_sys_user_role_ids <= 5000 then {{ fivetran_utils.string_agg("distinct user_has_role.sys_user_role_id", "'\\n'") }}
             else 'Too many sys user role ids to render' 
         end as sys_user_role_ids,
+        count_distinct_sys_user_role_names,
         case when
             aggregate_counts.count_distinct_sys_user_role_names <= 5000 then {{ fivetran_utils.string_agg("distinct user_role.sys_user_role_name", "'\\n'") }}
             else 'Too many sys user role names to render' 
         end as sys_user_role_names,
+        count_distinct_included_roles,
         case when
             aggregate_counts.count_distinct_included_roles <= 5000 then {{ fivetran_utils.string_agg("distinct user_role.includes_roles", "'\\n'") }}
             else 'Too many roles to render' 
         end as included_roles,
+        count_distinct_sys_user_group_roles,
         case when
             aggregate_counts.count_distinct_sys_user_group_roles <= 5000 then {{ fivetran_utils.string_agg("distinct user_group.sys_user_group_roles", "'\\n'") }}
             else 'Too many sys user group roles to render' 
