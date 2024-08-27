@@ -4,7 +4,6 @@
     enabled=var('fivetran_validation_tests_enabled', false)
 ) }}
 
--- The necessary source and source_filter adjustments used below originate from the int_zendesk__sla_policy_applied model
 with source as (
     select
         1 as join_key,

@@ -20,6 +20,7 @@ sys_user as (
 sys_choice as (
     select *
     from {{ ref('stg_servicenow__sys_choice') }}
+    where sys_choice_name = 'problem'
 ),
 
 problem_enhanced as (
@@ -124,7 +125,6 @@ problem_enhanced as (
         and problem.source_relation = problem_workaround_communicator.source_relation
     left join sys_choice state_choice
         on problem.problem_state = state_choice.sys_choice_value
-        and state_choice.sys_choice_name = 'problem'
         and state_choice.element = 'state'
         and problem.source_relation = state_choice.source_relation
 )

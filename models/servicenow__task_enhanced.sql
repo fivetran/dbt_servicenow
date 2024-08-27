@@ -51,6 +51,7 @@ cmdb_ci_service as (
 sys_choice as (
   select *
   from {{ ref('stg_servicenow__sys_choice') }}
+  where sys_choice_name = 'task'
 ),
 
 task_enhanced as (
@@ -303,22 +304,18 @@ left join cmdb_ci_service business_service
   and task.source_relation = business_service.source_relation
 left join sys_choice state_choice
   on task.task_state = state_choice.sys_choice_value
-  and state_choice.sys_choice_name = 'task'
   and state_choice.element = 'state'
   and task.source_relation = state_choice.source_relation
 left join sys_choice priority_choice
   on task.priority = priority_choice.sys_choice_value
-  and priority_choice.sys_choice_name = 'task'
   and priority_choice.element = 'priority'
   and task.source_relation = priority_choice.source_relation
 left join sys_choice impact_choice
   on task.impact = impact_choice.sys_choice_value
-  and impact_choice.sys_choice_name = 'task'
   and impact_choice.element = 'impact'
   and task.source_relation = impact_choice.source_relation
 left join sys_choice urgency_choice
   on task.urgency = urgency_choice.sys_choice_value
-  and urgency_choice.sys_choice_name = 'task'
   and urgency_choice.element = 'urgency'
   and task.source_relation = urgency_choice.source_relation
 )
