@@ -99,7 +99,6 @@ incident_enhanced as (
     left join sys_choice business_impact_choice
         on incident.business_impact = business_impact_choice.sys_choice_value
         and business_impact_choice.element = 'business_impact'
-        -- none when filtered for incident
         and incident.source_relation = business_impact_choice.source_relation
     left join sys_choice severity_choice
         on incident.incident_severity = severity_choice.sys_choice_value
