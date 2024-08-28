@@ -6,16 +6,18 @@
 
 with source as (
     select
-        1 as join_key,
+        problem_id as join_key,
         count(*) as row_count
     from {{ ref('stg_servicenow__problem') }}
+    group by 1
 ),
 
 problem as (
     select
-        1 as join_key,
+        problem_id as join_key,
         count(*) as row_count
     from {{ ref('servicenow__problem_enhanced') }}
+    group by 1
 ),
 
 match_check as (

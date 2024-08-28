@@ -6,16 +6,18 @@
 
 with source as (
     select
-        1 as join_key,
+        sys_user_id as join_key,
         count(*) as row_count
     from {{ ref('stg_servicenow__sys_user') }}
+    group by 1
 ),
 
 user_enhanced as (
     select
-        1 as join_key,
+        sys_user_id as join_key,
         count(*) as row_count
     from {{ ref('servicenow__user_enhanced') }}
+    group by 1
 ),
 
 match_check as (

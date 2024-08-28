@@ -6,16 +6,18 @@
 
 with source as (
     select
-        1 as join_key,
+        change_request_id as join_key,
         count(*) as row_count
     from {{ ref('stg_servicenow__change_request') }}
+    group by 1
 ),
 
 change_request as (
     select
-        1 as join_key,
+        change_request_id as join_key,
         count(*) as row_count
     from {{ ref('servicenow__change_request_enhanced') }}
+    group by 1
 ),
 
 match_check as (

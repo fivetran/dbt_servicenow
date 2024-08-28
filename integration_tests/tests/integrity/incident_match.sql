@@ -6,16 +6,18 @@
 
 with source as (
     select
-        1 as join_key,
+        incident_id as join_key,
         count(*) as row_count
     from {{ ref('stg_servicenow__incident') }}
+    group by 1
 ),
 
 incident as (
     select
-        1 as join_key,
+        incident_id as join_key,
         count(*) as row_count
     from {{ ref('servicenow__incident_enhanced') }}
+    group by 1
 ),
 
 match_check as (

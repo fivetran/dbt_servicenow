@@ -6,16 +6,18 @@
 
 with source as (
     select
-        1 as join_key,
+        task_id as join_key,
         count(*) as row_count
     from {{ ref('stg_servicenow__task') }}
+    group by 1
 ),
 
 task as (
     select
-        1 as join_key,
+        task_id as join_key,
         count(*) as row_count
     from {{ ref('servicenow__task_enhanced') }}
+    group by 1
 ),
 
 match_check as (
