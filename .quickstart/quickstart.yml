@@ -14,3 +14,12 @@ destination_configurations:
     dispatch:
       - macro_namespace: dbt_utils
         search_order: [ 'spark_utils', 'dbt_utils' ]
+public_models: [
+  "servicenow__user_enhanced",
+  "servicenow__change_request_enhanced",
+  "servicenow__user_aggregated",
+  "servicenow__problem_enhanced",
+  "servicenow__activity_summary",
+  "servicenow__task_enhanced",
+  "servicenow__incident_enhanced"
+]
