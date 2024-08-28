@@ -1161,6 +1161,16 @@ models:
         description: '{{ doc("included_roles") }}'
       - name: sys_user_group_roles
         description: '{{ doc("sys_user_group_roles") }}'
+      - name: count_distinct_sys_user_group_ids
+        description: '{{ doc("count_distinct_sys_user_group_ids") }}'
+      - name: count_distinct_sys_user_role_ids
+        description: '{{ doc("count_distinct_sys_user_role_ids") }}'
+      - name: count_distinct_sys_user_role_names
+        description: '{{ doc("count_distinct_sys_user_role_names") }}'
+      - name: count_distinct_included_roles
+        description: '{{ doc("count_distinct_included_roles") }}'
+      - name: count_distinct_sys_user_group_roles
+        description: '{{ doc("count_distinct_sys_user_group_roles") }}'
 
   - name: servicenow__user_enhanced
     description: '{{ doc("servicenow__user_enhanced") }}'
@@ -1262,3 +1272,13 @@ models:
         description: '{{ doc("user_name") }}'
       - name: user_password
         description: '{{ doc("user_password") }}'
+      - name: count_distinct_sys_user_group_ids
+        description: '{{ doc("count_distinct_sys_user_group_ids") }}'
+      - name: count_distinct_sys_user_role_ids
+        description: '{{ doc("count_distinct_sys_user_role_ids") }}'
+      - name: count_distinct_sys_user_role_names
+        description: '{{ doc("count_distinct_sys_user_role_names") }}'
+      - name: count_distinct_included_roles
+        description: '{{ doc("count_distinct_included_roles") }}'
+      - name: count_distinct_sys_user_group_roles
+        description: '{{ doc("count_distinct_sys_user_group_roles") }}'

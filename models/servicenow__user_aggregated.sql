@@ -35,11 +35,11 @@ aggregate_counts as (
     select 
         sys_user.sys_user_id,
         sys_user.source_relation,
-        count(distinct user_grmember.sys_user_group_id) as count_distinct_sys_user_group_ids,
-        count(distinct user_has_role.sys_user_role_id) as count_distinct_sys_user_role_ids,
-        count(distinct user_role.sys_user_role_name) as count_distinct_sys_user_role_names,
-        count(distinct user_role.includes_roles) as count_distinct_included_roles,
-        count(distinct user_group.sys_user_group_roles) as count_distinct_sys_user_group_roles
+        count(distinct case when user_grmember.sys_user_group_id is not null and user_grmember.sys_user_group_id != '' then user_grmember.sys_user_group_id else null end) as count_distinct_sys_user_group_ids,
+        count(distinct case when user_has_role.sys_user_role_id is not null and user_has_role.sys_user_role_id != '' then user_has_role.sys_user_role_id else null end) as count_distinct_sys_user_role_ids,
+        count(distinct case when user_role.sys_user_role_name is not null and user_role.sys_user_role_name != '' then user_role.sys_user_role_name else null end) as count_distinct_sys_user_role_names,
+        count(distinct case when user_role.includes_roles is not null and user_role.includes_roles != '' then user_role.includes_roles else null end) as count_distinct_included_roles,
+        count(distinct case when user_group.sys_user_group_roles is not null and user_group.sys_user_group_roles != '' then user_group.sys_user_group_roles else null end) as count_distinct_sys_user_group_roles
 
     from sys_user
     left join user_grmember

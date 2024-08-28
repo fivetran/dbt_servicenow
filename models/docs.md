@@ -1979,3 +1979,24 @@ The stored value for this choice option, often used in database operations or sc
 {% docs sys_choice_name %}
 Indicates the table to which the field belongs, such as task.
 {% enddocs %}
+
+
+{% docs count_distinct_sys_user_group_ids %}
+The number of distinct sys_user_group_ids related to this user.
+{% enddocs %}
+
+{% docs count_distinct_sys_user_role_ids %}
+The number of distinct sys_user_role_ids related to this user.
+{% enddocs %}
+
+{% docs count_distinct_sys_user_role_names %}
+The number of distinct sys_user_role_names related to this user.
+{% enddocs %}
+
+{% docs count_distinct_included_roles %}
+The number of distinct included_roles related to this user.
+{% enddocs %}
+
+{% docs count_distinct_sys_user_group_roles %}
+The number of distinct sys_user_group_roles related to this user.
+{% enddocs %}
