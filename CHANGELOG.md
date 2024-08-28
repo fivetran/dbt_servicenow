@@ -20,7 +20,7 @@
 - The following fields were added to the `servicenow__user_enhanced` model to add relevant display names to the `company_value` and `manager_value`. 
   - `company_name`
   - `manager_name`
-- The following label fields were added to respective choice fields in order to bring the human-readable text displayed for each choice option:
+- The following label fields were added to respective choice fields in order to bring the display value (`dv`), or human-readable text available in the ServiceNow UI, displayed for each choice option:
   - `dv_priority_label`
   - `dv_impact_label`
   - `dv_urgency_label`
@@ -40,10 +40,11 @@
     - For more information about the logic used to attach labels to choice fields, refer to the [DECISIONLOG](https://github.com/fivetran/dbt_servicenow/blob/main/DECISIONLOG.md#methodology-for-adding-label-for-choice-fields) where a section has been added (titled *Methodology for Adding Labels for Choice Fields*).
 
 #### New Staging Model
-- To include labels, we added a new source table `sys_choice`. This is reflected upstream, in `stg_servicenow__sys_choice` and `stg_servicenow__sys_choice_base`. 
+- To include labels, we used a new source table `sys_choice`. This is reflected upstream, in the newly added `stg_servicenow__sys_choice` and `stg_servicenow__sys_choice_base`. 
 
 ## Under The Hood
 - Added explicit casts to timestamp fields, as well as string casts to choice fields in order to join them later downstream on `sys_choice.element`.
+- Added consistency and integrity validation tests within integration_tests folder for all current end models.
 
 # dbt_servicenow v0.2.0
 [PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:
