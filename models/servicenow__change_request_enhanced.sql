@@ -1,11 +1,9 @@
 with change_request as (
-
     select * 
     from {{ ref('stg_servicenow__change_request') }}
 ),
 
 change_task as (
-
     select
         change_request_value,
         source_relation,
@@ -15,9 +13,14 @@ change_task as (
 ),
 
 sys_user as (
-    
     select *
     from {{ ref('stg_servicenow__sys_user') }}
+),
+
+sys_choice as (
+    select *
+    from {{ ref('stg_servicenow__sys_choice') }}
+    where sys_choice_name = 'change_request'
 ),
 
 change_request_enhanced as (
@@ -25,6 +28,7 @@ change_request_enhanced as (
         change_request.change_request_id,
         change_request.change_request_category,
         change_request.change_request_type,
+        type_choice.label as dv_change_request_type_label,
         change_request.change_request_created_at,
         change_request.change_request_created_date,
         change_request.change_request_updated_at,
@@ -50,6 +54,7 @@ change_request_enhanced as (
         change_request.conflict_status,
         change_request.change_request_phase,
         change_request.change_request_phase_state,
+        phase_state_choice.label as dv_change_request_phase_state_label,
         change_request.change_request_implementation_plan,
         change_request.change_request_justification,
         change_request.is_change_request_on_hold,
@@ -59,6 +64,7 @@ change_request_enhanced as (
         change_request.is_production_system,
         change_request.change_request_reason,
         change_request.change_request_risk,
+        risk_choice.label as dv_change_request_risk_label,
         change_request.risk_impact_analysis,
         change_request.change_request_scope,
         change_request.change_request_test_plan,
@@ -83,8 +89,20 @@ change_request_enhanced as (
     left join sys_user change_requestor
         on change_request.change_requested_by_value = change_requestor.sys_user_id
         and change_request.source_relation = change_requestor.source_relation
+    left join sys_choice type_choice
+        on change_request.change_request_type = type_choice.sys_choice_value
+        and type_choice.element = 'type'
+        and change_request.source_relation = type_choice.source_relation
+    left join sys_choice phase_state_choice
+        on change_request.change_request_phase_state = phase_state_choice.sys_choice_value
+        and phase_state_choice.element = 'phase_state'
+        and change_request.change_request_phase = phase_state_choice.dependent_value
+        and change_request.source_relation = phase_state_choice.source_relation
+    left join sys_choice risk_choice
+        on change_request.change_request_risk = risk_choice.sys_choice_value
+        and risk_choice.element = 'risk'
+        and change_request.source_relation = risk_choice.source_relation
 )
 
 select *
 from change_request_enhanced
-

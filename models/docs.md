@@ -1931,3 +1931,72 @@ List of included roles.
 {% docs sys_user_group_roles %}
 List of associated user group roles.
 {% enddocs %}
+
+{% docs sys_choice %}
+Table containing all records relating to system choices. System choices represent predefined options for fields in various ServiceNow tables.
+{% enddocs %}
+
+{% docs stg_servicenow__sys_choice %}
+Staging table containing all records relating to system choices. System choices represent predefined options for fields in various ServiceNow tables.
+{% enddocs %}
+
+{% docs dependent_value %}
+The value of another field that this choice depends on. Used for creating dependent choice lists.
+{% enddocs %}
+
+{% docs element %}
+The name of the field that this choice is associated with, for example Urgency.
+{% enddocs %}
+
+{% docs hint %}
+Additional information or guidance about the choice, often displayed as a tooltip or helper text.
+{% enddocs %}
+
+{% docs inactive %}
+Boolean indicating whether this choice is inactive (not available for selection).
+{% enddocs %}
+
+{% docs label %}
+The display value (viewable in the ServiceNow UI), or human-readable text, for a titular choice option.
+{% enddocs %}
+
+{% docs language %}
+The language code for this choice, used for multilingual implementations.
+{% enddocs %}
+
+{% docs sequence %}
+A number indicating the order in which this choice should appear in a list.
+{% enddocs %}
+
+{% docs synonyms %}
+Alternative terms or phrases that are equivalent to this choice, used for searching or matching.
+{% enddocs %}
+
+{% docs sys_choice_value %}
+The stored value for this choice option, often used in database operations or scripts. The actual value stored in the element. (e.g., for element = Urgency: 1, 2, or 3).
+{% enddocs %}
+
+{% docs sys_choice_name %}
+Indicates the table to which the field belongs, such as task.
+{% enddocs %}
+
+
+{% docs count_distinct_sys_user_group_ids %}
+The number of distinct sys_user_group_ids related to this user.
+{% enddocs %}
+
+{% docs count_distinct_sys_user_role_ids %}
+The number of distinct sys_user_role_ids related to this user.
+{% enddocs %}
+
+{% docs count_distinct_sys_user_role_names %}
+The number of distinct sys_user_role_names related to this user.
+{% enddocs %}
+
+{% docs count_distinct_included_roles %}
+The number of distinct included_roles related to this user.
+{% enddocs %}
+
+{% docs count_distinct_sys_user_group_roles %}
+The number of distinct sys_user_group_roles related to this user.
+{% enddocs %}

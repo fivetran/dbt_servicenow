@@ -1,5 +1,5 @@
 name: 'servicenow_integration_tests'
-version: '0.2.0'
+version: '0.3.0'
 config-version: 2
 
 profile: 'integration_tests'
@@ -10,7 +10,7 @@ dispatch:
 
 vars:
   servicenow:
-    servicenow_schema: servicenow_integration_tests_10
+    servicenow_schema: servicenow_integration_tests_13
     servicenow_task_identifier: "task_data"
     servicenow_task_sla_identifier: "task_sla_data"
     servicenow_sys_user_identifier: "sys_user_data"
@@ -27,6 +27,10 @@ vars:
     servicenow_sys_user_has_role_identifier: "sys_user_has_role_data"
     servicenow_sys_user_grmember_identifier: "sys_user_grmember_data"
 
+    # servicenow__using_roles: true # to be turned on when generating docs so that can be generated via the manifest and docs as it is turned off by default.
+
+models:
+  +schema: "servicenow_{{ var('directed_schema','dev') }}"
 
 seeds:
   +quote_columns: "{{ true if target.type in ('redshift','postgres') else false }}"

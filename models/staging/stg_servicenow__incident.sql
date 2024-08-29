@@ -1,12 +1,9 @@
-
 with base as (
-
     select * 
     from {{ ref('stg_servicenow__incident_base') }}
 ),
 
 fields as (
-
     select
         {{
             fivetran_utils.fill_staging_columns(
@@ -22,7 +19,6 @@ fields as (
 ),
 
 final as (
-    
     select 
         source_relation, 
         cast(sys_id as {{ dbt.type_string() }}) as incident_id,
@@ -30,19 +26,19 @@ final as (
         cast(sys_updated_on as {{ dbt.type_timestamp() }}) as incident_updated_at,
         _fivetran_deleted,
         _fivetran_synced,
-        business_impact,
+        cast(business_impact as {{ dbt.type_string() }}) as business_impact,
         business_stc,
         calendar_stc,
         caller_id_link,
         cast(caller_id_value as {{ dbt.type_string() }}) as caller_id_value,
-        category as incident_category,
-        cause as incident_cause,
+        cast(category as {{ dbt.type_string() }}) as incident_category,
+        cast(cause as {{ dbt.type_string() }}) as incident_cause,
         caused_by_link,
         cast(caused_by_value as {{ dbt.type_string() }}) as caused_by_value,
         child_incidents,
         close_code,
         hold_reason,
-        incident_state,
+        cast(incident_state as {{ dbt.type_string() }}) as incident_state,
         notify,
         origin_id_link,
         cast(origin_id_value as {{ dbt.type_string() }}) as origin_id_value,
@@ -59,8 +55,8 @@ final as (
         cast(resolved_by_value as {{ dbt.type_string() }}) as resolved_by_value,
         rfc_link,
         cast(rfc_value as {{ dbt.type_string() }}) as rfc_value,
-        severity as incident_severity,
-        subcategory as incident_subcategory
+        cast(severity as {{ dbt.type_string() }}) as incident_severity,
+        cast(subcategory as {{ dbt.type_string() }}) as incident_subcategory
     from fields
     where not coalesce(_fivetran_deleted, false)
 )

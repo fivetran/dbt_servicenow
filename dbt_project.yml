@@ -1,6 +1,6 @@
 config-version: 2
 name: 'servicenow'
-version: '0.2.0'
+version: '0.3.0'
 
 require-dbt-version: [">=1.3.0", "<2.0.0"]
 
@@ -26,6 +26,7 @@ vars:
     core_company: "{{ source('servicenow','core_company') }}"
     cmdb_ci: "{{ source('servicenow','cmdb_ci') }}"
     cmdb_ci_service: "{{ source('servicenow','cmdb_ci_service') }}"
+    sys_choice: "{{ source('servicenow','sys_choice') }}"
     sys_user_group: "{{ source('servicenow','sys_user_group') }}"
     sys_user_role: "{{ source('servicenow','sys_user_role') }}"
     sys_user_has_role: "{{ source('servicenow','sys_user_has_role') }}"

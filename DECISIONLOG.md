@@ -1,3 +1,11 @@
+## Methodology for Adding Labels for Choice Fields 
+
+A choice field is a type of field that allows users to select from a predefined list of options (for example, `incident_subcategory` and `change_request_risk`). These options are stored in the `sys_choice` table, which contains the possible values, labels, and other metadata for the choice field. Each choice field is typically associated with a specific table and column in the database and is used to standardize the input for commonly selected values, such as incident states, categories, or priorities.
+
+Certain choice fields have labels that can depend on the `dependent_value` field in the `sys_choice` table. This dependency typically arises when the same choice field can have different labels based on the context in which it is used. Therefore some elements from `sys_choice` are also joined in on additional fields. Here are some common examples where `dependent_value` might influence the label:
+
+- `incident_category` and `incident_subcategory`: These fields often depend on each other. For instance, if the `incident_category` is "Software," the `incident_subcategory` might have different options compared to when the category is "Hardware." The `dependent_value` in this case could represent the `incident_category` and influence the `incident_subcategory` labels.
+
 ## Relationships between User, Group, and Role related tables in ServiceNow
 
 The Users table (`sys_user`) is linked to Roles (`sys_user_role`) through a many-to-many relationship via the `sys_user_has_role` table. This intermediary table stores records that connect each User with one or more Roles. When a Role is assigned directly to a User, a corresponding entry is created in the `sys_user_has_role` table. Conversely, when a Role is removed from a User, the corresponding entry is deleted from the table.
