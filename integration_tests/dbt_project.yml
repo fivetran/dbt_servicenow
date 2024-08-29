@@ -27,7 +27,7 @@ vars:
     servicenow_sys_user_has_role_identifier: "sys_user_has_role_data"
     servicenow_sys_user_grmember_identifier: "sys_user_grmember_data"
 
-    servicenow__using_roles: true # to be turned on when generating docs so that can be generated via the manifest and docs as it is turned off by default.
+    # servicenow__using_roles: true # to be turned on when generating docs so that can be generated via the manifest and docs as it is turned off by default.
 
 models:
   +schema: "servicenow_{{ var('directed_schema','dev') }}"

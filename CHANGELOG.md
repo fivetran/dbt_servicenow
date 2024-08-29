@@ -54,7 +54,6 @@
 ## Under The Hood
 - Added explicit casts to timestamp fields, as well as string casts to choice fields in order to join them later downstream on `sys_choice.element`.
 - Added consistency and integrity validation tests within integration_tests folder for all current end models.
-- Updated the logic for 
 
 # dbt_servicenow v0.2.0
 [PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:
