@@ -42,9 +42,19 @@
 #### New Staging Model
 - To include labels, we used a new source table `sys_choice`. This is reflected upstream, in the newly added `stg_servicenow__sys_choice` and `stg_servicenow__sys_choice_base`. 
 
+#### Aggregations in User Models
+- The following fields, which previously only existed in intermediate CTEs, have been persisted through to the `servicenow__user_aggregated` and `servicenow__user_enhanced` models to add more user metadata:
+  - `count_distinct_sys_user_group_ids`
+  - `count_distinct_sys_user_role_ids`
+  - `count_distinct_sys_user_role_names`
+  - `count_distinct_included_roles`
+  - `count_distinct_sys_user_group_roles`
+- Additionally, we've realized the way these fields were previously aggregated could unintentionally also include blank values that were not-null, so we have updated the logic accordingly.
+
 ## Under The Hood
 - Added explicit casts to timestamp fields, as well as string casts to choice fields in order to join them later downstream on `sys_choice.element`.
 - Added consistency and integrity validation tests within integration_tests folder for all current end models.
+- Updated the logic for 
 
 # dbt_servicenow v0.2.0
 [PR #8](https://github.com/fivetran/dbt_servicenow/pull/8) includes the following updates:
