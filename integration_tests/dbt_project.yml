@@ -29,8 +29,8 @@ vars:
 
     servicenow__using_roles: true # to be turned on when generating docs so that can be generated via the manifest and docs as it is turned off by default.
 
-# models:
-#   +schema: "servicenow_{{ var('directed_schema','dev') }}"
+models:
+  +schema: "servicenow_{{ var('directed_schema','dev') }}"
 
 seeds:
   +quote_columns: "{{ true if target.type in ('redshift','postgres') else false }}"
