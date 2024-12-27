@@ -1,4 +1,6 @@
-<p align="center">
+# ServiceNow dbt Package ([Docs](https://fivetran.github.io/dbt_servicenow/))
+
+<p align="left">
     <a alt="License"
         href="https://github.com/fivetran/dbt_servicenow/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
@@ -9,9 +11,6 @@
     <a alt="PRs">
         <img src="https://img.shields.io/badge/Contributions-welcome-blueviolet" /></a>
 </p>
-
-
-# ServiceNow dbt Package ([Docs](https://fivetran.github.io/dbt_servicenow/))
 
 ## What does this dbt package do?
 
@@ -73,7 +72,7 @@ Include the following ServiceNow package version in your `packages.yml` file:
 ```yml
 packages:
   - package: fivetran/servicenow
-    version: [">=0.3.0", "<0.4.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=0.4.0", "<0.5.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 ### Step 3: Define database and schema variables
@@ -104,14 +103,14 @@ To connect your multiple schema/database sources to the package models, follow t
 
 ### (Optional) Step 4: Additional configurations
 
-#### Populating the User Models
-Our user grain models are disabled by default because not everyone syncs the underlying tables: `sys_user_role`, `sys_user_has_role`, and `sys_user_grmember`. If these tables do exist in your schema, set this following variable `servicenow__using_roles` to True in order to populate the user models `servicenow__user_aggregated` and `servicenow__user_enhanced`.
+#### Enable/Disable the User End Models
+Our user grain models are enabled by default, but we do understand that not everyone syncs the underlying tables: `sys_user_role`, `sys_user_has_role`, and `sys_user_grmember`. If these tables do not exist in your schema, set this following variable `servicenow__using_roles` to False in order to disable the end models `servicenow__user_aggregated` and `servicenow__user_enhanced`.
 
 ```yml
 # dbt_project.yml
 
 vars:
-    servicenow__using_roles: True
+    servicenow__using_roles: False # Disable if you are not using user roles
 ```
 
 #### Changing the Build Schema
@@ -139,7 +138,6 @@ vars:
     servicenow_<default_source_table_name>_identifier: your_table_name 
 ```
 </details>
-
 
 ### (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
 <details><summary>Expand for details</summary>

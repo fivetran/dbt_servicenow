@@ -1,3 +1,18 @@
+# dbt_servicenow v0.4.0
+[PR #17](https://github.com/fivetran/dbt_servicenow/pull/17) includes the following updates:
+
+## Breaking Changes
+- Enabled `servicenow__user_aggregated` and `servicenow__user_enhanced` by default by changing the default `servicenow__using_roles` value to true.
+  - By setting the `servicenow__using_roles` variable to true, we now also enable the upstream `stg_servicenow_*` models that flow into these user tables, which derive from the `sys_user_grmember`, `sys_user_has_role`, and `sys_user_role` source tables.
+- Because this change will introduce new end model tables to users because they were initially disabled by default, we've classified this as a breaking change. 
+
+## Documentation Update
+- Updated the variable configuration section of the README since `servicenow__using_roles` is now set to true by default.
+- Moved badges at top of the README below the H1 header to be consistent with popular README formats.
+
+## Under the Hood
+- Changed Buildkite scripts to run models when `servicenow__using_roles` is set to False (since it's now True by default on all models).
+
 # dbt_servicenow v0.3.0
 [PR #10](https://github.com/fivetran/dbt_servicenow/pull/10) includes the following updates:
 

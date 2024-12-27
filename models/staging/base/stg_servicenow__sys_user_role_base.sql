@@ -1,4 +1,4 @@
-{{ config(enabled=var('servicenow__using_roles', False)) }}
+{{ config(enabled=var('servicenow__using_roles', True)) }}
 
 {{
     fivetran_utils.union_data(
