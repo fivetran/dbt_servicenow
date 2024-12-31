@@ -3,13 +3,16 @@
 
 ## Breaking Changes
 - Enabled `servicenow__user_aggregated` and `servicenow__user_enhanced` by default by changing the default `servicenow__using_roles` value to true.
-- Staging models now also enabled by default include:
+- Staging and base models now also enabled by default include:
   - `stg_servicenow__sys_user_grmember`
   - `stg_servicenow__sys_user_has_role`
   - `stg_servicenow__sys_user_role`
+  - `stg_servicenow__sys_user_grmember_base`
+  - `stg_servicenow__sys_user_has_role_base`
+  - `stg_servicenow__sys_user_role_base`
 - Because this change will introduce new end model tables to users because they were initially disabled by default and changes the default behavior of a variable, we've classified this as a breaking change. 
-- Quickstart users will be able to handle disabling of these tables by [utilizing the Quickstart data model tab](https://fivetran.com/docs/using-fivetran/fivetran-dashboard/transformations#datamodels) within your ServiceNow connection, and choose to un-sync the tables required for these models.
-- Non-Quickstart users who do not have these source tables will need to re-define the variable in their `dbt_project.yml`. [See the README](https://github.com/fivetran/dbt_servicenow/blob/main/README.md#optional-step-4-additional-configurations) for more instructions. 
+- Quickstart users will be able to handle disabling of these tables by [utilizing the Quickstart data model tab](https://fivetran.com/docs/transformations/quickstart) within your ServiceNow connection, and choose to un-sync the tables required for these models.
+- Non-Quickstart users who do not have these source tables will need to define the variable in their `dbt_project.yml`. [See the README](https://github.com/fivetran/dbt_servicenow/blob/main/README.md#optional-step-4-additional-configurations) for more instructions. 
 
 ## Documentation Update
 - Updated the variable configuration section of the README since `servicenow__using_roles` is now set to true by default.
