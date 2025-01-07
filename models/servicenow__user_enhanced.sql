@@ -1,4 +1,4 @@
-{{ config(enabled=var('servicenow__using_roles', False)) }}
+{{ config(enabled=var('servicenow__using_roles', True)) }}
 
 with user_aggregates as (
 

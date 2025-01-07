@@ -1,6 +1,6 @@
 {{ config(
     tags="fivetran_validations",
-    enabled=var('fivetran_validation_tests_enabled', false)
+    enabled=(var('fivetran_validation_tests_enabled', false) and var('servicenow__using_roles', true))
 ) }}
 
 with prod as (

@@ -1,3 +1,27 @@
+# dbt_servicenow v0.4.0
+[PR #17](https://github.com/fivetran/dbt_servicenow/pull/17) includes the following updates:
+
+## Breaking Changes
+- Enabled `servicenow__user_aggregated` and `servicenow__user_enhanced` by default by changing the default `servicenow__using_roles` value to true.
+- Staging and base models now also enabled by default include:
+  - `stg_servicenow__sys_user_grmember`
+  - `stg_servicenow__sys_user_has_role`
+  - `stg_servicenow__sys_user_role`
+  - `stg_servicenow__sys_user_grmember_base`
+  - `stg_servicenow__sys_user_has_role_base`
+  - `stg_servicenow__sys_user_role_base`
+- Because this change will introduce new end model tables to users because they were initially disabled by default and changes the default behavior of a variable, we've classified this as a breaking change. 
+- Quickstart users will be able to handle disabling of these tables by [utilizing the Quickstart data model tab](https://fivetran.com/docs/transformations/quickstart) within your ServiceNow connection, and choose to un-sync the tables required for these models.
+- Non-Quickstart users who do not have these source tables will need to define the variable in their `dbt_project.yml`. [See the README](https://github.com/fivetran/dbt_servicenow/blob/main/README.md#optional-step-4-additional-configurations) for more instructions. 
+
+## Documentation Update
+- Updated the variable configuration section of the README since `servicenow__using_roles` is now set to true by default.
+- Moved badges at top of the README below the H1 header to be consistent with popular README formats.
+
+## Under the Hood
+- Changed Buildkite scripts to run models when `servicenow__using_roles` is set to False (since it's now True by default on all models).
+- Updated validation tests to account for the new `servicenow__using_roles` variable configuration.
+
 # dbt_servicenow v0.3.0
 [PR #10](https://github.com/fivetran/dbt_servicenow/pull/10) includes the following updates:
 
