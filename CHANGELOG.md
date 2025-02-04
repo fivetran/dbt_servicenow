@@ -1,3 +1,9 @@
+# dbt_servicenow version.version
+
+## Documentation
+- Added Quickstart model counts to README. ([#18](https://github.com/fivetran/dbt_servicenow/pull/18))
+- Corrected references to connectors and connections in the README. ([#18](https://github.com/fivetran/dbt_servicenow/pull/18))
+
 # dbt_servicenow v0.4.0
 [PR #17](https://github.com/fivetran/dbt_servicenow/pull/17) includes the following updates:
 

@@ -43,6 +43,8 @@ The following table provides a detailed list of all tables materialized within t
 | [servicenow__change_request_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__change_request_enhanced)  | Each record represents a change request with additional information about users who have interacted with it, pertinent task data, and relevant timestamps.    |
 | [servicenow__user_aggregated](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_aggregated)  | Each record represents a user with their associated groups and roles.    |
 | [servicenow__user_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_enhanced)  | Each record represents a user with their associated groups and roles, in addition to additional user info from the sys_user table.    |
+### Materialized Models
+Each Quickstart transformation job run materializes 39 models if all components of this data model are enabled. This count includes all staging, intermediate, and final models materialized as `view`, `table`, or `incremental`.
 <!--section-end-->
 
 
@@ -55,7 +57,7 @@ Servicenow tables can be complex, for example exhibiting many-to-many relationsh
 ### Step 1: Prerequisites
 To use this dbt package, you must have the following:
 
-- At least one Fivetran ServiceNow connector syncing data into your destination.
+- At least one Fivetran ServiceNow connection syncing data into your destination.
 - A **BigQuery**, **Snowflake**, **Redshift**, **Databricks**, or **PostgreSQL** destination.
 
 #### Databricks dispatch configuration
@@ -76,7 +78,7 @@ packages:
 ```
 
 ### Step 3: Define database and schema variables
-#### Single connector
+#### Single connection
 By default, this package runs using your destination and the `servicenow` schema. If this is not where your ServiceNow data is (for example, if your ServiceNow schema is named `servicenow_fivetran`), add the following configuration to your root `dbt_project.yml` file:
 
 ```yml
@@ -86,8 +88,8 @@ vars:
     servicenow_database: your_database_name
     servicenow_schema: your_schema_name
 ```
-#### Union multiple connectors
-If you have multiple ServiceNow connectors in Fivetran and would like to use this package on all of them simultaneously, we have provided functionality to do so. The package will union all of the data together and pass the unioned table into the transformations. You will be able to see which source it came from in the `source_relation` column of each model. To use this functionality, you will need to set either the `servicenow_union_schemas` OR `servicenow_union_databases` variables (cannot do both) in your root `dbt_project.yml` file:
+#### Union multiple connections
+If you have multiple ServiceNow connections in Fivetran and would like to use this package on all of them simultaneously, we have provided functionality to do so. The package will union all of the data together and pass the unioned table into the transformations. You will be able to see which source it came from in the `source_relation` column of each model. To use this functionality, you will need to set either the `servicenow_union_schemas` OR `servicenow_union_databases` variables (cannot do both) in your root `dbt_project.yml` file:
 
 ```yml
 # dbt_project.yml
