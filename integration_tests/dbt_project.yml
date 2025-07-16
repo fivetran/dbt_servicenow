@@ -31,6 +31,8 @@ models:
   +schema: "servicenow_{{ var('directed_schema','dev') }}"
 
 seeds:
+  +docs:
+    show: False
   +quote_columns: "{{ true if target.type in ('redshift','postgres') else false }}"
   servicenow_integration_tests:
     +column_types:
@@ -75,3 +77,7 @@ seeds:
     task_data_snowflake:
       +alias: task_data
       +enabled: "{{ true if target.type == 'snowflake' else false }}"
+
+flags:
+  send_anonymous_usage_stats: False
+  use_colors: True
