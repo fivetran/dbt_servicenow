@@ -1,5 +1,5 @@
 name: 'servicenow_integration_tests'
-version: '0.4.0'
+version: '0.5.0'
 config-version: 2
 
 profile: 'integration_tests'
@@ -22,6 +22,7 @@ vars:
     servicenow_core_company_identifier: "core_company_data"
     servicenow_cmdb_ci_identifier: "cmdb_ci_data"
     servicenow_cmdb_ci_service_identifier: "cmdb_ci_service_data"
+    servicenow_sys_choice_identifier: "sys_choice_data"
     servicenow_sys_user_group_identifier: "sys_user_group_data"
     servicenow_sys_user_role_identifier: "sys_user_role_data"
     servicenow_sys_user_has_role_identifier: "sys_user_has_role_data"
@@ -31,6 +32,8 @@ models:
   +schema: "servicenow_{{ var('directed_schema','dev') }}"
 
 seeds:
+  +docs:
+    show: False
   +quote_columns: "{{ true if target.type in ('redshift','postgres') else false }}"
   servicenow_integration_tests:
     +column_types:
@@ -49,10 +52,8 @@ seeds:
       roles: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       sys_id: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       sys_created_on: "timestamp"
-      resolved_at: "timestamp"
       closed_at: "timestamp"
       market_cap: "{{ 'FLOAT64' if target.type == 'bigquery' else 'float' }}"
-      fix_at: "timestamp"
       requested_by_date: "timestamp"
       review_date: "timestamp"
       confirmed_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
@@ -60,11 +61,9 @@ seeds:
       requested_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       fix_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       started_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
-      requested_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       problem_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       resolved_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       change_request_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
-      requested_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       assigned_to_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       closed_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
       opened_by_value: "{{ 'varchar' if target.type in ['redshift', 'postgres', 'snowflake'] else 'string' }}"
@@ -75,3 +74,7 @@ seeds:
     task_data_snowflake:
       +alias: task_data
       +enabled: "{{ true if target.type == 'snowflake' else false }}"
+
+flags:
+  send_anonymous_usage_stats: False
+  use_colors: True

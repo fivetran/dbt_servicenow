@@ -3,11 +3,6 @@ version: 2
 models:
   - name: stg_servicenow__task
     description: '{{ doc("stg_servicenow__task") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - task_id
-            - source_relation
     columns:
       - name: task_id
         description: '{{ doc("sys_id") }}'
@@ -271,11 +266,6 @@ models:
 
   - name: stg_servicenow__task_sla
     description: '{{ doc("stg_servicenow__task_sla") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - task_sla_id
-            - source_relation
     columns:
       - name: task_sla_id
         description: '{{ doc("sys_id") }}'
@@ -374,11 +364,6 @@ models:
 
   - name: stg_servicenow__sys_user
     description: '{{ doc("stg_servicenow__sys_user") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - sys_user_id
-            - source_relation
     columns:
       - name: sys_user_id
         description: '{{ doc("sys_id") }}'
@@ -603,11 +588,6 @@ models:
 
   - name: stg_servicenow__problem
     description: '{{ doc("stg_servicenow__problem") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - problem_id
-            - source_relation
     columns:
       - name: problem_id
         description: '{{ doc("sys_id") }}'
@@ -739,11 +719,6 @@ models:
 
   - name: stg_servicenow__problem_task
     description: '{{ doc("stg_servicenow__problem_task") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - problem_task_id
-            - source_relation
     columns:
       - name: problem_task_id
         description: '{{ doc("sys_id") }}'
@@ -809,11 +784,6 @@ models:
 
   - name: stg_servicenow__incident
     description: '{{ doc("stg_servicenow__incident") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - incident_id
-            - source_relation
     columns:
       - name: incident_id
         description: '{{ doc("sys_id") }}'
@@ -927,11 +897,6 @@ models:
 
   - name: stg_servicenow__change_task
     description: '{{ doc("stg_servicenow__change_task") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - change_task_id
-            - source_relation
     columns:
       - name: change_task_id
         description: '{{ doc("sys_id") }}'
@@ -979,11 +944,6 @@ models:
 
   - name: stg_servicenow__change_request
     description: '{{ doc("stg_servicenow__change_request") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - change_request_id
-            - source_relation
     columns:
       - name: change_request_id
         description: '{{ doc("sys_id") }}'
@@ -1125,11 +1085,6 @@ models:
 
   - name: stg_servicenow__core_company
     description: '{{ doc("stg_servicenow__core_company") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - core_company_id
-            - source_relation
     columns:
       - name: core_company_id
         description: '{{ doc("sys_id") }}'
@@ -1181,11 +1136,6 @@ models:
 
   - name: stg_servicenow__cmdb_ci
     description: '{{ doc("stg_servicenow__cmdb_ci") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - cmdb_ci_id
-            - source_relation
     columns:
       - name: cmdb_ci_id
         description: '{{ doc("sys_id") }}'
@@ -1266,11 +1216,6 @@ models:
 
   - name: stg_servicenow__cmdb_ci_service
     description: '{{ doc("stg_servicenow__cmdb_ci_service") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - cmdb_ci_service_id
-            - source_relation
     columns:
       - name: cmdb_ci_service_id
         description: '{{ doc("sys_id") }}'
@@ -1363,11 +1308,6 @@ models:
 
   - name: stg_servicenow__sys_user_group
     description: '{{ doc("stg_servicenow__sys_user_group") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - sys_user_group_id
-            - source_relation
     columns:
       - name: sys_user_group_id
         description: '{{ doc("sys_id") }}'
@@ -1448,11 +1388,6 @@ models:
 
   - name: stg_servicenow__sys_user_role
     description: '{{ doc("stg_servicenow__sys_user_role") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - sys_user_role_id
-            - source_relation
     columns:
       - name: sys_user_role_id
         description: '{{ doc("sys_id") }}'
@@ -1506,11 +1441,6 @@ models:
 
   - name: stg_servicenow__sys_user_has_role
     description: '{{ doc("stg_servicenow__sys_user_has_role") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - sys_user_has_role_id
-            - source_relation
     columns:
       - name: sys_user_has_role_id
         description: '{{ doc("sys_id") }}'
@@ -1583,11 +1513,6 @@ models:
 
   - name: stg_servicenow__sys_user_grmember
     description: '{{ doc("stg_servicenow__sys_user_grmember") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - sys_user_grmember_id
-            - source_relation
     columns:
       - name: sys_user_grmember_id
         description: '{{ doc("sys_id") }}'
@@ -1629,11 +1554,6 @@ models:
 
   - name: stg_servicenow__sys_choice
     description: '{{ doc("stg_servicenow__sys_choice") }}'
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - sys_choice_id
-            - source_relation
     columns:
       - name: sys_choice_id
         description: '{{ doc("sys_id") }}'
