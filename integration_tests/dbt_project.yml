@@ -37,6 +37,7 @@ seeds:
   servicenow_integration_tests:
     +column_types:
       confirmed_at: "timestamp"
+      fix_communicated_at: "timestamp"
       due_date: "timestamp"
       reopened_at: "timestamp"
       fix_at: "timestamp"
