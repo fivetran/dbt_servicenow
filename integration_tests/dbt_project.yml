@@ -22,6 +22,7 @@ vars:
     servicenow_core_company_identifier: "core_company_data"
     servicenow_cmdb_ci_identifier: "cmdb_ci_data"
     servicenow_cmdb_ci_service_identifier: "cmdb_ci_service_data"
+    servicenow_sys_choice_identifier: "sys_choice_data"
     servicenow_sys_user_group_identifier: "sys_user_group_data"
     servicenow_sys_user_role_identifier: "sys_user_role_data"
     servicenow_sys_user_has_role_identifier: "sys_user_has_role_data"
