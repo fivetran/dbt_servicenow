@@ -288,10 +288,10 @@ left join sys_user opener
   on task.opened_by_value = opener.sys_user_id
   and task.source_relation = opener.source_relation
 left join sys_user creator
-  on task.sys_created_by = creator.sys_user_id
+  on lower(task.sys_created_by) = lower(creator.user_name)
   and task.source_relation = creator.source_relation
 left join sys_user updater
-  on task.sys_updated_by = updater.sys_user_id
+  on lower(task.sys_updated_by) = lower(updater.user_name)
   and task.source_relation = updater.source_relation
 left join sys_user_group assignment_group
   on task.assignment_group_value = assignment_group.sys_user_group_id
