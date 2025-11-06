@@ -1,3 +1,9 @@
+# dbt_servicenow v0.5.1
+[PR #22](https://github.com/fivetran/dbt_servicenow/pull/21) includes the following updates:
+
+### Bug Fix
+- Updated joins on `servicenow__task_enhanced` to join on the `user_name` rather than `sys_user_id` field for creator and updater field values.
+
 # dbt_servicenow v0.5.0
 [PR #21](https://github.com/fivetran/dbt_servicenow/pull/21) includes the following updates:
 
