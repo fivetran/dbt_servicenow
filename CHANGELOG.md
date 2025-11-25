@@ -1,3 +1,10 @@
+# dbt_servicenow v0.6.0
+
+[PR #23](https://github.com/fivetran/dbt_servicenow/pull/23) includes the following updates:
+
+## Features
+  - Increases the required dbt version upper limit to v3.0.0
+
 # dbt_servicenow v0.5.1
 [PR #22](https://github.com/fivetran/dbt_servicenow/pull/21) includes the following updates:
 
