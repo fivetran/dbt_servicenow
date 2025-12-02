@@ -6,6 +6,8 @@ Certain choice fields have labels that can depend on the `dependent_value` field
 
 - `incident_category` and `incident_subcategory`: These fields often depend on each other. For instance, if the `incident_category` is "Software," the `incident_subcategory` might have different options compared to when the category is "Hardware." The `dependent_value` in this case could represent the `incident_category` and influence the `incident_subcategory` labels.
 
+There are a number of system-generated values for labels associated with choice fields. For example, in the latest version, the `state` element has the default labels `New`, `Assess`, `Authorize`, `Scheduled`, `Implement`, `Review`, `Closed`, and `Canceled`, each with a unique `sys_choice_value`. ServiceNow does allow for manual creation of additional labels and values; however, users should first review existing system-generated options to ensure they are not creating duplicates.
+
 ## Relationships between User, Group, and Role related tables in ServiceNow
 
 The Users table (`sys_user`) is linked to Roles (`sys_user_role`) through a many-to-many relationship via the `sys_user_has_role` table. This intermediary table stores records that connect each User with one or more Roles. When a Role is assigned directly to a User, a corresponding entry is created in the `sys_user_has_role` table. Conversely, when a Role is removed from a User, the corresponding entry is deleted from the table.
