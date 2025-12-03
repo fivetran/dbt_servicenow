@@ -1,3 +1,10 @@
+# dbt_servicenow v0.next.version
+
+[PR #24](https://github.com/fivetran/dbt_servicenow/pull/24) includes the following updates:
+
+## Documentation updates
+- Adds a section to the `DECISIONLOG.md` with a recommendation for avoiding the manual creation of duplicate `sys_choice` values, per ServiceNow's advised best practices.
+
 # dbt_servicenow v0.6.0
 [PR #23](https://github.com/fivetran/dbt_servicenow/pull/23) includes the following updates:
 
