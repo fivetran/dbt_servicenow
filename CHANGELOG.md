@@ -1,9 +1,19 @@
-# dbt_servicenow v0.next.version
+# dbt_servicenow v0.7.0
 
-[PR #24](https://github.com/fivetran/dbt_servicenow/pull/24) includes the following updates:
+## Schema/Data Change
+**2 total changes • 0 possible breaking changes**
 
-## Documentation updates
+| Data Model(s) | Change type | Old | New | Notes |
+| ---------- | ----------- | -------- | -------- | ----- |
+| `servicenow__task_enhanced` | New Column |  | `business_duration_sec` | The duration of the task in terms of business hours (in seconds). This is the conversion of `business_duration` from an Epoch timestamp to an integer. |
+| `servicenow__task_enhanced` | New Column |  | `calendar_duration_sec` | The duration of the task in terms of calendar time (in seconds). This is the conversion of `calendar_duration` from an Epoch timestamp to an integer. |
+
+## Documentation
 - Adds a section to the `DECISIONLOG.md` with a recommendation for avoiding the manual creation of duplicate `sys_choice` values, per ServiceNow's advised best practices.
+- Ensures column types are consistent and accurate in the hosted [docs](https://fivetran.github.io/dbt_servicenow/#!/overview).
+
+## Under the Hood
+- Streamlines integration test seed files by removing unused columns to improve test maintainability.
 
 # dbt_servicenow v0.6.0
 [PR #23](https://github.com/fivetran/dbt_servicenow/pull/23) includes the following updates:

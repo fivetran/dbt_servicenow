@@ -46,6 +46,9 @@ models:
       - name: business_duration
         description: '{{ doc("business_duration") }}'
 
+      - name: business_duration_sec
+        description: '{{ doc("business_duration_sec") }}'
+
       - name: business_service_link
         description: '{{ doc("business_service_link") }}'
 
@@ -54,6 +57,9 @@ models:
 
       - name: calendar_duration
         description: '{{ doc("calendar_duration") }}'
+
+      - name: calendar_duration_sec
+        description: '{{ doc("calendar_duration_sec") }}'
 
       - name: close_notes
         description: '{{ doc("close_notes") }}'
