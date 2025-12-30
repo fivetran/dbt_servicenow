@@ -712,6 +712,8 @@ sources:
             description: '{{ doc("sys_updated_by") }}'
           - name: sys_updated_on
             description: '{{ doc("sys_updated_on") }}'
+          - name: unverified
+            description: '{{ doc("unverified") }}'
           - name: vendor_link
             description: '{{ doc("vendor_link") }}'
           - name: vendor_value

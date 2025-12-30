@@ -2008,3 +2008,7 @@ The number of distinct included_roles related to this user.
 {% docs count_distinct_sys_user_group_roles %}
 The number of distinct sys_user_group_roles related to this user.
 {% enddocs %}
+
+{% unverified %}
+Boolean representing whether or not the Configuration Item (CI) in the CMDB has been confirmed as valid by a trusted discovery or reconciliation process.
+{% enddocs %}
