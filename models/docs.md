@@ -123,7 +123,7 @@ Value representing the assignment group associated with the task.
 {% enddocs %}
 
 {% docs business_duration %}
-The duration of the task in terms of business hours. Represented as an epoch timestamp (seconds from midnight January 1, 1970)
+The duration of the task in terms of business time. Represented as an epoch timestamp, or the number of seconds from midnight, January 1, 1970.
 {% enddocs %}
 
 {% docs business_duration_sec %}
