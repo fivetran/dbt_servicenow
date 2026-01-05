@@ -1,11 +1,11 @@
 # dbt_servicenow v0.7.0
 
-## Schema/Data Change
+## Schema/Data Changes
 **2 total changes • 0 possible breaking changes**
 
 | Data Model(s) | Change type | Old | New | Notes |
 | ---------- | ----------- | -------- | -------- | ----- |
-| `servicenow__task_enhanced` | New Column |  | `business_duration_sec` | The duration of the task in terms of business hours (in seconds). This is the conversion of `business_duration` from an Epoch timestamp to an integer. |
+| `servicenow__task_enhanced` | New Column |  | `business_duration_sec` | The duration of the task in terms of business time (in seconds). This is the conversion of `business_duration` from an Epoch timestamp to an integer. |
 | `servicenow__task_enhanced` | New Column |  | `calendar_duration_sec` | The duration of the task in terms of calendar time (in seconds). This is the conversion of `calendar_duration` from an Epoch timestamp to an integer. |
 
 ## Documentation
@@ -13,7 +13,8 @@
 - Ensures column types are consistent and accurate in the hosted [docs](https://fivetran.github.io/dbt_servicenow/#!/overview). ([#25](https://github.com/fivetran/dbt_servicenow/pull/25))
 
 ## Under the Hood
-- Streamlines integration test seed files by removing unused columns to improve test maintainability. ([#25](https://github.com/fivetran/dbt_servicenow/pull/25))
+Sets explicit `column_types` for all seed files to ensure data type consistency across data warehouses. ([#25](https://github.com/fivetran/dbt_servicenow/pull/25))
+- Streamlines integration test `cmdb_ci_data` and `core_company_data` seed files by removing unused columns to improve test maintainability. ([#25](https://github.com/fivetran/dbt_servicenow/pull/25))
 
 # dbt_servicenow v0.6.0
 [PR #23](https://github.com/fivetran/dbt_servicenow/pull/23) includes the following updates:

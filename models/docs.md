@@ -127,7 +127,7 @@ The duration of the task in terms of business hours. Represented as an epoch tim
 {% enddocs %}
 
 {% docs business_duration_sec %}
-The duration of the task in terms of business hours (in seconds).
+The duration of the task in terms of business time (in seconds).
 {% enddocs %}
 
 {% docs business_service_link %}
@@ -139,7 +139,7 @@ Value representing the business service associated with the task.
 {% enddocs %}
 
 {% docs calendar_duration %}
-The duration of the task in terms of calendar time. Represented as an epoch timestamp (seconds from midnight January 1, 1970)
+The duration of the task in terms of calendar time. Represented as an epoch timestamp, or the number of seconds from midnight, January 1, 1970.
 {% enddocs %}
 
 {% docs calendar_duration_sec %}

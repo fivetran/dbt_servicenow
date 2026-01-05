@@ -37,11 +37,19 @@ final as (
         assignment_group_link,
         cast(assignment_group_value as {{ dbt.type_string() }}) as assignment_group_value,
         business_duration,
-        {{ dbt.datediff("'1970-01-01'","business_duration", "second") }} as business_duration_sec,
+{{ dbt.datediff(
+      "cast('1970-01-01' as " ~ dbt.type_timestamp() ~ ")",
+      "business_duration",
+      "second"
+) }} as business_duration_sec,
         business_service_link,
         cast(business_service_value as {{ dbt.type_string() }}) as business_service_value,
         calendar_duration,
-        {{ dbt.datediff("'1970-01-01'","calendar_duration", "second") }} as calendar_duration_sec,
+  {{ dbt.datediff(
+      "cast('1970-01-01' as " ~ dbt.type_timestamp() ~ ")",
+      "calendar_duration",
+      "second"
+  ) }} as calendar_duration_sec,
         close_notes,
         cast(closed_at as {{ dbt.type_timestamp() }}) as task_closed_at,
         closed_by_link,
