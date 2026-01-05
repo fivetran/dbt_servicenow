@@ -13,7 +13,7 @@
 - Ensures column types are consistent and accurate in the hosted [docs](https://fivetran.github.io/dbt_servicenow/#!/overview). ([#25](https://github.com/fivetran/dbt_servicenow/pull/25))
 
 ## Under the Hood
-Sets explicit `column_types` for all seed files to ensure data type consistency across data warehouses. ([#25](https://github.com/fivetran/dbt_servicenow/pull/25))
+- Sets explicit `column_types` for all seed files to ensure data type consistency across data warehouses. ([#25](https://github.com/fivetran/dbt_servicenow/pull/25))
 - Streamlines integration test `cmdb_ci_data` and `core_company_data` seed files by removing unused columns to improve test maintainability. ([#25](https://github.com/fivetran/dbt_servicenow/pull/25))
 
 # dbt_servicenow v0.6.0
