@@ -123,7 +123,11 @@ Value representing the assignment group associated with the task.
 {% enddocs %}
 
 {% docs business_duration %}
-The duration of the task in terms of business hours.
+The duration of the task in terms of business time. Represented as an epoch timestamp, or the number of seconds from midnight, January 1, 1970.
+{% enddocs %}
+
+{% docs business_duration_sec %}
+The duration of the task in terms of business time (in seconds).
 {% enddocs %}
 
 {% docs business_service_link %}
@@ -135,7 +139,11 @@ Value representing the business service associated with the task.
 {% enddocs %}
 
 {% docs calendar_duration %}
-The duration of the task in terms of calendar time.
+The duration of the task in terms of calendar time. Represented as an epoch timestamp, or the number of seconds from midnight, January 1, 1970.
+{% enddocs %}
+
+{% docs calendar_duration_sec %}
+The duration of the task in terms of calendar time (in seconds).
 {% enddocs %}
 
 {% docs close_notes %}
@@ -1999,4 +2007,8 @@ The number of distinct included_roles related to this user.
 
 {% docs count_distinct_sys_user_group_roles %}
 The number of distinct sys_user_group_roles related to this user.
+{% enddocs %}
+
+{% unverified %}
+Boolean representing whether or not the Configuration Item (CI) in the CMDB has been confirmed as valid by a trusted discovery or reconciliation process.
 {% enddocs %}

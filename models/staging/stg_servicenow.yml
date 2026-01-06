@@ -48,6 +48,9 @@ models:
       - name: business_duration
         description: '{{ doc("business_duration") }}'
 
+      - name: business_duration_sec
+        description: '{{ doc("business_duration_sec") }}'
+
       - name: business_service_link
         description: '{{ doc("business_service_link") }}'
 
@@ -56,6 +59,9 @@ models:
 
       - name: calendar_duration
         description: '{{ doc("calendar_duration") }}'
+
+      - name: calendar_duration_sec
+        description: '{{ doc("calendar_duration_sec") }}'
 
       - name: close_notes
         description: '{{ doc("close_notes") }}'
@@ -1205,6 +1211,8 @@ models:
         description: '{{ doc("sys_updated_by") }}'
       - name: cmdb_ci_updated_at
         description: '{{ doc("sys_updated_on") }}'
+      - name: unverified
+        description: '{{ doc("unverified") }}'
       - name: vendor_link
         description: '{{ doc("vendor_link") }}'
       - name: vendor_value
