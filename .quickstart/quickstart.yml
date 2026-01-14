@@ -9,6 +9,13 @@ table_variables:
     - sys_user_has_role
     - sys_user_grmember
 
+  _fivetran_quickstart_task_sla:
+    - task_sla
+  _fivetran_quickstart_cmdb_ci:
+    - cmdb_ci
+  _fivetran_quickstart_cmdb_ci_service:
+    - cmdb_ci_service
+
 destination_configurations:
   databricks:
     dispatch:
