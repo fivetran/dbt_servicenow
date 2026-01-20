@@ -1,5 +1,5 @@
 <!--section="servicenow_transformation_model"-->
-# Servicenow dbt Package
+# ServiceNow dbt Package
 
 <p align="left">
     <a alt="License"
@@ -22,8 +22,8 @@ This dbt package transforms data from Fivetran's Servicenow connector into analy
 
 - Number of materialized models¹: 39
 - Connector documentation
-  - [Servicenow connector documentation](https://fivetran.com/docs/connectors/applications/servicenow)
-  - [Servicenow ERD](https://fivetran.com/docs/connectors/applications/servicenow#schemainformation)
+  - [ServiceNow connector documentation](https://fivetran.com/docs/connectors/applications/servicenow)
+  - [ServiceNow ERD](https://fivetran.com/docs/connectors/applications/servicenow#schemainformation)
 - dbt package documentation
   - [GitHub repository](https://github.com/fivetran/dbt_servicenow)
   - [dbt Docs](https://fivetran.github.io/dbt_servicenow/#!/overview)
@@ -32,10 +32,6 @@ This dbt package transforms data from Fivetran's Servicenow connector into analy
 
 ## What does this dbt package do?
 This package enables you to transform core object tables into analytics-ready models and enhance task management data with user information. It creates enriched models with metrics focused on task, problem, change, incident, and change request data.
-
-### Opinionated Modelling Decisions
-
-Servicenow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](https://github.com/fivetran/dbt_servicenow/blob/main/DECISIONLOG.md).
 
 ### Output schema
 Final output tables are generated in the following target schema:
@@ -50,11 +46,11 @@ By default, this package materializes the following final tables:
 
 | Table | Description |
 | :---- | :---- |
-| [servicenow__activity_summary](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__activity_summary) | Aggregates IT service management activity across tasks, problems, changes, and incidents by update date and multiple dimensions (state, priority, impact, urgency) including task counts, averages, and SLA metrics for comprehensive operational visibility. <br></br>**Example Analytics Questions:**<ul><li>What is the total_active_tasks count by priority, impact, and urgency levels?</li><li>How does average_minutes_open_to_close vary by task_state and priority?</li><li>Which combinations of impact and urgency have the highest total_tasks_made_slas percentages?</li></ul>|
-| [servicenow__task_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__task_enhanced) | Tracks tasks with links to related problems, incidents, or change requests, plus comprehensive user activity (opener, assignee, closer), timing metrics, SLA status, and state information to understand task workflows and completion patterns. <br></br>**Example Analytics Questions:**<ul><li>What is the average task_minutes_open_to_close by priority, impact, and task_state?</li><li>How does reassignment_count correlate with is_made_sla success rates?</li><li>Which sys_class_name types (incident, problem, change) have the longest resolution times?</li></ul>|
-| [servicenow__problem_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__problem_enhanced) | Chronicles problems with state, category, user interactions (confirmer, fixer, resolver), timing metrics, known error status, and related task/incident counts to track problem management and resolution effectiveness. <br></br>**Example Analytics Questions:**<ul><li>What is the average problem_minutes_created_to_fix by problem_category and is_known_error status?</li><li>Which problems have the highest problem_related_incidents and total_related_tasks counts?</li><li>How do is_major_problem cases compare in terms of reopen_count and resolution times?</li></ul>|
-| [servicenow__incident_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__incident_enhanced) | Provides comprehensive incident records with severity, state, category info, user interactions (caller, resolver, reopener), timing metrics, and problem associations to analyze incident response efficiency and resolution patterns. <br></br>**Example Analytics Questions:**<ul><li>What is the average incident_minutes_created_to_resolved by incident_severity and incident_state?</li><li>Which incident_category and incident_subcategory combinations have the highest reopen_count?</li><li>How does business_impact correlate with incident_severity and resolution times?</li></ul>|
-| [servicenow__change_request_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__change_request_enhanced) | Tracks change requests with user interaction details, change phases, risk levels, review status, timing metrics, and related task counts to monitor change management processes, approval workflows, and implementation efficiency. <br></br>**Example Analytics Questions:**<ul><li>Which change requests have the longest change_request_days_created_to_start times by change_request_risk level?</li><li>How many total_related_tasks are associated with each change request by change_request_type?</li><li>What is the average change_request_days_created_to_reviewed by change_request_review_status?</li></ul>|
+| [servicenow__activity_summary](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__activity_summary) | Aggregates IT service management activity across tasks, problems, changes, and incidents by update date and multiple dimensions (state, priority, impact, urgency) including task counts, averages, and SLA metrics for comprehensive operational visibility. <br></br>**Example Analytics Questions:**<ul><li>How many critical or high-priority tickets are currently open?</li><li>What's our average resolution time for urgent issues compared to normal priority?</li><li>Are we meeting our SLA targets this week across different ticket types?</li></ul>|
+| [servicenow__task_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__task_enhanced) | Tracks tasks with links to related problems, incidents, or change requests, plus comprehensive user activity (opener, assignee, closer), timing metrics, SLA status, and state information to understand task workflows and completion patterns. <br></br>**Example Analytics Questions:**<ul><li>What's our average resolution time for high-priority tickets?</li><li>Do tickets that get reassigned multiple times miss their SLAs?</li><li>Which types of work (incidents, problems, changes) take longest to resolve?</li></ul>|
+| [servicenow__problem_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__problem_enhanced) | Chronicles problems with state, category, user interactions (confirmer, fixer, resolver), timing metrics, known error status, and related task/incident counts to track problem management and resolution effectiveness. <br></br>**Example Analytics Questions:**<ul><li>How quickly are we fixing known errors compared to new problems?</li><li>Which problems are causing the most incidents across our systems?</li><li>Are major problems being resolved faster than minor ones, or are they reopened more often?</li></ul>|
+| [servicenow__incident_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__incident_enhanced) | Provides comprehensive incident records with severity, state, category info, user interactions (caller, resolver, reopener), timing metrics, and problem associations to analyze incident response efficiency and resolution patterns. <br></br>**Example Analytics Questions:**<ul><li>How quickly are critical incidents being resolved compared to lower severity issues?</li><li>Which types of incidents are reopened most often, indicating incomplete resolutions?</li><li>Do incidents with high business impact get resolved faster than their severity level would suggest?</li></ul>|
+| [servicenow__change_request_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__change_request_enhanced) | Tracks change requests with user interaction details, change phases, risk levels, review status, timing metrics, and related task counts to monitor change management processes, approval workflows, and implementation efficiency. <br></br>**Example Analytics Questions:**<ul><li>How long does it take to start implementing changes after they're requested, especially for high-risk changes?</li><li>Which types of changes require the most supporting tasks to complete?</li><li>Are we reviewing and approving changes within our target timeframes?</li></ul>|
 | [servicenow__user_aggregated](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_aggregated) | Summarizes user profiles with group memberships, role assignments, and counts of distinct groups, roles, and included roles to understand team structures, access permissions, and organizational hierarchies. <br></br>**Example Analytics Questions:**<ul><li>Which users have the highest count_distinct_sys_user_role_ids and count_distinct_sys_user_group_ids?</li><li>How are sys_user_role_names distributed across different user groups?</li><li>What is the average count_distinct_included_roles per user by primary role?</li></ul>|
 | [servicenow__user_enhanced](https://fivetran.github.io/dbt_servicenow/#!/model/model.servicenow.servicenow__user_enhanced) | Provides detailed user profiles enriched with group memberships, role assignments, personal info, department, manager, company details, and activity status to enable user-level analysis and access management reporting. <br></br>**Example Analytics Questions:**<ul><li>Which users have the most role assignments (count_distinct_sys_user_role_ids) by department_value?</li><li>How are active versus inactive users (is_active) distributed across companies and departments?</li><li>What is the relationship between manager_name hierarchies and role assignments?</li></ul>|
 
@@ -65,13 +61,13 @@ By default, this package materializes the following final tables:
 ## Prerequisites
 To use this dbt package, you must have the following:
 
-- At least one Fivetran Servicenow connection syncing data into your destination.
+- At least one Fivetran ServiceNow connection syncing data into your destination.
 - A **BigQuery**, **Snowflake**, **Redshift**, **Databricks**, or **PostgreSQL** destination.
 
 ## How do I use the dbt package?
 You can either add this dbt package in the Fivetran dashboard or import it into your dbt project:
 
-- To add the package in the Fivetran dashboard, follow our [Quickstart guide](https://fivetran.com/docs/transformations/data-models/quickstart-management).
+- To add the package in the Fivetran dashboard, follow our [Quickstart guide](https://fivetran.com/docs/transformations/data-models/quickstart-management#quickstartmanagement).
 - To add the package to your dbt project, follow the setup instructions in the dbt package's [README file](https://github.com/fivetran/dbt_servicenow/blob/main/README.md#how-do-i-use-the-dbt-package) to use this package.
 
 <!--section-end-->
@@ -187,6 +183,10 @@ The Fivetran team maintaining this package only maintains the [latest version](h
 A small team of analytics engineers at Fivetran develops these dbt packages. However, the packages are made better by community contributions.
 
 We highly encourage and welcome contributions to this package. Learn how to contribute to a package in dbt's [Contributing to an external dbt package article](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657).
+
+### Opinionated Modelling Decisions
+
+ServiceNow tables can be complex, for example exhibiting many-to-many relationships. For more information on table relationships and how they informed our model development, you may refer to the [DECISIONLOG](https://github.com/fivetran/dbt_servicenow/blob/main/DECISIONLOG.md).
 
 <!--section-end-->
 
