@@ -29,6 +29,9 @@ vars:
     servicenow_sys_user_grmember_identifier: "sys_user_grmember_data"
 
 models:
+  +persist_docs:
+    relation: true
+    columns: "{{ false if target.type in ('databricks') else true }}"
   +schema: "servicenow_{{ var('directed_schema','dev') }}"
 
 seeds:
