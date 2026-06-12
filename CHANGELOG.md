@@ -1,4 +1,4 @@
-# dbt_servicenow v0.9.0
+# dbt_servicenow v1.0.0
 
 [PR #29](https://github.com/fivetran/dbt_servicenow/pull/29) includes the following updates:
 

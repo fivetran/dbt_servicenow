@@ -1,8 +1,10 @@
+{% if var('servicenow_union_schemas', []) | length > 0 or var('servicenow_union_databases', []) | length > 0 %}
+
 {{
     fivetran_utils.union_data(
-        table_identifier='problem_task', 
-        database_variable='servicenow_database', 
-        schema_variable='servicenow_schema', 
+        table_identifier='problem_task',
+        database_variable='servicenow_database',
+        schema_variable='servicenow_schema',
         default_database=target.database,
         default_schema='servicenow',
         default_variable='problem_task',
@@ -10,3 +12,15 @@
         union_database_variable='servicenow_union_databases'
     )
 }}
+
+{% else %}
+
+{{
+    fivetran_utils.union_connections(
+        connection_dictionary='servicenow_sources',
+        single_source_name='servicenow',
+        single_table_name='problem_task'
+    )
+}}
+
+{% endif %}

@@ -1,5 +1,5 @@
 name: 'servicenow_integration_tests'
-version: '0.9.0'
+version: '1.0.0'
 config-version: 2
 
 profile: 'integration_tests'
@@ -37,10 +37,10 @@ models:
 seeds:
   +docs:
     show: False
-  +quote_columns: "{{ true if target.type in ('redshift','postgres') else false }}"
+  +quote_columns: "{{ target.type in ('redshift', 'postgres') or var('fivetran_using_source_casing', false) }}"
   servicenow_integration_tests:
     task_data:
-      +enabled: "{{ true if target.type != 'snowflake' else false }}"
+      +enabled: "{{ target.type != 'snowflake' or var('fivetran_using_source_casing', false) }}"
       +column_types:
         _fivetran_deleted: boolean
         _fivetran_synced: timestamp
@@ -130,7 +130,7 @@ seeds:
         work_start: timestamp
     task_data_snowflake:
       +alias: task_data
-      +enabled: "{{ true if target.type == 'snowflake' else false }}"
+      +enabled: "{{ target.type == 'snowflake' and not var('fivetran_using_source_casing', false)  }}"
       +column_types:
         _fivetran_deleted: boolean
         _fivetran_synced: timestamp

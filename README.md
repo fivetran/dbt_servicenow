@@ -65,7 +65,7 @@ Include the following ServiceNow package version in your `packages.yml` file:
 ```yml
 packages:
   - package: fivetran/servicenow
-    version: [">=0.9.0", "<0.10.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=1.0.0", "<1.1.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 #### Databricks dispatch configuration

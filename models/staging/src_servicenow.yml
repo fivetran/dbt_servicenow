@@ -4,6 +4,11 @@ sources:
   - name: servicenow
     database: '{% if target.type not in ("spark") %}{{ var("servicenow_database", target.database) }}{% endif %}'
     schema: '{{ var("servicenow_schema", "servicenow") }}'
+    
+    config:
+      loaded_at_field: _fivetran_synced
+      enabled: "{{ var('servicenow_sources', []) == [] }}"
+    
     tables:
       - name: task
         identifier: '{{ var("servicenow_task_identifier", "task") }}'
@@ -1014,7 +1019,7 @@ sources:
         identifier: '{{ var("servicenow_sys_user_role_identifier", "sys_user_role") }}'
         description: '{{ doc("sys_user_role") }}'
         config:
-          enabled: "{{ var('servicenow__using_roles', true) }}"
+          enabled: "{{ var('servicenow__using_roles', true) and var('servicenow_sources', []) == [] }}"
         columns:
           - name: sys_id
             description: '{{ doc("sys_id") }}'
@@ -1053,7 +1058,7 @@ sources:
         identifier: '{{ var("servicenow_sys_user_has_role_identifier", "sys_user_has_role") }}'
         description: '{{ doc("sys_user_has_role") }}'
         config:
-          enabled: "{{ var('servicenow__using_roles', true) }}"
+          enabled: "{{ var('servicenow__using_roles', true) and var('servicenow_sources', []) == [] }}"
         columns:
           - name: sys_id
             description: '{{ doc("sys_id") }}'
@@ -1104,7 +1109,7 @@ sources:
         identifier: '{{ var("servicenow_sys_user_grmember_identifier", "sys_user_grmember") }}'
         description: '{{ doc("sys_user_grmember") }}'
         config:
-          enabled: "{{ var('servicenow__using_roles', true) }}"
+          enabled: "{{ var('servicenow__using_roles', true) and var('servicenow_sources', []) == [] }}"
         columns:
           - name: sys_id
             description: '{{ doc("sys_id") }}'
@@ -1135,7 +1140,7 @@ sources:
         identifier: '{{ var("servicenow_sys_choice_identifier", "sys_choice") }}'
         description: '{{ doc("sys_choice") }}'
         config:
-          enabled: "{{ var('servicenow__using_sys_choice', true) }}"
+          enabled: "{{ var('servicenow__using_sys_choice', true) and var('servicenow_sources', []) == [] }}"
         columns:
           - name: sys_id
             description: '{{ doc("sys_id") }}'
