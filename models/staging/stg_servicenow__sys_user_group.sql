@@ -1,4 +1,3 @@
-
 with base as (
 
     select * 
@@ -14,10 +13,7 @@ fields as (
                 staging_columns=get_sys_user_group_columns()
             )
         }}
-        {{ fivetran_utils.source_relation(
-            union_schema_variable='servicenow_union_schemas', 
-            union_database_variable='servicenow_union_databases') 
-        }}
+        {{ fivetran_utils.apply_source_relation(package_name='servicenow') }}
     from base
 ),
 
