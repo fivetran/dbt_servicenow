@@ -1,3 +1,10 @@
+# dbt_servicenow v1.0.1
+
+[PR #31](https://github.com/fivetran/dbt_servicenow/pull/31) includes the following updates:
+
+## Bug Fix
+- Removes duplicate and malformed documentation block for the `CMDB_CI.unverified` field.
+
 # dbt_servicenow v1.0.0
 
 [PR #29](https://github.com/fivetran/dbt_servicenow/pull/29) includes the following updates:
