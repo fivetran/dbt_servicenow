@@ -4,6 +4,7 @@
 
 ## Bug Fix
 - Removes duplicate and malformed documentation block for the `CMDB_CI.unverified` field.
+- Fixes typo in `model_number` field description.
 
 # dbt_servicenow v1.0.0
 
