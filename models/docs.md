@@ -1679,7 +1679,7 @@ The ID to the model related to the CI.
 {% enddocs %}
 
 {% docs model_number %}
-The number of the model related to the IC.
+The number of the model related to the CI.
 {% enddocs %}
 
 {% docs owned_by_link %}
@@ -1743,7 +1743,7 @@ The day the task last got updated.
 {% enddocs %}
 
 {% docs unverified %}
-Boolean indicating if the change task is unverified.
+Boolean indicating if the Configuration Item (CI) in the CMDB has not been confirmed as valid by a trusted discovery or reconciliation process.
 {% enddocs %}
 
 {% docs monitor %}
@@ -2007,8 +2007,4 @@ The number of distinct included_roles related to this user.
 
 {% docs count_distinct_sys_user_group_roles %}
 The number of distinct sys_user_group_roles related to this user.
-{% enddocs %}
-
-{% unverified %}
-Boolean representing whether or not the Configuration Item (CI) in the CMDB has been confirmed as valid by a trusted discovery or reconciliation process.
 {% enddocs %}
