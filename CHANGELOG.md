@@ -2,7 +2,7 @@
 
 [PR #31](https://github.com/fivetran/dbt_servicenow/pull/31) includes the following updates:
 
-## Bug Fix
+## Bug Fixes
 - Removes duplicate and malformed documentation block for the `CMDB_CI.unverified` field.
 - Fixes typo in `model_number` field description.
 
