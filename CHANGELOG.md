@@ -1,3 +1,11 @@
+# dbt_servicenow v1.0.1
+
+[PR #32](https://github.com/fivetran/dbt_servicenow/pull/32) includes the following updates:
+
+## Feature Updates
+- Adds DuckDB as a supported destination.
+
+
 # dbt_servicenow v1.0.0
 
 [PR #29](https://github.com/fivetran/dbt_servicenow/pull/29) includes the following updates:
