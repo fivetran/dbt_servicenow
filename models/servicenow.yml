@@ -523,6 +523,16 @@ models:
 
   - name: servicenow__activity_summary
     description: '{{ doc("servicenow__activity_summary") }}'
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - task_updated_date
+              - task_state
+              - priority
+              - impact
+              - urgency
     columns:
       - name: task_updated_date
         description: '{{ doc("task_updated_date") }}'
@@ -571,6 +581,12 @@ models:
 
   - name: servicenow__problem_enhanced
     description: '{{ doc("servicenow__problem_enhanced") }}'
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - problem_id
     columns:
       - name: problem_id
         description: '{{ doc("sys_id") }}'
@@ -774,6 +790,12 @@ models:
 
   - name: servicenow__change_request_enhanced
     description: '{{ doc("servicenow__change_request_enhanced") }}'
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - change_request_id
     columns:
 
       - name: change_request_id
@@ -947,6 +969,12 @@ models:
 
   - name: servicenow__incident_enhanced
     description: '{{ doc("servicenow__incident_enhanced") }}'
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - incident_id
     columns:
       - name: incident_id
         description: '{{ doc("sys_id")}}'
@@ -1123,6 +1151,12 @@ models:
 
   - name: servicenow__user_aggregated
     description: '{{ doc("servicenow__user_aggregated") }}'
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - sys_user_id
     columns:
       - name: sys_user_id
         description: '{{ doc("sys_id") }}'
@@ -1151,6 +1185,12 @@ models:
 
   - name: servicenow__user_enhanced
     description: '{{ doc("servicenow__user_enhanced") }}'
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - sys_user_id
     columns:
       - name: sys_user_id
         description: '{{ doc("sys_id")}}'
