@@ -12,6 +12,9 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -281,6 +284,9 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -378,6 +384,9 @@ models:
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -603,6 +612,9 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -734,6 +746,9 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -798,6 +813,9 @@ models:
 
       - name: source_relation
         description: '{{ doc("source_relation") }}'
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -912,6 +930,9 @@ models:
       - name: source_relation
         description: '{{ doc("source_relation") }}'
 
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -955,6 +976,9 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -1147,6 +1171,9 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
       - name: attributes
@@ -1229,6 +1256,9 @@ models:
         description: '{{ doc("sys_id") }}'
         tests: 
           - not_null
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
       - name: attributes
@@ -1322,6 +1352,9 @@ models:
         tests:
           - not_null
 
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -1405,6 +1438,9 @@ models:
       - name: sys_user_role_name
         description: '{{ doc("name") }}'
 
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
+
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
 
@@ -1454,6 +1490,9 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
@@ -1526,6 +1565,9 @@ models:
         description: '{{ doc("sys_id") }}'
         tests:
           - not_null
+
+      - name: _fivetran_deleted
+        description: '{{ doc("_fivetran_deleted") }}'
 
       - name: _fivetran_synced
         description: '{{ doc("_fivetran_synced") }}'
