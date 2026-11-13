@@ -1,4 +1,7 @@
 version: 1.0.3
 pr_number: 35
 under_the_hood:
-  - description: Adds the missing `_fivetran_deleted` column documentation to the 14 staging models that already output the field. The column itself is unchanged; only the documentation is updated.
+- description: Adds the missing `_fivetran_deleted` column documentation to the 14
+    staging models that already output the field. The column itself is unchanged;
+    only the documentation is updated.
+date: '2026-11-13'

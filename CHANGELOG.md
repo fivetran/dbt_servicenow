@@ -1,3 +1,10 @@
+# dbt_servicenow v1.0.3
+
+[PR #35](https://github.com/fivetran/dbt_servicenow/pull/35) includes the following updates:
+
+## Under the Hood
+- Adds the missing `_fivetran_deleted` column documentation to the 14 staging models that already output the field. The column itself is unchanged; only the documentation is updated.
+
 # dbt_servicenow v1.0.2
 
 [PR #32](https://github.com/fivetran/dbt_servicenow/pull/32) includes the following updates:
