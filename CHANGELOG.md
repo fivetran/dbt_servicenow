@@ -1,3 +1,14 @@
+# dbt_servicenow v1.1.0
+
+[PR #36](https://github.com/fivetran/dbt_servicenow/pull/36) includes the following updates:
+
+## Feature Update
+- Raises the minimum dbt version to 1.10.0.
+- Adds `dbt_utils.unique_combination_of_columns` tests to staging and end models. If a test fails, please [open an issue](https://github.com/fivetran/dbt_servicenow/issues/new/choose).
+
+## Under the Hood
+- Adds the missing `_fivetran_deleted` column documentation to the 14 staging models that already output the field. The column itself is unchanged; only the documentation is updated.
+
 # dbt_servicenow v1.0.2
 
 [PR #32](https://github.com/fivetran/dbt_servicenow/pull/32) includes the following updates:
