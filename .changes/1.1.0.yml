@@ -5,5 +5,5 @@ new_features:
 - description: Adds `dbt_utils.unique_combination_of_columns` tests to staging and
     end models. If a test fails, please [open an issue](https://github.com/fivetran/dbt_servicenow/issues/new/choose).
 under_the_hood:
-- description: Adds `_fivetran_deleted` documentation to `stg_servicenow.yml`.
+- description: Updates yml column documentation to match model output.
 date: '2026-11-18'
