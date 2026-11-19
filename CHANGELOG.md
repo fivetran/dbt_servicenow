@@ -7,7 +7,7 @@
 - Adds `dbt_utils.unique_combination_of_columns` tests to staging and end models. If a test fails, please [open an issue](https://github.com/fivetran/dbt_servicenow/issues/new/choose).
 
 ## Under the Hood
-- Adds `_fivetran_deleted` documentation to `stg_servicenow.yml`.
+- Updates yml column documentation to match model output.
 
 # dbt_servicenow v1.0.2
 
