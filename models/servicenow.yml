@@ -6,7 +6,7 @@ models:
     columns:
       - name: task_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - unique
           - not_null
 

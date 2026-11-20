@@ -12,7 +12,7 @@ models:
     columns:
       - name: task_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: source_relation
@@ -290,7 +290,7 @@ models:
     columns:
       - name: task_sla_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: source_relation
@@ -397,7 +397,7 @@ models:
     columns:
       - name: sys_user_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: source_relation
@@ -630,7 +630,7 @@ models:
     columns:
       - name: problem_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: source_relation
@@ -770,7 +770,7 @@ models:
     columns:
       - name: problem_task_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: source_relation
@@ -844,7 +844,7 @@ models:
     columns:
       - name: incident_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: source_relation
@@ -966,7 +966,7 @@ models:
     columns:
       - name: change_task_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: source_relation
@@ -1022,7 +1022,7 @@ models:
     columns:
       - name: change_request_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: _fivetran_deleted
@@ -1172,7 +1172,7 @@ models:
     columns:
       - name: core_company_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
       - name: source_relation
         description: '{{ doc("source_relation") }}'
@@ -1229,7 +1229,7 @@ models:
     columns:
       - name: cmdb_ci_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
@@ -1320,7 +1320,7 @@ models:
     columns:
       - name: cmdb_ci_service_id
         description: '{{ doc("sys_id") }}'
-        tests: 
+        data_tests: 
           - not_null
       - name: _fivetran_deleted
         description: '{{ doc("_fivetran_deleted") }}'
@@ -1421,7 +1421,7 @@ models:
     columns:
       - name: sys_user_group_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: _fivetran_deleted
@@ -1510,7 +1510,7 @@ models:
     columns:
       - name: sys_user_role_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: sys_user_role_name
@@ -1572,7 +1572,7 @@ models:
     columns:
       - name: sys_user_has_role_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: _fivetran_deleted
@@ -1653,7 +1653,7 @@ models:
     columns:
       - name: sys_user_grmember_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: _fivetran_deleted
@@ -1703,7 +1703,7 @@ models:
     columns:
       - name: sys_choice_id
         description: '{{ doc("sys_id") }}'
-        tests:
+        data_tests:
           - not_null
 
       - name: sys_choice_created_at
